@@ -6,8 +6,11 @@ Created on 2017年7月20日
 @author: superhy
 '''
 
-from gensim.models.word2vec import Word2Vec
 import multiprocessing
+import time
+
+from gensim.models import word2vec
+from gensim.models.word2vec import Word2Vec
 
 from interface import fileProcess
 
@@ -54,6 +57,20 @@ def queryMostSimWords(model, wordStr, topN=20):
 def loadModelfromFile(modelPath):
     
     model = Word2Vec.load(modelPath)
+    return model
+
+#------------------------------------------------------------------------------ application process
+
+def embedding_patient_text(segPath, wordvecPath):
+    
+    patient_sentences = word2vec.LineSentence(segPath)
+    print('sentences num: {0}'.format(len(patient_sentences)))
+    
+    start_w2v = time.clock()
+    model = trainWord2VecModel(patient_sentences, wordvecPath)
+    end_w2v = time.clock()
+    print('train gensim word2vec model finish, use time: {0}'.format(end_w2v - start_w2v))
+    
     return model
 
 if __name__ == '__main__':
