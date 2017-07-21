@@ -1,8 +1,13 @@
-'''
-Created on 2017Äê7ÔÂ19ÈÕ
+# -*- coding: UTF-8 -*-
 
-@author: super
 '''
+Created on 2017å¹´7æœˆ20æ—¥
+
+@author: superhy
+'''
+
+def loadMatrixfromData(seg_patient_path, zhiliao_path, nb_yao):
+    pass
 
 if __name__ == '__main__':
     pass

@@ -12,7 +12,7 @@ import time
 from gensim.models import word2vec
 from gensim.models.word2vec import Word2Vec
 
-from interface import fileProcess
+from interface import tools
 
 
 def trainWord2VecModel(sentences, modelPath,
@@ -21,7 +21,7 @@ def trainWord2VecModel(sentences, modelPath,
                            MinCount=1,
                            Workers=multiprocessing.cpu_count()):
     # reload for safe
-    fileProcess.reLoadEncoding()
+    tools.reLoadEncoding()
     
     # train word2vec model
     model = Word2Vec(sentences, 
@@ -38,7 +38,7 @@ def trainWord2VecModel(sentences, modelPath,
 
 def getWordVec(model, queryWord):
     # reload for safe
-    fileProcess.reLoadEncoding()
+    tools.reLoadEncoding()
     
     vector = model[queryWord.decode('utf-8')]
 #     vector = model[queryWord]
@@ -49,7 +49,7 @@ def queryMostSimWords(model, wordStr, topN=20):
     MSimilar words basic query function
     return 2-dim List [0] is word [1] is double-prob
     '''
-    fileProcess.reLoadEncoding()
+    tools.reLoadEncoding()
         
     similarPairList = model.most_similar(wordStr.decode('utf-8'), topn=topN)
     return similarPairList
@@ -61,13 +61,15 @@ def loadModelfromFile(modelPath):
 
 #------------------------------------------------------------------------------ application process
 
-def embedding_patient_text(segPath, wordvecPath):
+def embedding_patient_text(seg_path, wordvec_path):
     
-    patient_sentences = word2vec.LineSentence(segPath)
+    patient_sentences = []
+    patient_sentences.extend(word2vec.LineSentence(seg_path))
+    print(type(patient_sentences))
     print('sentences num: {0}'.format(len(patient_sentences)))
     
     start_w2v = time.clock()
-    model = trainWord2VecModel(patient_sentences, wordvecPath)
+    model = trainWord2VecModel(patient_sentences, wordvec_path)
     end_w2v = time.clock()
     print('train gensim word2vec model finish, use time: {0}'.format(end_w2v - start_w2v))
     

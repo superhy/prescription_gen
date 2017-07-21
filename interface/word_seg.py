@@ -8,7 +8,7 @@ Created on 2017年7月20日
 
 from jieba import posseg
 import jieba
-from interface import fileProcess
+from interface import tools
 
 def singleSegEngine(segStr, segMode='e', userDictPath=None):
     if not userDictPath == None:
@@ -74,15 +74,24 @@ def seg_patient_text(original_path, seg_path):
     ori_lines = ori_file.readlines()
     ori_file.close()
     
-    seg_patient_lines = []
-    for line in ori_lines:
-        patient_str = line.split('|')
-        seg_patient_str = ' '.join(singleSegEngine(patient_str))
-        seg_patient_lines.append(seg_patient_str)
-    
     seg_file = open(seg_path, 'w')
-    seg_file.write('\n'.join(seg_patient_lines))
+    seg_file.write('')
     seg_file.close()
+    
+    seg_file = open(seg_path, 'a')
+    max_length = 0
+    for line in ori_lines:
+        patient_str = line.split('|')[0]
+        seg_words = singleSegEngine(patient_str)
+        if max_length < len(seg_words):
+            max_length = len(seg_words)
+            print(patient_str)
+        seg_patient_str = ' '.join(seg_words)
+        seg_file.write(seg_patient_str.encode('utf-8') + '\n')
+    seg_file.close()
+    print('patient seg finished!')
+    
+    return max_length
 
 if __name__ == '__main__':
     pass
