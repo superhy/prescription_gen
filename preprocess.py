@@ -9,7 +9,7 @@ Created on 2017年7月21日
 from interface import word_seg, word_embedding
 from interface.tools import get_config
 
-config = get_config('interface/interface.ini')
+config = get_config('interface.ini')
 
 #------------------------------------------------------------------------------ preprocess application
 def patientTextSeg():
