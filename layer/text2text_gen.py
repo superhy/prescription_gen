@@ -26,12 +26,13 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
     
     @return:       
     '''
-    vocab = wordvec_model.vocab.key()
+    vocab = wordvec_model.vocab.keys()
 
     x = np.zeros((len(patient_sentences), patient_cnt_len,
                   wordvec_model.vector_size), dtype=np.float32)
     y = np.zeros((len(patient_sentences), nb_yao), dtype=np.bool)
 
+    print('data tensorization...')
     for i, sentence in enumerate(patient_sentences):
         for j, word, in enumerate(sentence):
             if word in vocab:
@@ -42,7 +43,7 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
             # use Chinese wordvec as the training space
             x[i, j] = vocab_vector
         for yao_id in yaofangs[i]:
-            y[i, yao_id] = 1
+            y[i, yao_id - 1] = 1
 
     return x, y
 
@@ -61,7 +62,7 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
     _lstm_activation = 'sigmoid'
     # mlp & output layer parameters
     _mlp_units = 50
-    _mlp_activation = 'sigmoid'
+    _mlp_activation = 'tanh'
     _output_units = yao_indices_dim
     _output_activation = 'softmax'
 
@@ -70,7 +71,7 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
     lstm_mlp_model.add(Masking(mask_value=_mask_value, input_shape=_input_shape))
     lstm_mlp_model.add(LSTM(units=_lstm_units, activation=_lstm_activation,
                       dropout=_dropout, recurrent_dropout=_recurrent_dropout))
-#     lstm_mlp_model.add(BatchNormalization())
+    lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation))
 #     lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_output_units))
@@ -81,7 +82,7 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
     '''
     rms_optimizer = RMSprop(lr=0.01)
     _loss = 'categorical_crossentropy'
-    lstm_mlp_model.compile(optimizer=rms_optimizer, loss=_loss)
+    lstm_mlp_model.compile(optimizer=rms_optimizer, loss=_loss, metrics=['accuracy'])
 
     return lstm_mlp_model
 
@@ -90,10 +91,10 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
 #=========================================================================
 
 
-def trainer(model, x_train, y_train,
-            batch_size=64,
-            epochs=100,
-            validation_split=0.1,
+def trainer(model, train_x, train_y,
+            batch_size=16,
+            epochs=300,
+            validation_split=0.0,
             auto_stop=False,
             best_record_path=None):
 
@@ -129,7 +130,7 @@ def trainer(model, x_train, y_train,
 
     history = MetricesHistory()
     callbacks.append(history)
-    model.fit(x=x_train, y=y_train,
+    model.fit(x=train_x, y=train_y,
               batch_size=batch_size,
               epochs=epochs,
               validation_split=validation_split,
@@ -138,20 +139,20 @@ def trainer(model, x_train, y_train,
     return model, history.metrices
 
 
-def predictor(model, x_test,
-              batch_size=64):
+def predictor(model, test_x,
+              batch_size=16):
 
     # predict the test data's labels with trained layer model
-    output = model.predict(x_test, batch_size=batch_size)
+    output = model.predict(test_x, batch_size=batch_size)
 
     return output
 
 
-def evaluator(model, x_test, y_test,
-              batch_size=256):
+def evaluator(model, test_x, test_y,
+              batch_size=16):
 
     # evaluate the trained layer model
-    score = model.evaluate(x_test, y_test, batch_size=batch_size)
+    score = model.evaluate(test_x, test_y, batch_size=batch_size)
     return score
 
 
@@ -223,12 +224,12 @@ if __name__ == '__main__':
          [1, 1, 0, 1, 1, 0, 1, 0, 1, 1],
          [1, 0, 0, 1, 1, 0, 1, 0, 0, 1],
          [1, 0, 0, 1, 1, 1, 0, 0, 0, 1]]
-    y_train = np.asarray(a * 10, dtype=np.bool)
+    train_y = np.asarray(a * 10, dtype=np.bool)
     x_test = np.random.random((2, 20, 100))
     
     lstm_mlp_model = lstm_mlp(yaofang_length=20, wordvec_dim=100, yao_indices_dim=10)
     
-    model, history = trainer(lstm_mlp_model, x_train, y_train, batch_size=16, epochs=5, validation_split=0.1)
+    model, history = trainer(lstm_mlp_model, x_train, train_y, batch_size=16, epochs=5, validation_split=0.1)
     output = predictor(lstm_mlp_model, x_test, batch_size=2)
     
     print(output)
