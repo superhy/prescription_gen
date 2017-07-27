@@ -40,7 +40,7 @@ def loadDatafromFile(patient_seg_path, patient_wordvec_path, zhiliao_path):
     yaofangs = []
     for line in zhiliao_lines:
         line = line[:len(line) - 1]  # remove the line break flag
-        yaofang = list(int(yao) for yao in line.split(':')[1].split(','))
+        yaofang = list(int(yao) - 1 for yao in line.split(':')[1].split(','))
         yaofangs.append(yaofang)
 
     return patient_sentences, wordvec_model, yaofangs, patient_cnt_len
@@ -67,7 +67,7 @@ def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len):
     return trained_gen_model
 
 
-def gen_predictor(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, trained_gen_model):
+def gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, trained_gen_model):
     ''' load test_x & test_y '''
     nb_yao = 725  # should be detected from yao-vocabulary
     total_x, total_y = text2text_gen.data_tensorization(
@@ -75,7 +75,7 @@ def gen_predictor(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, t
     # train data ratio
     test_ratio = 0.05
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
-    test_x = total_x[:10]
+    test_x = total_x[:20]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = text2text_gen.predictor(trained_gen_model, test_x)
@@ -91,24 +91,24 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=0.01):
+def threshold_outputfilter(output, threshold=0.015):
     '''
     use arg(output > threshold)
     '''
     output_index = list(np.where(output > threshold)[0])
     print(' '.join(str(output[index]) for index in output_index))
-    
+
     return output_index
 
 
-def dynamic_threshold_outputfilter(output, d_ratio=0.5):
+def dynamic_threshold_outputfilter(output, d_ratio=0.8):
     '''
     use arg(output > max - (max - min) * d_ratio) 
     '''
     threshold = output.max() - ((output.max() - output.min()) * d_ratio)
     print('get id > %f' % threshold)
     output_index = list(np.where(output > threshold)[0])
-    
+
     print(' '.join(str(output[index]) for index in output_index))
 
     return output_index

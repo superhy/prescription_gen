@@ -43,7 +43,7 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
             # use Chinese wordvec as the training space
             x[i, j] = vocab_vector
         for yao_id in yaofangs[i]:
-            y[i, yao_id - 1] = 1
+            y[i, yao_id] = 1
 
     return x, y
 
