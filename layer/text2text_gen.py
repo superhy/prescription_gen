@@ -83,6 +83,9 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
     rms_optimizer = RMSprop(lr=0.01)
     _loss = 'categorical_crossentropy'
     lstm_mlp_model.compile(optimizer=rms_optimizer, loss=_loss, metrics=['accuracy'])
+    
+    # print layers framework
+    lstm_mlp_model.summary()
 
     return lstm_mlp_model
 
