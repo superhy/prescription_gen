@@ -23,7 +23,7 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
     @param yaofangs:
     @param patient_cnt_len:
     @param nb_yao:
-    
+
     @return:       
     '''
     vocab = wordvec_model.vocab.keys()
@@ -47,9 +47,14 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
 
     return x, y
 
+#=========================================================================
+# layers function of keras
+#=========================================================================
 
-def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
+
+def k_lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim, with_compile=True):
     '''
+    'k_' prefix means keras_layers
     some layer parameters
     '''
     # mask layer parameters
@@ -68,33 +73,43 @@ def lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim):
 
     print('Build LSTM + MLP model...')
     lstm_mlp_model = Sequential()
-    lstm_mlp_model.add(Masking(mask_value=_mask_value, input_shape=_input_shape))
+    lstm_mlp_model.add(
+        Masking(mask_value=_mask_value, input_shape=_input_shape))
     lstm_mlp_model.add(LSTM(units=_lstm_units, activation=_lstm_activation,
-                      dropout=_dropout, recurrent_dropout=_recurrent_dropout))
+                            dropout=_dropout, recurrent_dropout=_recurrent_dropout))
     lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation))
 #     lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_output_units))
     lstm_mlp_model.add(Activation(_output_activation))
 
-    '''
-    some compiler parameters
-    '''
-    rms_optimizer = RMSprop(lr=0.01)
-    _loss = 'categorical_crossentropy'
-    lstm_mlp_model.compile(optimizer=rms_optimizer, loss=_loss, metrics=['accuracy'])
-    
     # print layers framework
     lstm_mlp_model.summary()
-
-    return lstm_mlp_model
+    
+    if with_compile == True:
+        return compiler(lstm_mlp_model)
+    else:
+        # ready to joint in some other frameworks like Tensorflow
+        return lstm_mlp_model
 
 #=========================================================================
 # tools function for layer-net model
 #=========================================================================
 
 
-def trainer(model, train_x, train_y,
+def compiler(layers_model):
+    '''
+    some compiler parameters
+    '''
+    _optimizer = RMSprop(lr=0.01)
+    _loss = 'categorical_crossentropy'
+
+    layers_model.compile(optimizer=_optimizer,
+                         loss=_loss, metrics=['accuracy'])
+    return layers_model
+
+
+def rl_player_env(model, train_x, train_y,
             batch_size=16,
             epochs=300,
             validation_split=0.0,
@@ -212,9 +227,10 @@ def loadStoredModel(frame_path, record_path, recompile=False):
 
     return model
 
+
 if __name__ == '__main__':
     '''
-    test for lstm_mlp
+    test for k_lstm_mlp
     '''
     x_train = np.random.random((100, 20, 100))
     a = [[0, 1, 0, 1, 1, 0, 0, 0, 0, 1],
@@ -229,10 +245,12 @@ if __name__ == '__main__':
          [1, 0, 0, 1, 1, 1, 0, 0, 0, 1]]
     train_y = np.asarray(a * 10, dtype=np.bool)
     x_test = np.random.random((2, 20, 100))
-    
-    lstm_mlp_model = lstm_mlp(yaofang_length=20, wordvec_dim=100, yao_indices_dim=10)
-    
-    model, history = trainer(lstm_mlp_model, x_train, train_y, batch_size=16, epochs=5, validation_split=0.1)
+
+    lstm_mlp_model = k_lstm_mlp(
+        yaofang_length=20, wordvec_dim=100, yao_indices_dim=10)
+
+    model, history = rl_player_env(
+        lstm_mlp_model, x_train, train_y, batch_size=16, epochs=5, validation_split=0.1)
     output = predictor(lstm_mlp_model, x_test, batch_size=2)
-    
+
     print(output)

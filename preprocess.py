@@ -23,7 +23,7 @@ def patientTextSeg():
 def patientTextWordvec():
     
     seg_path = config['root_path'] + config['cache_path'] + 'patient_seg.list'
-    wordvec_path = config['root_path'] + config['cache_path'] + 'patient_gensim_wordvec.vector'
+    wordvec_path = config['root_path'] + config['cache_path'] + 'nlp/patient_gensim_wordvec.vector'
     
     model = word_embedding.embedding_patient_text(seg_path, wordvec_path)
     print('patient wordvec vocab size: %d' % len(model.vocab.keys()))

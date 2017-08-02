@@ -57,9 +57,9 @@ def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len):
     train_y = total_y[: int(len(total_y) * train_ratio)]
 
     print('training lstm + mlp text2text gen model...')
-    gen_model = text2text_gen.lstm_mlp(
-        yaofang_length=patient_cnt_len, wordvec_dim=wordvec_model.vector_size, yao_indices_dim=nb_yao)
-    trained_gen_model, history = text2text_gen.trainer(
+    gen_model = text2text_gen.k_lstm_mlp(
+        yaofang_length=patient_cnt_len, wordvec_dim=wordvec_model.vector_size, yao_indices_dim=nb_yao, with_compile=True)
+    trained_gen_model, history = text2text_gen.rl_player_env(
         gen_model, train_x, train_y)
 
     print('history: {0}'.format(history))
