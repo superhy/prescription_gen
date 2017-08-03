@@ -29,5 +29,7 @@ def patientTextWordvec():
     print('patient wordvec vocab size: %d' % len(model.vocab.keys()))
     
 if __name__ == '__main__':
+    # step 1:
     patientTextSeg()
+    # step 2:
 #     patientTextWordvec()

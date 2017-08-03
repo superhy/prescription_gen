@@ -46,9 +46,9 @@ def loadDatafromFile(patient_seg_path, patient_wordvec_path, zhiliao_path):
     return patient_sentences, wordvec_model, yaofangs, patient_cnt_len
 
 
-def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len):
+def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao):
     ''' load train_x & train_y '''
-    nb_yao = 725  # should be detected from yao-vocabulary
+#     nb_yao = 725  # should be detected from yao-vocabulary
     total_x, total_y = text2text_gen.data_tensorization(
         patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao)
     # train data ratio
@@ -59,7 +59,7 @@ def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len):
     print('training lstm + mlp text2text gen model...')
     gen_model = text2text_gen.k_lstm_mlp(
         yaofang_length=patient_cnt_len, wordvec_dim=wordvec_model.vector_size, yao_indices_dim=nb_yao, with_compile=True)
-    trained_gen_model, history = text2text_gen.rl_player_env(
+    trained_gen_model, history = text2text_gen.trainer(
         gen_model, train_x, train_y)
 
     print('history: {0}'.format(history))
@@ -67,9 +67,9 @@ def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len):
     return trained_gen_model
 
 
-def gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, trained_gen_model):
+def gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao, trained_gen_model):
     ''' load test_x & test_y '''
-    nb_yao = 725  # should be detected from yao-vocabulary
+#     nb_yao = 725  # should be detected from yao-vocabulary
     total_x, total_y = text2text_gen.data_tensorization(
         patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao)
     # train data ratio
@@ -124,7 +124,7 @@ def load_yaopin_dict(yaopin_path):
     yaopin_vocab_file.close()
 
     yaopin_dict = dict((int(line.split(' ')[
-                       0]) - 1, line[:len(line) - 1].split(' ')[1]) for line in yaopin_vocab_lines)
+                       0]) - 1, line[:line.find('\r')].split(' ')[1]) for line in yaopin_vocab_lines)
 
     return yaopin_dict
 

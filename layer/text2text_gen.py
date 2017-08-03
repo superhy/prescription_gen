@@ -109,7 +109,7 @@ def compiler(layers_model):
     return layers_model
 
 
-def rl_player_env(model, train_x, train_y,
+def trainer(model, train_x, train_y,
             batch_size=16,
             epochs=300,
             validation_split=0.0,
@@ -249,7 +249,7 @@ if __name__ == '__main__':
     lstm_mlp_model = k_lstm_mlp(
         yaofang_length=20, wordvec_dim=100, yao_indices_dim=10)
 
-    model, history = rl_player_env(
+    model, history = trainer(
         lstm_mlp_model, x_train, train_y, batch_size=16, epochs=5, validation_split=0.1)
     output = predictor(lstm_mlp_model, x_test, batch_size=2)
 
