@@ -75,7 +75,7 @@ def gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
     # train data ratio
     test_ratio = 0.05
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
-    test_x = total_x[:20]
+    test_x = total_x[:200]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = text2text_gen.predictor(trained_gen_model, test_x)

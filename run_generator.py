@@ -32,7 +32,7 @@ def train_predict_text2text_gen():
     trained_gen_model = patient_text_generator.gen_trainer(
         patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao)
     # store keras layers_framework(optional)
-    frame_name = 'text2text_lstmmlp_575_t02_300it.json'
+    frame_name = 'text2text_lstmmlp_1153_t02_300it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     text2text_gen.storageModel(
@@ -46,8 +46,8 @@ def train_predict_text2text_gen():
     yaopin_dict = patient_text_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
-    test_patient_sentences = patient_sentences[:20]
-    test_yaofangs = yaofangs[:20]
+    test_patient_sentences = patient_sentences[:200]
+    test_yaofangs = yaofangs[:200]
     for i, output in enumerate(gen_output):
         # print test data label info:
         print('{0}. \npatient text:'.format(i))

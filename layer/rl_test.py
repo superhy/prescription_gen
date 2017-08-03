@@ -78,11 +78,11 @@ def rl_player_env():
     newGrads = tf.gradients(loss, tvars)
 
     # define gradient update
-    adam = tf.train.AdamOptimizer(learning_rate=learning_rate)
     W1Grad = tf.placeholder(dtype=tf.float32, name="batch_grad1")
     W2Grad = tf.placeholder(dtype=tf.float32, name="batch_grad2")
     batchGrad = [W1Grad, W2Grad]
     # updateGrads just a opinion of optimizer
+    adam = tf.train.AdamOptimizer(learning_rate=learning_rate)
     updateGrads = adam.apply_gradients(zip(batchGrad, tvars))
 
     def discount_rewards(r):
