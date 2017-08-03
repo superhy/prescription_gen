@@ -101,7 +101,7 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = RMSprop(lr=0.1, decay=1e-5)
+    _optimizer = RMSprop(lr=0.02, decay=1e-5)
     _loss = 'categorical_crossentropy'
 
     layers_model.compile(optimizer=_optimizer,
@@ -110,7 +110,7 @@ def compiler(layers_model):
 
 
 def trainer(model, train_x, train_y,
-            batch_size=16,
+            batch_size=64,
             epochs=300,
             validation_split=0.0,
             auto_stop=False,
@@ -158,7 +158,7 @@ def trainer(model, train_x, train_y,
 
 
 def predictor(model, test_x,
-              batch_size=16):
+              batch_size=64):
 
     # predict the test data's labels with trained layer model
     output = model.predict(test_x, batch_size=batch_size)
@@ -167,7 +167,7 @@ def predictor(model, test_x,
 
 
 def evaluator(model, test_x, test_y,
-              batch_size=16):
+              batch_size=64):
 
     # evaluate the trained layer model
     score = model.evaluate(test_x, test_y, batch_size=batch_size)
@@ -206,7 +206,7 @@ def recompileModel(model):
 
     # optimizer = SGD(lr=0.1, decay=1e-5, nesterov=True)  # only CNNs_Net use
     # SGD
-    optimizer = RMSprop(lr=0.1, decay=1e-5)
+    optimizer = RMSprop(lr=0.02, decay=1e-5)
 
     # ps: if want use precision, recall and fmeasure, need to add these metrics
     model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[
