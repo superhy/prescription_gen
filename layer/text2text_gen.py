@@ -101,7 +101,7 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = RMSprop(lr=0.02, decay=1e-6)
+    _optimizer = RMSprop(lr=0.1, decay=1e-5)
     _loss = 'categorical_crossentropy'
 
     layers_model.compile(optimizer=_optimizer,
@@ -206,7 +206,7 @@ def recompileModel(model):
 
     # optimizer = SGD(lr=0.1, decay=1e-5, nesterov=True)  # only CNNs_Net use
     # SGD
-    optimizer = RMSprop(lr=0.02, decay=1e-6)
+    optimizer = RMSprop(lr=0.1, decay=1e-5)
 
     # ps: if want use precision, recall and fmeasure, need to add these metrics
     model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[
