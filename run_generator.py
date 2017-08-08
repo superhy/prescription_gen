@@ -93,23 +93,23 @@ def train_predict_face2text_gen():
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model)
     print(gen_output[0])
 
-    yaopin_dict = patient_text_generator.load_yaopin_dict(yaopin_path)
+    yaopin_dict = patient_face_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
     test_face_ids = face_ids[:200]
     test_yaofangs = face_yaofangs[:200]
     for i, output in enumerate(gen_output):
         # print test data label info:
-        print('%d. \npatient face id: %s' % i, test_face_ids[i])
+        print('%d. \npatient face id: %s' % (i, test_face_ids[i]))
         print('label yaofang:')
-        yaofang_label = patient_text_generator.sample_yaofang(
+        yaofang_label = patient_face_generator.sample_yaofang(
             test_yaofangs[i], yaopin_dict)
         print(' '.join(yaofang_label))
 
-#         output_index = patient_text_generator.dynamic_threshold_outputfilter(output)
-        output_index = patient_text_generator.threshold_outputfilter(output)
+#         output_index = patient_face_generator.dynamic_threshold_outputfilter(output)
+        output_index = patient_face_generator.threshold_outputfilter(output)
 #         print('predicted yaofang ids: {0}'.format(output_index))
-        yaofang_output = patient_text_generator.sample_yaofang(
+        yaofang_output = patient_face_generator.sample_yaofang(
             output_index, yaopin_dict)
         print('predicted yaofang:')
         print(' '.join(yaofang_output) + '\n')
