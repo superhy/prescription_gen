@@ -89,7 +89,7 @@ def k_lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim, with_compile=True):
     if with_compile == True:
         return compiler(lstm_mlp_model)
     else:
-        # ready to joint in some other frameworks like Tensorflow
+        # ready to joint in some other frameworks like [Tensorflow]
         return lstm_mlp_model
 
 #=========================================================================
