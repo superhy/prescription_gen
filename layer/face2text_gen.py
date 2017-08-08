@@ -13,19 +13,36 @@ from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.pooling import MaxPool2D
 from keras.layers.normalization import BatchNormalization
 
+import numpy as np
 
-def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao):
+
+def data_tensorization(face_image_arrays, face_yaofangs, face_image_shape, nb_yao):
     '''
-    @todo: data tensorization from pair of face_image-text 
+    @param face_image_arrays:
+    @param face_yaofangs:
+    @param face_image_shape:
+
+    @return:    
     '''
-    pass
+    nb_samples = len(face_image_arrays)
+
+    face_x = np.zeros((0,) + face_image_shape)
+    y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+    for i in range(nb_samples):
+        face_x = np.vstack((face_x, face_image_arrays[i].reshape(
+            1, face_image_shape[0], face_image_shape[1], face_image_shape[2])))
+
+        for yao_id in face_yaofangs[i]:
+            y[i, yao_id] = 1
+
+    return face_x, y
 
 #=========================================================================
 # layers function of keras
 #=========================================================================
 
 
-def k_cnn2_mlp(input_shape, yao_indices_dim, with_compile=True):
+def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     '''
     'k_' prefix means keras_layers
     some layer parameters
@@ -53,7 +70,7 @@ def k_cnn2_mlp(input_shape, yao_indices_dim, with_compile=True):
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp_model = Sequential()
     cnn2_mlp_model.add(Conv2D(filters=_nb_filters_1,
-                              kernel_size=_kernel_size_1))
+                              kernel_size=_kernel_size_1, input_shape=face_image_shape))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_1))
@@ -99,7 +116,7 @@ def compiler(layers_model):
 
 def trainer(model, train_x, train_y,
             batch_size=64,
-            epochs=300,
+            epochs=3,
             validation_split=0.0,
             auto_stop=False,
             best_record_path=None):

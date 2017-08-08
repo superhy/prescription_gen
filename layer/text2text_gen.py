@@ -52,7 +52,7 @@ def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_l
 #=========================================================================
 
 
-def k_lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim, with_compile=True):
+def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     '''
     'k_' prefix means keras_layers
     some layer parameters
@@ -85,7 +85,7 @@ def k_lstm_mlp(yaofang_length, wordvec_dim, yao_indices_dim, with_compile=True):
 
     # print layers framework
     lstm_mlp_model.summary()
-    
+
     if with_compile == True:
         return compiler(lstm_mlp_model)
     else:
