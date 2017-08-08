@@ -49,19 +49,19 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     '''
 
     # cnn layer parameters
-    _nb_filters_1 = 128
+    _nb_filters_1 = 256
     _kernel_size_1 = (5, 5)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
-    _nb_filters_2 = 80
+    _nb_filters_2 = 160
     _kernel_size_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
-    _mlp_units = 64
+    _mlp_units = 1000
     _mlp_activation = 'tanh'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
@@ -105,7 +105,7 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = SGD(lr=0.02, decay=5e-6, momentum=0.9)
+    _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
     _loss = 'categorical_crossentropy'
 
     layers_model.compile(optimizer=_optimizer,
@@ -115,8 +115,8 @@ def compiler(layers_model):
 
 
 def trainer(model, train_x, train_y,
-            batch_size=64,
-            epochs=200,
+            batch_size=128,
+            epochs=300,
             validation_split=0.0,
             auto_stop=False,
             best_record_path=None):
@@ -163,7 +163,7 @@ def trainer(model, train_x, train_y,
 
 
 def predictor(model, test_x,
-              batch_size=64):
+              batch_size=128):
 
     # predict the test data's labels with trained layer model
     output = model.predict(test_x, batch_size=batch_size)
