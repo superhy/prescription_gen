@@ -49,7 +49,7 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     '''
 
     # cnn layer parameters
-    _nb_filters_1 = 256
+    _nb_filters_1 = 128
     _kernel_size_1 = (5, 5)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
@@ -61,7 +61,7 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
-    _mlp_units = 1000
+    _mlp_units = 200
     _mlp_activation = 'tanh'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
