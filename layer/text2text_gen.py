@@ -69,7 +69,7 @@ def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     _mlp_units = 50
     _mlp_activation = 'tanh'
     _output_units = yao_indices_dim
-    _output_activation = 'softmax'
+    _output_activation = 'sigmoid'
 
     print('Build LSTM + MLP model...')
     lstm_mlp_model = Sequential()
@@ -111,7 +111,7 @@ def compiler(layers_model):
 
 def trainer(model, train_x, train_y,
             batch_size=64,
-            epochs=300,
+            epochs=50,
             validation_split=0.0,
             auto_stop=False,
             best_record_path=None):
