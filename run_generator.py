@@ -137,7 +137,7 @@ def train_predict_face2text_gen_batch():
     image_normal_size = (224, 224)
     face_image_shape = image_normal_size + (3,)
 
-    trained_gen_model = face2text_gen.k_cnn2_mlp(yao_indices_dim=nb_yao, face_image_shape=face_image_shape, with_compile=True)
+    face_gen_model = face2text_gen.k_cnn2_mlp(yao_indices_dim=nb_yao, face_image_shape=face_image_shape, with_compile=True)
 
     batch_size = 64
     epochs = 300
@@ -151,9 +151,9 @@ def train_predict_face2text_gen_batch():
             patient_face_dir, face_id2yaofang_s_dict, image_normal_size=image_normal_size, batch_size=batch_size)
 
         # each iteration, we get 'batch_size' data and train_on_batch
-        for face_ids, face_image_arrays, face_yaofangs, trainNum in dataGenerator:
+        for face_ids, face_image_arrays, face_yaofangs, face_image_shape in dataGenerator:
             trained_gen_model = patient_face_generator.face_gen_trainer_on_batch(
-                trained_gen_model, trainNum, face_image_arrays, face_yaofangs, face_image_shape,nb_yao)
+                face_gen_model, face_image_arrays, face_yaofangs, face_image_shape,nb_yao)
         end = time.time()
         print '\n' + '##### epoch {} time: {} #####'.format(i + 1, end - start) + '\n'
 
