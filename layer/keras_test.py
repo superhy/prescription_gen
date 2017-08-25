@@ -5,7 +5,7 @@ Created on 2017年8月25日
 
 @author: superhy
 '''
-from keras import losses
+
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
 from keras.layers.core import Masking, Dense, Activation
 from keras.layers.normalization import BatchNormalization
@@ -14,7 +14,6 @@ from keras.models import Sequential
 from keras.optimizers import RMSprop
 
 import numpy as np
-
 
 def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     '''
@@ -55,7 +54,8 @@ def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     else:
         # ready to joint in some other frameworks like [Tensorflow]
         return lstm_mlp_model
-    
+
+
 def compiler(layers_model):
     '''
     some compiler parameters
@@ -66,6 +66,7 @@ def compiler(layers_model):
     layers_model.compile(optimizer=_optimizer,
                          loss=_loss, metrics=['accuracy'])
     return layers_model
+
 
 def trainer(model, train_x, train_y,
             batch_size=64,
@@ -114,6 +115,7 @@ def trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+
 def predictor(model, test_x,
               batch_size=64):
 
@@ -122,8 +124,34 @@ def predictor(model, test_x,
 
     return output
 
-def data_generator(size = 1000):
-    pass
+
+def data_generator(size=1000):
+    x_list = []
+    y_list = []
+    for i in range(size):
+        col_arrays = []
+        col_labels = []
+        for j in range(20):
+            array = np.random.random(size=100, dtype=np.float32)
+            col_arrays.append(array)
+            if array.sum(axis=-1) > 70.0:
+                col_labels.append(1)
+            else:
+                col_labels.append(0)
+        
+        x_list.append(col_arrays)
+        y_list.append(col_labels)
+    
+    x = np.asarray(x_list, dtype=np.float32)
+    y = np.asarray(y_list, dtype=np.bool)
+    
+    return x, y
+
+def run_test():
+    train_x, train_y = data_generator(10000)
+    test_x, test_y = data_generator(10)
+    
+    
 
 if __name__ == '__main__':
     pass
