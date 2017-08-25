@@ -80,12 +80,12 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2,
                               kernel_size=_kernel_size_2))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2, name='conv_1_2'))
+    cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2, name='conv1_2'))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(Flatten())
-    cnn2_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation, name='dense_1'))
+    cnn2_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
     cnn2_mlp_model.add(Dense(units=_output_units))
     cnn2_mlp_model.add(Activation(activation=_output_activation))

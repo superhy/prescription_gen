@@ -68,8 +68,10 @@ def train_predict_text2text_gen():
         print(' '.join(yaofang_output) + '\n')
 
 def train_predict_face2text_gen():
+#     patient_face_dir = config['root_path'] + \
+#         config['original_path'] + 'face_2166'
     patient_face_dir = config['root_path'] + \
-        config['original_path'] + 'face_2166'
+        config['original_path'] + 'face_6455'
     face_zhiliao_path = config['root_path'] + \
         config['original_path'] + 'face_zhiliao.list'
     yaopin_path = config['root_path'] + \
@@ -84,7 +86,8 @@ def train_predict_face2text_gen():
     trained_gen_model = patient_face_generator.face_gen_trainer(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao)
     # store keras layers_framework(optional)
-    frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
+#     frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
+    frame_name = 'face2text_cnn2mlp_6455_t02_300it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     face2text_gen.storageModel(
