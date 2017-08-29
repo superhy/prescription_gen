@@ -15,6 +15,7 @@ from keras.optimizers import RMSprop
 
 import numpy as np
 
+
 def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     '''
     'k_' prefix means keras_layers
@@ -30,7 +31,7 @@ def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
     _lstm_activation = 'sigmoid'
     # mlp & output layer parameters
     _mlp_units = 50
-    _mlp_activation = 'tanh'
+    _mlp_activation = 'sigmoid'
     _output_units = yao_indices_dim
     _output_activation = 'sigmoid'
 
@@ -42,7 +43,7 @@ def k_lstm_mlp(yao_indices_dim, yaofang_length, wordvec_dim, with_compile=True):
                             dropout=_dropout, recurrent_dropout=_recurrent_dropout))
     lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation))
-#     lstm_mlp_model.add(BatchNormalization())
+    lstm_mlp_model.add(BatchNormalization())
     lstm_mlp_model.add(Dense(units=_output_units))
     lstm_mlp_model.add(Activation(_output_activation))
 
@@ -60,7 +61,7 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = RMSprop(lr=0.02, decay=1e-5)
+    _optimizer = RMSprop(lr=0.02, decay=5e-6)
     _loss = 'binary_crossentropy'
 
     layers_model.compile(optimizer=_optimizer,
@@ -69,9 +70,9 @@ def compiler(layers_model):
 
 
 def trainer(model, train_x, train_y,
-            batch_size=64,
+            batch_size=128,
             epochs=50,
-            validation_split=0.0,
+            validation_split=0.1,
             auto_stop=False,
             best_record_path=None):
 
@@ -117,7 +118,7 @@ def trainer(model, train_x, train_y,
 
 
 def predictor(model, test_x,
-              batch_size=64):
+              batch_size=128):
 
     # predict the test data's labels with trained layer model
     output = model.predict(test_x, batch_size=batch_size)
@@ -132,26 +133,47 @@ def data_generator(size=1000):
         col_arrays = []
         col_labels = []
         for j in range(20):
-            array = np.random.random(size=100, dtype=np.float32)
+            array = np.random.random(size=100)
             col_arrays.append(array)
-            if array.sum(axis=-1) > 70.0:
+            if array.sum(axis=-1) >= 50.0:
                 col_labels.append(1)
             else:
                 col_labels.append(0)
-        
+
         x_list.append(col_arrays)
         y_list.append(col_labels)
-    
+
     x = np.asarray(x_list, dtype=np.float32)
     y = np.asarray(y_list, dtype=np.bool)
     
+    print('generate 20 * 100 data, size: %d' % size)
+
     return x, y
 
-def run_test():
-    train_x, train_y = data_generator(10000)
-    test_x, test_y = data_generator(10)
-    
-    
 
+def run_test():
+    train_x, train_y = data_generator(50000)
+    test_x, test_y = data_generator(10)
+    print(test_y)
+
+    # use test data as real
+    _yao_indices_dim = 20
+    _yaofang_length = 20
+    _wordvec_dim = 100
+
+    model = k_lstm_mlp(_yao_indices_dim, _yaofang_length,
+                       _wordvec_dim, with_compile=True)
+    trained_model, history = trainer(model, train_x, train_y)
+    
+    output = predictor(trained_model, test_x)
+    
+    for i in range(2):
+        print(test_y[i])
+        print(output[i])
+    
 if __name__ == '__main__':
-    pass
+    run_test()
+    
+#     from keras.utils.np_utils import to_categorical
+#     categorical_labels = to_categorical([7,8], num_classes=10)
+#     print(categorical_labels)
