@@ -32,7 +32,7 @@ def data_tensorization(face_image_arrays, face_yaofangs, face_image_shape, nb_ya
     for i in range(nb_samples):
         face_image_arrays[i] = face_image_arrays[i].reshape(face_image_shape)
         # face_x = np.vstack((face_x, face_image_arrays[i].reshape(
-        #     1, face_image_shape[0], face_image_shape[1], face_image_shape[2])))
+        # 1, face_image_shape[0], face_image_shape[1], face_image_shape[2])))
         for yao_id in face_yaofangs[i]:
             y[i, yao_id] = 1
 
@@ -68,7 +68,7 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
-    _output_activation = 'softmax'
+    _output_activation = 'sigmoid'
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp_model = Sequential()
@@ -85,7 +85,8 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(Flatten())
-    cnn2_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
+    cnn2_mlp_model.add(
+        Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
     cnn2_mlp_model.add(BatchNormalization())
     cnn2_mlp_model.add(Dense(units=_output_units))
@@ -99,7 +100,8 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     else:
         # ready to joint in some other frameworks like Tensorflow
         return cnn2_mlp_model
-    
+
+
 def k_vgg_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     '''
     'k_' prefix means keras_layers
@@ -107,7 +109,7 @@ def k_vgg_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     '''
 
     # vgg parameters
-    zero_padding = (1,1)
+    zero_padding = (1, 1)
     _kernel_size = (3, 3)
     _vgg_activation = 'relu'
     _pool_size = (2, 2)
@@ -129,41 +131,60 @@ def k_vgg_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     print('Build VGG + MLP model...')
     vgg_mlp_model = Sequential()
 
-    vgg_mlp_model.add(ZeroPadding2D(zero_padding, input_shape=face_image_shape))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_1, kernel_size=_kernel_size, activation=_vgg_activation, name='conv1_1'))
+    vgg_mlp_model.add(ZeroPadding2D(
+        zero_padding, input_shape=face_image_shape))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_1,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv1_1'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_1, kernel_size=_kernel_size, activation=_vgg_activation, name='conv1_2'))
-    vgg_mlp_model.add(MaxPooling2D(pool_size=_pool_size, strides=_pool_strides))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_1,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv1_2'))
+    vgg_mlp_model.add(MaxPooling2D(
+        pool_size=_pool_size, strides=_pool_strides))
 
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_2, kernel_size=_kernel_size, activation=_vgg_activation, name='conv2_1'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_2,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv2_1'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_2, kernel_size=_kernel_size, activation=_vgg_activation, name='conv2_2'))
-    vgg_mlp_model.add(MaxPooling2D(pool_size=_pool_size, strides=_pool_strides))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_2,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv2_2'))
+    vgg_mlp_model.add(MaxPooling2D(
+        pool_size=_pool_size, strides=_pool_strides))
 
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3, kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_1'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_1'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3, kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_2'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_2'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3, kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_3'))
-    vgg_mlp_model.add(MaxPooling2D(pool_size=_pool_size, strides=_pool_strides))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_3,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv3_3'))
+    vgg_mlp_model.add(MaxPooling2D(
+        pool_size=_pool_size, strides=_pool_strides))
 
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4, kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_1'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_1'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4, kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_2'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_2'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4, kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_3'))
-    vgg_mlp_model.add(MaxPooling2D(pool_size=_pool_size, strides=_pool_strides))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_4,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv4_3'))
+    vgg_mlp_model.add(MaxPooling2D(
+        pool_size=_pool_size, strides=_pool_strides))
 
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5, kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_1'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_1'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5, kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_2'))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_2'))
     vgg_mlp_model.add(ZeroPadding2D(zero_padding))
-    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5, kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_3'))
-    vgg_mlp_model.add(MaxPooling2D(pool_size=_pool_size, strides=_pool_strides))
+    vgg_mlp_model.add(Convolution2D(filters=_nb_filters_5,
+                                    kernel_size=_kernel_size, activation=_vgg_activation, name='conv5_3'))
+    vgg_mlp_model.add(MaxPooling2D(
+        pool_size=_pool_size, strides=_pool_strides))
 
     vgg_mlp_model.add(Flatten())
     vgg_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation))
@@ -189,18 +210,18 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = SGD(lr=0.02, decay=1e-5, momentum=0.9)
+    _optimizer = SGD(lr=0.02, decay=1e-6)
     _loss = 'binary_crossentropy'
 
-    layers_model.compile(optimizer=_optimizer, loss=_loss)
-    # , metrics=['accuracy']
+    layers_model.compile(optimizer=_optimizer,
+                         loss=_loss, metrics=['accuracy'])
 
     return layers_model
 
 
 def trainer(model, train_x, train_y,
             batch_size=32,
-            epochs=200,
+            epochs=100,
             validation_split=0.1,
             auto_stop=False,
             best_record_path=None):
@@ -245,6 +266,7 @@ def trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+
 def batch_trainer(model, train_x, train_y):
     training_start = time.time()
     res = model.train_on_batch(x=train_x, y=train_y)
@@ -253,6 +275,7 @@ def batch_trainer(model, train_x, train_y):
     acc = str(res[1])
     print 'loss: {}   acc: {}   time:{} '.format(loss, acc, training_end - training_start)
     return model
+
 
 def predictor(model, test_x,
               batch_size=32):
@@ -303,7 +326,7 @@ def recompileModel(model):
 
     # optimizer = SGD(lr=0.1, decay=1e-5, nesterov=True)  # only CNNs_Net use
     # SGD
-    optimizer = SGD(lr=0.02, decay=1e-5, momentum=0.9)
+    optimizer = SGD(lr=0.02, decay=1e-6)
 
     # ps: if want use precision, recall and fmeasure, need to add these metrics
     model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=[
