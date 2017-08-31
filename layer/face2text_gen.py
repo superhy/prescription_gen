@@ -65,10 +65,10 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
     _mlp_units = 64
-    _mlp_activation = 'tanh'
+    _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
-    _output_activation = 'sigmoid'
+    _output_activation = 'softmax'
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp_model = Sequential()
@@ -87,6 +87,7 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
     cnn2_mlp_model.add(Flatten())
     cnn2_mlp_model.add(Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
+    cnn2_mlp_model.add(BatchNormalization())
     cnn2_mlp_model.add(Dense(units=_output_units))
     cnn2_mlp_model.add(Activation(activation=_output_activation))
 
@@ -188,19 +189,19 @@ def compiler(layers_model):
     '''
     some compiler parameters
     '''
-    _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
-    _loss = 'categorical_crossentropy'
+    _optimizer = SGD(lr=0.02, decay=1e-5, momentum=0.9)
+    _loss = 'binary_crossentropy'
 
-    layers_model.compile(optimizer=_optimizer,
-                         loss=_loss, metrics=['accuracy'])
+    layers_model.compile(optimizer=_optimizer, loss=_loss)
+    # , metrics=['accuracy']
 
     return layers_model
 
 
 def trainer(model, train_x, train_y,
-            batch_size=128,
+            batch_size=32,
             epochs=200,
-            validation_split=0.0,
+            validation_split=0.1,
             auto_stop=False,
             best_record_path=None):
 
@@ -244,7 +245,7 @@ def trainer(model, train_x, train_y,
 
     return model, history.metrices
 
-def trainer_on_batch(model, train_x, train_y):
+def batch_trainer(model, train_x, train_y):
     training_start = time.time()
     res = model.train_on_batch(x=train_x, y=train_y)
     training_end = time.time()
@@ -254,7 +255,7 @@ def trainer_on_batch(model, train_x, train_y):
     return model
 
 def predictor(model, test_x,
-              batch_size=128):
+              batch_size=32):
 
     # predict the test data's labels with trained layer model
     output = model.predict(test_x, batch_size=batch_size)
@@ -263,7 +264,7 @@ def predictor(model, test_x,
 
 
 def evaluator(model, test_x, test_y,
-              batch_size=128):
+              batch_size=32):
 
     # evaluate the trained layer model
     score = model.evaluate(test_x, test_y, batch_size=batch_size)
@@ -302,10 +303,10 @@ def recompileModel(model):
 
     # optimizer = SGD(lr=0.1, decay=1e-5, nesterov=True)  # only CNNs_Net use
     # SGD
-    optimizer = SGD(lr=0.02, decay=5e-6, momentum=0.9)
+    optimizer = SGD(lr=0.02, decay=1e-5, momentum=0.9)
 
     # ps: if want use precision, recall and fmeasure, need to add these metrics
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=[
                   'accuracy', 'precision', 'recall', 'fmeasure'])
     return model
 

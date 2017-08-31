@@ -68,10 +68,10 @@ def train_predict_text2text_gen():
         print(' '.join(yaofang_output) + '\n')
 
 def train_predict_face2text_gen():
-    patient_face_dir = config['root_path'] + \
-        config['original_path'] + 'face_2166'
 #     patient_face_dir = config['root_path'] + \
-#         config['original_path'] + 'face_6455'
+#         config['original_path'] + 'face_2166'
+    patient_face_dir = config['root_path'] + \
+        config['original_path'] + 'face_6455'
     face_zhiliao_path = config['root_path'] + \
         config['original_path'] + 'face_zhiliao.list'
     yaopin_path = config['root_path'] + \
@@ -86,8 +86,8 @@ def train_predict_face2text_gen():
     trained_gen_model = patient_face_generator.face_gen_trainer(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao)
     # store keras layers_framework(optional)
-    frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
-#     frame_name = 'face2text_cnn2mlp_6455_t02_300it.json'
+#     frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
+    frame_name = 'face2text_cnn2mlp_6455_t02_300it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     face2text_gen.storageModel(
@@ -96,7 +96,6 @@ def train_predict_face2text_gen():
     # test
     gen_output = patient_face_generator.gen_predictor_test(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model)
-    print(gen_output[0])
 
     yaopin_dict = patient_face_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
@@ -119,8 +118,8 @@ def train_predict_face2text_gen():
         print('predicted yaofang:')
         print(' '.join(yaofang_output) + '\n')
     
-def train_predict_face2text_gen_batch():
-    patient_face_dir = config['root_path'] + config['original_path'] + 'face_2166'
+def train_predict_face2text_gen_batch_dataproduce():
+    patient_face_dir = config['root_path'] + config['original_path'] + 'face_6455'
     face_zhiliao_path = config['root_path'] + config['original_path'] + 'face_zhiliao.list'
     yaopin_path = config['root_path'] + config['original_path'] + 'yaopin.vocab'
 
@@ -143,7 +142,7 @@ def train_predict_face2text_gen_batch():
     face_gen_model = face2text_gen.k_cnn2_mlp(yao_indices_dim=nb_yao, face_image_shape=face_image_shape, with_compile=True)
 
     batch_size = 64
-    epochs = 300
+    epochs = 3
 
     print('training 2 * cnn + mlp face2text gen model...\n')
     trained_gen_model = None
@@ -156,13 +155,14 @@ def train_predict_face2text_gen_batch():
 
         # each iteration, we get 'batch_size' data and train_on_batch
         for face_ids, face_image_arrays, face_yaofangs, face_image_shape in dataGenerator:
+            print(type(face_image_shape))
             trained_gen_model = patient_face_generator.face_gen_trainer_on_batch(
-                face_gen_model, face_image_arrays, face_yaofangs, face_image_shape,nb_yao)
+                face_gen_model, face_image_arrays, face_yaofangs, face_image_shape, nb_yao)
         end = time.time()
         print '\n' + '##### epoch {} time: {} #####'.format(i + 1, end - start) + '\n'
 
     # store keras layers_framework(optional)
-    frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
+    frame_name = 'face2text_cnn2mlp_6455_t02_300it.json'
     gen_frame_path = config['root_path'] + \
                      config['cache_path'] + 'keras/' + frame_name
     face2text_gen.storageModel(
@@ -172,4 +172,4 @@ def train_predict_face2text_gen_batch():
 train_predict_face2text_gen()
 
 # if train_x are too large and range out of memory, we can use train_on_batch. Now we don't need to use this.
-# train_predict_face2text_gen_batch()
+# train_predict_face2text_gen_batch_dataproduce()

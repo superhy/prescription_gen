@@ -12,6 +12,7 @@ import os
 from layer import face2text_gen
 import numpy as np
 
+
 def loadFace2YaofangDict(face_zhiliao_path):
     print('load face_id2yaofang_s_dict...')
     face_zhiliao_file = open(face_zhiliao_path, 'r')
@@ -19,8 +20,9 @@ def loadFace2YaofangDict(face_zhiliao_path):
     face_zhiliao_file.close()
     face_id2yaofang_s_dict = dict((line.split('|:')[0], line.split('|:')[
                                   1]) for line in face_zhiliao_lines)
-    
+
     return face_id2yaofang_s_dict
+
 
 def loadDatafromFile(face_image_dir, face_zhiliao_path, image_normal_size=(256, 256)):
     ''' load face_id-zhiliao dictionary'''
@@ -47,7 +49,7 @@ def loadDatafromFile(face_image_dir, face_zhiliao_path, image_normal_size=(256, 
         face_ids.append(face_id)
         face_image_arrays.append(image_array)
         face_yaofangs.append(yaofang)
-        
+
         print('.'),
     print('load complete!')
 
@@ -56,6 +58,7 @@ def loadDatafromFile(face_image_dir, face_zhiliao_path, image_normal_size=(256, 
 
     return face_ids, face_image_arrays, face_yaofangs, face_image_shape
 
+
 def loadBatchDatafromFile(face_image_dir, face_id2yaofang_s_dict, image_normal_size=(256, 256), batch_size=64):
     ''' load face face_image array & yaofangs'''
     # print('load face face_image array & yaofangs')
@@ -63,19 +66,20 @@ def loadBatchDatafromFile(face_image_dir, face_id2yaofang_s_dict, image_normal_s
     face_yaofangs = []
     face_ids = []
     face_image_dirs = os.listdir(face_image_dir)
-    
-    face_image_shape = image_normal_size + (3,)
 
-    for i,face_filename in enumerate(face_image_dirs):
+    for i, face_filename in enumerate(face_image_dirs):
+        face_image_shape = image_normal_size + (3,)
         # get face face_image arrays
         face_path = os.path.join(face_image_dir, face_filename)
         face_image = Image.open(fp=face_path)
         image_array = np.array(face_image.resize(image_normal_size))
 
-        face_id = face_filename[face_filename.find('r') + 1: face_filename.find('.jpg')]
+        face_id = face_filename[face_filename.find(
+            'r') + 1: face_filename.find('.jpg')]
         face_ids.append(face_id)
         # get face yaofangs
-        yaofang = list(int(yao) - 1 for yao in face_id2yaofang_s_dict[face_id].split(','))
+        yaofang = list(
+            int(yao) - 1 for yao in face_id2yaofang_s_dict[face_id].split(','))
 
         face_image_arrays.append(image_array)
         face_yaofangs.append(yaofang)
@@ -83,13 +87,14 @@ def loadBatchDatafromFile(face_image_dir, face_id2yaofang_s_dict, image_normal_s
         if i == len(face_image_dirs) - 1:
             break
 
-        if (i+1)%batch_size == 0:
-            yield face_ids, face_image_arrays, face_yaofangs, str(i+1)
+        if (i + 1) % batch_size == 0:
+            yield face_ids, face_image_arrays, face_yaofangs, face_image_shape
             face_image_arrays = []
             face_yaofangs = []
 
     # print('load complete!')
     yield face_ids, face_image_arrays, face_yaofangs, face_image_shape
+
 
 def face_gen_trainer(face_image_arrays, face_yaofangs, face_image_shape, nb_yao):
     total_face_x, total_y = face2text_gen.data_tensorization(
@@ -118,7 +123,7 @@ def face_gen_trainer_on_batch(face_gen_model, face_image_arrays, face_yaofangs, 
     train_y = total_y[: int(len(total_y) * train_ratio)]
 
 #     print 'batch training Num: {} ------------'.format(trainNum)
-    trained_face_gen_model= face2text_gen.trainer_on_batch(
+    trained_face_gen_model= face2text_gen.batch_trainer(
         face_gen_model, train_x, train_y)
 
     return trained_face_gen_model
@@ -147,7 +152,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=0.55):
+def threshold_outputfilter(output, threshold=0.02):
     '''
     use arg(output > threshold)
     '''
