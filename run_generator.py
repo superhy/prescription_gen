@@ -117,6 +117,54 @@ def train_predict_face2text_gen():
             output_index, yaopin_dict)
         print('predicted yaofang:')
         print(' '.join(yaofang_output) + '\n')
+        
+def train_predict_tongue2text_gen():
+    patient_tongue_dir = config['root_path'] + config['original_path'] + 'tongue_9585'
+    tongue_zhiliao_path = config['root_path'] + config['original_path'] + 'tongue_zhiliao.list'
+    yaopin_path = config['root_path'] + config['original_path'] + 'yaopin.vocab'
+
+    # tongue_ids: [01012045534615_1_4_7, ...]
+    # tongue_image_array: [np.array(pixels matrix of image), np.array(pixels matrix of image2), ...]
+    # tongue_yaofangs: [ [0,1,2,3], [4,5,6,7], ... ]
+    tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape = patient_tongue_generator.loadDatafromFile(
+        patient_tongue_dir, tongue_zhiliao_path, image_normal_size=(224, 224))
+
+    # fetch max(id) in yaopin.vocab as nb_yao
+    with open(yaopin_path, 'r') as yaopin_file:
+        nb_yao = max(int(line.split(' ')[0]) for line in yaopin_file.readlines())
+
+    trained_gen_model = patient_tongue_generator.tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+    # store keras layers_framework(optional)
+    frame_name = 'tongue2text_cnn2mlp_9585_t02_300it.json'
+    gen_frame_path = config['root_path'] + \
+        config['cache_path'] + 'keras/' + frame_name
+    tongue2text_gen.storageModel(model=trained_gen_model, frame_path=gen_frame_path)
+
+    # test
+    # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]
+    gen_output = patient_tongue_generator.gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model)
+    print(gen_output[0])
+
+    # yaopin_dict: {0:'麻黄',1:'桂枝',...}
+    yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
+#     print(yaopin_dict)
+
+    test_tongue_ids = tongue_ids[:200]
+    test_yaofangs = tongue_yaofangs[:200]
+    for i, output in enumerate(gen_output):
+        # print test data label info:
+        print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
+        print('label yaofang:')
+        yaofang_label = patient_tongue_generator.sample_yaofang(test_yaofangs[i], yaopin_dict)
+        print(' '.join(yaofang_label))
+
+#         output_index = patient_face_generator.dynamic_threshold_outputfilter(output)
+        output_index = patient_tongue_generator.threshold_outputfilter(output)
+#         print('predicted yaofang ids: {0}'.format(output_index))
+        yaofang_output = patient_tongue_generator.sample_yaofang(
+            output_index, yaopin_dict)
+        print('predicted yaofang:')
+        print(' '.join(yaofang_output) + '\n')
     
 def train_predict_face2text_gen_batch_dataproduce():
     patient_face_dir = config['root_path'] + config['original_path'] + 'face_6455'
@@ -170,6 +218,7 @@ def train_predict_face2text_gen_batch_dataproduce():
         
 # train_predict_text2text_gen()
 train_predict_face2text_gen()
+# train_predict_tongue2text_gen()
 
 # if train_x are too large and range out of memory, we can use train_on_batch. Now we don't need to use this.
 # train_predict_face2text_gen_batch_dataproduce()
