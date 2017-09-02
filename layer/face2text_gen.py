@@ -221,7 +221,7 @@ def compiler(layers_model):
 
 def trainer(model, train_x, train_y,
             batch_size=32,
-            epochs=300,
+            epochs=200,
             validation_split=0.1,
             auto_stop=False,
             best_record_path=None):
