@@ -96,7 +96,7 @@ def loadBatchDatafromFile(face_image_dir, face_id2yaofang_s_dict, image_normal_s
     yield face_ids, face_image_arrays, face_yaofangs, face_image_shape
 
 
-def face_gen_trainer(face_image_arrays, face_yaofangs, face_image_shape, nb_yao):
+def face_gen_trainer(face_image_arrays, face_yaofangs, face_image_shape, nb_yao, train_on_batch=False):
     total_face_x, total_y = face2text_gen.data_tensorization(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao)
     # train data ratio
@@ -107,12 +107,18 @@ def face_gen_trainer(face_image_arrays, face_yaofangs, face_image_shape, nb_yao)
     print('training 2 * cnn + mlp face2text gen model...')
     face_gen_model = face2text_gen.k_cnn2_mlp(
         yao_indices_dim=nb_yao, face_image_shape=face_image_shape, with_compile=True)
-    trained_face_gen_model, history = face2text_gen.trainer(
-        face_gen_model, train_x, train_y)
+    
+    if train_on_batch == True:
+        trained_face_gen_model, history = face2text_gen.trainer_on_batch(
+            face_gen_model, train_x, train_y)
+    else:
+        trained_face_gen_model, history = face2text_gen.trainer(
+            face_gen_model, train_x, train_y)
 
     print('history: {0}'.format(history))
 
     return trained_face_gen_model
+
 
 def face_gen_trainer_on_batch(face_gen_model, face_image_arrays, face_yaofangs, face_image_shape, nb_yao):
     total_face_x, total_y = face2text_gen.data_tensorization(
@@ -123,10 +129,11 @@ def face_gen_trainer_on_batch(face_gen_model, face_image_arrays, face_yaofangs, 
     train_y = total_y[: int(len(total_y) * train_ratio)]
 
 #     print 'batch training Num: {} ------------'.format(trainNum)
-    trained_face_gen_model= face2text_gen.batch_trainer(
+    trained_face_gen_model = face2text_gen.batch_trainer(
         face_gen_model, train_x, train_y)
 
     return trained_face_gen_model
+
 
 def gen_predictor_test(face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model):
     ''' load test_x & test_y '''

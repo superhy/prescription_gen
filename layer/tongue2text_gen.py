@@ -5,19 +5,23 @@ Created on 2017年8月4日
 
 @author: super
 '''
+import time
+
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
 from keras.layers.convolutional import Conv2D, ZeroPadding2D, Convolution2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D, MaxPooling2D
+import keras.losses
 from keras.models import model_from_json, Sequential
 from keras.optimizers import SGD
-import keras.losses
-
-import time
+from keras.utils.generic_utils import Progbar
 
 import numpy as np
 
+
+_default_batch_size = 32
+_default_epochs = 200
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
@@ -124,8 +128,8 @@ def compiler(layers_model):
 
 
 def trainer(model, train_x, train_y,
-            batch_size=32,
-            epochs=200,
+            batch_size=_default_batch_size,
+            epochs=_default_epochs,
             validation_split=0.0,
             auto_stop=False,
             best_record_path=None):
@@ -170,9 +174,36 @@ def trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+def trainer_on_batch(model, train_x, train_y,
+                     batch_size=_default_batch_size,
+                     epochs=_default_epochs):
+
+    for epoch in range(epochs):
+        print('Epoch {} of {}'.format(epoch + 1, epochs))
+
+        nb_batches = int(train_x.shape[0] / batch_size)
+        # progress_bar display
+        progress_bar = Progbar(target=nb_batches)
+
+        batch_res = [None, None]
+        history = []
+        start_epoch = time.time()
+        for iter in range(nb_batches):
+            # get a batch train_set
+            train_x_batch = train_x[iter * batch_size:(iter + 1) * batch_size]
+            train_y_batch = train_y[iter * batch_size:(iter + 1) * batch_size]
+            
+            batch_res = model.train_on_batch(x=train_x, y=train_y)
+            history.append(batch_res)
+            # update the progress_bar
+            progress_bar.update(iter)
+        end_epoch = time.time()
+        print('epoch_loss: {}   epoch_acc: {}   epoch_time:{}'.format(str(batch_res[0]), str(batch_res[1]), end_epoch - start_epoch))
+    
+    return model, history
 
 def predictor(model, test_x,
-              batch_size=32):
+              batch_size=_default_batch_size):
 
     # predict the test data's labels with trained layer model
     output = model.predict(test_x, batch_size=batch_size)
@@ -181,7 +212,7 @@ def predictor(model, test_x,
 
 
 def evaluator(model, test_x, test_y,
-              batch_size=32):
+              batch_size=_default_batch_size):
 
     # evaluate the trained layer model
     score = model.evaluate(test_x, test_y, batch_size=batch_size)

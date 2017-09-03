@@ -57,7 +57,7 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
     return tongue_ids, tongue_image_arrays, tongue_yaofangs, face_image_shape
 
 
-def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
+def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch=False):
     total_tongue_x, total_y = tongue2text_gen.data_tensorization(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
@@ -68,8 +68,13 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     print('training 2 * cnn + mlp tongue2text gen model...')
     tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
         yao_indices_dim=nb_yao, face_image_shape=tongue_image_shape, with_compile=True)
-    trained_tongue_gen_model, history = tongue2text_gen.trainer(
-        tongue_gen_model, train_x, train_y)
+
+    if train_on_batch == True:
+        trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
+            tongue_gen_model, train_x, train_y)
+    else:
+        trained_tongue_gen_model, history = tongue2text_gen.trainer(
+            tongue_gen_model, train_x, train_y)
 
     print('history: {0}'.format(history))
 
