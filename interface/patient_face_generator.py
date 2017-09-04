@@ -159,7 +159,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=0.5):
+def threshold_outputfilter(output, threshold=0.4):
     '''
     use arg(output > threshold)
     '''
@@ -198,7 +198,9 @@ def load_yaopin_dict(yaopin_path):
 
 
 def sample_yaofang(output_index, yaopin_dict):
-
+    
+    output_index.sort()
+    
     yaofang_output = list(yaopin_dict[int(index)] for index in output_index)
     return yaofang_output
 

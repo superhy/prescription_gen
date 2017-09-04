@@ -143,6 +143,8 @@ def load_yaopin_dict(yaopin_path):
 
 
 def sample_yaofang(output_index, yaopin_dict):
+    
+    output_index.sort()
 
     yaofang_output = list(yaopin_dict[int(index)] for index in output_index)
     return yaofang_output

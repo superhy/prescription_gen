@@ -8,11 +8,10 @@ Created on 2017年8月4日
 import time
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
-from keras.layers.convolutional import Conv2D, ZeroPadding2D, Convolution2D
+from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
-from keras.layers.pooling import MaxPool2D, MaxPooling2D
-import keras.losses
+from keras.layers.pooling import MaxPool2D
 from keras.models import model_from_json, Sequential
 from keras.optimizers import SGD
 from keras.utils.generic_utils import Progbar
@@ -57,18 +56,18 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
 
     # cnn layer parameters
     _nb_filters_1 = 80
-    _kernel_size_1 = (5, 5)
+    _kernel_size_1 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
     _nb_filters_2 = 64
-    _kernel_size_2 = (3, 3)
+    _kernel_size_2 = (5, 5)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
-    _mlp_units = 64
+    _mlp_units = 40
     _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
@@ -81,16 +80,14 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_1))
-
     cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2,
                               kernel_size=_kernel_size_2))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2, name='conv1_2'))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_2))
-
     cnn2_mlp_model.add(BatchNormalization())
+    
     cnn2_mlp_model.add(Flatten())
-
     cnn2_mlp_model.add(
         Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
@@ -183,7 +180,7 @@ def trainer_on_batch(model, train_x, train_y,
 
         nb_batches = int(train_x.shape[0] / batch_size)
         # progress_bar display
-        progress_bar = Progbar(target=nb_batches)
+        progress_bar = Progbar(target=train_x.shape[0])
 
         batch_res = [None, None]
         history = []
@@ -193,12 +190,12 @@ def trainer_on_batch(model, train_x, train_y,
             train_x_batch = train_x[iter * batch_size:(iter + 1) * batch_size]
             train_y_batch = train_y[iter * batch_size:(iter + 1) * batch_size]
             
-            batch_res = model.train_on_batch(x=train_x, y=train_y)
+            batch_res = model.train_on_batch(x=train_x_batch, y=train_y_batch)
             history.append(batch_res)
             # update the progress_bar
-            progress_bar.update(iter)
+            progress_bar.update((iter + 1) * batch_size)
         end_epoch = time.time()
-        print('epoch_loss: {}   epoch_acc: {}   epoch_time:{}'.format(str(batch_res[0]), str(batch_res[1]), end_epoch - start_epoch))
+        print(' epoch_loss: {}   epoch_acc: {}   epoch_time:{}'.format(str(batch_res[0]), str(batch_res[1]), end_epoch - start_epoch))
     
     return model, history
 

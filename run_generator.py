@@ -87,7 +87,7 @@ def train_predict_face2text_gen():
     nb_yao = max(int(line.split(' ')[0]) for line in yaopin_file.readlines())
     yaopin_file.close()
 
-    train_on_batch = True  # switch train_on_batch or not
+    train_on_batch = False  # switch train_on_batch or not
     trained_gen_model = patient_face_generator.face_gen_trainer(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao, train_on_batch)
     # store keras layers_framework(optional)
@@ -143,7 +143,7 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    train_on_batch = True  # switch train_on_batch or not
+    train_on_batch = False  # switch train_on_batch or not
     trained_gen_model = patient_tongue_generator.tongue_gen_trainer(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch)
     # store keras layers_framework(optional)
