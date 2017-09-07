@@ -14,7 +14,7 @@ import numpy as np
 
 
 def loadTongue2YaofangDict(tongue_zhiliao_path):
-    print('load face_id2yaofang_s_dict...')
+    print('load tongue_id2yaofang_s_dict...')
     with open(tongue_zhiliao_path, 'r') as tongue_zhiliao_file:
         tongue_zhiliao_lines = tongue_zhiliao_file.readlines()
 
@@ -25,7 +25,7 @@ def loadTongue2YaofangDict(tongue_zhiliao_path):
 
 def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(256, 256)):
     ''' load tongue_id-zhiliao dictionary'''
-    face_id2yaofang_s_dict = loadTongue2YaofangDict(tongue_zhiliao_path)
+    tongue_id2yaofang_s_dict = loadTongue2YaofangDict(tongue_zhiliao_path)
 
     ''' load tongue tongue_image array & yaofangs'''
     print('load tongue tongue_image array & yaofangs'),
@@ -42,7 +42,7 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
         tongue_id = tongue_filename[tongue_filename.find(
             's') + 1: tongue_filename.find('.jpg')]
         yaofang = list(
-            int(yao) - 1 for yao in face_id2yaofang_s_dict[tongue_id].split(','))
+            int(yao) - 1 for yao in tongue_id2yaofang_s_dict[tongue_id].split(','))
 
         tongue_ids.append(tongue_id)
         tongue_image_arrays.append(image_array)
@@ -52,9 +52,9 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
     print('load complete!')
 
     # add RGB channel shape element
-    face_image_shape = image_normal_size + (3,)
+    tongue_image_shape = image_normal_size + (3,)
 
-    return tongue_ids, tongue_image_arrays, tongue_yaofangs, face_image_shape
+    return tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape
 
 
 def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch=False):
@@ -67,7 +67,7 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     print('training 2 * cnn + mlp tongue2text gen model...')
     tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
-        yao_indices_dim=nb_yao, face_image_shape=tongue_image_shape, with_compile=True)
+        yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True)
 
     if train_on_batch == True:
         trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
@@ -104,7 +104,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=0.5):
+def threshold_outputfilter(output, threshold=0.3):
     '''
     use arg(output > threshold)
     '''

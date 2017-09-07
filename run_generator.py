@@ -36,7 +36,7 @@ def train_predict_text2text_gen():
     trained_gen_model = patient_text_generator.gen_trainer(
         patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao)
     # store keras layers_framework(optional)
-    frame_name = 'text2text_lstmmlp_1153_t02_300it.json'
+    frame_name = 'text2text_lstmmlp_1153_t002_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     text2text_gen.storageModel(
@@ -74,7 +74,7 @@ def train_predict_face2text_gen():
     #     patient_face_dir = config['root_path'] + \
     #         config['original_path'] + 'face_2166'
     patient_face_dir = config['root_path'] + \
-        config['original_path'] + 'face_6455'
+        config['original_path'] + 'face_10155'
     face_zhiliao_path = config['root_path'] + \
         config['original_path'] + 'face_zhiliao.list'
     yaopin_path = config['root_path'] + \
@@ -92,7 +92,7 @@ def train_predict_face2text_gen():
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao, train_on_batch)
     # store keras layers_framework(optional)
 #     frame_name = 'face2text_cnn2mlp_2166_t02_300it.json'
-    frame_name = 'face2text_cnn2mlp_6455_t02_300it.json'
+    frame_name = 'face2text_cnn2mlp_10155_t03_200it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     face2text_gen.storageModel(
@@ -147,7 +147,7 @@ def train_predict_tongue2text_gen():
     trained_gen_model = patient_tongue_generator.tongue_gen_trainer(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch)
     # store keras layers_framework(optional)
-    frame_name = 'tongue2text_cnn2mlp_9585_t02_300it.json'
+    frame_name = 'tongue2text_cnn2mlp_9585_t03_200it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     tongue2text_gen.storageModel(
@@ -173,7 +173,7 @@ def train_predict_tongue2text_gen():
             test_yaofangs[i], yaopin_dict)
         print(' '.join(yaofang_label))
 
-#         output_index = patient_face_generator.dynamic_threshold_outputfilter(output)
+#         output_index = patient_tongue_generator.dynamic_threshold_outputfilter(output)
         output_index = patient_tongue_generator.threshold_outputfilter(output)
 #         print('predicted yaofang ids: {0}'.format(output_index))
         yaofang_output = patient_tongue_generator.sample_yaofang(
@@ -239,8 +239,8 @@ def train_predict_face2text_gen_batch_dataproduce():
 
 
 # train_predict_text2text_gen()
-train_predict_face2text_gen()
-# train_predict_tongue2text_gen()
+# train_predict_face2text_gen()
+train_predict_tongue2text_gen()
 
 # if train_x are too large and range out of memory, we can use train_on_batch. Now we don't need to use this.
 # train_predict_face2text_gen_batch_dataproduce()

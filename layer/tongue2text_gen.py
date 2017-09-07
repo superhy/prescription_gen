@@ -20,7 +20,7 @@ import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 200
+_default_epochs = 150
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
@@ -127,7 +127,7 @@ def compiler(layers_model):
 def trainer(model, train_x, train_y,
             batch_size=_default_batch_size,
             epochs=_default_epochs,
-            validation_split=0.0,
+            validation_split=0.1,
             auto_stop=False,
             best_record_path=None):
 

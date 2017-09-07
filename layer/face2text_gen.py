@@ -93,6 +93,7 @@ def k_cnn2_mlp(yao_indices_dim, face_image_shape, with_compile=True):
         Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
     cnn2_mlp_model.add(BatchNormalization())
+#     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
     
     cnn2_mlp_model.add(Dense(units=_output_units))
     cnn2_mlp_model.add(Activation(activation=_output_activation))
