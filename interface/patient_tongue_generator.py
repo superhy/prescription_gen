@@ -128,7 +128,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=3):
+def threshold_outputfilter(output, threshold=4):
     '''
     use arg(output > threshold)
     '''
