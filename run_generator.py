@@ -3,14 +3,16 @@
 '''
 Created on 2017年7月24日
 
-@author: superhy
+@author: superhy, huiqiang
 '''
 import time
 
 from interface import patient_text_generator, patient_face_generator,\
-    patient_tongue_generator
+    patient_tongue_generator, generator_eval
 from interface.tools import get_config
 from layer import text2text_gen, face2text_gen, tongue2text_gen
+
+import numpy as np
 
 
 config = get_config('interface.ini')
@@ -143,20 +145,36 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
+    _use_tfidf_tensor = True  # set for use tfidf_tensor
+
+    '''
+    The part of train a new gen_model and storage it on disk,
+    the new one will cover the old one
+    '''
     train_on_batch = False  # switch train_on_batch or not
     trained_gen_model = patient_tongue_generator.tongue_gen_trainer(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch)
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        train_on_batch, use_tfidf_tensor=_use_tfidf_tensor)
     # store keras layers_framework(optional)
-    frame_name = 'tongue2text_cnn2mlp_9585_t03_200it.json'
+    frame_name = 'tongue2text_cnn2mlp_9585_act(tfidf)_t3_150it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     tongue2text_gen.storageModel(
         model=trained_gen_model, frame_path=gen_frame_path)
 
+    '''
+    The part of load a trained gen_model from disk,
+    the trained gen_model will be reload and use to eval and predict directly,
+    without retraining which is for time saving
+    '''
+#     trained_gen_model = tongue2text_gen.loadStoredModel(
+#         gen_frame_path, gen_frame_path.replace('.json', '.h5'))
+
     # test
     # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]
     gen_output = patient_tongue_generator.gen_predictor_test(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model)
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        trained_gen_model, use_tfidf_tensor=_use_tfidf_tensor)
     print(gen_output[0])
 
     # yaopin_dict: {0:'麻黄',1:'桂枝',...}
@@ -165,6 +183,10 @@ def train_predict_tongue2text_gen():
 
     test_tongue_ids = tongue_ids[:200]
     test_yaofangs = tongue_yaofangs[:200]
+    '''the evaluation criterion '''
+    precisions = []
+    recalls = []
+    errors = []
     for i, output in enumerate(gen_output):
         # print test data label info:
         print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
@@ -180,6 +202,19 @@ def train_predict_tongue2text_gen():
             output_index, yaopin_dict)
         print('predicted yaofang:')
         print(' '.join(yaofang_output) + '\n')
+
+        precision, recall, error = generator_eval.evaluator(
+            test_yaofangs[i], output_index)
+        precisions.append(precision)
+        recalls.append(recall)
+        errors.append(error)
+        print('------Score: precision: %f, recall: %f, error: %f' %
+              (precision, recall, error))
+
+    print('------Score: average precision: %f, average recall: %f, error: %f' %
+          (np.average(precisions), np.average(recalls), np.average(errors)))
+
+#---------------------------- unused now ----------------------------
 
 
 def train_predict_face2text_gen_batch_dataproduce():

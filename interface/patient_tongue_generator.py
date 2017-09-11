@@ -3,7 +3,7 @@
 '''
 Created on 2017年8月8日
 
-@author: superhy
+@author: superhy, huiqiang
 '''
 
 from PIL import Image
@@ -57,17 +57,32 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
     return tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape
 
 
-def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, train_on_batch=False):
-    total_tongue_x, total_y = tongue2text_gen.data_tensorization(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+                       train_on_batch=False, use_tfidf_tensor=False):
+    '''
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    '''
+
+    if use_tfidf_tensor == True:
+        total_tongue_x, total_y = tongue2text_gen.data_tensorization_tfidf(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+    else:
+        total_tongue_x, total_y = tongue2text_gen.data_tensorization(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
     train_ratio = 1.0
     train_x = total_tongue_x[: int(len(total_tongue_x) * train_ratio)]
     train_y = total_y[: int(len(total_y) * train_ratio)]
 
-    print('training 2 * cnn + mlp tongue2text gen model...')
-    tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
-        yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True)
+    scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
+    print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
+          (train_on_batch, scaling_act_type))
+    if use_tfidf_tensor == True:
+        tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
+            yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='tfidf')
+    else:
+        tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
+            yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='binary')
 
     if train_on_batch == True:
         trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
@@ -81,10 +96,19 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     return trained_tongue_gen_model
 
 
-def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model):
+def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model,
+                       use_tfidf_tensor=False):
+    '''
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    '''
+
     ''' load test_x & test_y '''
-    total_x, total_y = tongue2text_gen.data_tensorization(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+    if use_tfidf_tensor == True:
+        total_x, total_y = tongue2text_gen.data_tensorization_tfidf(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+    else:
+        total_x, total_y = tongue2text_gen.data_tensorization(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
     test_ratio = 0.05
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
@@ -104,7 +128,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=0.3):
+def threshold_outputfilter(output, threshold=3):
     '''
     use arg(output > threshold)
     '''
@@ -143,7 +167,7 @@ def load_yaopin_dict(yaopin_path):
 
 
 def sample_yaofang(output_index, yaopin_dict):
-    
+
     output_index.sort()
 
     yaofang_output = list(yaopin_dict[int(index)] for index in output_index)

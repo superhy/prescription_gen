@@ -27,7 +27,13 @@ sys.setdefaultencoding('utf8')
 # weight example: [ [0.292070034636, 0.0, ..., 0.248286212953,...], [...], ...]
 # weight[i][j]: i is the num of document, j is the num of word
 # weight[i][j] is tf-idf in i document and j word
-def get_tf_idf(corpus):
+def get_tf_idf(corpus, scaling_rate=100.0):
+    '''
+    @param scaling_rate: scaling the tfidf weight as this rate
+            such as "* 100" or "* 0.1"
+            default set as 100.0
+    '''
+    
     vectorizer= CountVectorizer()
     X = vectorizer.fit_transform(corpus)
     word = vectorizer.get_feature_names()
@@ -35,9 +41,9 @@ def get_tf_idf(corpus):
     transformer = TfidfTransformer()
     tfidf = transformer.fit_transform(X)
     weight = tfidf.toarray()
-
+    weight *= scaling_rate
+    
     return word, weight
-
 
 # change list into corpus
 # list: [ [0,1,2,3], [4,5,6,0,12], ...]
@@ -59,6 +65,8 @@ if __name__ == '__main__':
         '11 12 13 14',
         '15 16 17 18 19',
     ]
-    print(get_tf_idf(corpus))
+    word, weight = get_tf_idf(corpus, scaling_rate=100)
+    print(type(weight))
+    print(weight)
     
     

@@ -3,10 +3,8 @@
 '''
 Created on 2017年8月4日
 
-@author: super
+@author: superhy, huiqiang
 '''
-import time
-
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
 from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
@@ -15,12 +13,15 @@ from keras.layers.pooling import MaxPool2D
 from keras.models import model_from_json, Sequential
 from keras.optimizers import SGD
 from keras.utils.generic_utils import Progbar
+import time
 
+from layer.norm import tfidf
 import numpy as np
 
 
 _default_batch_size = 32
 _default_epochs = 150
+
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
@@ -43,12 +44,46 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     return tongue_x, y
 
+
+def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
+    '''
+        get the tfidf tensors of train and test data
+
+        @param tongue_image_arrays:
+        @param tongue_yaofangs:
+        @param tongue_image_shape:
+
+        @return:
+        '''
+
+    print('get data_tensorization_tfidf...')
+    # compute tf-idf with tongue_yaofangs
+    # tongue_yaofangs: [ [98, 1329, 1330, 253, 75, 19, 1331, 1165, 1332, 1333, 1, 41], [...], ...]
+    # yaofangs_corpus: [ '98 1329 1330 253 75 19 1331 1165 1332 1333 01 41', '...', ...]
+    # word: ['01', '03', '05', '06', '103', '1052', ...]
+    # weight: [ [0.292070034636, 0.0, ..., 0.248286212953,...], [...], ...]
+    yaofangs_corpus = tfidf.list2corpus(tongue_yaofangs)
+    word, weight = tfidf.get_tf_idf(yaofangs_corpus)
+
+    nb_samples = len(tongue_image_arrays)
+
+    y = np.zeros((nb_samples, nb_yao), dtype=np.float32)
+    for i in range(nb_samples):
+        tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
+            tongue_image_shape)
+        for j in range(len(word)):
+            y[i][int(word[j])] = weight[i][j]
+
+    tongue_x = np.array(tongue_image_arrays)
+
+    return tongue_x, y
+
 #=========================================================================
 # layers function of keras
 #=========================================================================
 
 
-def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
+def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
     some layer parameters
@@ -71,7 +106,11 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
-    _output_activation = 'sigmoid'
+    if scaling_activation == 'tfidf':
+        _output_activation = 'relu'  # just for tfidf tensor
+    else:
+        _output_activation = 'sigmoid'
+        # _output_activation = 'softmax'
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp_model = Sequential()
@@ -86,7 +125,7 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2, name='conv1_2'))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_model.add(BatchNormalization())
-    
+
     cnn2_mlp_model.add(Flatten())
     cnn2_mlp_model.add(
         Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
@@ -100,7 +139,7 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     cnn2_mlp_model.summary()
 
     if with_compile == True:
-        return compiler(cnn2_mlp_model)
+        return compiler(cnn2_mlp_model, scaling_activation)
     else:
         # ready to joint in some other frameworks like Tensorflow
         return cnn2_mlp_model
@@ -110,16 +149,19 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
 #=========================================================================
 
 
-def compiler(layers_model):
+def compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
     _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
-    _loss = 'binary_crossentropy'
-    # _loss = 'category_crossentropy'
+    if scaling_activation == 'tfidf':
+        _loss = 'mse'  # just for tfidf tensor
+    else:
+        # _loss = 'categorical_crossentropy'
+        _loss = 'binary_crossentropy'
 
-    layers_model.compile(optimizer=_optimizer,
-                         loss=_loss, metrics=['accuracy'])
+    layers_model.compile(optimizer=_optimizer, loss=_loss)
+#     layers_model.compile(optimizer=_optimizer, loss=_loss, metrics=['accuracy'])
 
     return layers_model
 
@@ -171,6 +213,7 @@ def trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+
 def trainer_on_batch(model, train_x, train_y,
                      batch_size=_default_batch_size,
                      epochs=_default_epochs):
@@ -189,15 +232,17 @@ def trainer_on_batch(model, train_x, train_y,
             # get a batch train_set
             train_x_batch = train_x[iter * batch_size:(iter + 1) * batch_size]
             train_y_batch = train_y[iter * batch_size:(iter + 1) * batch_size]
-            
+
             batch_res = model.train_on_batch(x=train_x_batch, y=train_y_batch)
             history.append(batch_res)
             # update the progress_bar
             progress_bar.update((iter + 1) * batch_size)
         end_epoch = time.time()
-        print(' epoch_loss: {}   epoch_acc: {}   epoch_time:{}'.format(str(batch_res[0]), str(batch_res[1]), end_epoch - start_epoch))
-    
+        print(' epoch_loss: {}   epoch_acc: {}   epoch_time:{}'.format(
+            str(batch_res[0]), str(batch_res[1]), end_epoch - start_epoch))
+
     return model, history
+
 
 def predictor(model, test_x,
               batch_size=_default_batch_size):
