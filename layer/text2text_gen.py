@@ -5,15 +5,16 @@ Created on 2017年7月20日
 
 @author: superhy
 '''
+
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
+from keras.layers.core import Masking, Dense, Activation
+from keras.layers.normalization import BatchNormalization
+from keras.layers.recurrent import LSTM
 from keras.models import model_from_json, Sequential
 from keras.optimizers import RMSprop
 
 from interface import word_embedding
 import numpy as np
-from keras.layers.recurrent import LSTM
-from keras.layers.core import Masking, Dense, Activation
-from keras.layers.normalization import BatchNormalization
 
 
 def data_tensorization(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao):

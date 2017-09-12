@@ -70,9 +70,9 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
         total_tongue_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
-    train_ratio = 1.0
-    train_x = total_tongue_x[: int(len(total_tongue_x) * train_ratio)]
-    train_y = total_y[: int(len(total_y) * train_ratio)]
+#     train_ratio = 1.0
+    train_x = total_tongue_x[: len(total_tongue_x) - 200]
+    train_y = total_y[: len(total_y) - 200]
 
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
@@ -110,9 +110,9 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
         total_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
-    test_ratio = 0.05
+    test_ratio = 1.0
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
-    test_x = total_x[:200]
+    test_x = total_x[len(total_x) - 200:]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
@@ -128,7 +128,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
 
 
-def threshold_outputfilter(output, threshold=4):
+def threshold_outputfilter(output, threshold=1):
     '''
     use arg(output > threshold)
     '''

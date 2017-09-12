@@ -7,8 +7,7 @@ Created on 2017年7月24日
 '''
 import time
 
-from interface import patient_text_generator, patient_face_generator,\
-    patient_tongue_generator, generator_eval
+from interface import patient_text_generator, patient_face_generator, patient_tongue_generator, generator_eval
 from interface.tools import get_config
 from layer import text2text_gen, face2text_gen, tongue2text_gen
 

@@ -11,7 +11,7 @@ from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D
 from keras.models import model_from_json, Sequential
-from keras.optimizers import SGD
+from keras.optimizers import SGD, Adadelta, RMSprop
 from keras.utils.generic_utils import Progbar
 import time
 
@@ -20,7 +20,7 @@ import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 150
+_default_epochs = 200
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -153,9 +153,11 @@ def compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
-    _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
+#     _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
+    _optimizer = Adadelta(lr=1.2, rho=0.95, epsilon=1e-06, decay=1e-6)
+#     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
     if scaling_activation == 'tfidf':
-        _loss = 'mse'  # just for tfidf tensor
+        _loss = 'msle'  # just for tfidf tensor
     else:
         # _loss = 'categorical_crossentropy'
         _loss = 'binary_crossentropy'
@@ -169,7 +171,7 @@ def compiler(layers_model, scaling_activation):
 def trainer(model, train_x, train_y,
             batch_size=_default_batch_size,
             epochs=_default_epochs,
-            validation_split=0.1,
+            validation_split=0.0,
             auto_stop=False,
             best_record_path=None):
 
