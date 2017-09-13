@@ -9,7 +9,7 @@ Created on 2017年8月8日
 from PIL import Image
 import os
 
-from layer import tongue2text_gen
+from layer import tongue2text_gen, tongue2text_sklearn_gen
 import numpy as np
 
 
@@ -73,6 +73,8 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 #     train_ratio = 1.0
     train_x = total_tongue_x[: len(total_tongue_x) - 200]
     train_y = total_y[: len(total_y) - 200]
+#     train_x = total_tongue_x[200:]
+#     train_y = total_y[200:]
 
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
@@ -96,6 +98,46 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     return trained_tongue_gen_model
 
 
+def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
+    '''
+    1. train a basic sigmoid binary generator;
+    2. get the intermediate layer output as inner feature of tongue image 
+        for prescription generator
+    3. train the sklearn multi-label classifier(default now: random-forest)
+    '''
+    total_tongue_x, total_y = tongue2text_gen.data_tensorization(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+
+    # train data ratio
+#     train_ratio = 1.0
+    train_x = total_tongue_x[: len(total_tongue_x) - 200]
+    train_y = total_y[: len(total_y) - 200]
+#     train_x = total_tongue_x[200:]
+#     train_y = total_y[200:]
+
+    scaling_act_type = 'binary'
+    print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
+          (0, scaling_act_type))
+    tongue_gen_model = tongue2text_sklearn_gen.k_cnn2_mlp(
+        yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True)
+    trained_tongue_gen_model, history = tongue2text_sklearn_gen.keras_trainer(
+        tongue_gen_model, train_x, train_y)
+
+    # get intermediate layer output as train_x of sklearn classifier-generator
+    print('load intermediate layer output as sk_train_x...')
+    sk_train_x = tongue2text_sklearn_gen.get_interlayer_output(
+        trained_tongue_gen_model, train_x)
+    # train the sklearn classifier-generator
+    print('training sklearn multi-label classifier-generator...')
+    tongue_gen_classifier = tongue2text_sklearn_gen.randomforest_multioutput_classifier(
+        n_jobs=-1)
+    trained_tongue_gen_classifier = tongue2text_sklearn_gen.sklearn_trainer(
+        tongue_gen_classifier, sk_train_x, train_y)
+    print('train sklearn multi-label classifier-generator finished!')
+
+    return trained_tongue_gen_classifier
+
+
 def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model,
                        use_tfidf_tensor=False):
     '''
@@ -113,6 +155,7 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     test_ratio = 1.0
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
     test_x = total_x[len(total_x) - 200:]
+#     test_x = total_x[:200]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)

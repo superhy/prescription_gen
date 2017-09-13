@@ -5,13 +5,14 @@ Created on 2017年8月4日
 
 @author: superhy, huiqiang
 '''
+from keras import regularizers
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
 from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D
 from keras.models import model_from_json, Sequential
-from keras.optimizers import SGD, Adadelta, RMSprop
+from keras.optimizers import SGD, Adadelta, RMSprop, Adam
 from keras.utils.generic_utils import Progbar
 import time
 
@@ -20,7 +21,7 @@ import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 200
+_default_epochs = 50
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -106,6 +107,7 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True, scaling_a
     _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
     _output_units = yao_indices_dim
+    _output_kernel_regularizer = None
     if scaling_activation == 'tfidf':
         _output_activation = 'relu'  # just for tfidf tensor
     else:
@@ -122,17 +124,18 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True, scaling_a
     cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2,
                               kernel_size=_kernel_size_2))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2, name='conv1_2'))
+    cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(Flatten())
     cnn2_mlp_model.add(
-        Dense(units=_mlp_units, activation=_mlp_activation, name='dense2_1'))
+        Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
     cnn2_mlp_model.add(BatchNormalization())
 
-    cnn2_mlp_model.add(Dense(units=_output_units))
+    cnn2_mlp_model.add(
+        Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer))
     cnn2_mlp_model.add(Activation(activation=_output_activation))
 
     # print layers framework
@@ -153,14 +156,15 @@ def compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
-#     _optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
-    _optimizer = Adadelta(lr=1.2, rho=0.95, epsilon=1e-06, decay=1e-6)
+#     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
+    _optimizer = Adadelta(lr=2.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
+
     if scaling_activation == 'tfidf':
         _loss = 'msle'  # just for tfidf tensor
     else:
-        # _loss = 'categorical_crossentropy'
         _loss = 'binary_crossentropy'
+        # _loss = 'categorical_crossentropy'
 
     layers_model.compile(optimizer=_optimizer, loss=_loss)
 #     layers_model.compile(optimizer=_optimizer, loss=_loss, metrics=['accuracy'])
@@ -171,7 +175,7 @@ def compiler(layers_model, scaling_activation):
 def trainer(model, train_x, train_y,
             batch_size=_default_batch_size,
             epochs=_default_epochs,
-            validation_split=0.0,
+            validation_split=0.05,
             auto_stop=False,
             best_record_path=None):
 
@@ -293,12 +297,11 @@ def storageModel(model, frame_path, replace_record=True):
 
 def recompileModel(model):
 
-    # optimizer = SGD(lr=0.1, decay=1e-5, nesterov=True)  # only CNNs_Net use
-    # SGD
-    optimizer = SGD(lr=0.02, decay=1e-6, momentum=0.9)
+    #     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
+    _optimizer = Adadelta(lr=2.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 
     # ps: if want use precision, recall and fmeasure, need to add these metrics
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=[
+    model.compile(loss='categorical_crossentropy', optimizer=_optimizer, metrics=[
                   'accuracy', 'precision', 'recall', 'fmeasure'])
     return model
 

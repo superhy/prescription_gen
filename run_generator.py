@@ -144,8 +144,9 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    _use_tfidf_tensor = True  # set for use tfidf_tensor
-
+    _use_tfidf_tensor = False  # set for use tfidf_tensor
+#     _use_tfidf_tensor = False
+    
     '''
     The part of train a new gen_model and storage it on disk,
     the new one will cover the old one
@@ -210,8 +211,12 @@ def train_predict_tongue2text_gen():
         print('------Score: precision: %f, recall: %f, error: %f' %
               (precision, recall, error))
 
-    print('------Score: average precision: %f, average recall: %f, error: %f' %
+    print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
+
+# train_predict_text2text_gen()
+# train_predict_face2text_gen()
+train_predict_tongue2text_gen()
 
 #---------------------------- unused now ----------------------------
 
@@ -270,11 +275,6 @@ def train_predict_face2text_gen_batch_dataproduce():
         config['cache_path'] + 'keras/' + frame_name
     face2text_gen.storageModel(
         model=trained_gen_model, frame_path=gen_frame_path)
-
-
-# train_predict_text2text_gen()
-# train_predict_face2text_gen()
-train_predict_tongue2text_gen()
 
 # if train_x are too large and range out of memory, we can use train_on_batch. Now we don't need to use this.
 # train_predict_face2text_gen_batch_dataproduce()
