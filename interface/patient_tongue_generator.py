@@ -105,7 +105,7 @@ def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         for prescription generator
     3. train the sklearn multi-label classifier(default now: random-forest)
     '''
-    total_tongue_x, total_y = tongue2text_gen.data_tensorization(
+    total_tongue_x, total_y = tongue2text_sklearn_gen.data_tensorization(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
 
     # train data ratio
@@ -135,7 +135,7 @@ def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_gen_classifier, sk_train_x, train_y)
     print('train sklearn multi-label classifier-generator finished!')
 
-    return trained_tongue_gen_classifier
+    return trained_tongue_gen_model, trained_tongue_gen_classifier
 
 
 def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model,
@@ -159,6 +159,27 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
+
+    return gen_output
+
+
+def sklearn_gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+                               trained_gen_model, trained_gen_classifier):
+
+    total_x, total_y = tongue2text_sklearn_gen.data_tensorization(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+
+    # train data ratio
+    test_ratio = 1.0
+#     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
+    test_x = total_x[len(total_x) - 200:]
+#     test_x = total_x[:200]
+#     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
+
+    sk_test_x = tongue2text_sklearn_gen.get_interlayer_output(
+        trained_gen_model, test_x)
+    gen_output = tongue2text_sklearn_gen.sklearn_predictor(
+        trained_gen_classifier, sk_test_x)
 
     return gen_output
 
