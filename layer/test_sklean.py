@@ -21,5 +21,22 @@ n_outputs = Y.shape[1] # 3
 n_classes = 3
 forest = RandomForestClassifier(n_estimators=100, random_state=1)
 multi_target_forest = MultiOutputClassifier(forest, n_jobs=-1)
-R = multi_target_forest.fit(X, Y).predict(X)
+forest = multi_target_forest.fit(X, Y)
+R = forest.predict(X)
+R_proba = forest.predict_proba(X)
 print(R)
+print(R_proba)
+
+def trans_proba(R_proba):
+    R_p = []
+    for c in R_proba:
+        R_c = []
+        for i in c:
+            R_c.append(i[1])
+        R_p.append(R_c)
+        
+    NR_p = np.asarray(R_p, dtype=np.float).T
+    
+    print(NR_p)
+
+trans_proba(R_proba)

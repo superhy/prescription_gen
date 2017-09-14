@@ -203,21 +203,23 @@ def get_interlayer_output(model, input_x, intermediate_layer_name='intermediate_
 #=========================================================================
 
 
-def randomforest_multioutput_classifier(n_jobs=-1):
+def randomforest_multioutput_classifier(n_jobs=4):
     '''
-    @param n_jobs: 1: only 1 CPU are used, -1: all CPUs are used, -2: all CPUs but one are used 
+    @param n_jobs: n: n CPUs are used, 1: only 1 CPU are used,
+        -1: all CPUs are used, -2: all CPUs but one are used 
     '''
 
     forest = RandomForestClassifier(
-        n_estimators=100)  # n_estimators: nb of trees
+        n_estimators=50)  # n_estimators: nb of trees
     multi_target_forest = MultiOutputClassifier(forest, n_jobs=n_jobs)
 
     return multi_target_forest
 
 
-def knn_multioutput_classifier(n_jobs=-1):
+def knn_multioutput_classifier(n_jobs=4):
     '''
-    @param n_jobs: 1: only 1 CPU are used, -1: all CPUs are used, -2: all CPUs but one are used 
+    @param n_jobs: n: n CPUs are used, 1: only 1 CPU are used,
+        -1: all CPUs are used, -2: all CPUs but one are used 
     '''
 
     knn = KNeighborsClassifier(n_neighbors=20, weights='distance')  # n_estimators: nb of trees
@@ -229,8 +231,21 @@ def sklearn_trainer(classifier, sk_train_x, train_y):
     trained_classifier = classifier.fit(sk_train_x, train_y)
     return trained_classifier
 
-def sklearn_predictor(trained_classifier, test_x):
-    return trained_classifier.perdict(test_x)
+def sklearn_predictor(trained_classifier, test_x, proba_output=False):
+    if proba_output == False:
+        return np.asarray(trained_classifier.predict(test_x), dtype=np.bool)
+    else:
+        def trans_proba(R_proba):
+            R_p = []
+            for c in R_proba:
+                R_c = []
+                for i in c:
+                    R_c.append(i[1])
+                R_p.append(R_c)
+            NR_p = np.asarray(R_p, dtype=np.float).T
+            return NR_p
+        
+        return trans_proba(trained_classifier.predict_proba(test_x))
     
 if __name__ == '__main__':
     pass

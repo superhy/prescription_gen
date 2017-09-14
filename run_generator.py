@@ -144,9 +144,9 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    _use_tfidf_tensor = False  # set for use tfidf_tensor
+    _use_tfidf_tensor = True  # set for use tfidf_tensor
 #     _use_tfidf_tensor = False
-    
+
     '''
     The part of train a new gen_model and storage it on disk,
     the new one will cover the old one
@@ -214,9 +214,90 @@ def train_predict_tongue2text_gen():
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
+
+def train_predict_tongue2text_sklearn_gen():
+    patient_tongue_dir = config['root_path'] + \
+        config['original_path'] + 'tongue_9585'
+    tongue_zhiliao_path = config['root_path'] + \
+        config['original_path'] + 'tongue_zhiliao.list'
+    yaopin_path = config['root_path'] + \
+        config['original_path'] + 'yaopin.vocab'
+
+    # tongue_ids: [01012045534615_1_4_7, ...]
+    # tongue_image_array: [np.array(pixels matrix of image), np.array(pixels matrix of image2), ...]
+    # tongue_yaofangs: [ [0,1,2,3], [4,5,6,7], ... ]
+    tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape = patient_tongue_generator.loadDatafromFile(
+        patient_tongue_dir, tongue_zhiliao_path, image_normal_size=(224, 224))
+
+    # fetch max(id) in yaopin.vocab as nb_yao
+    with open(yaopin_path, 'r') as yaopin_file:
+        nb_yao = max(int(line.split(' ')[0])
+                     for line in yaopin_file.readlines())
+
+    '''
+    The part of train a new sklearn_gen_model
+    @todo: need to storage keras feature scratch and sklearn generator
+        on disk together(with same type names)
+    '''
+    trained_gen_model, trained_gen_classifier = patient_tongue_generator.tongue_sklearn_gen_trainer(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+
+    '''
+    The part of test trained sklearn classifier-generator
+    '''
+    _proba_predict = False # set the output_type of sklearn classifier-generator(proba or not)
+    gen_output = patient_tongue_generator.sklearn_gen_predictor_test(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
+        nb_yao, trained_gen_model, trained_gen_classifier,
+        proba_predict=_proba_predict)
+    print(gen_output[0])
+
+    # yaopin_dict: {0:'麻黄',1:'桂枝',...}
+    yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
+#     print(yaopin_dict)
+
+    test_tongue_ids = tongue_ids[:200]
+    test_yaofangs = tongue_yaofangs[:200]
+    '''the evaluation criterion '''
+    precisions = []
+    recalls = []
+    errors = []
+    for i, output in enumerate(gen_output):
+        # print test data label info:
+        print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
+        print('label yaofang:')
+        yaofang_label = patient_tongue_generator.sample_yaofang(
+            test_yaofangs[i], yaopin_dict)
+        print(' '.join(yaofang_label))
+
+        if _proba_predict == False:
+            output_index = patient_tongue_generator.label_outputfilter(output)
+        else:
+            output_index = patient_tongue_generator.threshold_outputfilter(output)
+#         print('predicted yaofang ids: {0}'.format(output_index))
+        yaofang_output = patient_tongue_generator.sample_yaofang(
+            output_index, yaopin_dict)
+        print('predicted yaofang:')
+        print(' '.join(yaofang_output) + '\n')
+
+        precision, recall, error = generator_eval.evaluator(
+            test_yaofangs[i], output_index)
+        precisions.append(precision)
+        recalls.append(recall)
+        errors.append(error)
+        print('------Score: precision: %f, recall: %f, error: %f' %
+              (precision, recall, error))
+
+    print('------Average Score: average precision: %f, average recall: %f, error: %f' %
+          (np.average(precisions), np.average(recalls), np.average(errors)))
+
+
 # train_predict_text2text_gen()
 # train_predict_face2text_gen()
-train_predict_tongue2text_gen()
+# train_predict_tongue2text_gen()
+
+'''use keras model scratch the features and use sklearn do generator'''
+train_predict_tongue2text_sklearn_gen()
 
 #---------------------------- unused now ----------------------------
 

@@ -124,7 +124,7 @@ def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_gen_model, train_x, train_y)
 
     # get intermediate layer output as train_x of sklearn classifier-generator
-    print('load intermediate layer output as sk_train_x...')
+    print('load intermediate layer output as training data for sklearn...')
     sk_train_x = tongue2text_sklearn_gen.get_interlayer_output(
         trained_tongue_gen_model, train_x)
     # train the sklearn classifier-generator
@@ -164,7 +164,7 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
 
 def sklearn_gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                               trained_gen_model, trained_gen_classifier):
+                               trained_gen_model, trained_gen_classifier, proba_predict):
 
     total_x, total_y = tongue2text_sklearn_gen.data_tensorization(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
@@ -176,10 +176,13 @@ def sklearn_gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
 #     test_x = total_x[:200]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
+    print('load intermediate layer output as testing data for sklearn...')
     sk_test_x = tongue2text_sklearn_gen.get_interlayer_output(
         trained_gen_model, test_x)
+    print('predict sklearn classifier-generator result...')
+    print('    [use proba(or not) output]: %d' % proba_predict)
     gen_output = tongue2text_sklearn_gen.sklearn_predictor(
-        trained_gen_classifier, sk_test_x)
+        trained_gen_classifier, sk_test_x, proba_output=proba_predict)
 
     return gen_output
 
@@ -190,7 +193,7 @@ def ratio_outputfilter(output, ratio=0.015):
     '''
     use arg(output > index_down(num * ratio))
     '''
-
+    pass
 
 def threshold_outputfilter(output, threshold=0.3):
     '''
@@ -201,6 +204,14 @@ def threshold_outputfilter(output, threshold=0.3):
 
     return output_index
 
+def label_outputfilter(output, tag_label=1):
+    '''
+    use arg(output == tag_label)
+    '''
+    output_index = list(np.where(output == tag_label)[0])
+    print(' '.join(str(output[index]) for index in output_index))
+
+    return output_index
 
 def dynamic_threshold_outputfilter(output, d_ratio=0.8):
     '''
