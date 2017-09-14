@@ -14,6 +14,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D
 from keras.models import Sequential
 from keras.optimizers import Adadelta
+from keras.utils.generic_utils import Progbar
 from sklearn.ensemble.forest import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.neighbors.classification import KNeighborsClassifier
@@ -23,6 +24,8 @@ import numpy as np
 
 _keras_batch_size = 32
 _keras_epochs = 20
+
+# _sklearn_batch_size = 32
 
 #=========================================================================
 # keras function
@@ -203,20 +206,20 @@ def get_interlayer_output(model, input_x, intermediate_layer_name='intermediate_
 #=========================================================================
 
 
-def randomforest_multioutput_classifier(n_jobs=4):
+def randomforest_multioutput_classifier(n_jobs=1):
     '''
     @param n_jobs: n: n CPUs are used, 1: only 1 CPU are used,
         -1: all CPUs are used, -2: all CPUs but one are used 
     '''
 
     forest = RandomForestClassifier(
-        n_estimators=50)  # n_estimators: nb of trees
+        n_estimators=10)  # n_estimators: nb of trees
     multi_target_forest = MultiOutputClassifier(forest, n_jobs=n_jobs)
 
     return multi_target_forest
 
 
-def knn_multioutput_classifier(n_jobs=4):
+def knn_multioutput_classifier(n_jobs=1):
     '''
     @param n_jobs: n: n CPUs are used, 1: only 1 CPU are used,
         -1: all CPUs are used, -2: all CPUs but one are used 
@@ -232,6 +235,9 @@ def sklearn_trainer(classifier, sk_train_x, train_y):
     return trained_classifier
 
 def sklearn_predictor(trained_classifier, test_x, proba_output=False):
+    '''
+    predictor need not use partially running
+    '''
     if proba_output == False:
         return np.asarray(trained_classifier.predict(test_x), dtype=np.bool)
     else:
@@ -240,12 +246,17 @@ def sklearn_predictor(trained_classifier, test_x, proba_output=False):
             for c in R_proba:
                 R_c = []
                 for i in c:
-                    R_c.append(i[1])
+                    if len(i) < 2:
+                        R_c.append(0.0)
+                    else:
+                        R_c.append(i[1])
                 R_p.append(R_c)
             NR_p = np.asarray(R_p, dtype=np.float).T
             return NR_p
         
-        return trans_proba(trained_classifier.predict_proba(test_x))
+        R_proba = trained_classifier.predict_proba(test_x)
+#         print(R_proba)
+        return trans_proba(R_proba)
     
 if __name__ == '__main__':
     pass

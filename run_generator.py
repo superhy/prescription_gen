@@ -241,11 +241,11 @@ def train_predict_tongue2text_sklearn_gen():
     '''
     trained_gen_model, trained_gen_classifier = patient_tongue_generator.tongue_sklearn_gen_trainer(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
-
+    
     '''
     The part of test trained sklearn classifier-generator
     '''
-    _proba_predict = False # set the output_type of sklearn classifier-generator(proba or not)
+    _proba_predict = True # set the output_type of sklearn classifier-generator(proba or not)
     gen_output = patient_tongue_generator.sklearn_gen_predictor_test(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
         nb_yao, trained_gen_model, trained_gen_classifier,

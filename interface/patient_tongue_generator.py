@@ -127,6 +127,7 @@ def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     print('load intermediate layer output as training data for sklearn...')
     sk_train_x = tongue2text_sklearn_gen.get_interlayer_output(
         trained_tongue_gen_model, train_x)
+    
     # train the sklearn classifier-generator
     print('training sklearn multi-label classifier-generator...')
     tongue_gen_classifier = tongue2text_sklearn_gen.randomforest_multioutput_classifier(

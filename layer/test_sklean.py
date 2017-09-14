@@ -14,7 +14,8 @@ import numpy as np
 X, y1 = make_classification(n_samples=10, n_features=100, n_informative=30, n_classes=2, random_state=1)
 y2 = shuffle(y1, random_state=1)
 y3 = shuffle(y1, random_state=2)
-Y = np.vstack((y1, y2, y3)).T
+y4 = shuffle(y1, random_state=3)
+Y = np.vstack((y1, y2, y3, y4)).T
 print(X)
 n_samples, n_features = X.shape # 10,100
 n_outputs = Y.shape[1] # 3
@@ -26,6 +27,9 @@ R = forest.predict(X)
 R_proba = forest.predict_proba(X)
 print(R)
 print(R_proba)
+
+_classes = [np.unique(Y[:, i]) for i in range(Y.shape[1])]
+print(_classes)
 
 def trans_proba(R_proba):
     R_p = []
