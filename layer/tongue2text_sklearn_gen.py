@@ -12,7 +12,7 @@ from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D
-from keras.models import Sequential
+from keras.models import Sequential, model_from_json
 from keras.optimizers import Adadelta
 from keras.utils.generic_utils import Progbar
 from sklearn.ensemble.forest import RandomForestClassifier
@@ -189,6 +189,33 @@ def keras_trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+def storageKerasModel(model, frame_path, replace_record=True):
+
+    record_path = None
+
+    frameFile = open(frame_path, 'w')
+    json_str = model.to_json()
+    frameFile.write(json_str)  # save model's framework file
+    frameFile.close()
+    if replace_record == True:
+        record_path = frame_path.replace('.json', '.h5')
+        # save model's data file
+        model.save_weights(record_path, overwrite=True)
+
+    return frame_path, record_path
+
+def loadStoredKerasModel(frame_path, record_path, recompile=False):
+
+    frameFile = open(frame_path, 'r')
+#     yaml_str = frameFile.readline()
+    json_str = frameFile.readline()
+    model = model_from_json(json_str)
+    if recompile == True:
+        model = compiler(model)  # if need to recompile
+    model.load_weights(record_path)
+    frameFile.close()
+
+    return model
 
 def get_interlayer_output(model, input_x, intermediate_layer_name='intermediate_dense'):
     '''
@@ -213,22 +240,10 @@ def randomforest_multioutput_classifier(n_jobs=1):
     '''
 
     forest = RandomForestClassifier(
-        n_estimators=10)  # n_estimators: nb of trees
+        n_estimators=20)  # n_estimators: nb of trees
     multi_target_forest = MultiOutputClassifier(forest, n_jobs=n_jobs)
 
     return multi_target_forest
-
-
-def knn_multioutput_classifier(n_jobs=1):
-    '''
-    @param n_jobs: n: n CPUs are used, 1: only 1 CPU are used,
-        -1: all CPUs are used, -2: all CPUs but one are used 
-    '''
-
-    knn = KNeighborsClassifier(n_neighbors=20, weights='distance')  # n_estimators: nb of trees
-    multi_target_knn = MultiOutputClassifier(knn, n_jobs=n_jobs)
-
-    return multi_target_knn
 
 def sklearn_trainer(classifier, sk_train_x, train_y):
     trained_classifier = classifier.fit(sk_train_x, train_y)

@@ -9,7 +9,8 @@ import time
 
 from interface import patient_text_generator, patient_face_generator, patient_tongue_generator, generator_eval
 from interface.tools import get_config
-from layer import text2text_gen, face2text_gen, tongue2text_gen
+from layer import text2text_gen, face2text_gen, tongue2text_gen,\
+    tongue2text_sklearn_gen
 
 import numpy as np
 
@@ -215,7 +216,13 @@ def train_predict_tongue2text_gen():
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
 
-def train_predict_tongue2text_sklearn_gen():
+def train_predict_tongue2text_sklearn_gen(step=0):
+    '''
+    @param step: 0: keras train, 1: load keras model train sk_classifier and test 
+    
+    
+    '''
+
     patient_tongue_dir = config['root_path'] + \
         config['original_path'] + 'tongue_9585'
     tongue_zhiliao_path = config['root_path'] + \
@@ -234,62 +241,84 @@ def train_predict_tongue2text_sklearn_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    '''
-    The part of train a new sklearn_gen_model
-    @todo: need to storage keras feature scratch and sklearn generator
-        on disk together(with same type names)
-    '''
-    trained_gen_model, trained_gen_classifier = patient_tongue_generator.tongue_sklearn_gen_trainer(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
-    
-    '''
-    The part of test trained sklearn classifier-generator
-    '''
-    _proba_predict = True # set the output_type of sklearn classifier-generator(proba or not)
-    gen_output = patient_tongue_generator.sklearn_gen_predictor_test(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
-        nb_yao, trained_gen_model, trained_gen_classifier,
-        proba_predict=_proba_predict)
-    print(gen_output[0])
+    frame_name = 'test_tongue2text_cnn2mlp_9585_act(bi)_t3_20it.json'
+    if step == 0:
+        '''
+        The part of train a new sklearn_gen_model
+        @todo: need to storage keras feature scratch and sklearn generator
+            on disk together(with same type names)
+        '''
+        trained_gen_model = patient_tongue_generator.tongue_sklearn_gen_keras_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+        # store keras layers_framework(optional)
+        gen_frame_path = config['root_path'] + \
+            config['cache_path'] + 'keras/' + frame_name
+        tongue2text_sklearn_gen.storageKerasModel(
+            model=trained_gen_model, frame_path=gen_frame_path)
 
-    # yaopin_dict: {0:'麻黄',1:'桂枝',...}
-    yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
-#     print(yaopin_dict)
+    if step == 1:
+        '''
+        The part of load keras model from disk first and train the sklearn classifier
+        '''
+        gen_frame_path = config['root_path'] + \
+            config['cache_path'] + 'keras/' + frame_name
+        gen_record_path = gen_frame_path.replace('.json', '.h5')
 
-    test_tongue_ids = tongue_ids[:200]
-    test_yaofangs = tongue_yaofangs[:200]
-    '''the evaluation criterion '''
-    precisions = []
-    recalls = []
-    errors = []
-    for i, output in enumerate(gen_output):
-        # print test data label info:
-        print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
-        print('label yaofang:')
-        yaofang_label = patient_tongue_generator.sample_yaofang(
-            test_yaofangs[i], yaopin_dict)
-        print(' '.join(yaofang_label))
+        print('load keras model from disk...')
+        trained_tongue_gen_model = tongue2text_sklearn_gen.loadStoredKerasModel(
+            gen_frame_path, gen_record_path, recompile=True)
+        trained_tongue_gen_classifier = patient_tongue_generator.tongue_sklearn_gen_sk_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_tongue_gen_model)
+        '''
+        The part of test trained sklearn classifier-generator
+        '''
+        _proba_predict = True  # set the output_type of sklearn classifier-generator(proba or not)
+        gen_output = patient_tongue_generator.sklearn_gen_predictor_test(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
+            nb_yao, trained_tongue_gen_model, trained_tongue_gen_classifier,
+            proba_predict=_proba_predict)
+        print(gen_output[0])
 
-        if _proba_predict == False:
-            output_index = patient_tongue_generator.label_outputfilter(output)
-        else:
-            output_index = patient_tongue_generator.threshold_outputfilter(output)
-#         print('predicted yaofang ids: {0}'.format(output_index))
-        yaofang_output = patient_tongue_generator.sample_yaofang(
-            output_index, yaopin_dict)
-        print('predicted yaofang:')
-        print(' '.join(yaofang_output) + '\n')
+        # yaopin_dict: {0:'麻黄',1:'桂枝',...}
+        yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
+    #     print(yaopin_dict)
 
-        precision, recall, error = generator_eval.evaluator(
-            test_yaofangs[i], output_index)
-        precisions.append(precision)
-        recalls.append(recall)
-        errors.append(error)
-        print('------Score: precision: %f, recall: %f, error: %f' %
-              (precision, recall, error))
+        test_tongue_ids = tongue_ids[:200]
+        test_yaofangs = tongue_yaofangs[:200]
+        '''the evaluation criterion '''
+        precisions = []
+        recalls = []
+        errors = []
+        for i, output in enumerate(gen_output):
+            # print test data label info:
+            print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
+            print('label yaofang:')
+            yaofang_label = patient_tongue_generator.sample_yaofang(
+                test_yaofangs[i], yaopin_dict)
+            print(' '.join(yaofang_label))
 
-    print('------Average Score: average precision: %f, average recall: %f, error: %f' %
-          (np.average(precisions), np.average(recalls), np.average(errors)))
+            if _proba_predict == False:
+                output_index = patient_tongue_generator.label_outputfilter(
+                    output)
+            else:
+                output_index = patient_tongue_generator.threshold_outputfilter(
+                    output)
+    #         print('predicted yaofang ids: {0}'.format(output_index))
+            yaofang_output = patient_tongue_generator.sample_yaofang(
+                output_index, yaopin_dict)
+            print('predicted yaofang:')
+            print(' '.join(yaofang_output) + '\n')
+
+            precision, recall, error = generator_eval.evaluator(
+                test_yaofangs[i], output_index)
+            precisions.append(precision)
+            recalls.append(recall)
+            errors.append(error)
+            print('------Score: precision: %f, recall: %f, error: %f' %
+                  (precision, recall, error))
+
+        print('------Average Score: average precision: %f, average recall: %f, error: %f' %
+              (np.average(precisions), np.average(recalls), np.average(errors)))
 
 
 # train_predict_text2text_gen()
@@ -297,7 +326,7 @@ def train_predict_tongue2text_sklearn_gen():
 # train_predict_tongue2text_gen()
 
 '''use keras model scratch the features and use sklearn do generator'''
-train_predict_tongue2text_sklearn_gen()
+train_predict_tongue2text_sklearn_gen(step=1)
 
 #---------------------------- unused now ----------------------------
 

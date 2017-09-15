@@ -278,7 +278,6 @@ def ploter(model, pic_path):
     print(model.summary())
     plot_model(model, to_file=pic_path)
 
-
 def storageModel(model, frame_path, replace_record=True):
 
     record_path = None
@@ -294,7 +293,6 @@ def storageModel(model, frame_path, replace_record=True):
 
     return frame_path, record_path
 
-
 def recompileModel(model):
 
     #     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
@@ -305,8 +303,7 @@ def recompileModel(model):
                   'accuracy', 'precision', 'recall', 'fmeasure'])
     return model
 
-
-def loadStoredModel(frame_path, record_path, recompile=False):
+def loadStoredKerasModel(frame_path, record_path, recompile=False):
 
     frameFile = open(frame_path, 'r')
 #     yaml_str = frameFile.readline()

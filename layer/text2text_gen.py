@@ -215,7 +215,7 @@ def recompileModel(model):
     return model
 
 
-def loadStoredModel(frame_path, record_path, recompile=False):
+def loadStoredKerasModel(frame_path, record_path, recompile=False):
 
     frameFile = open(frame_path, 'r')
 #     yaml_str = frameFile.readline()
