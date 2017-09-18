@@ -6,10 +6,12 @@ Created on 2017年8月8日
 @author: superhy, huiqiang
 '''
 
-from PIL import Image
 import os
 
+from PIL import Image
+
 from layer import tongue2text_gen, tongue2text_sklearn_gen
+from layer.norm import lda
 import numpy as np
 
 
@@ -97,6 +99,7 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     return trained_tongue_gen_model
 
+
 def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model,
                        use_tfidf_tensor=False):
     '''
@@ -121,6 +124,17 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     return gen_output
 
+
+def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+                               lda_model_path, train_on_batch=False, use_tfidf_tensor=False):
+    '''
+    TODO: train lda_model_path, train double output keras layer model
+    '''
+
+
+#=========================================================================
+# keras layer feature encoding, sklearn classifier output functions
+#=========================================================================
 
 def tongue_sklearn_gen_keras_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
@@ -166,7 +180,8 @@ def tongue_sklearn_gen_sk_trainer(tongue_image_arrays, tongue_yaofangs, tongue_i
 
     # train the sklearn classifier-generator
     print('training sklearn multi-label classifier-generator...')
-    tongue_gen_classifier = tongue2text_sklearn_gen.randomforest_multioutput_classifier(n_jobs=4)
+    tongue_gen_classifier = tongue2text_sklearn_gen.randomforest_multioutput_classifier(
+        n_jobs=4)
     trained_tongue_gen_classifier = tongue2text_sklearn_gen.sklearn_trainer(
         tongue_gen_classifier, sk_train_x, train_y)
     print('train sklearn multi-label classifier-generator finished!')

@@ -45,6 +45,9 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     return tongue_x, y
 
+def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
+    pass
+
 
 def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
