@@ -23,7 +23,7 @@ import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 2
+_default_epochs = 20
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):

@@ -417,9 +417,9 @@ def train_predict_tongue2text_sklearn_gen(step=0):
 # train_predict_text2text_gen()
 # train_predict_face2text_gen()
 
-# train_predict_tongue2text_gen()
+train_predict_tongue2text_gen()
 '''keras layer model with double output(lda) to help generator to specify prescription direction'''
-train_predict_tongue2text_gen_withlda()
+# train_predict_tongue2text_gen_withlda()
 
 '''use keras model scratch the features and use sklearn do generator'''
 # train_predict_tongue2text_sklearn_gen(step=1)
