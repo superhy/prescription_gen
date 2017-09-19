@@ -182,8 +182,8 @@ def train_predict_tongue2text_gen():
     yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
-    test_tongue_ids = tongue_ids[: len(tongue_ids) - 200]
-    test_yaofangs = tongue_yaofangs[: len(tongue_yaofangs) - 200]
+    test_tongue_ids = tongue_ids[len(tongue_ids) - 200:]
+    test_yaofangs = tongue_yaofangs[len(tongue_yaofangs) - 200:]
     '''the evaluation criterion '''
     precisions = []
     recalls = []
@@ -275,8 +275,8 @@ def train_predict_tongue2text_gen_withlda():
     yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
-    test_tongue_ids = tongue_ids[: len(tongue_ids) - 200]
-    test_yaofangs = tongue_yaofangs[: len(tongue_yaofangs) - 200]
+    test_tongue_ids = tongue_ids[len(tongue_ids) - 200:]
+    test_yaofangs = tongue_yaofangs[len(tongue_yaofangs) - 200:]
     '''the evaluation criterion '''
     precisions = []
     recalls = []
