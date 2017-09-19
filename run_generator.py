@@ -145,8 +145,8 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-#     _use_tfidf_tensor = True  # set for use tfidf_tensor
-    _use_tfidf_tensor = False
+    _use_tfidf_tensor = True  # set for use tfidf_tensor
+#     _use_tfidf_tensor = False
 
     '''
     The part of train a new gen_model and storage it on disk,
