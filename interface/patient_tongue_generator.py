@@ -6,9 +6,8 @@ Created on 2017年8月8日
 @author: superhy, huiqiang
 '''
 
-import os
-
 from PIL import Image
+import os
 
 from layer import tongue2text_gen, tongue2text_sklearn_gen
 from layer.norm import lda
@@ -43,6 +42,7 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
         # get tongue yaofangs
         tongue_id = tongue_filename[tongue_filename.find(
             's') + 1: tongue_filename.find('.jpg')]
+        # id also -1 in module <load_yaopin_dict>
         yaofang = list(
             int(yao) - 1 for yao in tongue_id2yaofang_s_dict[tongue_id].split(','))
 
@@ -57,6 +57,10 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
     tongue_image_shape = image_normal_size + (3,)
 
     return tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape
+
+#=========================================================================
+# layer model train and test function
+#=========================================================================
 
 
 def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
@@ -126,10 +130,82 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
 
 def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                               lda_model_path, train_on_batch=False, use_tfidf_tensor=False):
+                               lda_model_path, lda_replace=False, use_tfidf_tensor=False):
     '''
-    TODO: train lda_model_path, train double output keras layer model
+    can not use train_on_batch
+    @param lda_replace: flag of lda need replace by a new one or not 
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
     '''
+
+    if os.path.exists(lda_model_path) == False or lda_replace == True:
+        tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
+        lda_model, dictionary = lda.lda_trainer(
+            tongue_yaofangs_str, lda_model_path)
+    else:
+        lda_model, dictionary = lda.loadModelfromFile(
+            lda_model_path, readOnly=True)
+
+#     if use_tfidf_tensor == True:
+#         '''
+#         TODO: now use_tfidf_tensor == True, the situation is same as False,
+#             need add tfidf+lda tensorization in module <tongue2text_gen>
+#         '''
+#     else:
+    total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
+        lda_model, dictionary)
+    
+    train_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
+    train_y = total_y[: len(total_y) - 200]
+    train_aux_y = total_aux_y[: len(total_aux_y) - 200]
+    del(total_tongue_x)
+    del(total_y)
+    del(total_aux_y)
+
+    scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
+    print('training 2 * cnn + mlp with double output(lda) tongue2text gen model------scaling_activation: %s...' %
+          scaling_act_type)
+#     if use_tfidf_tensor == True:
+#         tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
+#             yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='tfidf')
+#     else:
+    tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
+                                                          tongue_image_shape=tongue_image_shape,
+                                                          topics_dim=lda_model.num_topics,
+                                                          with_compile=True, scaling_activation='binary')
+
+    trained_tongue_gen_model, history = tongue2text_gen.trainer(
+        tongue_gen_model, train_tongue_x, train_y, train_aux_y)
+
+    print('history: {0}'.format(history))
+
+    return trained_tongue_gen_model
+
+
+def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model,
+                               lda_model_path, use_tfidf_tensor=False):
+    '''
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    '''
+
+    # in test process, lda_model and dictionary can be only load from disk(can
+    # not be replaced)
+    lda_model, dictionary = lda.loadModelfromFile(
+        lda_model_path, readOnly=True)
+
+    total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
+        lda_model, dictionary)
+    
+    test_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
+#     test_y = total_y[: len(total_y) - 200]
+#     test_aux_y = total_aux_y[: len(total_aux_y) - 200]
+    
+    gen_output_tuples = tongue2text_gen.predictor(trained_gen_model, test_tongue_x)
+    # gen_output in here is a tuple as (main_output, aux_output), get the first one
+    gen_output = list(output_tuple[0] for output_tuple in gen_output_tuples)
+
+    return gen_output
 
 
 #=========================================================================

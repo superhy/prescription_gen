@@ -57,7 +57,6 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     '''
     'k_' prefix means keras_layers
-    some layer parameters
     '''
 
     # cnn layer parameters
@@ -76,6 +75,7 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     _mlp_units = 40
     _mlp_activation = 'sigmoid'
     _mlp_dropout = 0.0
+    # output layer parameters
     _output_units = yao_indices_dim
     # add some regularizers to overcome the overfit
 #     _output_kernel_regularizer = regularizers.l1_l2(l1=0.01, l2=0.01)
@@ -189,6 +189,7 @@ def keras_trainer(model, train_x, train_y,
 
     return model, history.metrices
 
+
 def storageKerasModel(model, frame_path, replace_record=True):
 
     record_path = None
@@ -204,6 +205,7 @@ def storageKerasModel(model, frame_path, replace_record=True):
 
     return frame_path, record_path
 
+
 def loadStoredKerasModel(frame_path, record_path, recompile=False):
 
     frameFile = open(frame_path, 'r')
@@ -217,13 +219,14 @@ def loadStoredKerasModel(frame_path, record_path, recompile=False):
 
     return model
 
+
 def get_interlayer_output(model, input_x, intermediate_layer_name='intermediate_dense'):
     '''
     @param model: the model best has been trained 
     '''
 
     intermediate_layer_model = Model(
-        input=model.input, output=model.get_layer(intermediate_layer_name).output)
+        inputs=model.input, outputs=model.get_layer(intermediate_layer_name).output)
     intermediate_x = intermediate_layer_model.predict(input_x)
 
     return intermediate_x
@@ -245,9 +248,11 @@ def randomforest_multioutput_classifier(n_jobs=1):
 
     return multi_target_forest
 
+
 def sklearn_trainer(classifier, sk_train_x, train_y):
     trained_classifier = classifier.fit(sk_train_x, train_y)
     return trained_classifier
+
 
 def sklearn_predictor(trained_classifier, test_x, proba_output=False):
     '''
@@ -268,10 +273,11 @@ def sklearn_predictor(trained_classifier, test_x, proba_output=False):
                 R_p.append(R_c)
             NR_p = np.asarray(R_p, dtype=np.float).T
             return NR_p
-        
+
         R_proba = trained_classifier.predict_proba(test_x)
 #         print(R_proba)
         return trans_proba(R_proba)
-    
+
+
 if __name__ == '__main__':
     pass

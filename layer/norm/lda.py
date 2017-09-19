@@ -14,22 +14,23 @@ from gensim.corpora.dictionary import Dictionary
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-# change int into str
-# list_2d_int: [ [0,1,2,3], [4,5,6,0,12], ...]
-# list_2d_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
 
-
-def int2str(list_2d_int):
-    list_2d_str = copy.deepcopy(list_2d_int)
-    for i, row in enumerate(list_2d_int):
+def list_int2str(list2d_int):
+    '''
+    change int into str
+    list2d_int: [ [0,1,2,3], [4,5,6,0,12], ...]
+    list2d_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
+    '''
+    list2d_str = copy.deepcopy(list2d_int)
+    for i, row in enumerate(list2d_int):
         for j, column in enumerate(row):
-            list_2d_str[i][j] = str(list_2d_int[i][j])
-    return list_2d_str
+            list2d_str[i][j] = str(list2d_int[i][j])
+    return list2d_str
 
 
 def lda_trainer(sentences, modelPath=None, nb_topics=100, multicore=False):
     '''
-    @return: lda: the lda model trained by gensim, dictionary: all terms dictionary in lda model
+    @return: lda_model: the lda_model model trained by gensim, dictionary: all terms dictionary in lda_model model
     '''
 
     # load doc2bow
@@ -37,51 +38,51 @@ def lda_trainer(sentences, modelPath=None, nb_topics=100, multicore=False):
     print('finish load dictionary!')
     corpus = [dictionary.doc2bow(text) for text in sentences]
     print('finish load doc2bow corpus!')
-    # train lda model
-    print('training lda model...')
+    # train lda_model model
+    print('training lda_model model...')
     if multicore == True:
         # can just use in linux
         # very hard for CPU, cautiously use it
-        lda = LdaMulticore(
+        lda_model = LdaMulticore(
             corpus=corpus, num_topics=nb_topics, id2word=dictionary)
     else:
-        lda = LdaModel(corpus=corpus, num_topics=nb_topics, id2word=dictionary)
-    print('finished lda model training, nb terms: %d' % lda.num_terms)
+        lda_model = LdaModel(corpus=corpus, num_topics=nb_topics, id2word=dictionary)
+    print('finished lda_model model training, nb terms: %d' % lda_model.num_terms)
 
-    # save lda model on disk
+    # save lda_model model on disk
     if modelPath != None:
-        lda.save(fname=modelPath)
+        lda_model.save(fname=modelPath)
         dictionary.save(fname_or_handle=modelPath.replace('.topic', '.dict'))
         print(
-            'producing lda & dictionary model ... ok! model store in {0}(.dict)'.format(modelPath))
+            'producing lda_model & dictionary model ... ok! model store in {0}(.dict)'.format(modelPath))
 
-    return lda, dictionary
+    return lda_model, dictionary
 
 
 def loadModelfromFile(modelPath, readOnly=False):
 
     if readOnly == True:
-        lda = LdaModel.load(fname=modelPath, mmap='r')
+        lda_model = LdaModel.load(fname=modelPath, mmap='r')
         dictionary = Dictionary.load(
             fname=modelPath.replace('.topic', '.dict'), mmap='r')
     else:
-        lda = LdaModel.load(fname=modelPath)
+        lda_model = LdaModel.load(fname=modelPath)
         dictionary = Dictionary.load(
             fname=modelPath.replace('.topic', '.dict'))
-    print('load lda model from {0} ok!'.format(modelPath))
+    print('load lda_model model from {0} ok!'.format(modelPath))
 
-    return lda, dictionary
+    return lda_model, dictionary
 
 
-def get_topics_np4doc(doc_sentence, lda, dictionary):
+def get_topics_np4doc(doc_sentence, lda_model, dictionary):
     '''
-    @param lda and dictionary: not one less 
+    @param lda_model and dictionary: not one less 
     '''
     
-    # trans normal doc_sentence into bow for gensim lda model
+    # trans normal doc_sentence into bow for gensim lda_model model
     bow_sentence = dictionary.doc2bow(doc_sentence)
 
-    doc_topic_tuples = lda.get_document_topics(
+    doc_topic_tuples = lda_model.get_document_topics(
         bow_sentence, minimum_probability=0)
     doc_topics = []
 
@@ -106,14 +107,14 @@ def get_topics_np4doc(doc_sentence, lda, dictionary):
 #     corpus = [dictionary.doc2bow(text) for text in sentences]
 #     print('finished load doc2bow corpus!')
 #
-#     # train lda model
-#     print('training lda model...')
-#     lda = LdaModel(corpus=corpus, num_topics=nb_topics, id2word=dictionary)
-#     print('finished lda model training, nb terms: %d' % lda.num_terms)
+#     # train lda_model model
+#     print('training lda_model model...')
+#     lda_model = LdaModel(corpus=corpus, num_topics=nb_topics, id2word=dictionary)
+#     print('finished lda_model model training, nb terms: %d' % lda_model.num_terms)
 #
 #     # get topics distributions for documents
 #     # the length is number of document, that is to say, len(corpus)
-#     document_topics_list = lda.get_document_topics(
+#     document_topics_list = lda_model.get_document_topics(
 #         corpus, minimum_probability=0)
 #     document_topics_np = np.zeros((len(corpus), nb_topics), dtype=np.float32)
 #
@@ -132,13 +133,16 @@ def get_topics_np4doc(doc_sentence, lda, dictionary):
 if __name__ == '__main__':
     sentences_int = [[1, 2, 3], [1, 3, 4], [3, 4, 5], [
         4, 5, 6], [1, 3, 5], [1, 3, 6], [2, 4, 7]] * 1500
-    sentences = int2str(sentences_int)
+    sentences = list_int2str(sentences_int)
 #     print(sentences)
-    lda, dictionary = lda_trainer(sentences)
-    print('lda model size: %s, dict size: %s' %
-          (sys.getsizeof(lda), sys.getsizeof(dictionary)))
+    lda_model, dictionary = lda_trainer(sentences)
+    print('nb_topics = {0}'.format(lda_model.num_topics))
+    print('lda_model model size: %s, dict size: %s' %
+          (sys.getsizeof(lda_model), sys.getsizeof(dictionary)))
 
     doc_sentence = ['1', '2', '4']
-    topic_np = get_topics_np4doc(doc_sentence, lda, dictionary)
-#     topic_np = lda[bow_sentence]
+    topic_np = get_topics_np4doc(doc_sentence, lda_model, dictionary)
+#     topic_np = lda_model[bow_sentence]
     print(topic_np)
+    print(type(np.array(topic_np)))
+    print(np.sum(topic_np))

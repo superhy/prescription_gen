@@ -145,8 +145,8 @@ def train_predict_tongue2text_gen():
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    _use_tfidf_tensor = True  # set for use tfidf_tensor
-#     _use_tfidf_tensor = False
+#     _use_tfidf_tensor = True  # set for use tfidf_tensor
+    _use_tfidf_tensor = False
 
     '''
     The part of train a new gen_model and storage it on disk,
@@ -182,8 +182,101 @@ def train_predict_tongue2text_gen():
     yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
-    test_tongue_ids = tongue_ids[:200]
-    test_yaofangs = tongue_yaofangs[:200]
+    test_tongue_ids = tongue_ids[: len(tongue_ids) - 200]
+    test_yaofangs = tongue_yaofangs[: len(tongue_yaofangs) - 200]
+    '''the evaluation criterion '''
+    precisions = []
+    recalls = []
+    errors = []
+    for i, output in enumerate(gen_output):
+        # print test data label info:
+        print('%d. \npatient tongue id: %s' % (i, test_tongue_ids[i]))
+        print('label yaofang:')
+        yaofang_label = patient_tongue_generator.sample_yaofang(
+            test_yaofangs[i], yaopin_dict)
+        print(' '.join(yaofang_label))
+
+#         output_index = patient_tongue_generator.dynamic_threshold_outputfilter(output)
+        output_index = patient_tongue_generator.threshold_outputfilter(output)
+#         print('predicted yaofang ids: {0}'.format(output_index))
+        yaofang_output = patient_tongue_generator.sample_yaofang(
+            output_index, yaopin_dict)
+        print('predicted yaofang:')
+        print(' '.join(yaofang_output) + '\n')
+
+        precision, recall, error = generator_eval.evaluator(
+            test_yaofangs[i], output_index)
+        precisions.append(precision)
+        recalls.append(recall)
+        errors.append(error)
+        print('------Score: precision: %f, recall: %f, error: %f' %
+              (precision, recall, error))
+
+    print('------Average Score: average precision: %f, average recall: %f, error: %f' %
+          (np.average(precisions), np.average(recalls), np.average(errors)))
+
+
+def train_predict_tongue2text_gen_withlda():
+    patient_tongue_dir = config['root_path'] + \
+        config['original_path'] + 'tongue_9585'
+    tongue_zhiliao_path = config['root_path'] + \
+        config['original_path'] + 'tongue_zhiliao.list'
+    yaopin_path = config['root_path'] + \
+        config['original_path'] + 'yaopin.vocab'
+
+    tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape = patient_tongue_generator.loadDatafromFile(
+        patient_tongue_dir, tongue_zhiliao_path, image_normal_size=(224, 224))
+
+    # fetch max(id) in yaopin.vocab as nb_yao
+    with open(yaopin_path, 'r') as yaopin_file:
+        nb_yao = max(int(line.split(' ')[0])
+                     for line in yaopin_file.readlines())
+
+#     _use_tfidf_tensor = True  # set for use tfidf_tensor
+    _use_tfidf_tensor = False
+
+    '''
+    The part of train a new gen_model with lda and storage it on disk,
+    the new one will cover the old one
+    '''
+    lda_model_name = 'tongue_9585_gensim_lda.topic'
+    lda_model_path = config['root_path'] + \
+        config['cache_path'] + 'nlp/' + lda_model_name
+    _lda_replace = True  # first time is True, other is False if not needed
+#     _lda_replace = False
+    trained_gen_model = patient_tongue_generator.tongue_gen_withlda_trainer(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        lda_model_path, lda_replace=_lda_replace,
+        use_tfidf_tensor=_use_tfidf_tensor)
+    # store keras layers_framework(optional)
+    frame_name = 'tongue2text_cnn2mlp_9585_act(tfidf)_t3_150it.json'
+    gen_frame_path = config['root_path'] + \
+        config['cache_path'] + 'keras/' + frame_name
+    tongue2text_gen.storageModel(
+        model=trained_gen_model, frame_path=gen_frame_path)
+
+    '''
+    The part of load a trained gen_model from disk,
+    the trained gen_model will be reload and use to eval and predict directly,
+    without retraining which is for time saving
+    '''
+#     trained_gen_model = tongue2text_gen.loadStoredModel(
+#         gen_frame_path, gen_frame_path.replace('.json', '.h5'))
+
+    # test
+    # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]
+    gen_output = patient_tongue_generator.gen_withlda_predictor_test(
+        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        trained_gen_model, lda_model_path,
+        use_tfidf_tensor=_use_tfidf_tensor)
+    print(gen_output[0])
+
+    # yaopin_dict: {0:'麻黄',1:'桂枝',...}
+    yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
+#     print(yaopin_dict)
+
+    test_tongue_ids = tongue_ids[: len(tongue_ids) - 200]
+    test_yaofangs = tongue_yaofangs[: len(tongue_yaofangs) - 200]
     '''the evaluation criterion '''
     precisions = []
     recalls = []
@@ -219,8 +312,8 @@ def train_predict_tongue2text_gen():
 def train_predict_tongue2text_sklearn_gen(step=0):
     '''
     @param step: 0: keras train, 1: load keras model train sk_classifier and test 
-    
-    
+
+
     '''
 
     patient_tongue_dir = config['root_path'] + \
@@ -323,10 +416,13 @@ def train_predict_tongue2text_sklearn_gen(step=0):
 
 # train_predict_text2text_gen()
 # train_predict_face2text_gen()
+
 # train_predict_tongue2text_gen()
+'''keras layer model with double output(lda) to help generator to specify prescription direction'''
+train_predict_tongue2text_gen_withlda()
 
 '''use keras model scratch the features and use sklearn do generator'''
-train_predict_tongue2text_sklearn_gen(step=1)
+# train_predict_tongue2text_sklearn_gen(step=1)
 
 #---------------------------- unused now ----------------------------
 

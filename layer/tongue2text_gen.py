@@ -7,6 +7,8 @@ Created on 2017年8月4日
 '''
 from keras import regularizers
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
+from keras.layers import Input
+from keras.models import Model
 from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
@@ -16,12 +18,12 @@ from keras.optimizers import SGD, Adadelta, RMSprop, Adam
 from keras.utils.generic_utils import Progbar
 import time
 
-from layer.norm import tfidf
+from layer.norm import tfidf, lda
 import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 20
+_default_epochs = 2
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -45,8 +47,35 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
     return tongue_x, y
 
-def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
-    pass
+
+def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, nb_topics,
+                           lda_model, dictionary):
+    '''
+    @param tongue_image_arrays:
+    @param tongue_yaofangs:
+    @param tongue_image_shape:
+
+    @return:    
+    '''
+    nb_samples = len(tongue_image_arrays)
+#     tongue_yaofangs: [ [0,1,2,3], [4,5,6,0,12], ...]
+#     tongue_yaofangs_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
+    tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
+#     print(tongue_yaofangs_str)
+
+    y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+    aux_y = np.zeros((nb_samples, nb_topics), dtype=np.float32)
+    for i in range(nb_samples):
+        tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
+            tongue_image_shape)
+        for yao_id in tongue_yaofangs[i]:
+            y[i, yao_id] = 1
+        aux_y[i] = lda.get_topics_np4doc(tongue_yaofangs_str[i], lda_model, dictionary)
+
+    tongue_x = np.array(tongue_image_arrays)
+    aux_y = np.array(aux_y)
+    
+    return tongue_x, y, aux_y
 
 
 def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -87,7 +116,8 @@ def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_
 #=========================================================================
 
 
-def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True, scaling_activation='binary'):
+def k_cnn2_mlp(yao_indices_dim, tongue_image_shape,
+               with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
     some layer parameters
@@ -150,6 +180,86 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape, with_compile=True, scaling_a
         # ready to joint in some other frameworks like Tensorflow
         return cnn2_mlp_model
 
+
+def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
+                       with_compile=True, scaling_activation='binary'):
+    '''
+    'k_' prefix means keras_layers
+    '2output' means this layer model has double output(LDA)
+    @param scaling_activation: is for main output use tfidf(relu) output or not
+    '''
+    # cnn layer parameters
+    _nb_filters_1 = 80
+    _kernel_size_1 = (3, 3)
+    _cnn_activation_1 = 'relu'
+    _pool_size_1 = (2, 2)
+    _cnn_dropout_1 = 0.0
+
+    _nb_filters_2 = 64
+    _kernel_size_2 = (5, 5)
+    _cnn_activation_2 = 'relu'
+    _pool_size_2 = (2, 2)
+    _cnn_dropout_2 = 0.0
+    # mlp layer parameters
+    _mlp_units = 40
+    _mlp_activation = 'sigmoid'
+    _mlp_dropout = 0.0
+    # output_aux layer parameters
+    _output_units = yao_indices_dim
+#     add some regularizers to overcome the overfit
+#     _output_kernel_regularizer = regularizers.l1_l2(l1=0.01, l2=0.01)
+    _output_kernel_regularizer = None
+    if scaling_activation == 'tfidf':
+        _output_activation = 'relu'  # just for tfidf tensor
+    else:
+        _output_activation = 'sigmoid'
+    _aux_output_units = topics_dim
+    _aux_output_activation = 'relu'
+
+    print('Build 2 * CNN + MLP model...')
+    cnn2_mlp = Sequential()
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_1,
+                        kernel_size=_kernel_size_1, input_shape=tongue_image_shape))
+    cnn2_mlp.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_2,
+                        kernel_size=_kernel_size_2))
+    cnn2_mlp.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_mlp.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_mlp.add(BatchNormalization())
+
+    cnn2_mlp.add(Flatten())
+    cnn2_mlp.add(
+        Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
+    cnn2_mlp.add(Dropout(rate=_mlp_dropout))
+    cnn2_mlp.add(BatchNormalization())
+
+    image_input = Input(shape=tongue_image_shape)
+    features = cnn2_mlp(image_input)
+
+    '''
+    The first output is the main output for prescription generation
+    The second output is the aux output for prescription topic recognition
+    '''
+    gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
+                       activation=_output_activation)(features)
+    aux_output = Dense(units=_aux_output_units,
+                       activation=_aux_output_activation)(features)
+
+    cnn2_mlp_2output_model = Model(inputs=image_input, outputs=[
+                                   gen_output, aux_output])
+
+    # print layers framework
+    cnn2_mlp_2output_model.summary()
+
+    if with_compile == True:
+        return double_output_compiler(cnn2_mlp_2output_model, scaling_activation)
+    else:
+        # ready to joint in some other frameworks like Tensorflow
+        return cnn2_mlp_2output_model
+
 #=========================================================================
 # tools function for layer-net model
 #=========================================================================
@@ -175,7 +285,28 @@ def compiler(layers_model, scaling_activation):
     return layers_model
 
 
-def trainer(model, train_x, train_y,
+def double_output_compiler(layers_model, scaling_activation):
+    '''
+    some compiler parameters
+    '''
+#     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
+    _optimizer = Adadelta(lr=2.0, rho=0.95, epsilon=1e-06, decay=1e-6)
+#     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
+
+    if scaling_activation == 'tfidf':
+        _losses = ['msle', 'sparse_categorical_crossentropy']
+    else:
+        _losses = ['binary_crossentropy', 'sparse_categorical_crossentropy']
+    # the weights of loss for main output and aux output
+    _loss_weights = [1., 0.6]
+
+    layers_model.compile(optimizer=_optimizer, loss=_losses,
+                         loss_weights=_loss_weights)
+
+    return layers_model
+
+
+def trainer(model, train_x, train_y, train_aux_y=[],
             batch_size=_default_batch_size,
             epochs=_default_epochs,
             validation_split=0.05,
@@ -214,11 +345,18 @@ def trainer(model, train_x, train_y,
 
     history = MetricesHistory()
     callbacks.append(history)
-    model.fit(x=train_x, y=train_y,
-              batch_size=batch_size,
-              epochs=epochs,
-              validation_split=validation_split,
-              callbacks=callbacks)
+    if train_aux_y == []:
+        model.fit(x=train_x, y=train_y,
+                  batch_size=batch_size,
+                  epochs=epochs,
+                  validation_split=validation_split,
+                  callbacks=callbacks)
+    else:
+        model.fit(x=train_x, y=[train_y, train_aux_y],
+                  batch_size=batch_size,
+                  epochs=epochs,
+                  validation_split=validation_split,
+                  callbacks=callbacks)
 
     return model, history.metrices
 
@@ -281,6 +419,7 @@ def ploter(model, pic_path):
     print(model.summary())
     plot_model(model, to_file=pic_path)
 
+
 def storageModel(model, frame_path, replace_record=True):
 
     record_path = None
@@ -296,6 +435,7 @@ def storageModel(model, frame_path, replace_record=True):
 
     return frame_path, record_path
 
+
 def recompileModel(model):
 
     #     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
@@ -305,6 +445,7 @@ def recompileModel(model):
     model.compile(loss='categorical_crossentropy', optimizer=_optimizer, metrics=[
                   'accuracy', 'precision', 'recall', 'fmeasure'])
     return model
+
 
 def loadStoredKerasModel(frame_path, record_path, recompile=False):
 
