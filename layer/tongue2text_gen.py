@@ -23,7 +23,7 @@ import numpy as np
 
 
 _default_batch_size = 32
-_default_epochs = 20
+_default_epochs = 30
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -70,11 +70,12 @@ def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_sh
             tongue_image_shape)
         for yao_id in tongue_yaofangs[i]:
             y[i, yao_id] = 1
-        aux_y[i] = lda.get_topics_np4doc(tongue_yaofangs_str[i], lda_model, dictionary)
+        aux_y[i] = lda.get_topics_np4doc(
+            tongue_yaofangs_str[i], lda_model, dictionary)
 
     tongue_x = np.array(tongue_image_arrays)
     aux_y = np.array(aux_y)
-    
+
     return tongue_x, y, aux_y
 
 
@@ -214,7 +215,7 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     else:
         _output_activation = 'sigmoid'
     _aux_output_units = topics_dim
-    _aux_output_activation = 'relu'
+    _aux_output_activation = 'softmax'
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp = Sequential()
@@ -244,9 +245,9 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     The second output is the aux output for prescription topic recognition
     '''
     gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
-                       activation=_output_activation)(features)
+                       activation=_output_activation, name='gen_output')(features)
     aux_output = Dense(units=_aux_output_units,
-                       activation=_aux_output_activation)(features)
+                       activation=_aux_output_activation, name='aux_output')(features)
 
     cnn2_mlp_2output_model = Model(inputs=image_input, outputs=[
                                    gen_output, aux_output])
@@ -294,11 +295,13 @@ def double_output_compiler(layers_model, scaling_activation):
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
-        _losses = ['msle', 'sparse_categorical_crossentropy']
+        _losses = {'gen_output': 'msle', 
+                   'aux_output': 'categorical_crossentropy'}
     else:
-        _losses = ['binary_crossentropy', 'sparse_categorical_crossentropy']
+        _losses = {'gen_output': 'binary_crossentropy',
+                   'aux_output': 'categorical_crossentropy'}
     # the weights of loss for main output and aux output
-    _loss_weights = [1., 0.6]
+    _loss_weights = {'gen_output':1., 'aux_output': 0.2}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
@@ -352,7 +355,7 @@ def trainer(model, train_x, train_y, train_aux_y=[],
                   validation_split=validation_split,
                   callbacks=callbacks)
     else:
-        model.fit(x=train_x, y=[train_y, train_aux_y],
+        model.fit(x=train_x, y={'gen_output': train_y, 'aux_output': train_aux_y},
                   batch_size=batch_size,
                   epochs=epochs,
                   validation_split=validation_split,

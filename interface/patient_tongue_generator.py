@@ -186,6 +186,7 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
                                lda_model_path, use_tfidf_tensor=False):
     '''
     @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    @return: gen_output_list: [gen_output, aux_output]
     '''
 
     # in test process, lda_model and dictionary can be only load from disk(can
@@ -197,15 +198,14 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary)
     
-    test_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
-#     test_y = total_y[: len(total_y) - 200]
-#     test_aux_y = total_aux_y[: len(total_aux_y) - 200]
+    test_tongue_x = total_tongue_x[len(total_tongue_x) - 200:]
+#     test_y = total_y[len(total_y) - 200:]
+#     test_aux_y = total_aux_y[len(total_aux_y) - 200:]
     
-    gen_output_tuples = tongue2text_gen.predictor(trained_gen_model, test_tongue_x)
+    gen_output_list = tongue2text_gen.predictor(trained_gen_model, test_tongue_x)
     # gen_output in here is a tuple as (main_output, aux_output), get the first one
-    gen_output = list(output_tuple[0] for output_tuple in gen_output_tuples)
 
-    return gen_output
+    return gen_output_list
 
 
 #=========================================================================
@@ -298,7 +298,7 @@ def ratio_outputfilter(output, ratio=0.015):
     pass
 
 
-def threshold_outputfilter(output, threshold=1.):
+def threshold_outputfilter(output, threshold=0.3):
     '''
     use arg(output > threshold)
     '''
