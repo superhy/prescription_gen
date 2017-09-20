@@ -1801,3 +1801,5 @@ predicted yaofang:
 
 ------Score: precision: 0.750000, recall: 0.214286, error: 0.250000
 ------Average Score: average precision: 0.404905, average recall: 0.289024, error: 0.595095
+
+precision > 0.4: 107/200(53.5%), precision > 0.4 and recall > 0.3: 69/200(34.5%)
