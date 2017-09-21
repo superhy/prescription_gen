@@ -20,6 +20,7 @@ import time
 
 from layer.norm import tfidf, lda
 import numpy as np
+from keras.layers.advanced_activations import LeakyReLU
 
 
 _default_batch_size = 32
@@ -46,37 +47,6 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     tongue_x = np.array(tongue_image_arrays)
 
     return tongue_x, y
-
-
-def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, nb_topics,
-                           lda_model, dictionary):
-    '''
-    @param tongue_image_arrays:
-    @param tongue_yaofangs:
-    @param tongue_image_shape:
-
-    @return:    
-    '''
-    nb_samples = len(tongue_image_arrays)
-#     tongue_yaofangs: [ [0,1,2,3], [4,5,6,0,12], ...]
-#     tongue_yaofangs_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
-    tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
-#     print(tongue_yaofangs_str)
-
-    y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
-    aux_y = np.zeros((nb_samples, nb_topics), dtype=np.float32)
-    for i in range(nb_samples):
-        tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
-            tongue_image_shape)
-        for yao_id in tongue_yaofangs[i]:
-            y[i, yao_id] = 1
-        aux_y[i] = lda.get_topics_np4doc(
-            tongue_yaofangs_str[i], lda_model, dictionary)
-
-    tongue_x = np.array(tongue_image_arrays)
-    aux_y = np.array(aux_y)
-
-    return tongue_x, y, aux_y
 
 
 def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -111,6 +81,37 @@ def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_
     tongue_x = np.array(tongue_image_arrays)
 
     return tongue_x, y
+
+
+def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, nb_topics,
+                           lda_model, dictionary, use_tfidf_tensor=False):
+    '''
+    @param tongue_image_arrays:
+    @param tongue_yaofangs:
+    @param tongue_image_shape:
+
+    @return:    
+    '''
+    nb_samples = len(tongue_image_arrays)
+#     tongue_yaofangs: [ [0,1,2,3], [4,5,6,0,12], ...]
+#     tongue_yaofangs_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
+    tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
+#     print(tongue_yaofangs_str)
+
+    y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+    aux_y = np.zeros((nb_samples, nb_topics), dtype=np.float32)
+    for i in range(nb_samples):
+        tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
+            tongue_image_shape)
+        for yao_id in tongue_yaofangs[i]:
+            y[i, yao_id] = 1
+        aux_y[i] = lda.get_topics_np4doc(
+            tongue_yaofangs_str[i], lda_model, dictionary)
+
+    tongue_x = np.array(tongue_image_arrays)
+    aux_y = np.array(aux_y)
+
+    return tongue_x, y, aux_y
 
 #=========================================================================
 # layers function of keras
@@ -215,7 +216,9 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     else:
         _output_activation = 'sigmoid'
     _aux_output_units = topics_dim
-    _aux_output_activation = 'softmax'
+#     _aux_output_activation = 'softmax'
+    _aux_output_activation = LeakyReLU(alpha=0.3)
+#     _aux_output_activation = 'sigmoid'
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp = Sequential()
@@ -295,11 +298,19 @@ def double_output_compiler(layers_model, scaling_activation):
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
+#         _losses = {'gen_output': 'msle', 
+#                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'msle', 
-                   'aux_output': 'categorical_crossentropy'}
+                   'aux_output': 'msle'}
+#         _losses = {'gen_output': 'msle', 
+#                    'aux_output': 'binary_crossentropy'}
     else:
+#         _losses = {'gen_output': 'binary_crossentropy',
+#                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
-                   'aux_output': 'categorical_crossentropy'}
+                   'aux_output': 'msle'}
+#         _losses = {'gen_output': 'binary_crossentropy',
+#                    'aux_output': 'binary_crossentropy'}
     # the weights of loss for main output and aux output
     _loss_weights = {'gen_output':1., 'aux_output': 0.2}
 
