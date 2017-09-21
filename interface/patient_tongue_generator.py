@@ -145,15 +145,9 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         lda_model, dictionary = lda.loadModelfromFile(
             lda_model_path, readOnly=True)
 
-#     if use_tfidf_tensor == True:
-#         '''
-#         TODO: now use_tfidf_tensor == True, the situation is same as False,
-#             need add tfidf+lda tensorization in module <tongue2text_gen>
-#         '''
-#     else:
     total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
-        lda_model, dictionary)
+        lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
     
     train_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
     train_y = total_y[: len(total_y) - 200]
@@ -165,14 +159,16 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp with double output(lda) tongue2text gen model------scaling_activation: %s...' %
           scaling_act_type)
-#     if use_tfidf_tensor == True:
-#         tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
-#             yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='tfidf')
-#     else:
-    tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
-                                                          tongue_image_shape=tongue_image_shape,
-                                                          topics_dim=lda_model.num_topics,
-                                                          with_compile=True, scaling_activation='binary')
+    if use_tfidf_tensor == True:
+        tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
+                                                              tongue_image_shape=tongue_image_shape,
+                                                              topics_dim=lda_model.num_topics,
+                                                              with_compile=True, scaling_activation='tfidf')
+    else:
+        tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
+                                                              tongue_image_shape=tongue_image_shape,
+                                                              topics_dim=lda_model.num_topics,
+                                                              with_compile=True, scaling_activation='binary')
 
     trained_tongue_gen_model, history = tongue2text_gen.trainer(
         tongue_gen_model, train_tongue_x, train_y, train_aux_y)
@@ -196,7 +192,7 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
 
     total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
-        lda_model, dictionary)
+        lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
     
     test_tongue_x = total_tongue_x[len(total_tongue_x) - 200:]
 #     test_y = total_y[len(total_y) - 200:]
@@ -298,7 +294,7 @@ def ratio_outputfilter(output, ratio=0.015):
     pass
 
 
-def threshold_outputfilter(output, threshold=0.3):
+def threshold_outputfilter(output, threshold=1):
     '''
     use arg(output > threshold)
     '''

@@ -24,7 +24,7 @@ from keras.layers.advanced_activations import LeakyReLU
 
 
 _default_batch_size = 32
-_default_epochs = 30
+_default_epochs = 20
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -38,6 +38,7 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     nb_samples = len(tongue_image_arrays)
 
     y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+    
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
             tongue_image_shape)
@@ -51,15 +52,14 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
 def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
     '''
-        get the tfidf tensors of train and test data
+    get the tfidf tensors of train and test data
 
-        @param tongue_image_arrays:
-        @param tongue_yaofangs:
-        @param tongue_image_shape:
+    @param tongue_image_arrays:
+    @param tongue_yaofangs:
+    @param tongue_image_shape:
 
-        @return:
-        '''
-
+    @return:
+    '''
     print('get data_tensorization_tfidf...')
     # compute tf-idf with tongue_yaofangs
     # tongue_yaofangs: [ [98, 1329, 1330, 253, 75, 19, 1331, 1165, 1332, 1333, 1, 41], [...], ...]
@@ -72,6 +72,7 @@ def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_
     nb_samples = len(tongue_image_arrays)
 
     y = np.zeros((nb_samples, nb_yao), dtype=np.float32)
+    
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
             tongue_image_shape)
@@ -86,25 +87,44 @@ def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_
 def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, nb_topics,
                            lda_model, dictionary, use_tfidf_tensor=False):
     '''
+    this function can also give the tfidf scaling activation output
+    use use_tfidf_tensor to switch
     @param tongue_image_arrays:
     @param tongue_yaofangs:
     @param tongue_image_shape:
 
-    @return:    
+    @return:
     '''
-    nb_samples = len(tongue_image_arrays)
 #     tongue_yaofangs: [ [0,1,2,3], [4,5,6,0,12], ...]
 #     tongue_yaofangs_str: [ ['0','1','2','3'], ['4','5','6','0','12'], ...]
     tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
 #     print(tongue_yaofangs_str)
 
-    y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+    print('ready data_tensorization_tfidf...')
+    yaofangs_corpus = tfidf.list2corpus(tongue_yaofangs)
+    word, weight = tfidf.get_tf_idf(yaofangs_corpus)
+    if use_tfidf_tensor == False:
+        del(yaofangs_corpus) # use binary scaling activation free the memory 
+        del(word)
+        del(weight)
+    
+    nb_samples = len(tongue_image_arrays)
+
+    if use_tfidf_tensor == True:
+        y = np.zeros((nb_samples, nb_yao), dtype=np.float32)
+    else:
+        y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
+        
     aux_y = np.zeros((nb_samples, nb_topics), dtype=np.float32)
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
             tongue_image_shape)
-        for yao_id in tongue_yaofangs[i]:
-            y[i, yao_id] = 1
+        if use_tfidf_tensor == True:
+            for j in range(len(word)):
+                y[i][int(word[j])] = weight[i][j]
+        else:
+            for yao_id in tongue_yaofangs[i]:
+                y[i, yao_id] = 1
         aux_y[i] = lda.get_topics_np4doc(
             tongue_yaofangs_str[i], lda_model, dictionary)
 
@@ -216,8 +236,7 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     else:
         _output_activation = 'sigmoid'
     _aux_output_units = topics_dim
-#     _aux_output_activation = 'softmax'
-    _aux_output_activation = LeakyReLU(alpha=0.3)
+    _aux_output_activation = 'softmax'
 #     _aux_output_activation = 'sigmoid'
 
     print('Build 2 * CNN + MLP model...')
@@ -301,18 +320,15 @@ def double_output_compiler(layers_model, scaling_activation):
 #         _losses = {'gen_output': 'msle', 
 #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'msle', 
-                   'aux_output': 'msle'}
-#         _losses = {'gen_output': 'msle', 
-#                    'aux_output': 'binary_crossentropy'}
+                   'aux_output': 'binary_crossentropy'}
+        # the weights of loss for main output and aux output
+        _loss_weights = {'gen_output':1., 'aux_output': 0.6}
     else:
 #         _losses = {'gen_output': 'binary_crossentropy',
 #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
-                   'aux_output': 'msle'}
-#         _losses = {'gen_output': 'binary_crossentropy',
-#                    'aux_output': 'binary_crossentropy'}
-    # the weights of loss for main output and aux output
-    _loss_weights = {'gen_output':1., 'aux_output': 0.2}
+                   'aux_output': 'binary_crossentropy'}
+        _loss_weights = {'gen_output':1., 'aux_output': 0.6}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
