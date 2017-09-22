@@ -490,7 +490,7 @@ def loadStoredModel(frame_path, record_path,
     json_str = frameFile.readline()
     model = model_from_json(json_str)
     if compile_info['recompile'] == True: # if need to recompile
-        _scaling_activation = 'tfidf' if compile_info['use_tfidf_tensor'] == False else 'binary'
+        _scaling_activation = 'tfidf' if compile_info['use_tfidf_tensor'] == True else 'binary'
         if compile_info['aux_output'] == False:
             model = compiler(model, scaling_activation=_scaling_activation)
         else:
