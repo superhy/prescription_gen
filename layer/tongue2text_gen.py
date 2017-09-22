@@ -13,6 +13,7 @@ from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPool2D
+from keras.layers.advanced_activations import LeakyReLU
 from keras.models import model_from_json, Sequential
 from keras.optimizers import SGD, Adadelta, RMSprop, Adam
 from keras.utils.generic_utils import Progbar
@@ -20,8 +21,6 @@ import time
 
 from layer.norm import tfidf, lda
 import numpy as np
-from keras.layers.advanced_activations import LeakyReLU
-from pyflakes.messages import UnusedImport
 
 
 _default_batch_size = 32
