@@ -64,7 +64,7 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
 
 
 def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                       train_on_batch=False, use_tfidf_tensor=False):
+                       gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False):
     '''
     @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
     '''
@@ -96,8 +96,14 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
         trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
             tongue_gen_model, train_x, train_y)
     else:
+        record_path = None
+        if gen_model_path != None:
+            record_path = gen_model_path.replace('json', 'h5')
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
-            tongue_gen_model, train_x, train_y)
+            tongue_gen_model, train_x, train_y, best_record_path=record_path)
+        if gen_model_path != None:
+            tongue2text_gen.storageModel(
+                model=trained_tongue_gen_model, frame_path=gen_model_path)
 
     print('history: {0}'.format(history))
 

@@ -24,7 +24,7 @@ from keras.layers.advanced_activations import LeakyReLU
 
 
 _default_batch_size = 32
-_default_epochs = 20
+_default_epochs = 100
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -158,9 +158,9 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape,
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
-    _mlp_units = 40
+    _mlp_units = 128
     _mlp_activation = 'sigmoid'
-    _mlp_dropout = 0.0
+    _mlp_dropout = 0.2
     _output_units = yao_indices_dim
     _output_kernel_regularizer = None
     if scaling_activation == 'tfidf':
@@ -187,7 +187,7 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_model.add(
         Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
     cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
-    cnn2_mlp_model.add(BatchNormalization())
+#     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(
         Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer))
@@ -223,9 +223,9 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
     # mlp layer parameters
-    _mlp_units = 40
+    _mlp_units = 128
     _mlp_activation = 'sigmoid'
-    _mlp_dropout = 0.0
+    _mlp_dropout = 0.2
     # output_aux layer parameters
     _output_units = yao_indices_dim
 #     add some regularizers to overcome the overfit
@@ -257,7 +257,7 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp.add(
         Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
     cnn2_mlp.add(Dropout(rate=_mlp_dropout))
-    cnn2_mlp.add(BatchNormalization())
+#     cnn2_mlp.add(BatchNormalization())
 
     image_input = Input(shape=tongue_image_shape)
     features = cnn2_mlp(image_input)
@@ -293,7 +293,7 @@ def compiler(layers_model, scaling_activation):
     some compiler parameters
     '''
 #     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
-    _optimizer = Adadelta(lr=2.0, rho=0.95, epsilon=1e-06, decay=1e-6)
+    _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
@@ -313,22 +313,22 @@ def double_output_compiler(layers_model, scaling_activation):
     some compiler parameters
     '''
 #     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
-    _optimizer = Adadelta(lr=2.0, rho=0.95, epsilon=1e-06, decay=1e-6)
+    _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
-#         _losses = {'gen_output': 'msle', 
-#                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'msle', 
-                   'aux_output': 'binary_crossentropy'}
+                   'aux_output': 'categorical_crossentropy'}
+#         _losses = {'gen_output': 'msle', 
+#                    'aux_output': 'binary_crossentropy'}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output':1., 'aux_output': 0.6}
+        _loss_weights = {'gen_output':1., 'aux_output': 0.01}
     else:
-#         _losses = {'gen_output': 'binary_crossentropy',
-#                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
-                   'aux_output': 'binary_crossentropy'}
-        _loss_weights = {'gen_output':1., 'aux_output': 0.6}
+                   'aux_output': 'categorical_crossentropy'}
+#         _losses = {'gen_output': 'binary_crossentropy',
+#                    'aux_output': 'binary_crossentropy'}
+        _loss_weights = {'gen_output':1., 'aux_output': 0.01}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
@@ -350,14 +350,14 @@ def trainer(model, train_x, train_y, train_aux_y=[],
     callbacks = []
 
     if auto_stop == True:
-        monitor = 'val_acc' if validation_split > 0.0 else 'acc'
+        monitor = 'val_loss' if validation_split > 0.0 else 'loss'
 #         early_stopping = EarlyStopping(monitor=monitor, min_delta=0.001, patience=10, mode='auto')
         early_stopping = EarlyStopping(
             monitor=monitor, patience=20, mode='auto')
         callbacks.append(early_stopping)
 
     if best_record_path != None:
-        monitor = 'val_acc' if validation_split > 0.0 else 'acc'
+        monitor = 'val_loss' if validation_split > 0.0 else 'loss'
         check_pointer = ModelCheckpoint(
             best_record_path, monitor=monitor, verbose=1, save_best_only=True)
         callbacks.append(check_pointer)
