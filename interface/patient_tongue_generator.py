@@ -12,6 +12,7 @@ import os
 from layer import tongue2text_gen, tongue2text_sklearn_gen
 from layer.norm import lda
 import numpy as np
+from numpy.distutils.conv_template import replace_re
 
 
 def loadTongue2YaofangDict(tongue_zhiliao_path):
@@ -102,8 +103,8 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
             tongue_gen_model, train_x, train_y, best_record_path=record_path)
         if gen_model_path != None:
-            tongue2text_gen.storageModel(
-                model=trained_tongue_gen_model, frame_path=gen_model_path)
+            tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
+                                         replace_record=False)
 
     print('history: {0}'.format(history))
 
@@ -154,7 +155,7 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
-    
+
     train_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
     train_y = total_y[: len(total_y) - 200]
     train_aux_y = total_aux_y[: len(total_aux_y) - 200]
@@ -199,13 +200,15 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
     total_tongue_x, total_y, total_aux_y = tongue2text_gen.data_tensorization_lda(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
-    
+
     test_tongue_x = total_tongue_x[len(total_tongue_x) - 200:]
 #     test_y = total_y[len(total_y) - 200:]
 #     test_aux_y = total_aux_y[len(total_aux_y) - 200:]
-    
-    gen_output_list = tongue2text_gen.predictor(trained_gen_model, test_tongue_x)
-    # gen_output in here is a tuple as (main_output, aux_output), get the first one
+
+    gen_output_list = tongue2text_gen.predictor(
+        trained_gen_model, test_tongue_x)
+    # gen_output in here is a tuple as (main_output, aux_output), get the
+    # first one
 
     return gen_output_list
 

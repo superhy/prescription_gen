@@ -161,7 +161,7 @@ def train_predict_tongue2text_gen():
         config['cache_path'] + 'keras/' + frame_name
 
     train_on_batch = False  # switch train_on_batch or not
-    trained_gen_model = patient_tongue_generator.tongue_gen_trainer(
+    _ = patient_tongue_generator.tongue_gen_trainer(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
         gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor)
 
@@ -170,8 +170,11 @@ def train_predict_tongue2text_gen():
     the trained gen_model will be reload and use to eval and predict directly,
     without retraining which is for time saving
     '''
-#     trained_gen_model = tongue2text_gen.loadStoredModel(
-#         gen_frame_path, gen_frame_path.replace('.json', '.h5'))
+    trained_gen_model = tongue2text_gen.loadStoredModel(
+        gen_frame_path, gen_frame_path.replace('.json', '.h5'),
+        compile_info={'recompile': True,
+                      'aux_output': False,
+                      'use_tfidf_tensor': _use_tfidf_tensor})
 
     # test
     # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]

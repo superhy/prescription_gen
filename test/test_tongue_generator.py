@@ -116,7 +116,7 @@ def test_get_interlayer_output(tongue_image_arrays, tongue_yaofangs, tongue_imag
 
 
 def testStorageModel(trained_tongue_gen_model, frame_path):
-    return tongue2text_sklearn_gen.storageModel(
+    return tongue2text_sklearn_gen.storageKerasModel(
         trained_tongue_gen_model, frame_path)
 
 

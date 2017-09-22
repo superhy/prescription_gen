@@ -21,6 +21,7 @@ import time
 from layer.norm import tfidf, lda
 import numpy as np
 from keras.layers.advanced_activations import LeakyReLU
+from pyflakes.messages import UnusedImport
 
 
 _default_batch_size = 32
@@ -38,7 +39,7 @@ def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     nb_samples = len(tongue_image_arrays)
 
     y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
-    
+
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
             tongue_image_shape)
@@ -72,7 +73,7 @@ def data_tensorization_tfidf(tongue_image_arrays, tongue_yaofangs, tongue_image_
     nb_samples = len(tongue_image_arrays)
 
     y = np.zeros((nb_samples, nb_yao), dtype=np.float32)
-    
+
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
             tongue_image_shape)
@@ -104,17 +105,17 @@ def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_sh
     yaofangs_corpus = tfidf.list2corpus(tongue_yaofangs)
     word, weight = tfidf.get_tf_idf(yaofangs_corpus)
     if use_tfidf_tensor == False:
-        del(yaofangs_corpus) # use binary scaling activation free the memory 
+        del(yaofangs_corpus)  # use binary scaling activation free the memory
         del(word)
         del(weight)
-    
+
     nb_samples = len(tongue_image_arrays)
 
     if use_tfidf_tensor == True:
         y = np.zeros((nb_samples, nb_yao), dtype=np.float32)
     else:
         y = np.zeros((nb_samples, nb_yao), dtype=np.bool)
-        
+
     aux_y = np.zeros((nb_samples, nb_topics), dtype=np.float32)
     for i in range(nb_samples):
         tongue_image_arrays[i] = tongue_image_arrays[i].reshape(
@@ -317,18 +318,18 @@ def double_output_compiler(layers_model, scaling_activation):
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
-        _losses = {'gen_output': 'msle', 
+        _losses = {'gen_output': 'msle',
                    'aux_output': 'categorical_crossentropy'}
-#         _losses = {'gen_output': 'msle', 
+#         _losses = {'gen_output': 'msle',
 #                    'aux_output': 'binary_crossentropy'}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output':1., 'aux_output': 0.01}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.01}
     else:
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': 'categorical_crossentropy'}
 #         _losses = {'gen_output': 'binary_crossentropy',
 #                    'aux_output': 'binary_crossentropy'}
-        _loss_weights = {'gen_output':1., 'aux_output': 0.01}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.01}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
@@ -465,6 +466,8 @@ def storageModel(model, frame_path, replace_record=True):
 
     return frame_path, record_path
 
+# unused
+
 
 def recompileModel(model):
 
@@ -477,14 +480,21 @@ def recompileModel(model):
     return model
 
 
-def loadStoredKerasModel(frame_path, record_path, recompile=False):
+def loadStoredModel(frame_path, record_path,
+                    compile_info={'recompile': False,
+                                  'aux_output': False,
+                                  'use_tfidf_tensor': False}):
 
     frameFile = open(frame_path, 'r')
 #     yaml_str = frameFile.readline()
     json_str = frameFile.readline()
     model = model_from_json(json_str)
-    if recompile == True:
-        model = recompileModel(model)  # if need to recompile
+    if compile_info['recompile'] == True: # if need to recompile
+        _scaling_activation = 'tfidf' if compile_info['use_tfidf_tensor'] == False else 'binary'
+        if compile_info['aux_output'] == False:
+            model = compiler(model, scaling_activation=_scaling_activation)
+        else:
+            model = double_output_compiler(model, scaling_activation=_scaling_activation)
     model.load_weights(record_path)
     frameFile.close()
 
