@@ -241,6 +241,8 @@ def train_predict_tongue2text_gen_withlda():
     _use_tfidf_tensor = False
 
     '''
+    TODO: storage model and load it from disk
+    
     The part of train a new gen_model with lda and storage it on disk,
     the new one will cover the old one
     '''

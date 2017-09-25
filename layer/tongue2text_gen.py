@@ -146,21 +146,31 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape,
     '''
 
     # cnn layer parameters
-    _nb_filters_1 = 80
-    _kernel_size_1 = (3, 3)
+    _nb_filters_1_1 = 40
+    _kernel_size_1_1 = (3, 3)
+    _padding_1_1 = 'same'
+    _nb_filters_1_2 = 40
+    _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
-    _nb_filters_2 = 64
-    _kernel_size_2 = (5, 5)
+    _nb_filters_2_1 = 64
+    _kernel_size_2_1 = (3, 3)
+    _padding_2_1 = 'same'
+    _nb_filters_2_2 = 64
+    _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
+
     # mlp layer parameters
-    _mlp_units = 128
-    _mlp_activation = 'sigmoid'
-    _mlp_dropout = 0.2
+    _mlp_units_1 = 512
+    _mlp_activation_1 = 'relu'
+    _mlp_dropout_1 = 0.6
+    _mlp_units_2 = 256
+    _mlp_activation_2 = 'relu'
+    _mlp_dropout_2 = 0.6
     _output_units = yao_indices_dim
     _output_kernel_regularizer = None
     if scaling_activation == 'tfidf':
@@ -171,22 +181,31 @@ def k_cnn2_mlp(yao_indices_dim, tongue_image_shape,
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp_model = Sequential()
-    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_1,
-                              kernel_size=_kernel_size_1, input_shape=tongue_image_shape))
+    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                              padding=_padding_1_1, input_shape=tongue_image_shape))
+    cnn2_mlp_model.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_1_2,
+                              kernel_size=_kernel_size_1_2))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2,
-                              kernel_size=_kernel_size_2))
+    cnn2_mlp_model.add(BatchNormalization())
+    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2_1, kernel_size=_kernel_size_2_1,
+                              padding=_padding_2_1))
+    cnn2_mlp_model.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp_model.add(Conv2D(filters=_nb_filters_2_2,
+                              kernel_size=_kernel_size_2_2))
     cnn2_mlp_model.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_model.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_model.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(Flatten())
-    cnn2_mlp_model.add(
-        Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
-    cnn2_mlp_model.add(Dropout(rate=_mlp_dropout))
+    cnn2_mlp_model.add(Dense(units=_mlp_units_1, activation=_mlp_activation_1))
+    cnn2_mlp_model.add(Dropout(rate=_mlp_dropout_1))
+    cnn2_mlp_model.add(Dense(
+        units=_mlp_units_2, activation=_mlp_activation_2, name='intermediate_dense'))
+    cnn2_mlp_model.add(Dropout(rate=_mlp_dropout_2))
 #     cnn2_mlp_model.add(BatchNormalization())
 
     cnn2_mlp_model.add(
@@ -211,21 +230,32 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     @param scaling_activation: is for main output use tfidf(relu) output or not
     '''
     # cnn layer parameters
-    _nb_filters_1 = 80
-    _kernel_size_1 = (3, 3)
+    _nb_filters_1_1 = 40
+    _kernel_size_1_1 = (3, 3)
+    _padding_1_1 = 'same'
+    _nb_filters_1_2 = 40
+    _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
-    _nb_filters_2 = 64
-    _kernel_size_2 = (5, 5)
+    _nb_filters_2_1 = 64
+    _kernel_size_2_1 = (3, 3)
+    _padding_2_1 = 'same'
+    _nb_filters_2_2 = 64
+    _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
+
     # mlp layer parameters
-    _mlp_units = 128
-    _mlp_activation = 'sigmoid'
-    _mlp_dropout = 0.2
+    _mlp_units_1 = 512
+    _mlp_activation_1 = 'relu'
+    _mlp_dropout_1 = 0.6
+    _mlp_units_2 = 256
+    _mlp_activation_2 = 'relu'
+    _mlp_dropout_2 = 0.6
+
     # output_aux layer parameters
     _output_units = yao_indices_dim
 #     add some regularizers to overcome the overfit
@@ -241,23 +271,32 @@ def k_cnn2_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
 
     print('Build 2 * CNN + MLP model...')
     cnn2_mlp = Sequential()
-    cnn2_mlp.add(Conv2D(filters=_nb_filters_1,
-                        kernel_size=_kernel_size_1, input_shape=tongue_image_shape))
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                        padding=_padding_1_1, input_shape=tongue_image_shape))
+    cnn2_mlp.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_1_2,
+                        kernel_size=_kernel_size_1_2))
     cnn2_mlp.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp.add(Conv2D(filters=_nb_filters_2,
-                        kernel_size=_kernel_size_2))
+    cnn2_mlp.add(BatchNormalization())
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_2_1, kernel_size=_kernel_size_2_1,
+                        padding=_padding_2_1))
+    cnn2_mlp.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp.add(Conv2D(filters=_nb_filters_2_2,
+                        kernel_size=_kernel_size_2_2))
     cnn2_mlp.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp.add(BatchNormalization())
 
     cnn2_mlp.add(Flatten())
-    cnn2_mlp.add(
-        Dense(units=_mlp_units, activation=_mlp_activation, name='intermediate_dense'))
-    cnn2_mlp.add(Dropout(rate=_mlp_dropout))
-#     cnn2_mlp.add(BatchNormalization())
+    cnn2_mlp.add(Dense(units=_mlp_units_1, activation=_mlp_activation_1))
+    cnn2_mlp.add(Dropout(rate=_mlp_dropout_1))
+    cnn2_mlp.add(Dense(
+        units=_mlp_units_2, activation=_mlp_activation_2, name='intermediate_dense'))
+    cnn2_mlp.add(Dropout(rate=_mlp_dropout_2))
+#     cnn2_mlp_model.add(BatchNormalization())
 
     image_input = Input(shape=tongue_image_shape)
     features = cnn2_mlp(image_input)
@@ -488,12 +527,13 @@ def loadStoredModel(frame_path, record_path,
 #     yaml_str = frameFile.readline()
     json_str = frameFile.readline()
     model = model_from_json(json_str)
-    if compile_info['recompile'] == True: # if need to recompile
+    if compile_info['recompile'] == True:  # if need to recompile
         _scaling_activation = 'tfidf' if compile_info['use_tfidf_tensor'] == True else 'binary'
         if compile_info['aux_output'] == False:
             model = compiler(model, scaling_activation=_scaling_activation)
         else:
-            model = double_output_compiler(model, scaling_activation=_scaling_activation)
+            model = double_output_compiler(
+                model, scaling_activation=_scaling_activation)
     model.load_weights(record_path)
     frameFile.close()
 

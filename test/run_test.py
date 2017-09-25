@@ -9,7 +9,7 @@ Created on 2017年9月15日
 from interface.tools import get_config
 from test import test_tongue_generator
 
-config = get_config('interface.ini')
+config = get_config('../interface.ini')
 
 
 def test_storage_model(frame_name):
