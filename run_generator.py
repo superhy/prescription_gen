@@ -126,7 +126,11 @@ def train_predict_face2text_gen():
         print(' '.join(yaofang_output) + '\n')
 
 
-def train_predict_tongue2text_gen():
+def train_predict_tongue2text_gen(train_new=True):
+    '''
+    @param train_new: flag of train a new model model and replace the model on disk 
+    '''
+    
     patient_tongue_dir = config['root_path'] + \
         config['original_path'] + 'tongue_9585'
     tongue_zhiliao_path = config['root_path'] + \
@@ -154,16 +158,17 @@ def train_predict_tongue2text_gen():
     '''
     # store keras layers_framework(optional, gen_frame_path==None or not)
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2mlp_9585_act(tfidf)_t3_20it.json'
+        frame_name = 'tongue2text_cnn2mlp_9585_act(tfidf)_t3_100it.json'
     else:
-        frame_name = 'tongue2text_cnn2mlp_9585_act(bi)_t3_20it.json'
+        frame_name = 'tongue2text_cnn2mlp_9585_act(bi)_t3_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
 
     train_on_batch = False  # switch train_on_batch or not
-    _ = patient_tongue_generator.tongue_gen_trainer(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-        gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor)
+    if train_new == True:
+        _ = patient_tongue_generator.tongue_gen_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+            gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor)
 
     '''
     The part of load a trained gen_model from disk,
@@ -221,7 +226,11 @@ def train_predict_tongue2text_gen():
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
 
-def train_predict_tongue2text_gen_withlda():
+def train_predict_tongue2text_gen_withlda(train_new=True):
+    '''
+    @param train_new: flag of train a new model model and replace the model on disk 
+    '''
+    
     patient_tongue_dir = config['root_path'] + \
         config['original_path'] + 'tongue_9585'
     tongue_zhiliao_path = config['root_path'] + \
@@ -257,9 +266,9 @@ def train_predict_tongue2text_gen_withlda():
         use_tfidf_tensor=_use_tfidf_tensor)
     # store keras layers_framework(optional)
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(tfidf)_t3_20it.json'
+        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(tfidf)_t3_100it.json'
     else:
-        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(bi)_t3_20it.json'
+        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(bi)_t3_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     tongue2text_gen.storageModel(
@@ -321,6 +330,12 @@ def train_predict_tongue2text_gen_withlda():
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
+# train_predict_text2text_gen()
+
+# train_predict_face2text_gen()
+train_predict_tongue2text_gen(train_new=True)
+'''keras layer model with double output(lda) to help generator to specify prescription direction'''
+# train_predict_tongue2text_gen_withlda()
 
 def train_predict_tongue2text_sklearn_gen(step=0):
     '''
@@ -347,7 +362,7 @@ def train_predict_tongue2text_sklearn_gen(step=0):
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    frame_name = 'test_tongue2text_cnn2mlp_9585_act(bi)_t3_20it.json'
+    frame_name = 'test_tongue2text_cnn2mlp_9585_act(bi)_t3_100it.json'
     if step == 0:
         '''
         The part of train a new sklearn_gen_model
@@ -425,14 +440,6 @@ def train_predict_tongue2text_sklearn_gen(step=0):
 
         print('------Average Score: average precision: %f, average recall: %f, error: %f' %
               (np.average(precisions), np.average(recalls), np.average(errors)))
-
-
-# train_predict_text2text_gen()
-
-# train_predict_face2text_gen()
-train_predict_tongue2text_gen()
-'''keras layer model with double output(lda) to help generator to specify prescription direction'''
-# train_predict_tongue2text_gen_withlda()
 
 '''use keras model scratch the features and use sklearn do generator'''
 # train_predict_tongue2text_sklearn_gen(step=1)
