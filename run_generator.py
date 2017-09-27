@@ -158,9 +158,9 @@ def train_predict_tongue2text_gen(train_new=True):
     '''
     # store keras layers_framework(optional, gen_frame_path==None or not)
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2mlp_9585_act(tfidf)_t3_100it.json'
+        frame_name = 'tongue2text_cnn2passmlp_9585_act(tfidf)_t3_100it.json'
     else:
-        frame_name = 'tongue2text_cnn2mlp_9585_act(bi)_t3_100it.json'
+        frame_name = 'tongue2text_cnn2passmlp_9585_act(bi)_t3_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
 
@@ -266,9 +266,9 @@ def train_predict_tongue2text_gen_withlda(train_new=True):
         use_tfidf_tensor=_use_tfidf_tensor)
     # store keras layers_framework(optional)
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(tfidf)_t3_100it.json'
+        frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(tfidf)_t3_100it.json'
     else:
-        frame_name = 'tongue2text_cnn2mlp_lda_9585_act(bi)_t3_100it.json'
+        frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(bi)_t3_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
     tongue2text_gen.storageModel(

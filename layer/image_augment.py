@@ -7,6 +7,7 @@ Created on 2017年9月26日
 '''
 from keras.preprocessing.image import ImageDataGenerator
 
+import numpy as np
 
 def image_augment_gen():
 
@@ -32,16 +33,29 @@ def image_augment_gen():
     
     return datagen
 
-def augmenter(datagen, src_path, save_path):
+def data_tensoration_augment(datagen, original_x, original_y, batch_size=64, times=100):
+    '''
+    randomly generate image tensor from original_x ONE BY ONE
+        correspondingly, copy label from original_y
+    '''
     
-    aug_batch_size = 256
+    augmented_x = list(original_x)
+    augmented_y = list(original_y)
     
-    aug_data_generator = datagen.flow_from_directory(
-        src_path,  # this is the target directory
-        target_size=(224, 224),  # all images will be resized to 224,224
-        batch_size=aug_batch_size,
-        shuffle=True,
-        class_mode='categorical', color_mode='rgb',save_to_dir=save_path,save_format='jpeg',save_prefix='pre')
+    for _ in range(times):
+        aug_ids = np.random.randint(0, len(original_x), size=batch_size)
+        print('randomly augment image ids: {0}'.format(aug_ids))
+        for i in aug_ids:
+            augmented_x.append(datagen.random_transform(original_x[i]))
+            augmented_y.append(original_y[i])
+    del(original_x)
+    del(original_y)
+    
+    augmented_x = np.asarray(augmented_x)
+    augmented_y = np.asarray(augmented_y)
+    print('augmented data num: {}'.format(len(augmented_x)))
+    
+    return augmented_x, augmented_y
 
 if __name__ == '__main__':
     pass

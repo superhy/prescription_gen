@@ -73,7 +73,7 @@ def tongue_sklearn_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     scaling_act_type = 'binary'
     print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
           (0, scaling_act_type))
-    tongue_gen_model = tongue2text_sklearn_gen.k_cnn2_mlp(
+    tongue_gen_model = tongue2text_sklearn_gen.k_cnn2pass_mlp(
         yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True)
     trained_tongue_gen_model, history = tongue2text_sklearn_gen.keras_trainer(
         tongue_gen_model, train_x, train_y)

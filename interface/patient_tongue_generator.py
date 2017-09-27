@@ -82,15 +82,17 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     train_y = total_y[: len(total_y) - 200]
 #     train_x = total_tongue_x[200:]
 #     train_y = total_y[200:]
+    del(total_tongue_x)
+    del(total_y)
 
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
           (train_on_batch, scaling_act_type))
     if use_tfidf_tensor == True:
-        tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
+        tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp(
             yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='tfidf')
     else:
-        tongue_gen_model = tongue2text_gen.k_cnn2_mlp(
+        tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp(
             yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True, scaling_activation='binary')
 
     if train_on_batch == True:
@@ -167,12 +169,12 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     print('training 2 * cnn + mlp with double output(lda) tongue2text gen model------scaling_activation: %s...' %
           scaling_act_type)
     if use_tfidf_tensor == True:
-        tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
+        tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp_2output(yao_indices_dim=nb_yao,
                                                               tongue_image_shape=tongue_image_shape,
                                                               topics_dim=lda_model.num_topics,
                                                               with_compile=True, scaling_activation='tfidf')
     else:
-        tongue_gen_model = tongue2text_gen.k_cnn2_mlp_2output(yao_indices_dim=nb_yao,
+        tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp_2output(yao_indices_dim=nb_yao,
                                                               tongue_image_shape=tongue_image_shape,
                                                               topics_dim=lda_model.num_topics,
                                                               with_compile=True, scaling_activation='binary')
