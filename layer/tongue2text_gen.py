@@ -155,7 +155,7 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
-    _cnn_dropout_1 = 0.0
+    _cnn_dropout_1 = 0.2
 
     _nb_filters_2_1 = 64
     _kernel_size_2_1 = (3, 3)
@@ -164,7 +164,7 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
-    _cnn_dropout_2 = 0.0
+    _cnn_dropout_2 = 0.2
 
     # mlp layer parameters
     _mlp_units_1 = 128
@@ -191,13 +191,13 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_1.add(BatchNormalization())
+#     cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
                           kernel_size=_kernel_size_2_1))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_1.add(BatchNormalization())
+#     cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Flatten())
     features_1 = cnn2_mlp_1(image_input)
     
@@ -210,13 +210,13 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_2.add(BatchNormalization())
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                           kernel_size=_kernel_size_2_2))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_2.add(BatchNormalization())
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
     features_2 = cnn2_mlp_2(image_input)
     
@@ -261,7 +261,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
-    _cnn_dropout_1 = 0.0
+    _cnn_dropout_1 = 0.2
 
     _nb_filters_2_1 = 64
     _kernel_size_2_1 = (3, 3)
@@ -270,7 +270,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
-    _cnn_dropout_2 = 0.0
+    _cnn_dropout_2 = 0.2
 
     # mlp layer parameters
     _mlp_units_1 = 128
@@ -303,13 +303,13 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_1.add(BatchNormalization())
+#     cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
                           kernel_size=_kernel_size_2_1))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_1.add(BatchNormalization())
+#     cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Flatten())
     features_1 = cnn2_mlp_1(image_input)
     
@@ -322,13 +322,13 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_2.add(BatchNormalization())
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                           kernel_size=_kernel_size_2_2))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_2.add(BatchNormalization())
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
     features_2 = cnn2_mlp_2(image_input)
     
