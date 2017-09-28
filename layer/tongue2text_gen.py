@@ -408,18 +408,18 @@ def double_output_compiler(layers_model, scaling_activation):
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     if scaling_activation == 'tfidf':
-        _losses = {'gen_output': 'msle',
-                   'aux_output': 'categorical_crossentropy'}
 #         _losses = {'gen_output': 'msle',
-#                    'aux_output': 'binary_crossentropy'}
+#                    'aux_output': 'categorical_crossentropy'}
+        _losses = {'gen_output': 'msle',
+                   'aux_output': 'mape'}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 0.01}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.2}
     else:
-        _losses = {'gen_output': 'binary_crossentropy',
-                   'aux_output': 'categorical_crossentropy'}
 #         _losses = {'gen_output': 'binary_crossentropy',
-#                    'aux_output': 'binary_crossentropy'}
-        _loss_weights = {'gen_output': 1., 'aux_output': 0.01}
+#                    'aux_output': 'categorical_crossentropy'}
+        _losses = {'gen_output': 'binary_crossentropy',
+                   'aux_output': 'mape'}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.2}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
