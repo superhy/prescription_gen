@@ -155,7 +155,7 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
-    _cnn_dropout_1 = 0.2
+    _cnn_dropout_1 = 0.0
 
     _nb_filters_2_1 = 64
     _kernel_size_2_1 = (3, 3)
@@ -164,15 +164,20 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
-    _cnn_dropout_2 = 0.2
+    _cnn_dropout_2 = 0.0
 
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.6
+    _mlp_dropout_1 = 0.0
     _mlp_units_2 = 128
     _mlp_activation_2 = 'relu'
-    _mlp_dropout_2 = 0.6
+    if scaling_activation == 'tfidf':
+        _mlp_dropout_2 = 0.8
+    else:
+        _mlp_dropout_2 = 0.6
+        
+    # output layer parameters
     _output_units = yao_indices_dim
     _output_kernel_regularizer = None
     if scaling_activation == 'tfidf':
@@ -191,13 +196,13 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
                           kernel_size=_kernel_size_2_1))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Flatten())
     features_1 = cnn2_mlp_1(image_input)
     
@@ -210,13 +215,13 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-#     cnn2_mlp_2.add(BatchNormalization())
+    cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                           kernel_size=_kernel_size_2_2))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-#     cnn2_mlp_2.add(BatchNormalization())
+    cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
     features_2 = cnn2_mlp_2(image_input)
     
@@ -226,10 +231,11 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
     concatenated = keras.layers.concatenate([features_1, features_2], axis=-1)
     cnn2pass_mlp = Dense(units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_1)(cnn2pass_mlp)
+    cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
     cnn2pass_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
                          name='intermediate_dense')(cnn2pass_mlp)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_2)(cnn2pass_mlp)
-#     cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
+    # cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
 
     gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
                        activation=_output_activation, name='gen_output')(cnn2pass_mlp)
@@ -275,10 +281,13 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.6
+    _mlp_dropout_1 = 0.0
     _mlp_units_2 = 128
     _mlp_activation_2 = 'relu'
-    _mlp_dropout_2 = 0.6
+    if scaling_activation == 'tfidf':
+        _mlp_dropout_2 = 0.8
+    else:
+        _mlp_dropout_2 = 0.6
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -338,6 +347,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     concatenated = keras.layers.concatenate([features_1, features_2], axis=-1)
     cnn2pass_mlp = Dense(units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_1)(cnn2pass_mlp)
+    cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
     cnn2pass_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
                          name='intermediate_dense')(cnn2pass_mlp)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_2)(cnn2pass_mlp)

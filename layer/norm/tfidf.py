@@ -27,11 +27,13 @@ sys.setdefaultencoding('utf8')
 # weight example: [ [0.292070034636, 0.0, ..., 0.248286212953,...], [...], ...]
 # weight[i][j]: i is the num of document, j is the num of word
 # weight[i][j] is tf-idf in i document and j word
-def get_tf_idf(corpus, scaling_rate=100.0):
+def get_tf_idf(corpus, scaling_rate=(500., 0.)):
     '''
-    @param scaling_rate: scaling the tfidf weight as this rate
+    @param scaling_rate = (a, b): 'a' scaling the tfidf weight as this rate
             such as "* 100" or "* 0.1"
             default set as 100.0
+                                'b' add the bias
+            weight = weight * a + b
     '''
     
     vectorizer= CountVectorizer()
@@ -41,7 +43,7 @@ def get_tf_idf(corpus, scaling_rate=100.0):
     transformer = TfidfTransformer()
     tfidf = transformer.fit_transform(X)
     weight = tfidf.toarray()
-    weight *= scaling_rate
+    weight = weight * scaling_rate[0] + scaling_rate[1]
     
     return word, weight
 
