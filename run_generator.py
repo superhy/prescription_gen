@@ -258,29 +258,32 @@ def train_predict_tongue2text_gen_withlda(train_new=True):
     lda_model_name = 'tongue_9585_gensim_lda.topic'
     lda_model_path = config['root_path'] + \
         config['cache_path'] + 'nlp/' + lda_model_name
-    _lda_replace = True  # first time is True, other is False if not needed
-#     _lda_replace = False
-    trained_gen_model = patient_tongue_generator.tongue_gen_withlda_trainer(
-        tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-        lda_model_path, lda_replace=_lda_replace,
-        use_tfidf_tensor=_use_tfidf_tensor)
-    # store keras layers_framework(optional)
+#     _lda_replace = True  # first time is True, other is False if not needed
+    _lda_replace = False
+    
     if _use_tfidf_tensor == True:
         frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(tfidf)_t3_100it.json'
     else:
         frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(bi)_t3_100it.json'
     gen_frame_path = config['root_path'] + \
         config['cache_path'] + 'keras/' + frame_name
-    tongue2text_gen.storageModel(
-        model=trained_gen_model, frame_path=gen_frame_path)
+    
+    if train_new == True:
+        _ = patient_tongue_generator.tongue_gen_withlda_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+            lda_model_path, gen_model_path=gen_frame_path, lda_replace=_lda_replace,
+            use_tfidf_tensor=_use_tfidf_tensor)
 
     '''
     The part of load a trained gen_model from disk,
     the trained gen_model will be reload and use to eval and predict directly,
     without retraining which is for time saving
     '''
-#     trained_gen_model = tongue2text_gen.loadStoredModel(
-#         gen_frame_path, gen_frame_path.replace('.json', '.h5'))
+    trained_gen_model = tongue2text_gen.loadStoredModel(
+        gen_frame_path, gen_frame_path.replace('.json', '.h5'),
+        compile_info={'recompile': True,
+                      'aux_output': True,
+                      'use_tfidf_tensor': _use_tfidf_tensor})
 
     # test
     # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]
@@ -333,9 +336,9 @@ def train_predict_tongue2text_gen_withlda(train_new=True):
 # train_predict_text2text_gen()
 
 # train_predict_face2text_gen()
-train_predict_tongue2text_gen(train_new=True)
+# train_predict_tongue2text_gen(train_new=False)
 '''keras layer model with double output(lda) to help generator to specify prescription direction'''
-# train_predict_tongue2text_gen_withlda()
+train_predict_tongue2text_gen_withlda(train_new=True)
 
 def train_predict_tongue2text_sklearn_gen(step=0):
     '''

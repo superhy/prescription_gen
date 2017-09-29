@@ -25,8 +25,10 @@ import keras
 from keras.layers.merge import Concatenate
 
 
+from keras import backend as K
+
 _default_batch_size = 32
-_default_epochs = 100
+_default_epochs = 50
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
@@ -267,7 +269,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
     _pool_size_1 = (2, 2)
-    _cnn_dropout_1 = 0.2
+    _cnn_dropout_1 = 0.0
 
     _nb_filters_2_1 = 64
     _kernel_size_2_1 = (3, 3)
@@ -276,18 +278,18 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
     _pool_size_2 = (2, 2)
-    _cnn_dropout_2 = 0.2
+    _cnn_dropout_2 = 0.0
 
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.0
+    _mlp_dropout_1 = 0.5
     _mlp_units_2 = 128
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
     else:
-        _mlp_dropout_2 = 0.6
+        _mlp_dropout_2 = 0.5
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -312,13 +314,13 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
                           kernel_size=_kernel_size_2_1))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Flatten())
     features_1 = cnn2_mlp_1(image_input)
     
@@ -331,13 +333,13 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-#     cnn2_mlp_2.add(BatchNormalization())
+    cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                           kernel_size=_kernel_size_2_2))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-#     cnn2_mlp_2.add(BatchNormalization())
+    cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
     features_2 = cnn2_mlp_2(image_input)
     
@@ -347,7 +349,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     concatenated = keras.layers.concatenate([features_1, features_2], axis=-1)
     cnn2pass_mlp = Dense(units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_1)(cnn2pass_mlp)
-    cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
+#     cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
     cnn2pass_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
                          name='intermediate_dense')(cnn2pass_mlp)
     cnn2pass_mlp = Dropout(rate=_mlp_dropout_2)(cnn2pass_mlp)
@@ -403,23 +405,28 @@ def double_output_compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
-#     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
+#     _optimizer = SGD(lr=0.015, decay=1e-7, momentum=0.9)
     _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
+
+    def mean_kl_divergence(y_true, y_pred):
+        y_true = K.clip(y_true, K.epsilon(), 1)
+        y_pred = K.clip(y_pred, K.epsilon(), 1)
+        return K.mean(y_true * K.log(y_true / y_pred), axis=-1)
 
     if scaling_activation == 'tfidf':
 #         _losses = {'gen_output': 'msle',
 #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'msle',
-                   'aux_output': 'mape'}
+                   'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 0.2}
+        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
     else:
 #         _losses = {'gen_output': 'binary_crossentropy',
 #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
-                   'aux_output': 'mape'}
-        _loss_weights = {'gen_output': 1., 'aux_output': 0.2}
+                   'aux_output': mean_kl_divergence}
+        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)

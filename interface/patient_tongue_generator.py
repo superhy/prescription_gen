@@ -139,7 +139,7 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
 
 def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                               lda_model_path, lda_replace=False, use_tfidf_tensor=False):
+                               lda_model_path, gen_model_path=None, lda_replace=False, use_tfidf_tensor=False):
     '''
     can not use train_on_batch
     @param lda_replace: flag of lda need replace by a new one or not 
@@ -179,8 +179,18 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
                                                               topics_dim=lda_model.num_topics,
                                                               with_compile=True, scaling_activation='binary')
 
+#     trained_tongue_gen_model, history = tongue2text_gen.trainer(
+#         tongue_gen_model, train_tongue_x, train_y, train_aux_y)
+    
+    record_path = None
+    if gen_model_path != None:
+        record_path = gen_model_path.replace('json', 'h5')
     trained_tongue_gen_model, history = tongue2text_gen.trainer(
-        tongue_gen_model, train_tongue_x, train_y, train_aux_y)
+        tongue_gen_model, train_tongue_x, train_y, train_aux_y=train_aux_y,
+        best_record_path=record_path)
+    if gen_model_path != None:
+        tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
+                                         replace_record=False)
 
     print('history: {0}'.format(history))
 
@@ -305,7 +315,7 @@ def ratio_outputfilter(output, ratio=0.015):
     pass
 
 
-def threshold_outputfilter(output, threshold=10.):
+def threshold_outputfilter(output, threshold=0.3):
     '''
     use arg(output > threshold)
     '''
