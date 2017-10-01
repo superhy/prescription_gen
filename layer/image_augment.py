@@ -57,5 +57,34 @@ def data_tensoration_augment(datagen, original_x, original_y, batch_size=64, tim
     
     return augmented_x, augmented_y
 
+def data_tensoration_augment_withaux(datagen, original_x, original_y, original_aux_y,
+                                     batch_size=64, times=100):
+    '''
+    randomly generate image tensor with aux label(such as lda) from original_x ONE BY ONE
+        correspondingly, copy label from original_y
+    '''
+    
+    augmented_x = list(original_x)
+    augmented_y = list(original_y)
+    augmented_aux_y = list(original_aux_y)
+    
+    for _ in range(times):
+        aug_ids = np.random.randint(0, len(original_x), size=batch_size)
+        print('randomly augment image ids: {0}'.format(aug_ids))
+        for i in aug_ids:
+            augmented_x.append(datagen.random_transform(original_x[i]))
+            augmented_y.append(original_y[i])
+            augmented_aux_y.append(original_aux_y[i])
+    del(original_x)
+    del(original_y)
+    del(original_aux_y)
+    
+    augmented_x = np.asarray(augmented_x)
+    augmented_y = np.asarray(augmented_y)
+    augmented_aux_y = np.asarray(augmented_aux_y)
+    print('augmented data num: {}'.format(len(augmented_x)))
+    
+    return augmented_x, augmented_y, augmented_aux_y
+
 if __name__ == '__main__':
     pass

@@ -28,7 +28,7 @@ def list_int2str(list2d_int):
     return list2d_str
 
 
-def lda_trainer(sentences, modelPath=None, nb_topics=200, multicore=False):
+def lda_trainer(sentences, modelPath=None, nb_topics=100, multicore=False):
     '''
     @return: lda_model: the lda_model model trained by gensim, dictionary: all terms dictionary in lda_model model
     '''

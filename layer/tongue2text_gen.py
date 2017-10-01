@@ -104,7 +104,7 @@ def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_sh
     tongue_yaofangs_str = lda.list_int2str(tongue_yaofangs)
 #     print(tongue_yaofangs_str)
 
-    print('ready data_tensorization_tfidf...')
+    print('ready data_tensorization_tfidf(just prepare, can be delete)...')
     yaofangs_corpus = tfidf.list2corpus(tongue_yaofangs)
     word, weight = tfidf.get_tf_idf(yaofangs_corpus)
     if use_tfidf_tensor == False:
@@ -178,7 +178,7 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
         _mlp_dropout_2 = 0.8
     else:
         _mlp_dropout_2 = 0.6
-        
+
     # output layer parameters
     _output_units = yao_indices_dim
     _output_kernel_regularizer = None
@@ -188,59 +188,61 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
         _output_activation = 'sigmoid'
         # _output_activation = 'softmax'
 
-    print('Build 2 * CNN with 2 passway + (merge) + MLP model...')
-    
+    print('Build 2 * CNN with 2 channel + (merge) + MLP model...')
+
     image_input = Input(shape=tongue_image_shape)
-    
-    cnn2_mlp_1 = Sequential()
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
-                          input_shape=tongue_image_shape))
-    cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
-                          kernel_size=_kernel_size_2_1))
-    cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
-    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Flatten())
-    features_1 = cnn2_mlp_1(image_input)
-    
+
+    cnn2_1 = Sequential()
+    cnn2_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                      input_shape=tongue_image_shape))
+    cnn2_1.add(Activation(activation=_cnn_activation_1))
+    cnn2_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_1.add(BatchNormalization())
+    cnn2_1.add(Conv2D(filters=_nb_filters_2_1,
+                      kernel_size=_kernel_size_2_1))
+    cnn2_1.add(Activation(activation=_cnn_activation_2))
+    cnn2_1.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_1.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_1.add(BatchNormalization())
+    cnn2_1.add(Flatten())
+    cnn2_channel_1 = cnn2_1(image_input)
+
     # print left pass framework
-    cnn2_mlp_1.summary()
+    cnn2_1.summary()
 
-    cnn2_mlp_2 = Sequential()
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
-                          input_shape=tongue_image_shape))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_2.add(BatchNormalization())
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
-                          kernel_size=_kernel_size_2_2))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_2.add(BatchNormalization())
-    cnn2_mlp_2.add(Flatten())
-    features_2 = cnn2_mlp_2(image_input)
-    
+    cnn2_2 = Sequential()
+    cnn2_2.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
+                      input_shape=tongue_image_shape))
+    cnn2_2.add(Activation(activation=_cnn_activation_1))
+    cnn2_2.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_2.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_2.add(BatchNormalization())
+    cnn2_2.add(Conv2D(filters=_nb_filters_2_2,
+                      kernel_size=_kernel_size_2_2))
+    cnn2_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_2.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_2.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_2.add(BatchNormalization())
+    cnn2_2.add(Flatten())
+    cnn2_channel_2 = cnn2_2(image_input)
+
     # print right pass framework
-    cnn2_mlp_2.summary()
+    cnn2_2.summary()
 
-    concatenated = keras.layers.concatenate([features_1, features_2], axis=-1)
-    cnn2pass_mlp = Dense(units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
-    cnn2pass_mlp = Dropout(rate=_mlp_dropout_1)(cnn2pass_mlp)
-    cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
-    cnn2pass_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
-                         name='intermediate_dense')(cnn2pass_mlp)
-    cnn2pass_mlp = Dropout(rate=_mlp_dropout_2)(cnn2pass_mlp)
-    # cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
+    concatenated = keras.layers.concatenate(
+        [cnn2_channel_1, cnn2_channel_2], axis=-1)
+    cnn2channel_mlp = Dense(
+        units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
+    cnn2channel_mlp = Dropout(rate=_mlp_dropout_1)(cnn2channel_mlp)
+    cnn2channel_mlp = BatchNormalization()(cnn2channel_mlp)
+    cnn2channel_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
+                            name='intermediate_dense')(cnn2channel_mlp)
+    cnn2channel_mlp = Dropout(rate=_mlp_dropout_2)(cnn2channel_mlp)
+    # cnn2channel_mlp = BatchNormalization()(cnn2channel_mlp)
 
     gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
-                       activation=_output_activation, name='gen_output')(cnn2pass_mlp)
+                       activation=_output_activation, name='gen_output')(cnn2channel_mlp)
     cnn2pass_mlp_model = Model(inputs=image_input, outputs=gen_output)
 
     # print final framework
@@ -254,13 +256,13 @@ def k_cnn2pass_mlp(yao_indices_dim, tongue_image_shape,
 
 
 def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
-                       with_compile=True, scaling_activation='binary'):
+                           with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
     '2output' means this layer model has double output(LDA)
     @param scaling_activation: is for main output use tfidf(relu) output or not
     '''
-    
+
     # cnn layer parameters
     _nb_filters_1_1 = 32
     _kernel_size_1_1 = (3, 3)
@@ -283,13 +285,18 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.5
+    _mlp_dropout_1 = 0.6
     _mlp_units_2 = 128
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
     else:
-        _mlp_dropout_2 = 0.5
+        _mlp_dropout_2 = 0.6
+
+    # aux_mlp layer parameters only follow cnn2_channel_2
+    _aux_mlp_units_1 = 128
+    _aux_mlp_activation_1 = 'relu'
+    _aux_mlp_dropout_1 = 0.6
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -304,65 +311,74 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _aux_output_activation = 'softmax'
 #     _aux_output_activation = 'sigmoid'
 
-    print('Build 2 * CNN with 2 passway + (merge) + MLP model...')
+    print('Build 2 * CNN with 2 channel + (merge) + MLP model and AUX_MLP...')
 
     image_input = Input(shape=tongue_image_shape)
-    
-    cnn2_mlp_1 = Sequential()
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
-                          input_shape=tongue_image_shape))
-    cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
-                          kernel_size=_kernel_size_2_1))
-    cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
-    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Flatten())
-    features_1 = cnn2_mlp_1(image_input)
-    
-    # print left pass framework
-    cnn2_mlp_1.summary()
 
-    cnn2_mlp_2 = Sequential()
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
-                          input_shape=tongue_image_shape))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
-    cnn2_mlp_2.add(BatchNormalization())
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
-                          kernel_size=_kernel_size_2_2))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
-    cnn2_mlp_2.add(BatchNormalization())
-    cnn2_mlp_2.add(Flatten())
-    features_2 = cnn2_mlp_2(image_input)
-    
-    # print right pass framework
-    cnn2_mlp_2.summary()
+    cnn2_1 = Sequential()
+    cnn2_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                      input_shape=tongue_image_shape))
+    cnn2_1.add(Activation(activation=_cnn_activation_1))
+    cnn2_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_1.add(BatchNormalization())
+    cnn2_1.add(Conv2D(filters=_nb_filters_2_1,
+                      kernel_size=_kernel_size_2_1))
+    cnn2_1.add(Activation(activation=_cnn_activation_2))
+    cnn2_1.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_1.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_1.add(BatchNormalization())
+    cnn2_1.add(Flatten())
+    cnn2_channel_1 = cnn2_1(image_input)
 
-    concatenated = keras.layers.concatenate([features_1, features_2], axis=-1)
-    cnn2pass_mlp = Dense(units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
-    cnn2pass_mlp = Dropout(rate=_mlp_dropout_1)(cnn2pass_mlp)
-#     cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
-    cnn2pass_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
-                         name='intermediate_dense')(cnn2pass_mlp)
-    cnn2pass_mlp = Dropout(rate=_mlp_dropout_2)(cnn2pass_mlp)
-#     cnn2pass_mlp = BatchNormalization()(cnn2pass_mlp)
+    # print left channel framework
+    cnn2_1.summary()
+
+    cnn2_2 = Sequential()
+    cnn2_2.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
+                      input_shape=tongue_image_shape))
+    cnn2_2.add(Activation(activation=_cnn_activation_1))
+    cnn2_2.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_2.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_2.add(BatchNormalization())
+    cnn2_2.add(Conv2D(filters=_nb_filters_2_2,
+                      kernel_size=_kernel_size_2_2))
+    cnn2_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_2.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_2.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_2.add(BatchNormalization())
+    cnn2_2.add(Flatten())
+    cnn2_channel_2 = cnn2_2(image_input)
+    
+    # print right channel framework
+    cnn2_2.summary()
+
+    concatenated = keras.layers.concatenate(
+        [cnn2_channel_1, cnn2_channel_2], axis=-1)
+    cnn2channels_mlp = Dense(
+        units=_mlp_units_1, activation=_mlp_activation_1)(concatenated)
+    cnn2channels_mlp = Dropout(rate=_mlp_dropout_1)(cnn2channels_mlp)
+#     cnn2channels_mlp = BatchNormalization()(cnn2channels_mlp)
+    cnn2channels_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
+                             name='intermediate_dense')(cnn2channels_mlp)
+    cnn2channels_mlp = Dropout(rate=_mlp_dropout_2)(cnn2channels_mlp)
+#     cnn2channels_mlp = BatchNormalization()(cnn2channels_mlp)
 
     '''
     The first output is the main output for prescription generation
     The second output is the aux output for prescription topic recognition
     '''
+    # main gen_output get features from both cnn2 channel_1 and
+    # channel_2(merge)
     gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
-                       activation=_output_activation, name='gen_output')(cnn2pass_mlp)
+                       activation=_output_activation, name='gen_output')(cnn2channels_mlp)
+    # aux_output only get features from only cnn2 channel_2
+    cnn_auxchannel_mlp = Dense(units=_aux_mlp_units_1, activation=_aux_mlp_activation_1,
+                               name='aux_dense')(cnn2_channel_2)
+    cnn_auxchannel_mlp = Dropout(rate=_aux_mlp_dropout_1)(cnn_auxchannel_mlp)
+#     cnn_auxchannel_mlp = BatchNormalization()(cnn_auxchannel_mlp)
     aux_output = Dense(units=_aux_output_units,
-                       activation=_aux_output_activation, name='aux_output')(cnn2pass_mlp)
+                       activation=_aux_output_activation, name='aux_output')(cnn_auxchannel_mlp)
 
     cnn2_mlp_2output_model = Model(inputs=image_input, outputs=[
                                    gen_output, aux_output])
@@ -385,7 +401,7 @@ def compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
-#     _optimizer = SGD(lr=0.02, decay=1e-8, momentum=0.9)
+#     _optimizer = SGD(lr=0.012, decay=1e-7, momentum=0.9)
     _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
@@ -405,7 +421,7 @@ def double_output_compiler(layers_model, scaling_activation):
     '''
     some compiler parameters
     '''
-#     _optimizer = SGD(lr=0.015, decay=1e-7, momentum=0.9)
+#     _optimizer = SGD(lr=0.012, decay=1e-7, momentum=0.9)
     _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
@@ -415,15 +431,15 @@ def double_output_compiler(layers_model, scaling_activation):
         return K.mean(y_true * K.log(y_true / y_pred), axis=-1)
 
     if scaling_activation == 'tfidf':
-#         _losses = {'gen_output': 'msle',
-#                    'aux_output': 'categorical_crossentropy'}
+        #         _losses = {'gen_output': 'msle',
+        #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
         _loss_weights = {'gen_output': 1., 'aux_output': 2.}
     else:
-#         _losses = {'gen_output': 'binary_crossentropy',
-#                    'aux_output': 'categorical_crossentropy'}
+        #         _losses = {'gen_output': 'binary_crossentropy',
+        #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
         _loss_weights = {'gen_output': 1., 'aux_output': 2.}
