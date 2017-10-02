@@ -296,7 +296,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # aux_mlp layer parameters only follow cnn2_channel_2
     _aux_mlp_units_1 = 128
     _aux_mlp_activation_1 = 'relu'
-    _aux_mlp_dropout_1 = 0.6
+    _aux_mlp_dropout_1 = 0.7
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -368,8 +368,7 @@ def k_cnn2pass_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     The first output is the main output for prescription generation
     The second output is the aux output for prescription topic recognition
     '''
-    # main gen_output get features from both cnn2 channel_1 and
-    # channel_2(merge)
+    # main gen_output get features from both cnn2 channel_1 and channel_2(merge)
     gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
                        activation=_output_activation, name='gen_output')(cnn2channels_mlp)
     # aux_output only get features from only cnn2 channel_2
@@ -436,13 +435,13 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.5}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
-        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.5}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
