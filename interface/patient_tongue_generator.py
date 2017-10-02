@@ -6,13 +6,14 @@ Created on 2017年8月8日
 @author: superhy, huiqiang
 '''
 
-from PIL import Image
 import os
 
-from layer import tongue2text_gen, tongue2text_sklearn_gen
+from PIL import Image
+from numpy.distutils.conv_template import replace_re
+
+from layer import tongue2text_gen, tongue2text_sklearn_gen, image_augment
 from layer.norm import lda
 import numpy as np
-from numpy.distutils.conv_template import replace_re
 
 
 def loadTongue2YaofangDict(tongue_zhiliao_path):
@@ -65,7 +66,8 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
 
 
 def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                       gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False):
+                       gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False,
+                       use_data_augment=False):
     '''
     @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
     '''
@@ -84,6 +86,12 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 #     train_y = total_y[200:]
     del(total_tongue_x)
     del(total_y)
+
+    if use_data_augment == True:
+        # just can be use on service 225 with big memory
+        datagen = image_augment.image_augment_gen()
+        train_x, train_y = image_augment.data_tensoration_augment(
+            datagen, train_x, train_y)
 
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
@@ -139,7 +147,8 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 
 
 def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-                               lda_model_path, gen_model_path=None, lda_replace=False, use_tfidf_tensor=False):
+                               lda_model_path, gen_model_path=None, lda_replace=False, use_tfidf_tensor=False,
+                               use_data_augment=False):
     '''
     can not use train_on_batch
     @param lda_replace: flag of lda need replace by a new one or not 
@@ -165,23 +174,29 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
     del(total_y)
     del(total_aux_y)
 
+    if use_data_augment == True:
+        # just can be use on service 225 with big memory
+        datagen = image_augment.image_augment_gen()
+        train_tongue_x, train_y, train_aux_y = image_augment.data_tensoration_augment_withaux(
+            datagen, train_tongue_x, train_y, train_aux_y)
+
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp with double output(lda) tongue2text gen model------scaling_activation: %s...' %
           scaling_act_type)
     if use_tfidf_tensor == True:
         tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp_2output(yao_indices_dim=nb_yao,
-                                                              tongue_image_shape=tongue_image_shape,
-                                                              topics_dim=lda_model.num_topics,
-                                                              with_compile=True, scaling_activation='tfidf')
+                                                                  tongue_image_shape=tongue_image_shape,
+                                                                  topics_dim=lda_model.num_topics,
+                                                                  with_compile=True, scaling_activation='tfidf')
     else:
         tongue_gen_model = tongue2text_gen.k_cnn2pass_mlp_2output(yao_indices_dim=nb_yao,
-                                                              tongue_image_shape=tongue_image_shape,
-                                                              topics_dim=lda_model.num_topics,
-                                                              with_compile=True, scaling_activation='binary')
+                                                                  tongue_image_shape=tongue_image_shape,
+                                                                  topics_dim=lda_model.num_topics,
+                                                                  with_compile=True, scaling_activation='binary')
 
 #     trained_tongue_gen_model, history = tongue2text_gen.trainer(
 #         tongue_gen_model, train_tongue_x, train_y, train_aux_y)
-    
+
     record_path = None
     if gen_model_path != None:
         record_path = gen_model_path.replace('json', 'h5')
@@ -190,7 +205,7 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         best_record_path=record_path)
     if gen_model_path != None:
         tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
-                                         replace_record=False)
+                                     replace_record=False)
 
     print('history: {0}'.format(history))
 

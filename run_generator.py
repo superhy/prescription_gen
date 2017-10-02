@@ -149,8 +149,11 @@ def train_predict_tongue2text_gen(train_new=True):
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
 
-    _use_tfidf_tensor = True  # set for use tfidf_tensor
-    # _use_tfidf_tensor = False
+#     _use_tfidf_tensor = True  # set for use tfidf_tensor
+    _use_tfidf_tensor = False
+    
+#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+    _use_data_augment = False
 
     '''
     The part of train a new gen_model and storage it on disk,
@@ -168,7 +171,8 @@ def train_predict_tongue2text_gen(train_new=True):
     if train_new == True:
         _ = patient_tongue_generator.tongue_gen_trainer(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-            gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor)
+            gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor,
+            use_data_augment=_use_data_augment)
 
     '''
     The part of load a trained gen_model from disk,
@@ -249,6 +253,9 @@ def train_predict_tongue2text_gen_withlda(train_new=True):
 #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
 
+#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+    _use_data_augment = False
+
     '''
     TODO: storage model and load it from disk
     
@@ -272,7 +279,8 @@ def train_predict_tongue2text_gen_withlda(train_new=True):
         _ = patient_tongue_generator.tongue_gen_withlda_trainer(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
             lda_model_path, gen_model_path=gen_frame_path, lda_replace=_lda_replace,
-            use_tfidf_tensor=_use_tfidf_tensor)
+            use_tfidf_tensor=_use_tfidf_tensor,
+            use_data_augment=_use_data_augment)
 
     '''
     The part of load a trained gen_model from disk,

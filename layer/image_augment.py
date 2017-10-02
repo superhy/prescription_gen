@@ -33,7 +33,8 @@ def image_augment_gen():
     
     return datagen
 
-def data_tensoration_augment(datagen, original_x, original_y, batch_size=64, times=100):
+def data_tensoration_augment(datagen, original_x, original_y,
+                             batch_size=64, times=100):
     '''
     randomly generate image tensor from original_x ONE BY ONE
         correspondingly, copy label from original_y
