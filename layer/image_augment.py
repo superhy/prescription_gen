@@ -80,9 +80,9 @@ def data_tensoration_augment_withaux(datagen, original_x, original_y, original_a
     del(original_y)
     del(original_aux_y)
     
-    augmented_x = np.asarray(augmented_x)
-    augmented_y = np.asarray(augmented_y)
-    augmented_aux_y = np.asarray(augmented_aux_y)
+    augmented_x = np.array(augmented_x)
+    augmented_y = np.array(augmented_y)
+    augmented_aux_y = np.array(augmented_aux_y)
     print('augmented data num: {}'.format(len(augmented_x)))
     
     return augmented_x, augmented_y, augmented_aux_y

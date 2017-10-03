@@ -145,7 +145,7 @@ def k_cnn_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     pass
 
 def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
-                   with_compile=True, scaling_activation='binary'):
+                       with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
     some layer parameters
@@ -236,16 +236,15 @@ def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
-    cnn2_mlp_1.add(Dense(units=_aux_mlp_units_1, activation=_aux_mlp_activation_1))
-    cnn2_mlp_1.add(Dropout(rate=_aux_mlp_dropout_1))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_2.add(Dense(units=_aux_mlp_units_1, activation=_aux_mlp_activation_1))
+    cnn2_mlp_2.add(Dropout(rate=_aux_mlp_dropout_1))
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_channel_2 = cnn2_mlp_2(image_input)
 
     # print right pass framework
     cnn2_mlp_2.summary()
 
-    concatenated = keras.layers.concatenate(
-        [cnn2_mlp_channel_1, cnn2_mlp_channel_2], axis=-1)
+    concatenated = keras.layers.concatenate([cnn2_mlp_channel_1, cnn2_mlp_channel_2])
     cnn2channel_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
                             name='intermediate_dense')(concatenated)
     cnn2channel_mlp = Dropout(rate=_mlp_dropout_2)(cnn2channel_mlp)
@@ -266,7 +265,7 @@ def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
 
 
 def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
-                           with_compile=True, scaling_activation='binary'):
+                               with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
     '2output' means this layer model has double output(LDA)
@@ -361,9 +360,9 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Flatten())
-    cnn2_mlp_1.add(Dense(units=_aux_mlp_units_1, activation=_aux_mlp_activation_1))
-    cnn2_mlp_1.add(Dropout(rate=_aux_mlp_dropout_1))
-#     cnn2_mlp_1.add(BatchNormalization())
+    cnn2_mlp_2.add(Dense(units=_aux_mlp_units_1, activation=_aux_mlp_activation_1))
+    cnn2_mlp_2.add(Dropout(rate=_aux_mlp_dropout_1))
+#     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_channel_2 = cnn2_mlp_2(image_input)
     
     # print right channel framework
@@ -503,6 +502,9 @@ def trainer(model, train_x, train_y, train_aux_y=[],
                   validation_split=validation_split,
                   callbacks=callbacks)
     else:
+        print(train_x)
+        print(train_y)
+        print(train_aux_y)
         model.fit(x=train_x, y={'gen_output': train_y, 'aux_output': train_aux_y},
                   batch_size=batch_size,
                   epochs=epochs,
