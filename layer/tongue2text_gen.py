@@ -331,11 +331,11 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_2_1,
-                      kernel_size=_kernel_size_2_1))
-    cnn2_mlp_1.add(Activation(activation=_cnn_activation_2))
-    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_2))
-    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2,
+                      kernel_size=_kernel_size_1_2))
+    cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
     cnn2_mlp_1.add(Flatten())
     cnn2_mlp_1.add(Dense(units=_mlp_units_1, activation=_mlp_activation_1))
@@ -347,11 +347,11 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.summary()
 
     cnn2_mlp_2 = Sequential()
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_1, kernel_size=_kernel_size_2_1,
                       input_shape=tongue_image_shape))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                       kernel_size=_kernel_size_2_2))
@@ -502,9 +502,6 @@ def trainer(model, train_x, train_y, train_aux_y=[],
                   validation_split=validation_split,
                   callbacks=callbacks)
     else:
-        print(train_x)
-        print(train_y)
-        print(train_aux_y)
         model.fit(x=train_x, y={'gen_output': train_y, 'aux_output': train_aux_y},
                   batch_size=batch_size,
                   epochs=epochs,
