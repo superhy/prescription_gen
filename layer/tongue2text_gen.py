@@ -28,7 +28,7 @@ from keras.layers.merge import Concatenate
 from keras import backend as K
 
 _default_batch_size = 32
-_default_epochs = 50
+_default_epochs = 80
 
 
 def data_tensorization(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao):
