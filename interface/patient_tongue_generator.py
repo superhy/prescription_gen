@@ -80,10 +80,10 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     # train data ratio
 #     train_ratio = 1.0
-    train_x = total_tongue_x[: len(total_tongue_x) - 200]
-    train_y = total_y[: len(total_y) - 200]
-#     train_x = total_tongue_x[200:]
-#     train_y = total_y[200:]
+    train_x = total_tongue_x[: len(total_tongue_x) - 500]
+    train_y = total_y[: len(total_y) - 500]
+#     train_x = total_tongue_x[500:]
+#     train_y = total_y[500:]
     del(total_tongue_x)
     del(total_y)
 
@@ -137,8 +137,8 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     # train data ratio
     test_ratio = 1.0
 #     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
-    test_x = total_x[len(total_x) - 200:]
-#     test_x = total_x[:200]
+    test_x = total_x[len(total_x) - 500:]
+#     test_x = total_x[:500]
 #     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
@@ -167,9 +167,9 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
 
-    train_tongue_x = total_tongue_x[: len(total_tongue_x) - 200]
-    train_y = total_y[: len(total_y) - 200]
-    train_aux_y = total_aux_y[: len(total_aux_y) - 200]
+    train_tongue_x = total_tongue_x[: len(total_tongue_x) - 500]
+    train_y = total_y[: len(total_y) - 500]
+    train_aux_y = total_aux_y[: len(total_aux_y) - 500]
     del(total_tongue_x)
     del(total_y)
     del(total_aux_y)
@@ -228,9 +228,9 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
 
-    test_tongue_x = total_tongue_x[len(total_tongue_x) - 200:]
-#     test_y = total_y[len(total_y) - 200:]
-#     test_aux_y = total_aux_y[len(total_aux_y) - 200:]
+    test_tongue_x = total_tongue_x[len(total_tongue_x) - 500:]
+#     test_y = total_y[len(total_y) - 500:]
+#     test_aux_y = total_aux_y[len(total_aux_y) - 500:]
 
     gen_output_list = tongue2text_gen.predictor(
         trained_gen_model, test_tongue_x)

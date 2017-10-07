@@ -305,7 +305,7 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
     _aux_mlp_units_1 = 64
     _aux_mlp_activation_1 = 'relu'
-    _aux_mlp_dropout_1 = 0.6
+    _aux_mlp_dropout_1 = 0.7
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -442,7 +442,7 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 2.0}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
@@ -459,7 +459,7 @@ def double_output_compiler(layers_model, scaling_activation):
 def trainer(model, train_x, train_y, train_aux_y=[],
             batch_size=_default_batch_size,
             epochs=_default_epochs,
-            validation_split=0.05,
+            validation_split=0.06,
             auto_stop=False,
             best_record_path=None):
 
