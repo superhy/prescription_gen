@@ -156,8 +156,8 @@ def train_predict_tongue2text_withlda_gen(train_new=True):
     lda_model_name = 'tongue_9585_gensim_lda.topic'
     lda_model_path = config['root_path'] + \
         config['cache_path'] + 'nlp/' + lda_model_name
-    _lda_replace = True  # first time is True, other is False if not needed
-#     _lda_replace = False
+#     _lda_replace = True  # first time is True, other is False if not needed
+    _lda_replace = False
     
     if _use_tfidf_tensor == True:
         frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(tfidf)_t3_100it.json'

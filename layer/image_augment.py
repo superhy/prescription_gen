@@ -12,12 +12,12 @@ import numpy as np
 def image_augment_gen():
 
     # randomly rotate images in the range (degrees, 0 to 180)
-    _rotation_range = 10
+    _rotation_range = 20
     # randomly shift images horizontally (fraction of total width)
-    _width_shift_range = 0.2
+    _width_shift_range = 0.05
     # randomly shift images vertically (fraction of total height)
-    _height_shift_range = 0.2
-    _shear_range = 0.2
+    _height_shift_range = 0.05
+    _shear_range = 0.05
     _zoom_range = 0.2
     _horizontal_flip = True  # randomly flip images
     _fill_mode = 'nearest'
@@ -59,7 +59,7 @@ def data_tensoration_augment(datagen, original_x, original_y,
     return augmented_x, augmented_y
 
 def data_tensoration_augment_withaux(datagen, original_x, original_y, original_aux_y,
-                                     batch_size=64, times=100):
+                                     batch_size=64, times=150):
     '''
     randomly generate image tensor with aux label(such as lda) from original_x ONE BY ONE
         correspondingly, copy label from original_y

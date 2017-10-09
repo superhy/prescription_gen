@@ -144,7 +144,7 @@ def data_tensorization_lda(tongue_image_arrays, tongue_yaofangs, tongue_image_sh
 def k_cnn_mlp(yao_indices_dim, tongue_image_shape, with_compile=True):
     pass
 
-def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
+def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
                        with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
@@ -152,22 +152,27 @@ def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
     '''
 
     # cnn channel_1 layer parameters
+    # use both on channel_1 step_1 cnn layers
     _nb_filters_1_1 = 64
     _kernel_size_1_1 = (3, 3)
 #     _padding_1_1 = 'same'
+    # use both on channel_1 step_2 cnn layers
     _nb_filters_1_2 = 64
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
+    # use both on channel_1 pooling layers
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
-    # cnn channel_2(aux) layer parameters
+    # use both on channel_1 step_1 cnn layers
     _nb_filters_2_1 = 32
     _kernel_size_2_1 = (3, 3)
 #     _padding_2_1 = 'same'
+    # use both on channel_1 step_2 cnn layers
     _nb_filters_2_2 = 32
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
+    # use both on channel_1 pooling layers
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
 
@@ -264,7 +269,7 @@ def k_cnn2channels_mlp(yao_indices_dim, tongue_image_shape,
         return cnn2pass_mlp_model
 
 
-def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
+def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
                                with_compile=True, scaling_activation='binary'):
     '''
     'k_' prefix means keras_layers
@@ -273,21 +278,27 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     '''
 
     # cnn layer parameters
+    # use both on channel_1 step_1 cnn layers
     _nb_filters_1_1 = 64
     _kernel_size_1_1 = (3, 3)
 #     _padding_1_1 = 'same'
+    # use both on channel_1 step_2 cnn layers
     _nb_filters_1_2 = 64
     _kernel_size_1_2 = (3, 3)
     _cnn_activation_1 = 'relu'
+    # use both on channel_1 pooling layers
     _pool_size_1 = (2, 2)
     _cnn_dropout_1 = 0.0
 
+    # use both on channel_1 step_1 cnn layers
     _nb_filters_2_1 = 32
     _kernel_size_2_1 = (3, 3)
 #     _padding_2_1 = 'same'
+    # use both on channel_1 step_2 cnn layers
     _nb_filters_2_2 = 32
     _kernel_size_2_2 = (3, 3)
     _cnn_activation_2 = 'relu'
+    # use both on channel_1 pooling layers
     _pool_size_2 = (2, 2)
     _cnn_dropout_2 = 0.0
 
@@ -305,7 +316,7 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
     _aux_mlp_units_1 = 64
     _aux_mlp_activation_1 = 'relu'
-    _aux_mlp_dropout_1 = 0.7
+    _aux_mlp_dropout_1 = 0.6
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -331,6 +342,14 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
+    
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                      input_shape=tongue_image_shape))
+    cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp_1.add(BatchNormalization())
+    
     cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2,
                       kernel_size=_kernel_size_1_2))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
@@ -353,6 +372,14 @@ def k_cnn2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
+    
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                      input_shape=tongue_image_shape))
+    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp_2.add(BatchNormalization())
+    
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
                       kernel_size=_kernel_size_2_2))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
@@ -442,13 +469,13 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 2.0}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
-        _loss_weights = {'gen_output': 1., 'aux_output': 2.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
