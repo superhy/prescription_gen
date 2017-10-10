@@ -8,7 +8,7 @@ Created on 2017年8月4日
 from keras import regularizers
 from keras.callbacks import EarlyStopping, ModelCheckpoint, Callback
 from keras.layers import Input
-from keras.layers.advanced_activations import LeakyReLU
+from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.layers.convolutional import Conv2D
 from keras.layers.core import Activation, Dropout, Flatten, Dense
 from keras.layers.normalization import BatchNormalization
@@ -159,6 +159,8 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     # use both on channel_1 step_2 cnn layers
     _nb_filters_1_2 = 64
     _kernel_size_1_2 = (3, 3)
+    _nb_filters_1_3 = 64
+    _kernel_size_1_3 = (3, 3)
     _cnn_activation_1 = 'relu'
     # use both on channel_1 pooling layers
     _pool_size_1 = (2, 2)
@@ -171,6 +173,8 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     # use both on channel_1 step_2 cnn layers
     _nb_filters_2_2 = 32
     _kernel_size_2_2 = (3, 3)
+    _nb_filters_2_3 = 32
+    _kernel_size_2_3 = (3, 3)
     _cnn_activation_2 = 'relu'
     # use both on channel_1 pooling layers
     _pool_size_2 = (2, 2)
@@ -180,7 +184,7 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
     _mlp_dropout_1 = 0.6
-    _mlp_units_2 = 128
+    _mlp_units_2 = 160
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
@@ -188,7 +192,7 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
         _mlp_dropout_2 = 0.4
         
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
-    _aux_mlp_units_1 = 64
+    _aux_mlp_units_1 = 128
     _aux_mlp_activation_1 = 'relu'
     _aux_mlp_dropout_1 = 0.6
 
@@ -212,8 +216,16 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2,
-                      kernel_size=_kernel_size_1_2))
+    
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
+                      input_shape=tongue_image_shape))
+    cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp_1.add(BatchNormalization())
+    
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_3,
+                      kernel_size=_kernel_size_1_3))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
@@ -230,12 +242,20 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     cnn2_mlp_2 = Sequential()
     cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_1, kernel_size=_kernel_size_2_1,
                       input_shape=tongue_image_shape))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
-                      kernel_size=_kernel_size_2_2))
+    
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2, kernel_size=_kernel_size_2_2,
+                      input_shape=tongue_image_shape))
+    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
+    cnn2_mlp_2.add(BatchNormalization())
+    
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_3,
+                      kernel_size=_kernel_size_2_3))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
@@ -285,6 +305,8 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # use both on channel_1 step_2 cnn layers
     _nb_filters_1_2 = 64
     _kernel_size_1_2 = (3, 3)
+    _nb_filters_1_3 = 64
+    _kernel_size_1_3 = (3, 3)
     _cnn_activation_1 = 'relu'
     # use both on channel_1 pooling layers
     _pool_size_1 = (2, 2)
@@ -297,6 +319,8 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # use both on channel_1 step_2 cnn layers
     _nb_filters_2_2 = 32
     _kernel_size_2_2 = (3, 3)
+    _nb_filters_2_3 = 32
+    _kernel_size_2_3 = (3, 3)
     _cnn_activation_2 = 'relu'
     # use both on channel_1 pooling layers
     _pool_size_2 = (2, 2)
@@ -305,16 +329,16 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.6
-    _mlp_units_2 = 128
+    _mlp_dropout_1 = 0.6 # maybe 0.4? just dropout info of aux_output
+    _mlp_units_2 = 256
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
     else:
-        _mlp_dropout_2 = 0.4
+        _mlp_dropout_2 = 0.6
 
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
-    _aux_mlp_units_1 = 64
+    _aux_mlp_units_1 = 128
     _aux_mlp_activation_1 = 'relu'
     _aux_mlp_dropout_1 = 0.6
 
@@ -343,15 +367,15 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
     
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
                       input_shape=tongue_image_shape))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
     cnn2_mlp_1.add(BatchNormalization())
     
-    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_2,
-                      kernel_size=_kernel_size_1_2))
+    cnn2_mlp_1.add(Conv2D(filters=_nb_filters_1_3,
+                      kernel_size=_kernel_size_1_3))
     cnn2_mlp_1.add(Activation(activation=_cnn_activation_1))
     cnn2_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
     cnn2_mlp_1.add(Dropout(rate=_cnn_dropout_1))
@@ -373,15 +397,15 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
     
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2, kernel_size=_kernel_size_2_2,
                       input_shape=tongue_image_shape))
-    cnn2_mlp_2.add(Activation(activation=_cnn_activation_1))
-    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_1))
-    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_1))
+    cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
+    cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
+    cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))
     cnn2_mlp_2.add(BatchNormalization())
     
-    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_2,
-                      kernel_size=_kernel_size_2_2))
+    cnn2_mlp_2.add(Conv2D(filters=_nb_filters_2_3,
+                      kernel_size=_kernel_size_2_3))
     cnn2_mlp_2.add(Activation(activation=_cnn_activation_2))
     cnn2_mlp_2.add(MaxPool2D(pool_size=_pool_size_2))
     cnn2_mlp_2.add(Dropout(rate=_cnn_dropout_2))

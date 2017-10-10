@@ -9,7 +9,6 @@ Created on 2017年8月8日
 import os
 
 from PIL import Image
-from numpy.distutils.conv_template import replace_re
 
 from layer import tongue2text_gen, tongue2text_sklearn_gen, image_augment
 from layer.norm import lda
@@ -185,14 +184,14 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
           scaling_act_type)
     if use_tfidf_tensor == True:
         tongue_gen_model = tongue2text_gen.k_cnns2channels_mlp_2output(yao_indices_dim=nb_yao,
-                                                                  tongue_image_shape=tongue_image_shape,
-                                                                  topics_dim=lda_model.num_topics,
-                                                                  with_compile=True, scaling_activation='tfidf')
+                                                                       tongue_image_shape=tongue_image_shape,
+                                                                       topics_dim=lda_model.num_topics,
+                                                                       with_compile=True, scaling_activation='tfidf')
     else:
         tongue_gen_model = tongue2text_gen.k_cnns2channels_mlp_2output(yao_indices_dim=nb_yao,
-                                                                  tongue_image_shape=tongue_image_shape,
-                                                                  topics_dim=lda_model.num_topics,
-                                                                  with_compile=True, scaling_activation='binary')
+                                                                       tongue_image_shape=tongue_image_shape,
+                                                                       topics_dim=lda_model.num_topics,
+                                                                       with_compile=True, scaling_activation='binary')
 
 #     trained_tongue_gen_model, history = tongue2text_gen.trainer(
 #         tongue_gen_model, train_tongue_x, train_y, train_aux_y)
@@ -351,11 +350,25 @@ def label_outputfilter(output, tag_label=1):
     return output_index
 
 
-def dynamic_threshold_outputfilter(output, d_ratio=0.8):
+def dynamic_threshold_outputfilter(output):
     '''
-    use arg(output > max - (max - min) * d_ratio) 
+    use average interval filtering to set the threshold
+    ref: https://link.springer.com/chapter/10.1007/978-3-319-59858-1_8
     '''
-    threshold = output.max() - ((output.max() - output.min()) * d_ratio)
+
+    sorted_output = sorted(output, reverse=True)
+    avg_inter_filtering = np.sum((sorted_output[i] - sorted_output[i + 1]
+                                  for i in range(len(sorted_output) - 1))) / 10
+    print(avg_inter_filtering)
+    threshold = sorted_output[1]
+    for i in range(len(sorted_output) - 1):
+        threshold = sorted_output[i + 1]
+        if sorted_output[i] - sorted_output[i + 1] > avg_inter_filtering:
+            break
+    print(threshold)
+
+#     threshold = output.max() - ((output.max() - output.min()) * 0.8)
+
     print('get id > %f' % threshold)
     output_index = list(np.where(output > threshold)[0])
 
