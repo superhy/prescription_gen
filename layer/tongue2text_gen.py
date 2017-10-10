@@ -329,7 +329,7 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.6 # maybe 0.4? just dropout info of aux_output
+    _mlp_dropout_1 = 0.4
     _mlp_units_2 = 256
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
