@@ -313,13 +313,13 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _cnn_dropout_1 = 0.0
 
     # use both on channel_1 step_1 cnn layers
-    _nb_filters_2_1 = 32
+    _nb_filters_2_1 = 40
     _kernel_size_2_1 = (3, 3)
 #     _padding_2_1 = 'same'
     # use both on channel_1 step_2 cnn layers
-    _nb_filters_2_2 = 32
+    _nb_filters_2_2 = 40
     _kernel_size_2_2 = (3, 3)
-    _nb_filters_2_3 = 32
+    _nb_filters_2_3 = 40
     _kernel_size_2_3 = (3, 3)
     _cnn_activation_2 = 'relu'
     # use both on channel_1 pooling layers
@@ -329,16 +329,16 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     # mlp layer parameters
     _mlp_units_1 = 128
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.4
+    _mlp_dropout_1 = 0.45
     _mlp_units_2 = 256
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
     else:
-        _mlp_dropout_2 = 0.6
+        _mlp_dropout_2 = 0.65
 
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
-    _aux_mlp_units_1 = 128
+    _aux_mlp_units_1 = 80
     _aux_mlp_activation_1 = 'relu'
     _aux_mlp_dropout_1 = 0.6
 
@@ -493,13 +493,13 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
+        _loss_weights = {'gen_output': 1., 'aux_output': 1.}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
