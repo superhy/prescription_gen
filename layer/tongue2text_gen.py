@@ -299,13 +299,13 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
 
     # cnn layer parameters
     # use both on channel_1 step_1 cnn layers
-    _nb_filters_1_1 = 64
+    _nb_filters_1_1 = 80
     _kernel_size_1_1 = (3, 3)
 #     _padding_1_1 = 'same'
     # use both on channel_1 step_2 cnn layers
-    _nb_filters_1_2 = 64
+    _nb_filters_1_2 = 80
     _kernel_size_1_2 = (3, 3)
-    _nb_filters_1_3 = 64
+    _nb_filters_1_3 = 80
     _kernel_size_1_3 = (3, 3)
     _cnn_activation_1 = 'relu'
     # use both on channel_1 pooling layers
@@ -327,20 +327,20 @@ def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
     _cnn_dropout_2 = 0.0
 
     # mlp layer parameters
-    _mlp_units_1 = 128
+    _mlp_units_1 = 160
     _mlp_activation_1 = 'relu'
-    _mlp_dropout_1 = 0.45
+    _mlp_dropout_1 = 0.4
     _mlp_units_2 = 256
     _mlp_activation_2 = 'relu'
     if scaling_activation == 'tfidf':
         _mlp_dropout_2 = 0.8
     else:
-        _mlp_dropout_2 = 0.65
+        _mlp_dropout_2 = 0.6
 
     # aux_mlp layer parameters follow cnn2_mlp_channel_2
     _aux_mlp_units_1 = 80
     _aux_mlp_activation_1 = 'relu'
-    _aux_mlp_dropout_1 = 0.6
+    _aux_mlp_dropout_1 = 0.4
 
     # output_aux layer parameters
     _output_units = yao_indices_dim
@@ -493,13 +493,13 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.8}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.8}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)
