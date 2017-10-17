@@ -64,6 +64,82 @@ def loadDatafromFile(tongue_image_dir, tongue_zhiliao_path, image_normal_size=(2
 #=========================================================================
 
 
+def tongue_basic_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+                       gen_model_path=None, train_on_batch=False,
+                       use_data_augment=False):
+    '''
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    '''
+
+    total_tongue_x, total_y = tongue2text_gen.data_tensorization(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+
+    train_x = total_tongue_x[500:]
+    train_y = total_y[500:]
+
+#     train_x = total_tongue_x[: 2000] + total_tongue_x[2500 :]
+#     train_y = total_y[: 2000] + total_y[2500 :]
+  
+#     train_x = total_tongue_x[: 4000] + total_tongue_x[4500 :]
+#     train_y = total_y[: 4000] + total_y[4500 :]
+     
+#     train_x = total_tongue_x[: 6000] + total_tongue_x[6500 :]
+#     train_y = total_y[: 6000] + total_y[6500 :]
+    
+#     train_x = total_tongue_x[: len(total_tongue_x) - 500]
+#     train_y = total_y[: len(total_y) - 500]
+    del(total_tongue_x)
+    del(total_y)
+
+    if use_data_augment == True:
+        # just can be use on service 225 with big memory
+        datagen = image_augment.image_augment_gen()
+        train_x, train_y = image_augment.data_tensoration_augment(
+            datagen, train_x, train_y)
+
+    scaling_act_type = 'binary'
+    print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
+          (train_on_batch, scaling_act_type))
+    tongue_gen_model = tongue2text_gen.k_cnns_mlp(
+            yao_indices_dim=nb_yao, tongue_image_shape=tongue_image_shape, with_compile=True)
+
+    if train_on_batch == True:
+        trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
+            tongue_gen_model, train_x, train_y)
+    else:
+        record_path = None
+        if gen_model_path != None:
+            record_path = gen_model_path.replace('json', 'h5')
+        trained_tongue_gen_model, history = tongue2text_gen.trainer(
+            tongue_gen_model, train_x, train_y, best_record_path=record_path)
+        if gen_model_path != None:
+            tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
+                                         replace_record=False)
+
+    print('history: {0}'.format(history))
+
+    return trained_tongue_gen_model
+
+
+def basic_gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, trained_gen_model):
+    '''
+    @param use_tfidf_tensor: flag of use tfidf tensor or not with different tensorization function
+    '''
+
+    ''' load test_x & test_y '''
+    total_x, total_y = tongue2text_gen.data_tensorization(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
+    
+    test_x = total_x[: 500]
+#     test_x = total_x[2000 : 2500]
+#     test_x = total_x[4000 : 4500]
+#     test_x = total_x[6000 : 6500]
+#     test_x = total_x[len(total_x) - 500:]
+
+    gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
+
+    return gen_output
+
 def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
                        gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False,
                        use_data_augment=False):
@@ -77,12 +153,22 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     else:
         total_tongue_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
-    # train data ratio
-#     train_ratio = 1.0
-    train_x = total_tongue_x[: len(total_tongue_x) - 500]
-    train_y = total_y[: len(total_y) - 500]
-#     train_x = total_tongue_x[500:]
-#     train_y = total_y[500:]
+
+    train_x = total_tongue_x[500:]
+    train_y = total_y[500:]
+
+#     train_x = total_tongue_x[: 2000] + total_tongue_x[2500 :]
+#     train_y = total_y[: 2000] + total_y[2500 :]
+  
+#     train_x = total_tongue_x[: 4000] + total_tongue_x[4500 :]
+#     train_y = total_y[: 4000] + total_y[4500 :]
+     
+#     train_x = total_tongue_x[: 6000] + total_tongue_x[6500 :]
+#     train_y = total_y[: 6000] + total_y[6500 :]
+    
+#     train_x = total_tongue_x[: len(total_tongue_x) - 500]
+#     train_y = total_y[: len(total_y) - 500]
+
     del(total_tongue_x)
     del(total_y)
 
@@ -93,7 +179,7 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
             datagen, train_x, train_y)
 
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
-    print('training 2 * cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
+    print('training cnn + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
           (train_on_batch, scaling_act_type))
     if use_tfidf_tensor == True:
         tongue_gen_model = tongue2text_gen.k_cnns2channels_mlp(
@@ -133,12 +219,12 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
     else:
         total_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
-    # train data ratio
-    test_ratio = 1.0
-#     test_x = total_x[int(len(total_x) * (1 - test_ratio)) + 1:]
-    test_x = total_x[len(total_x) - 500:]
-#     test_x = total_x[:500]
-#     test_y = total_y[int(len(total_y) * (1 - test_ratio)) + 1:]
+
+    test_x = total_x[: 500]
+#     test_x = total_x[2000 : 2500]
+#     test_x = total_x[4000 : 4500]
+#     test_x = total_x[6000 : 6500]
+#     test_x = total_x[len(total_x) - 500:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
 
@@ -166,9 +252,26 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
 
-    train_tongue_x = total_tongue_x[: len(total_tongue_x) - 500]
-    train_y = total_y[: len(total_y) - 500]
-    train_aux_y = total_aux_y[: len(total_aux_y) - 500]
+    train_tongue_x = total_tongue_x[500 :]
+    train_y = total_y[500 :]
+    train_aux_y = total_aux_y[500 :]
+
+#     train_tongue_x = total_tongue_x[: 2000] + total_tongue_x[2500 :]
+#     train_y = total_y[: 2000] + total_y[2500 :]
+#     train_aux_y = total_aux_y[: 2000] + total_aux_y[2500 :]
+  
+#     train_tongue_x = total_tongue_x[: 4000] + total_tongue_x[4500 :]
+#     train_y = total_y[: 4000] + total_y[4500 :]
+#     train_aux_y = total_aux_y[: 4000] + total_aux_y[4500 :]
+     
+#     train_tongue_x = total_tongue_x[: 6000] + total_tongue_x[6500 :]
+#     train_y = total_y[: 6000] + total_y[6500 :]
+#     train_aux_y = total_aux_y[: 6000] + total_aux_y[6500 :]
+    
+#     train_tongue_x = total_tongue_x[: len(total_tongue_x) - 500]
+#     train_y = total_y[: len(total_y) - 500]
+#     train_aux_y = total_aux_y[: len(total_aux_y) - 500]
+    
     del(total_tongue_x)
     del(total_y)
     del(total_aux_y)
@@ -206,7 +309,9 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
                                      replace_record=False)
 
-    print('history: {0}'.format(history))
+    print('history:')
+    for item in history:
+        print('\n{0}'.format(item))
 
     return trained_tongue_gen_model
 
@@ -227,9 +332,11 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, lda_model.num_topics,
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
 
-    test_tongue_x = total_tongue_x[len(total_tongue_x) - 500:]
-#     test_y = total_y[len(total_y) - 500:]
-#     test_aux_y = total_aux_y[len(total_aux_y) - 500:]
+    test_tongue_x = total_tongue_x[: 500]
+#     test_tongue_x = total_tongue_x[2000 : 2500]
+#     test_tongue_x = total_tongue_x[4000 : 4500]
+#     test_tongue_x = total_tongue_x[6000 : 6500]
+#     test_tongue_x = total_tongue_x[len(total_tongue_x) - 500:]
 
     gen_output_list = tongue2text_gen.predictor(
         trained_gen_model, test_tongue_x)

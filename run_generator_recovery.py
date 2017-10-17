@@ -50,7 +50,7 @@ def train_predict_text2text_gen():
         model=trained_gen_model, frame_path=gen_frame_path)
 
     # test
-    gen_output = patient_text_generator.gen_predictor_test(
+    gen_output = patient_text_generator.basic_gen_predictor_test(
         patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao, trained_gen_model)
     print(gen_output[0])
 
@@ -106,7 +106,7 @@ def train_predict_face2text_gen():
         model=trained_gen_model, frame_path=gen_frame_path)
 
     # test
-    gen_output = patient_face_generator.gen_predictor_test(
+    gen_output = patient_face_generator.basic_gen_predictor_test(
         face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model)
 
     yaopin_dict = patient_face_generator.load_yaopin_dict(yaopin_path)

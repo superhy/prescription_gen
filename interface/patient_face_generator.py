@@ -135,7 +135,7 @@ def face_gen_trainer_on_batch(face_gen_model, face_image_arrays, face_yaofangs, 
     return trained_face_gen_model
 
 
-def gen_predictor_test(face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model):
+def basic_gen_predictor_test(face_image_arrays, face_yaofangs, face_image_shape, nb_yao, trained_gen_model):
     ''' load test_x & test_y '''
 #     nb_yao = 725  # should be detected from yao-vocabulary
     total_x, total_y = face2text_gen.data_tensorization(

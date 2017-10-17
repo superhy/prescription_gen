@@ -67,7 +67,7 @@ def gen_trainer(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_
     return trained_gen_model
 
 
-def gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao, trained_gen_model):
+def basic_gen_predictor_test(patient_sentences, wordvec_model, yaofangs, patient_cnt_len, nb_yao, trained_gen_model):
     ''' load test_x & test_y '''
 #     nb_yao = 725  # should be detected from yao-vocabulary
     total_x, total_y = text2text_gen.data_tensorization(
