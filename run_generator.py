@@ -317,11 +317,11 @@ def train_predict_tongue2text_withlda_gen(train_new=True):
     yaopin_dict = patient_tongue_generator.load_yaopin_dict(yaopin_path)
 #     print(yaopin_dict)
 
-    test_tongue_ids = tongue_ids[: 500]
-    test_yaofangs = tongue_yaofangs[: 500]
+#     test_tongue_ids = tongue_ids[: 500]
+#     test_yaofangs = tongue_yaofangs[: 500]
     
-#     test_tongue_ids = tongue_ids[2000 : 2500]
-#     test_yaofangs = tongue_yaofangs[2000 : 2500]
+    test_tongue_ids = tongue_ids[2000 : 2500]
+    test_yaofangs = tongue_yaofangs[2000 : 2500]
      
 #     test_tongue_ids = tongue_ids[4000 : 4500]
 #     test_yaofangs = tongue_yaofangs[4000 : 4500]
