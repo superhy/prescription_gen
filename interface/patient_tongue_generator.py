@@ -74,11 +74,11 @@ def tongue_basic_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_
     total_tongue_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
 
-    train_x = total_tongue_x[500:]
-    train_y = total_y[500:]
+#     train_x = total_tongue_x[500:]
+#     train_y = total_y[500:]
 
-#     train_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
-#     train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
+    train_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
+    train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
   
 #     train_x = np.concatenate((total_tongue_x[: 4000], total_tongue_x[4500 :]), axis=0)
 #     train_y = np.concatenate((total_y[: 4000], total_y[4500 :]), axis=0)
@@ -130,8 +130,8 @@ def basic_gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_
     total_x, total_y = tongue2text_gen.data_tensorization(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
     
-    test_x = total_x[: 500]
-#     test_x = total_x[2000 : 2500]
+#     test_x = total_x[: 500]
+    test_x = total_x[2000 : 2500]
 #     test_x = total_x[4000 : 4500]
 #     test_x = total_x[6000 : 6500]
 #     test_x = total_x[len(total_x) - 500:]
@@ -256,9 +256,9 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
 #     train_y = total_y[500 :]
 #     train_aux_y = total_aux_y[500 :]
 
-    train_tongue_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
-    train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
-    train_aux_y = np.concatenate((total_aux_y[: 2000], total_aux_y[2500 :]), axis=0)
+#     train_tongue_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
+#     train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
+#     train_aux_y = np.concatenate((total_aux_y[: 2000], total_aux_y[2500 :]), axis=0)
   
 #     train_tongue_x = np.concatenate((total_tongue_x[: 4000], total_tongue_x[4500 :]), axis=0)
 #     train_y = np.concatenate((total_y[: 4000], total_y[4500 :]), axis=0)
@@ -268,9 +268,9 @@ def tongue_gen_withlda_trainer(tongue_image_arrays, tongue_yaofangs, tongue_imag
 #     train_y = np.concatenate((total_y[: 6000], total_y[6500 :]), axis=0)
 #     train_aux_y = np.concatenate((total_aux_y[: 6000], total_aux_y[6500 :]), axis=0)
     
-#     train_tongue_x = total_tongue_x[: len(total_tongue_x) - 500]
-#     train_y = total_y[: len(total_y) - 500]
-#     train_aux_y = total_aux_y[: len(total_aux_y) - 500]
+    train_tongue_x = total_tongue_x[: len(total_tongue_x) - 500]
+    train_y = total_y[: len(total_y) - 500]
+    train_aux_y = total_aux_y[: len(total_aux_y) - 500]
     
     del(total_tongue_x)
     del(total_y)
@@ -333,10 +333,10 @@ def gen_withlda_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_imag
         lda_model, dictionary, use_tfidf_tensor=use_tfidf_tensor)
 
 #     test_tongue_x = total_tongue_x[: 500]
-    test_tongue_x = total_tongue_x[2000 : 2500]
+#     test_tongue_x = total_tongue_x[2000 : 2500]
 #     test_tongue_x = total_tongue_x[4000 : 4500]
 #     test_tongue_x = total_tongue_x[6000 : 6500]
-#     test_tongue_x = total_tongue_x[len(total_tongue_x) - 500:]
+    test_tongue_x = total_tongue_x[len(total_tongue_x) - 500:]
 
     gen_output_list = tongue2text_gen.predictor(
         trained_gen_model, test_tongue_x)
