@@ -157,8 +157,8 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 #     train_x = total_tongue_x[500:]
 #     train_y = total_y[500:]
 
-    train_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
-    train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
+#     train_x = np.concatenate((total_tongue_x[: 2000], total_tongue_x[2500 :]), axis=0)
+#     train_y = np.concatenate((total_y[: 2000], total_y[2500 :]), axis=0)
   
 #     train_x = np.concatenate((total_tongue_x[: 4000], total_tongue_x[4500 :]), axis=0)
 #     train_y = np.concatenate((total_y[: 4000], total_y[4500 :]), axis=0)
@@ -166,8 +166,8 @@ def tongue_gen_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
 #     train_x = np.concatenate((total_tongue_x[: 6000], total_tongue_x[6500 :]), axis=0)
 #     train_y = np.concatenate((total_y[: 6000], total_y[6500 :]), axis=0)
     
-#     train_x = total_tongue_x[: len(total_tongue_x) - 500]
-#     train_y = total_y[: len(total_y) - 500]
+    train_x = total_tongue_x[: len(total_tongue_x) - 500]
+    train_y = total_y[: len(total_y) - 500]
 
     del(total_tongue_x)
     del(total_y)
@@ -221,10 +221,10 @@ def gen_predictor_test(tongue_image_arrays, tongue_yaofangs, tongue_image_shape,
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao)
 
 #     test_x = total_x[: 500]
-    test_x = total_x[2000 : 2500]
+#     test_x = total_x[2000 : 2500]
 #     test_x = total_x[4000 : 4500]
 #     test_x = total_x[6000 : 6500]
-#     test_x = total_x[len(total_x) - 500:]
+    test_x = total_x[len(total_x) - 500:]
 
     gen_output = tongue2text_gen.predictor(trained_gen_model, test_x)
 

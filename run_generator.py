@@ -196,8 +196,8 @@ def train_predict_tongue2text_gen(train_new=True):
 #     test_tongue_ids = tongue_ids[: 500]
 #     test_yaofangs = tongue_yaofangs[: 500]
     
-    test_tongue_ids = tongue_ids[2000 : 2500]
-    test_yaofangs = tongue_yaofangs[2000 : 2500]
+#     test_tongue_ids = tongue_ids[2000 : 2500]
+#     test_yaofangs = tongue_yaofangs[2000 : 2500]
      
 #     test_tongue_ids = tongue_ids[4000 : 4500]
 #     test_yaofangs = tongue_yaofangs[4000 : 4500]
@@ -205,8 +205,8 @@ def train_predict_tongue2text_gen(train_new=True):
 #     test_tongue_ids = tongue_ids[6000 : 6500]
 #     test_yaofangs = tongue_yaofangs[6000 : 6500]
     
-#     test_tongue_ids = tongue_ids[len(tongue_ids) - 500:]
-#     test_yaofangs = tongue_yaofangs[len(tongue_yaofangs) - 500:]
+    test_tongue_ids = tongue_ids[len(tongue_ids) - 500:]
+    test_yaofangs = tongue_yaofangs[len(tongue_yaofangs) - 500:]
     '''the evaluation criterion '''
     precisions = []
     recalls = []
