@@ -578,13 +578,13 @@ def double_output_compiler(layers_model, scaling_activation):
         _losses = {'gen_output': 'msle',
                    'aux_output': mean_kl_divergence}
         # the weights of loss for main output and aux output
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.8}
     else:
         #         _losses = {'gen_output': 'binary_crossentropy',
         #                    'aux_output': 'categorical_crossentropy'}
         _losses = {'gen_output': 'binary_crossentropy',
                    'aux_output': mean_kl_divergence}
-        _loss_weights = {'gen_output': 1., 'aux_output': 1.2}
+        _loss_weights = {'gen_output': 1., 'aux_output': 0.8}
 
     layers_model.compile(optimizer=_optimizer, loss=_losses,
                          loss_weights=_loss_weights)

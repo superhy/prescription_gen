@@ -12,7 +12,7 @@ import numpy as np
 def image_augment_gen():
 
     # randomly rotate images in the range (degrees, 0 to 180)
-    _rotation_range = 20
+    _rotation_range = 25
     # randomly shift images horizontally (fraction of total width)
     _width_shift_range = 0.05
     # randomly shift images vertically (fraction of total height)
@@ -34,7 +34,7 @@ def image_augment_gen():
     return datagen
 
 def data_tensoration_augment(datagen, original_x, original_y,
-                             batch_size=64, times=100):
+                             batch_size=64, times=150):
     '''
     randomly generate image tensor from original_x ONE BY ONE
         correspondingly, copy label from original_y

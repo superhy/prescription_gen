@@ -363,7 +363,7 @@ def train_predict_tongue2text_withlda_gen(train_new=True):
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
 # train_predict_tongue2text_basic_gen(train_new=True)
-train_predict_tongue2text_gen(train_new=True)
+# train_predict_tongue2text_gen(train_new=True)
 
 '''keras layer model with double output(lda) to help generator to specify prescription direction'''
-# train_predict_tongue2text_withlda_gen(train_new=True)
+train_predict_tongue2text_withlda_gen(train_new=True)
