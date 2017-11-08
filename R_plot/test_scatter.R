@@ -3,19 +3,18 @@
 # Author: superhy
 ###############################################################################
 
-
+library(gcookbook)
 library(ggplot2)
 
-
-x <- rnorm(3200)
-y <- x + rnome(3200)
-print(x)
-print(y)
-z <- sample(c("a","b"), size=3200, replace=TRUE)
-print(z)
-
-df <- data.frame(x=x, y=y, z=z)
-# print(df)
+x <- rnorm(200, mean = 2.5, sd = 1)
+y <- 1.5 + 2*x^2 + rnorm(200)
+z <- sample(c("boys","girls"), size = 200, replace = TRUE)
+df <- data.frame(x = x, y = y, z = z)
 df$z <- factor(df$z)
 
-ggplot(data = df, mapping = aes(x=x, y=y, colour=z)) + geom_point(size=1, alpha=6/10)
+ppi <- 200
+png('/home/superhy/文档/code/workspace/prescription_gen/R_plot/test.png', width = 4*ppi, height=4*ppi)
+ggplot(data = df, mapping = aes(x = x, y = y, colour=z)) + geom_point()
+# qplot(x, y, geom="line")
+
+dev.off()
