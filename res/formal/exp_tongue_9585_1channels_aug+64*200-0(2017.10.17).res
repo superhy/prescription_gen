@@ -1,4741 +1,4741 @@
-8512/8539 [============================>.] - ETA: 0s - loss: 0.1608Epoch 00000: val_loss improved from inf to 0.08288, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 70s - loss: 0.1606 - val_loss: 0.0829
+20544/20571 [============================>.] - ETA: 0s - loss: 0.1222Epoch 00000: val_loss improved from inf to 0.08026, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 116s - loss: 0.1222 - val_loss: 0.0803
 Epoch 2/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0984Epoch 00001: val_loss improved from 0.08288 to 0.08279, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 67s - loss: 0.0984 - val_loss: 0.0828
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0887Epoch 00001: val_loss improved from 0.08026 to 0.07761, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0887 - val_loss: 0.0776
 Epoch 3/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0910Epoch 00002: val_loss improved from 0.08279 to 0.08164, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0910 - val_loss: 0.0816
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0851Epoch 00002: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0851 - val_loss: 0.0792
 Epoch 4/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0881Epoch 00003: val_loss improved from 0.08164 to 0.07841, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0881 - val_loss: 0.0784
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0833Epoch 00003: val_loss improved from 0.07761 to 0.07673, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0833 - val_loss: 0.0767
 Epoch 5/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0858Epoch 00004: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0858 - val_loss: 0.0809
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0821Epoch 00004: val_loss improved from 0.07673 to 0.07484, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0821 - val_loss: 0.0748
 Epoch 6/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0843Epoch 00005: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0843 - val_loss: 0.0791
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0808Epoch 00005: val_loss improved from 0.07484 to 0.07357, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 113s - loss: 0.0809 - val_loss: 0.0736
 Epoch 7/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0833Epoch 00006: val_loss improved from 0.07841 to 0.07677, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0833 - val_loss: 0.0768
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0803Epoch 00006: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0803 - val_loss: 0.0739
 Epoch 8/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0822Epoch 00007: val_loss improved from 0.07677 to 0.07530, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0822 - val_loss: 0.0753
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0795Epoch 00007: val_loss improved from 0.07357 to 0.07290, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0795 - val_loss: 0.0729
 Epoch 9/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0810Epoch 00008: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0810 - val_loss: 0.0754
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0790Epoch 00008: val_loss improved from 0.07290 to 0.07216, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0790 - val_loss: 0.0722
 Epoch 10/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0806Epoch 00009: val_loss improved from 0.07530 to 0.07457, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0806 - val_loss: 0.0746
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0783Epoch 00009: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0783 - val_loss: 0.0728
 Epoch 11/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0798Epoch 00010: val_loss improved from 0.07457 to 0.07438, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0798 - val_loss: 0.0744
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0779Epoch 00010: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0779 - val_loss: 0.0726
 Epoch 12/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0794Epoch 00011: val_loss improved from 0.07438 to 0.07433, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0795 - val_loss: 0.0743
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0774Epoch 00011: val_loss improved from 0.07216 to 0.07204, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0774 - val_loss: 0.0720
 Epoch 13/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0786Epoch 00012: val_loss improved from 0.07433 to 0.07379, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0786 - val_loss: 0.0738
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0770Epoch 00012: val_loss improved from 0.07204 to 0.07121, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0770 - val_loss: 0.0712
 Epoch 14/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0782Epoch 00013: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0782 - val_loss: 0.0759
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0766Epoch 00013: val_loss improved from 0.07121 to 0.07117, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0765 - val_loss: 0.0712
 Epoch 15/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0779Epoch 00014: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0779 - val_loss: 0.0747
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0759Epoch 00014: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0759 - val_loss: 0.0715
 Epoch 16/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0774Epoch 00015: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0774 - val_loss: 0.0749
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0757Epoch 00015: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0757 - val_loss: 0.0731
 Epoch 17/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0771Epoch 00016: val_loss improved from 0.07379 to 0.07349, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0771 - val_loss: 0.0735
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0752Epoch 00016: val_loss improved from 0.07117 to 0.07109, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0752 - val_loss: 0.0711
 Epoch 18/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0766Epoch 00017: val_loss improved from 0.07349 to 0.07320, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0766 - val_loss: 0.0732
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0748Epoch 00017: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0748 - val_loss: 0.0738
 Epoch 19/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0763Epoch 00018: val_loss improved from 0.07320 to 0.07286, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0763 - val_loss: 0.0729
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0745Epoch 00018: val_loss improved from 0.07109 to 0.07085, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0745 - val_loss: 0.0709
 Epoch 20/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0760Epoch 00019: val_loss improved from 0.07286 to 0.07286, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0760 - val_loss: 0.0729
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0741Epoch 00019: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0741 - val_loss: 0.0710
 Epoch 21/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0756Epoch 00020: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0755 - val_loss: 0.0731
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0740Epoch 00020: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0740 - val_loss: 0.0710
 Epoch 22/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0750Epoch 00021: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0750 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0735Epoch 00021: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0735 - val_loss: 0.0722
 Epoch 23/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0749Epoch 00022: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0749 - val_loss: 0.0731
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0733Epoch 00022: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0733 - val_loss: 0.0715
 Epoch 24/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0745Epoch 00023: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0745 - val_loss: 0.0732
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0730Epoch 00023: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0730 - val_loss: 0.0710
 Epoch 25/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0744Epoch 00024: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0744 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0727Epoch 00024: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0727 - val_loss: 0.0720
 Epoch 26/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0739Epoch 00025: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0739 - val_loss: 0.0734
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0723Epoch 00025: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0723 - val_loss: 0.0714
 Epoch 27/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0737Epoch 00026: val_loss improved from 0.07286 to 0.07258, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 67s - loss: 0.0737 - val_loss: 0.0726
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0721Epoch 00026: val_loss improved from 0.07085 to 0.07080, saving model to /home/b3432/Code/experiment/huiqiang/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
+20571/20571 [==============================] - 112s - loss: 0.0721 - val_loss: 0.0708
 Epoch 28/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0735Epoch 00027: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0734 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0717Epoch 00027: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0717 - val_loss: 0.0709
 Epoch 29/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0731Epoch 00028: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0731 - val_loss: 0.0729
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0714Epoch 00028: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0714 - val_loss: 0.0712
 Epoch 30/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0730Epoch 00029: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0730 - val_loss: 0.0730
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0710Epoch 00029: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0710 - val_loss: 0.0710
 Epoch 31/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0724Epoch 00030: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0724 - val_loss: 0.0738
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0708Epoch 00030: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0708 - val_loss: 0.0712
 Epoch 32/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0724Epoch 00031: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0724 - val_loss: 0.0727
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0705Epoch 00031: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0705 - val_loss: 0.0712
 Epoch 33/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0723Epoch 00032: val_loss improved from 0.07258 to 0.07249, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0723 - val_loss: 0.0725
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0701Epoch 00032: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0701 - val_loss: 0.0710
 Epoch 34/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0718Epoch 00033: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0718 - val_loss: 0.0728
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0699Epoch 00033: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0699 - val_loss: 0.0722
 Epoch 35/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0716Epoch 00034: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0716 - val_loss: 0.0730
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0695Epoch 00034: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0695 - val_loss: 0.0720
 Epoch 36/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0714Epoch 00035: val_loss improved from 0.07249 to 0.07229, saving model to /home/superhy/prescription-gen-file/cache/keras/tongue2text_cnnmlp_9585_act(bi)_t3_100it.h5
-8539/8539 [==============================] - 66s - loss: 0.0714 - val_loss: 0.0723
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0692Epoch 00035: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0692 - val_loss: 0.0715
 Epoch 37/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0710Epoch 00036: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0710 - val_loss: 0.0732
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0689Epoch 00036: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0689 - val_loss: 0.0715
 Epoch 38/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0708Epoch 00037: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0709 - val_loss: 0.0731
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0685Epoch 00037: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0685 - val_loss: 0.0716
 Epoch 39/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0707Epoch 00038: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0707 - val_loss: 0.0730
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0684Epoch 00038: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0684 - val_loss: 0.0715
 Epoch 40/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0704Epoch 00039: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0704 - val_loss: 0.0728
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0678Epoch 00039: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0678 - val_loss: 0.0718
 Epoch 41/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0703Epoch 00040: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0703 - val_loss: 0.0726
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0677Epoch 00040: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0677 - val_loss: 0.0724
 Epoch 42/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0699Epoch 00041: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0700 - val_loss: 0.0729
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0673Epoch 00041: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0672 - val_loss: 0.0715
 Epoch 43/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0698Epoch 00042: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0698 - val_loss: 0.0731
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0669Epoch 00042: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0669 - val_loss: 0.0721
 Epoch 44/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0695Epoch 00043: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0695 - val_loss: 0.0727
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0666Epoch 00043: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0666 - val_loss: 0.0722
 Epoch 45/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0693Epoch 00044: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0693 - val_loss: 0.0736
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0662Epoch 00044: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0662 - val_loss: 0.0746
 Epoch 46/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0690Epoch 00045: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0690 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0658Epoch 00045: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0658 - val_loss: 0.0728
 Epoch 47/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0687Epoch 00046: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0687 - val_loss: 0.0735
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0656Epoch 00046: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0656 - val_loss: 0.0729
 Epoch 48/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0686Epoch 00047: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0686 - val_loss: 0.0737
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0651Epoch 00047: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0651 - val_loss: 0.0725
 Epoch 49/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0683Epoch 00048: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0683 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0648Epoch 00048: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0648 - val_loss: 0.0720
 Epoch 50/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0680Epoch 00049: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0681 - val_loss: 0.0741
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0645Epoch 00049: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0645 - val_loss: 0.0723
 Epoch 51/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0678Epoch 00050: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0678 - val_loss: 0.0738
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0640Epoch 00050: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0641 - val_loss: 0.0735
 Epoch 52/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0676Epoch 00051: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0676 - val_loss: 0.0735
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0638Epoch 00051: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0638 - val_loss: 0.0729
 Epoch 53/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0674Epoch 00052: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0674 - val_loss: 0.0737
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0634Epoch 00052: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0634 - val_loss: 0.0729
 Epoch 54/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0672Epoch 00053: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0672 - val_loss: 0.0733
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0630Epoch 00053: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0630 - val_loss: 0.0727
 Epoch 55/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0669Epoch 00054: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0668 - val_loss: 0.0740
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0628Epoch 00054: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0628 - val_loss: 0.0737
 Epoch 56/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0665Epoch 00055: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0665 - val_loss: 0.0739
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0625Epoch 00055: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0625 - val_loss: 0.0735
 Epoch 57/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0664Epoch 00056: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0664 - val_loss: 0.0737
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0623Epoch 00056: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0623 - val_loss: 0.0730
 Epoch 58/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0660Epoch 00057: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0660 - val_loss: 0.0736
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0620Epoch 00057: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0620 - val_loss: 0.0742
 Epoch 59/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0658Epoch 00058: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0658 - val_loss: 0.0743
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0617Epoch 00058: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0617 - val_loss: 0.0741
 Epoch 60/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0657Epoch 00059: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0657 - val_loss: 0.0742
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0615Epoch 00059: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0615 - val_loss: 0.0743
 Epoch 61/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0654Epoch 00060: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0654 - val_loss: 0.0740
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0611Epoch 00060: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0611 - val_loss: 0.0738
 Epoch 62/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0651Epoch 00061: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0651 - val_loss: 0.0742
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0608Epoch 00061: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0609 - val_loss: 0.0745
 Epoch 63/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0647Epoch 00062: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0647 - val_loss: 0.0747
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0606Epoch 00062: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0606 - val_loss: 0.0739
 Epoch 64/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0645Epoch 00063: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0646 - val_loss: 0.0744
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0603Epoch 00063: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0603 - val_loss: 0.0737
 Epoch 65/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0645Epoch 00064: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0645 - val_loss: 0.0750
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0602Epoch 00064: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0602 - val_loss: 0.0755
 Epoch 66/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0640Epoch 00065: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0640 - val_loss: 0.0748
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0599Epoch 00065: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0599 - val_loss: 0.0744
 Epoch 67/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0638Epoch 00066: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0639 - val_loss: 0.0748
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0597Epoch 00066: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0597 - val_loss: 0.0745
 Epoch 68/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0636Epoch 00067: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0636 - val_loss: 0.0746
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0594Epoch 00067: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0594 - val_loss: 0.0741
 Epoch 69/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0634Epoch 00068: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0634 - val_loss: 0.0747
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0592Epoch 00068: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0592 - val_loss: 0.0746
 Epoch 70/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0633Epoch 00069: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0632 - val_loss: 0.0747
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0589Epoch 00069: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0589 - val_loss: 0.0743
 Epoch 71/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0630Epoch 00070: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0630 - val_loss: 0.0753
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0586Epoch 00070: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0586 - val_loss: 0.0743
 Epoch 72/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0627Epoch 00071: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0627 - val_loss: 0.0752
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0583Epoch 00071: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0583 - val_loss: 0.0766
 Epoch 73/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0625Epoch 00072: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0625 - val_loss: 0.0759
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0582Epoch 00072: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0582 - val_loss: 0.0746
 Epoch 74/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0623Epoch 00073: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0623 - val_loss: 0.0751
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0580Epoch 00073: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0580 - val_loss: 0.0749
 Epoch 75/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0622Epoch 00074: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0621 - val_loss: 0.0755
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0578Epoch 00074: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0578 - val_loss: 0.0764
 Epoch 76/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0618Epoch 00075: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0618 - val_loss: 0.0755
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0575Epoch 00075: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0575 - val_loss: 0.0746
 Epoch 77/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0616Epoch 00076: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0616 - val_loss: 0.0759
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0573Epoch 00076: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0573 - val_loss: 0.0754
 Epoch 78/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0614Epoch 00077: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0614 - val_loss: 0.0756
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0572Epoch 00077: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0572 - val_loss: 0.0757
 Epoch 79/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0612Epoch 00078: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0612 - val_loss: 0.0763
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0569Epoch 00078: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0569 - val_loss: 0.0753
 Epoch 80/80
-8512/8539 [============================>.] - ETA: 0s - loss: 0.0611Epoch 00079: val_loss did not improve
-8539/8539 [==============================] - 66s - loss: 0.0611 - val_loss: 0.0763
-history: [(0.16064350684621126, None, 0.082877245550845566, None), (0.098423077206042597, None, 0.08279132774788818, None), (0.091027912785108148, None, 0.0816424113217291, None), (0.088057154126658155, None, 0.078410634409376984, None), (0.085831709144154264, None, 0.080871763956415779, None), (0.084302815748176857, None, 0.079111604381611939, None), (0.083278795471932995, None, 0.076770894802533657, None), (0.082188265986451778, None, 0.075297560774799668, None), (0.081003861362425392, None, 0.075406056456950116, None), (0.080569696689548304, None, 0.074570545264871127, None), (0.079770093174488313, None, 0.074380182357498145, None), (0.07945717737516679, None, 0.074326658805648052, None), (0.078612247250065867, None, 0.073790650064255295, None), (0.078169097735411613, None, 0.075914142114338862, None), (0.077866102988385727, None, 0.074740563829739884, None), (0.077389783460992831, None, 0.074946106380813726, None), (0.077072625932446098, None, 0.073494529112791404, None), (0.076629653093141667, None, 0.073204490509662004, None), (0.076250536092230356, None, 0.0728636567682137, None), (0.076048076332543832, None, 0.072857598600151771, None), (0.075541847380776225, None, 0.073080006918627705, None), (0.075016318216949568, None, 0.073293080805858848, None), (0.074932163933538298, None, 0.073135234551988684, None), (0.074458746477527024, None, 0.073217567261103747, None), (0.074354897547150703, None, 0.073277685395527231, None), (0.073867249176811867, None, 0.073350705997847807, None), (0.073725956642965565, None, 0.072584065079907362, None), (0.073437678803812911, None, 0.073323067427773184, None), (0.073129042027628752, None, 0.072918055913387195, None), (0.073019915657923526, None, 0.072985651346790054, None), (0.072433455420861076, None, 0.073752941775234629, None), (0.072437638785314437, None, 0.07273459218906396, None), (0.072284788127134805, None, 0.072489988072451217, None), (0.071778364631362959, None, 0.072829549101901148, None), (0.071581295745854964, None, 0.072959972170246384, None), (0.071416600730690269, None, 0.07229048420330543, None), (0.070974011707534868, None, 0.073171178690898106, None), (0.07086066818531174, None, 0.073082148319198972, None), (0.070701713134434421, None, 0.073043363489510807, None), (0.070415956419411077, None, 0.072753324340551331, None), (0.070277989723878137, None, 0.072615890275864375, None), (0.069952402163101932, None, 0.072870928916957359, None), (0.069765237943672967, None, 0.073060335912110599, None), (0.06954370132356355, None, 0.072722123273999698, None), (0.069320000742132071, None, 0.073598212265706328, None), (0.06896117985307898, None, 0.073259195729053067, None), (0.068720752135353683, None, 0.073450900204889064, None), (0.06856249143339066, None, 0.073734729936271365, None), (0.068319026356782636, None, 0.07326192618944706, None), (0.068051544690051174, None, 0.074070201333844177, None), (0.067814762572212459, None, 0.073755287370838959, None), (0.067620620590446281, None, 0.073487683148174499, None), (0.067382618848163309, None, 0.07368655961293441, None), (0.067161425993514851, None, 0.073275990347504177, None), (0.066839052824710768, None, 0.073986864570296296, None), (0.066520354440360516, None, 0.073931180732154142, None), (0.066390001132695151, None, 0.073676713002033725, None), (0.065996413038100554, None, 0.073576366917772612, None), (0.065792088375142929, None, 0.074294619780757049, None), (0.065711088234255283, None, 0.074179529434158689, None), (0.065418521476540217, None, 0.074021737544964522, None), (0.065080272585907456, None, 0.074193876332197428, None), (0.064706046374617007, None, 0.074666943769533561, None), (0.064550630378316889, None, 0.074384054094007168, None), (0.06450469354748907, None, 0.07495246284501457, None), (0.064004425459383993, None, 0.074815444893889374, None), (0.063862313539232995, None, 0.074838020889968659, None), (0.063570181878323098, None, 0.07458640304786382, None), (0.063413692408583036, None, 0.074711141077590082, None), (0.063224149024804846, None, 0.074728871521713966, None), (0.062985232487078338, None, 0.075267142919830346, None), (0.062724853164174685, None, 0.075184315934286011, None), (0.062490762477178517, None, 0.075938690440122025, None), (0.062321125295757895, None, 0.075077227838746791, None), (0.062149654952598714, None, 0.0755354466237428, None), (0.061764354279105788, None, 0.075537313717407184, None), (0.061645830013682457, None, 0.075929048242586436, None), (0.061420301349105262, None, 0.075558446866252044, None), (0.06117996472932092, None, 0.076254102036411503, None), (0.061075873527248761, None, 0.076269566494248292, None)]
+20544/20571 [============================>.] - ETA: 0s - loss: 0.0566Epoch 00079: val_loss did not improve
+20571/20571 [==============================] - 112s - loss: 0.0566 - val_loss: 0.0762
+history: [(0.12216625784548096, None, 0.080258606571585081, None), (0.088697029808922356, None, 0.077611660939191932, None), (0.085078512851256963, None, 0.079209260960057079, None), (0.083301182685080452, None, 0.076730313298364758, None), (0.082090725051902388, None, 0.074838325267875941, None), (0.080853230243993435, None, 0.07356847543694657, None), (0.080328743522901203, None, 0.073906321957412563, None), (0.07952682968607723, None, 0.072902446037195229, None), (0.079019038247790344, None, 0.072162663714345002, None), (0.078294713951071043, None, 0.072792141336828611, None), (0.077865143642347423, None, 0.072597533623196042, None), (0.077442427303121023, None, 0.072039040948067262, None), (0.07699831201485334, None, 0.071208669204417971, None), (0.076542902022352435, None, 0.071168449484775784, None), (0.075872311903989853, None, 0.071508462661296082, None), (0.075719949367078696, None, 0.073055372810164179, None), (0.075172406223639576, None, 0.071091211595128836, None), (0.074807154772133413, None, 0.073768319196352669, None), (0.074511482187419889, None, 0.070854287101253521, None), (0.074140552101934501, None, 0.071041253841903115, None), (0.073994814625201757, None, 0.070970565284768194, None), (0.073546906636827655, None, 0.072205144634166996, None), (0.073256877979738039, None, 0.071485579490117288, None), (0.072988027920886267, None, 0.071020927807511805, None), (0.072664788851855733, None, 0.071965798531493097, None), (0.07230287968205476, None, 0.071445886629720082, None), (0.072099616191765123, None, 0.070799362849971473, None), (0.071718859640528917, None, 0.070864380721450765, None), (0.071373315380714966, None, 0.071156253893625787, None), (0.071027066682286866, None, 0.070981231839870929, None), (0.070754286873717862, None, 0.071241605601626443, None), (0.070498253213713724, None, 0.071180097747429685, None), (0.070138259467177028, None, 0.071026837456081196, None), (0.069921084709226825, None, 0.072178868058065296, None), (0.069528812941780038, None, 0.071965632157873702, None), (0.069188351978662729, None, 0.071471998760054278, None), (0.068928211136031967, None, 0.071460323598196152, None), (0.068548882983624576, None, 0.071582800574045022, None), (0.0683505788219467, None, 0.071474390351064676, None), (0.06783809310571319, None, 0.071788854239284536, None), (0.067675064209180222, None, 0.072435911387613378, None), (0.067244021399739382, None, 0.071458472009844606, None), (0.066910793995652681, None, 0.07208044582033811, None), (0.066576164980564262, None, 0.072210370360262677, None), (0.066233809038277386, None, 0.074567835511500799, None), (0.065826444355792227, None, 0.072818205724477406, None), (0.065633596920603748, None, 0.072892879332944499, None), (0.065115617994266337, None, 0.072532915395416619, None), (0.064831302938286983, None, 0.071979127971730464, None), (0.064462412346650108, None, 0.072293549458548725, None), (0.064050732090562876, None, 0.073540443483643705, None), (0.063816408281886436, None, 0.072945444267725104, None), (0.063386172379632497, None, 0.072914263712670346, None), (0.063035459719679054, None, 0.072694383300784149, None), (0.062800852387997222, None, 0.073713675152674837, None), (0.062532282243304163, None, 0.073492424049424618, None), (0.062267275961836441, None, 0.073047547500518173, None), (0.062032600066776113, None, 0.074202950164970555, None), (0.061690363488071109, None, 0.074137769027115552, None), (0.061524125152442682, None, 0.074272286107188126, None), (0.061082418644922566, None, 0.073816724688585855, None), (0.060850301146533343, None, 0.074488821548595457, None), (0.060601629272257602, None, 0.073920328674704702, None), (0.060322247718673505, None, 0.073664935223497388, None), (0.060159822462233364, None, 0.075455972797250095, None), (0.059890683793075862, None, 0.074380445176426502, None), (0.059734982229085777, None, 0.074456963863909875, None), (0.059426830972581383, None, 0.074104121785548538, None), (0.059189801892896521, None, 0.074630668786562743, None), (0.058881509712450437, None, 0.074323712157785798, None), (0.058644925555317778, None, 0.074275772502614662, None), (0.058316022252200277, None, 0.076628335863578631, None), (0.058223696450276502, None, 0.074634057984232352, None), (0.05799152351675705, None, 0.074893868949315323, None), (0.057771134125927624, None, 0.076364480684790625, None), (0.057547140014831653, None, 0.074610393658802024, None), (0.057326235255234372, None, 0.075400332383006308, None), (0.057159644445861399, None, 0.07566582278846061, None), (0.056879043485656915, None, 0.075300809375862365, None), (0.056582688961843951, None, 0.07620372508668101, None)]
 0. 
-patient tongue id: 03211936112753_4
+patient tongue id: 02122059160135_4_6
 label yaofang:
-黄芩 茯苓 栀子 杜仲 牛膝 钩藤 天麻 石决明 桑寄生 益母草 首乌藤
-0.418059 0.327268 0.35486 0.513987
+甘草 黄芩 法半夏 茯苓 桃仁 远志 五味子 浙贝母 细辛 干姜 地龙 紫苏子 炙麻黄
+0.937282 0.539147 0.535182 0.420246 0.300575 0.502075 0.437493 0.430739 0.337908 0.350992 0.374642
 predicted yaofang:
-白芍 党参 姜半夏 炙甘草
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+------Score: precision: 0.181818, recall: 0.153846, error: 0.818182
 1. 
-patient tongue id: 06092004526441_1_4_6
+patient tongue id: 05092230212086_2_4_6
 label yaofang:
-甘草 川芎 当归 防风 独活 党参 白术 海螵蛸 杜仲 牛膝 厚朴 巴戟天 桑寄生 秦艽 紫苏叶 蜈蚣 骨碎补
-0.59142 0.354453 0.396266 0.489385 0.550674 0.332678 0.390843 0.391814 0.304835 0.328093
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.500000, recall: 0.294118, error: 0.500000
-2. 
-patient tongue id: 04252016476939_6
-label yaofang:
-甘草 香附 茯苓 葛根 党参 白术 海螵蛸 车前子 白花蛇舌草 紫苏梗 瓦楞子 猫爪草 山慈菇
-0.368804 0.498991 0.302449 0.328988 0.330014 0.507893 0.634078
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.285714, recall: 0.153846, error: 0.714286
-3. 
-patient tongue id: 03151854573311_3_6
-label yaofang:
-党参 白术 柏子仁 附子 车前子 干姜 砂仁 桑寄生 炙甘草 紫苏叶
-0.308142 0.387567 0.333151 0.302722 0.460116
-predicted yaofang:
-甘草 白芍 党参 姜半夏 炙甘草
-
-------Score: precision: 0.400000, recall: 0.200000, error: 0.600000
-4. 
-patient tongue id: 02122104594538_4_6
-label yaofang:
-甘草 薏苡仁 蒲公英 党参 厚朴 天麻 五灵脂 鳖甲 三棱 莪术 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 鱼古
-0.996289 0.488996 0.693147 0.383462 0.30998 0.336913 0.737427 0.635007 0.635215 0.496167 0.547602 0.57795
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.666667, recall: 0.500000, error: 0.333333
-5. 
-patient tongue id: 05270138084657_1_2_4
-label yaofang:
-甘草 法半夏 茯苓 桔梗 薏苡仁 党参 浙贝母 细辛 砂仁 天麻 鳖甲 补骨脂 莪术 蜈蚣 白花蛇舌 天山雪莲
-0.975622 0.454897 0.630931 0.398358 0.310609 0.59652 0.505313 0.509157 0.401082 0.436729 0.451721
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.500000, error: 0.272727
-6. 
-patient tongue id: 06190148379154_7_6
-label yaofang:
-甘草 川芎 茯苓 龙骨 桃仁 远志 党参 酸枣仁 丹参 红花 赤芍 知母 地黄 淡竹叶 浮小麦 百合 合欢花
-0.969619 0.305632 0.448823 0.603932 0.359785 0.300134 0.603019 0.451989 0.452551 0.349646 0.372779 0.38099
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.176471, error: 0.750000
-7. 
-patient tongue id: 05090815286121_1_3
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.426088 0.592055 0.457288 0.385875 0.606065 0.575548 0.553787 0.565552 0.587173 0.547816 0.640323 0.521067 0.605427 0.616886 0.644005
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-8. 
-patient tongue id: 04141835473752_1_4_3
-label yaofang:
-陈皮 枳壳 当归 木香 黄芪 枸杞子 白术 杜仲 厚朴 砂仁 菟丝子 鸡内金 北沙参 紫苏叶 预知子 稻芽
-0.386149 0.366126 0.377045 0.317909 0.3012
-predicted yaofang:
-甘草 茯苓 黄芪 北沙参 炙甘草
-
-------Score: precision: 0.400000, recall: 0.125000, error: 0.600000
-9. 
-patient tongue id: 05182041306526_1_4
-label yaofang:
-当归 木香 龙骨 远志 党参 黄芪 鸡血藤 白术 柏子仁 金樱子 桑螵蛸 炙甘草 百合 紫苏叶 覆盆子
-0.388716 0.54383 0.338887 0.342176 0.316487 0.353487 0.550318 0.690845
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.125000, recall: 0.066667, error: 0.875000
-10. 
-patient tongue id: 06130757280187_1_2_4
-label yaofang:
-甘草 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.461496 0.599046 0.47026 0.39505 0.600402 0.587802 0.543514 0.546467 0.585452 0.542992 0.640714 0.545638 0.598936 0.62086 0.635774
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.250000, error: 0.800000
-11. 
-patient tongue id: 02150746046672_1_3_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.400379 0.456002 0.384253 0.434955 0.487708 0.371 0.437646 0.410882 0.406184 0.350327 0.433296 0.31904 0.368812 0.408141 0.368556
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.230769, error: 0.800000
-12. 
-patient tongue id: 04300900263194_5
-label yaofang:
-甘草 荆芥 金银花 蒲公英 紫花地丁 白术 丹参 浙贝母 地黄 紫草 麦芽 皂角刺 白鲜皮 地肤子
-0.98458 0.430228 0.654248 0.37027 0.321726 0.304325 0.675879 0.495223 0.529787 0.375954 0.447371 0.530882
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
-13. 
-patient tongue id: 01201410528158_1_4
-label yaofang:
-甘草 白芍 枳壳 薏苡仁 党参 白术 熟附子 天麻 鳖甲 莪术 败酱草 佛手 蜈蚣 天山雪莲 半枝莲 红豆杉
-0.928668 0.312166 0.425166 0.574985 0.374743 0.514408 0.357432 0.381964
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.875000, recall: 0.437500, error: 0.125000
-14. 
-patient tongue id: 03081838101446_4
-label yaofang:
-麻黄 陈皮 前胡 半夏 防风 细辛 白芷 款冬花 紫菀 白前 百部 紫苏子 炙甘草 辛夷 广藿香
-0.470457 0.802795 0.347134 0.947491 0.548255 0.742665 0.437322 0.335033 0.467545 0.911706 0.931226 0.891433 0.927578 0.308458 0.970993 0.500376 0.473726 0.543778 0.778493
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.800000, error: 0.368421
-15. 
-patient tongue id: 04112055520868_1_2_7
-label yaofang:
-桂枝 白芍 牡蛎 薏苡仁 黄芪 白术 熟地黄 浙贝母 山茱萸 砂仁 糯稻根 北沙参 炙甘草 麻黄根 黑枣 鲜龙葵果
-0.614388 0.335502 0.389566 0.430011 0.535069 0.314476 0.321809
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁
-
-------Score: precision: 0.428571, recall: 0.187500, error: 0.571429
-16. 
-patient tongue id: 02182202209567_2_1
-label yaofang:
-甘草 白芍 茯苓 龙骨 远志 玉竹 党参 赤芍 紫河车 天麻 僵蚕 益智仁 北沙参 沙苑子
-0.96994 0.314904 0.461112 0.587564 0.335576 0.574317 0.43805 0.417835 0.328537 0.347097 0.344866
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.357143, error: 0.545455
-17. 
-patient tongue id: 05022129253218_1_6
-label yaofang:
-甘草 法半夏 茯苓 龙骨 牡蛎 远志 党参 太子参 酸枣仁 丹参 黄连 生地黄 浮小麦 合欢花
-0.941052 0.322302 0.418209 0.577108 0.327921 0.537614 0.34113 0.344849
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.375000, recall: 0.214286, error: 0.625000
-18. 
-patient tongue id: 03232025522366_6_4
-label yaofang:
-甘草 法半夏 茯苓 桔梗 柏子仁 浙贝母 鳖甲 首乌藤 白花蛇舌 天山雪莲
-0.955854 0.436653 0.591265 0.434393 0.313956 0.513013 0.416805 0.477234 0.330627 0.350072
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
-
-------Score: precision: 0.400000, recall: 0.400000, error: 0.600000
-19. 
-patient tongue id: 06190943139925_2_1_4
-label yaofang:
-甘草 茯苓 薏苡仁 党参 白术 山药 石菖蒲 天麻 鳖甲 白扁豆 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.967149 0.330081 0.441892 0.590833 0.368055 0.590921 0.47304 0.481922 0.371037 0.413934 0.449617
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.909091, recall: 0.714286, error: 0.090909
-20. 
-patient tongue id: 04291510105716_1_6
-label yaofang:
-甘草 薏苡仁 党参 黄芪 熟附子 泽泻 天麻 赤石脂 鳖甲 补骨脂 莪术 败酱草 蜈蚣 天山雪莲 半枝莲
-0.974297 0.452753 0.628335 0.358142 0.314829 0.326556 0.651593 0.478978 0.487212 0.369952 0.412629 0.452086
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.583333, recall: 0.466667, error: 0.416667
-21. 
-patient tongue id: 03291941162140_1_2
-label yaofang:
-甘草 桃仁 党参 太子参 枸杞子 浙贝母 乌药 莪术 北沙参 赭石 蜈蚣 荔枝核 鸭脚艾
-0.372128 0.313191 0.370029 0.503784
-predicted yaofang:
-甘草 白芍 茯苓 炙甘草
-
-------Score: precision: 0.250000, recall: 0.076923, error: 0.750000
-22. 
-patient tongue id: 05192002495832_6_7_2
-label yaofang:
-甘草 川芎 茯苓 薏苡仁 党参 赤芍 杜仲 牛膝 山药 天麻 僵蚕 桑寄生 川木瓜 宽筋藤
-0.858438 0.398833 0.511356 0.313615 0.441925
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.800000, recall: 0.285714, error: 0.200000
-23. 
-patient tongue id: 04282239073444_1_2_7
-label yaofang:
-甘草 柴胡 当归 黄芪 白术 赤芍 海螵蛸 砂仁 柿蒂 鸡内金 北沙参 土鳖虫 预知子 稻芽
-0.652884 0.303768 0.434098 0.500007 0.45241
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.600000, recall: 0.214286, error: 0.400000
-24. 
-patient tongue id: 04282213242322_5
-label yaofang:
-甘草 陈皮 黄芩 法半夏 茯苓 桔梗 芦根 浙贝母 白茅根 细辛 诃子 板蓝根 紫苏子 木蝴蝶
-0.946715 0.302 0.408171 0.565589 0.35627 0.515962 0.325287 0.358927
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.250000, recall: 0.142857, error: 0.750000
-25. 
-patient tongue id: 02221317287831_1_4_7
-label yaofang:
-甘草 法半夏 桔梗 橘红 防风 金银花 太子参 藿香 白前 鸡内金 蜜百部 干鱼腥草
-0.326965 0.384142 0.337714 0.313146 0.310035 0.302489
-predicted yaofang:
-甘草 党参 黄芪 丹参 牛膝 车前子
-
-------Score: precision: 0.166667, recall: 0.083333, error: 0.833333
-26. 
-patient tongue id: 06072249163764_1_4
-label yaofang:
-甘草 桔梗 独活 芦根 薏苡仁 白术 浙贝母 天麻 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.98847 0.303885 0.464438 0.647138 0.365929 0.36685 0.324758 0.340242 0.71841 0.605452 0.601592 0.498184 0.548455 0.614766
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.571429, recall: 0.571429, error: 0.428571
-27. 
-patient tongue id: 03231441188626_4
-label yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄
-0.449056 0.694145 0.392536 0.865699 0.498701 0.651842 0.310815 0.395966 0.332446 0.439071 0.830871 0.852475 0.809542 0.854921 0.353885 0.906569 0.448199 0.435929 0.507088 0.703128
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.750000, recall: 1.000000, error: 0.250000
-28. 
-patient tongue id: 04171837100610_6
-label yaofang:
-川芎 陈皮 法半夏 茯苓 木香 茯神 党参 白术 五味子 杜仲 郁金 砂仁 炙甘草 合欢皮 牛大力 五指毛桃
-0.97542 0.328714 0.446237 0.598286 0.376768 0.610432 0.502056 0.514662 0.396697 0.433436 0.456808
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.187500, error: 0.727273
-29. 
-patient tongue id: 05232044202054_1_4_7
-label yaofang:
-甘草 茯苓 半夏 党参 黄芪 枸杞子 白术 杜仲 牛膝 厚朴 菟丝子 芡实 鸡内金 莲子 紫苏子 百合 紫苏叶 骨碎补 红豆杉 土茯苓 预知子 素馨花
-0.556872 0.336154 0.40833 0.397799 0.376976
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 1.000000, recall: 0.227273, error: 0.000000
-30. 
-patient tongue id: 02212026241597_4_6
-label yaofang:
-甘草 前胡 酸枣仁 生地黄 牡丹皮 杜仲 天麻 鳖甲 苦杏仁 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.989912 0.472992 0.656068 0.403825 0.304958 0.330924 0.669492 0.570431 0.576636 0.447704 0.493057 0.519464
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.666667, recall: 0.533333, error: 0.333333
-31. 
-patient tongue id: 04072028513350_4_5_1
-label yaofang:
-黄芪 白术 丹参 厚朴 砂仁 菟丝子 桑寄生 莪术 王不留行 橘核 首乌藤 合欢皮
-0.488715 0.33261 0.398323 0.477385 0.344476 0.309331
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴
-
-------Score: precision: 0.500000, recall: 0.250000, error: 0.500000
-32. 
-patient tongue id: 04130619356062_4
-label yaofang:
-甘草 川芎 当归 茯苓 桔梗 黄芪 郁金 山药 山茱萸 石菖蒲 天麻 桑螵蛸 地龙 辛夷 首乌藤
-0.975344 0.457686 0.612465 0.329011 0.304909 0.623963 0.490822 0.455008 0.37814 0.394704 0.387792
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.266667, error: 0.636364
-33. 
-patient tongue id: 02251112247374_4
-label yaofang:
-白芍 川芎 茯苓 木香 防风 丹参 钩藤 天麻 白芷 石决明 炙甘草 首乌藤 广藿香 威灵仙 炒蔓荆子 棉萆薢
-0.43747 0.626486 0.415644 0.763504 0.463768 0.576519 0.349318 0.398962 0.347945 0.323036 0.400229 0.713379 0.730955 0.693023 0.73485 0.371986 0.826611 0.420146 0.304813 0.433055 0.476671 0.610268
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.227273, recall: 0.312500, error: 0.772727
-34. 
-patient tongue id: 05161912268370_4
-label yaofang:
-麻黄 陈皮 前胡 桔梗 半夏 防风 细辛 白芷 白前 百部 紫苏子 炙甘草 辛夷 广藿香
-0.483547 0.883411 0.318033 0.981256 0.607683 0.80851 0.47571 0.357857 0.515618 0.963087 0.973612 0.948916 0.971521 0.990131 0.526666 0.491446 0.587749 0.861136
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.611111, recall: 0.785714, error: 0.388889
-35. 
-patient tongue id: 02281228362087_1_7
-label yaofang:
-黄芩 金银花 牛蒡子 蒲公英 麦冬 细辛 荷叶 蔓荆子 百部 白鲜皮 苍耳子 炒六神曲
-0.467695 0.325703 0.440057 0.332492 0.352676 0.326235 0.314928 0.331568
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 车前子 天麻
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-36. 
-patient tongue id: 01132305570528_1
-label yaofang:
-柴胡 黄芩 大枣 龙骨 牡蛎 党参 栀子 淡豆豉 姜半夏 炙甘草
-0.345738 0.42605 0.340808 0.307245 0.483925
-predicted yaofang:
-甘草 白芍 党参 白术 炙甘草
-
-------Score: precision: 0.400000, recall: 0.200000, error: 0.600000
-37. 
-patient tongue id: 01051854006500_4_1
-label yaofang:
-陈皮 法半夏 茯苓 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.330334 0.53441 0.385043 0.57243 0.374908 0.517256 0.516348 0.553066 0.574456 0.559638 0.30506 0.723823 0.336554 0.310024 0.320015 0.393888
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.750000, recall: 0.800000, error: 0.250000
-38. 
-patient tongue id: 04291449031355_7_1
-label yaofang:
-甘草 柴胡 白芍 薏苡仁 桃仁 远志 天麻 白花蛇舌草 佛手 浮小麦 蜈蚣 合欢花 半枝莲 醋鳖甲
-0.971947 0.451749 0.594935 0.369635 0.577922 0.466199 0.492934 0.348732 0.391551 0.432723
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.400000, recall: 0.285714, error: 0.600000
-39. 
-patient tongue id: 03231854140386_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 蜜麻黄 炒苍耳子
-0.453812 0.732201 0.374501 0.892468 0.502069 0.675357 0.300269 0.408084 0.335585 0.427724 0.847572 0.86984 0.826483 0.870079 0.341657 0.934737 0.457784 0.449441 0.518596 0.711825
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.650000, recall: 0.928571, error: 0.350000
-40. 
-patient tongue id: 04131756056735_1_6_4
-label yaofang:
-甘草 陈皮 法半夏 茯苓 桔梗 白术 酸枣仁 浙贝母 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.964877 0.31292 0.475081 0.572662 0.401404 0.31415 0.528852 0.482571 0.479855 0.381163 0.396429 0.368486
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
-41. 
-patient tongue id: 03090802565431_6
-label yaofang:
-甘草 法半夏 茯苓 远志 党参 酸枣仁 天麻 鳖甲 浮小麦 百合 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.956412 0.322142 0.449817 0.572197 0.395671 0.52942 0.434201 0.475783 0.324905 0.373558 0.40674
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.642857, error: 0.181818
-42. 
-patient tongue id: 02272226177792_4_1
-label yaofang:
-白芍 当归 木香 党参 白术 肉桂 补骨脂 肉豆蔻 诃子 炙甘草
-0.461793 0.359764 0.473953 0.383988 0.346239 0.302342 0.380185
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母 炙甘草
-
-------Score: precision: 0.571429, recall: 0.400000, error: 0.428571
-43. 
-patient tongue id: 03141606320774_1_2_7
-label yaofang:
-桔梗 防风 金银花 薏苡仁 党参 乳香 胆南星 藿香 白芷 辛夷 干鱼腥草 苍耳子
-0.877992 0.375721 0.547478 0.566671
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.250000, recall: 0.083333, error: 0.750000
-44. 
-patient tongue id: 03280627487411_4
-label yaofang:
-陈皮 前胡 桔梗 荆芥 防风 牛蒡子 薏苡仁 浙贝母 桑白皮 紫菀 苦杏仁 紫苏叶
-0.549238 0.347135 0.433484 0.380968
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-45. 
-patient tongue id: 06190936485518_6_1
-label yaofang:
-甘草 党参 黄芪 酸枣仁 生地黄 山药 菟丝子 桑寄生 益母草 鳖甲 麦芽 续断 天山雪莲 半枝莲 红豆杉
-0.996088 0.462304 0.69962 0.390553 0.373054 0.311372 0.349366 0.783203 0.660736 0.688259 0.535466 0.611486 0.710931
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.615385, recall: 0.533333, error: 0.384615
-46. 
-patient tongue id: 03271537585114_2_5
-label yaofang:
-桂枝 柴胡 白芍 黄芩 当归 牡蛎 桃仁 党参 黄芪 枸杞子 白术 黄连 生地黄 胆南星 黄柏 干姜 水蛭 天花粉 糯稻根 姜半夏 炙甘草 浮小麦 半枝莲 淡附片 半边莲 蒸陈皮
-0.986063 0.48108 0.635018 0.436587 0.329671 0.632038 0.587471 0.602277 0.465205 0.514954 0.522905
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.115385, error: 0.727273
-47. 
-patient tongue id: 05092124506730_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒六神曲
-0.4037 0.610472 0.392998 0.764071 0.450754 0.598749 0.342273 0.381563 0.719996 0.732308 0.701115 0.741126 0.31111 0.827241 0.416171 0.405561 0.429481 0.578571
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.666667, recall: 0.857143, error: 0.333333
-48. 
-patient tongue id: 02201802258727_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 荆芥穗 款冬花 紫菀 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄 炒苍耳子
-0.477911 0.828372 0.348556 0.960107 0.561608 0.745922 0.448441 0.35062 0.468773 0.933745 0.948321 0.914012 0.945575 0.321159 0.977638 0.490953 0.466648 0.560977 0.816136
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.857143, error: 0.368421
-49. 
-patient tongue id: 03301352465122_4
-label yaofang:
-法半夏 前胡 防风 黄芪 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 广藿香 蜜麻黄
-0.425937 0.607611 0.39506 0.768417 0.449601 0.554714 0.319455 0.355731 0.368306 0.725232 0.735651 0.71192 0.763304 0.384812 0.825059 0.396218 0.39156 0.454499 0.606807
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.857143, error: 0.368421
-50. 
-patient tongue id: 02142152203344_6_1_2
-label yaofang:
-甘草 党参 白术 山药 天麻 鳖甲 扁豆花 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 木棉花
-0.978586 0.316845 0.468956 0.630388 0.405889 0.338435 0.340415 0.671541 0.571168 0.577931 0.467619 0.518588 0.554968
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.769231, recall: 0.714286, error: 0.230769
-51. 
-patient tongue id: 06132207194330_4_1_6
-label yaofang:
-柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
-0.346628 0.327527 0.303232 0.306815 0.414773 0.350526 0.313612
-predicted yaofang:
-甘草 白芍 党参 黄芪 白术 海螵蛸 炙甘草
-
-------Score: precision: 0.428571, recall: 0.272727, error: 0.571429
-52. 
-patient tongue id: 03021201155190_1_4_7
-label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
-0.386704 0.367271 0.407185 0.376272 0.393506 0.37622 0.335965 0.353765
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 泽泻 车前子
-
-------Score: precision: 0.375000, recall: 0.250000, error: 0.625000
-53. 
-patient tongue id: 03021953406490_4_1
-label yaofang:
-白芍 川芎 大枣 当归 党参 太子参 枸杞子 熟地黄 山萸肉 炙甘草 续断 制何首乌 炙黄芪 盐菟丝子 酒女贞子 盐巴戟天
-0.496547 0.439577 0.392232 0.381324 0.337051 0.32676 0.354992 0.38609 0.406463
-predicted yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 炙甘草
-
-------Score: precision: 0.111111, recall: 0.062500, error: 0.888889
-54. 
-patient tongue id: 04222116002959_1_4
-label yaofang:
-法半夏 茯苓 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 蜜麻黄
-0.455332 0.716741 0.394702 0.8779 0.499602 0.682591 0.319705 0.413412 0.354571 0.327733 0.432988 0.829991 0.854158 0.809667 0.851363 0.359748 0.92874 0.455078 0.462939 0.517515 0.714688
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.666667, recall: 0.933333, error: 0.333333
-55. 
-patient tongue id: 04200637018914_2_6
-label yaofang:
-甘草 白芍 茯苓 龙骨 党参 白术 酸枣仁 生地黄 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.986019 0.328388 0.458094 0.617732 0.3674 0.642076 0.556257 0.549796 0.434388 0.478434 0.491045
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 1.000000, recall: 0.785714, error: 0.000000
-56. 
-patient tongue id: 04062010158057_1_4_7
-label yaofang:
-甘草 枳壳 木香 党参 黄芪 丹参 海螵蛸 厚朴 莱菔子 鸡内金 草豆蔻 六神曲
-0.992631 0.47857 0.662756 0.370272 0.358985 0.317943 0.346003 0.74601 0.633884 0.625221 0.513943 0.566969 0.617853
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.153846, recall: 0.166667, error: 0.846154
-57. 
-patient tongue id: 06111022092460_1_6
-label yaofang:
-甘草 白芍 党参 白术 山药 白茅根 茜草 天麻 赤石脂 鳖甲 补骨脂 蜈蚣 天山雪莲 半枝莲 广金钱草
-0.994898 0.30239 0.48984 0.663772 0.36346 0.314214 0.722129 0.64713 0.616303 0.525453 0.562332 0.562284
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.833333, recall: 0.666667, error: 0.166667
-58. 
-patient tongue id: 05222124222250_7_2_1
-label yaofang:
-牡蛎 蒲公英 黄芪 白术 浙贝母 砂仁 莪术 王不留行 麦芽 橘络 墨旱莲
-0.475101 0.303747 0.33954 0.468684 0.514191 0.339774 0.326276
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁
-
-------Score: precision: 0.428571, recall: 0.272727, error: 0.571429
-59. 
-patient tongue id: 03111203178808_1_4_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.488424 0.311207 0.320982 0.40188 0.310311 0.341604
-predicted yaofang:
-甘草 白芍 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.666667, recall: 0.307692, error: 0.333333
-60. 
-patient tongue id: 05021440330750_1_4_7
-label yaofang:
-人参 当归 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子 煨诃子
-0.456845 0.48095 0.439944 0.520061 0.51501 0.414631 0.474886 0.323704 0.421702 0.332715 0.410386 0.354453 0.367329 0.401585 0.328765
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.066667, recall: 0.083333, error: 0.933333
-61. 
-patient tongue id: 04191714594400_3_1
-label yaofang:
-牡蛎 黄芪 白术 熟地黄 杜仲 附子 山药 山茱萸 厚朴 当归尾 砂仁 三七 桑枝
-0.513443 0.377719 0.363141 0.301825 0.387683 0.502256 0.516047 0.320976 0.301145 0.341509 0.420374 0.394324 0.30096 0.361631 0.397578 0.318565
-predicted yaofang:
-甘草 茯苓 半夏 薏苡仁 党参 黄芪 白术 海螵蛸 浙贝母 杜仲 厚朴 砂仁 莪术 鸡内金 北沙参 合欢皮
-
-------Score: precision: 0.312500, recall: 0.384615, error: 0.687500
-62. 
-patient tongue id: 05182102403420_4
-label yaofang:
-陈皮 桔梗 牛蒡子 车前子 大腹皮 干姜 厚朴 白芷 姜半夏 紫苏叶 广藿香 天山雪莲
-0.569576 0.398253 0.375472 0.364195
-predicted yaofang:
-甘草 白芍 党参 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-63. 
-patient tongue id: 02231821438489_4
-label yaofang:
-麻黄 甘草 法半夏 前胡 桔梗 防风 荆芥穗 紫菀 辛夷 紫苏梗 广藿香 炒苍耳子
-0.433694 0.664609 0.399303 0.814894 0.480196 0.617034 0.326273 0.397982 0.346166 0.316822 0.421584 0.773209 0.790774 0.753335 0.799267 0.365094 0.866322 0.443991 0.432524 0.503735 0.65915
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.380952, recall: 0.666667, error: 0.619048
-64. 
-patient tongue id: 03240608491750_2_7_4
-label yaofang:
-甘草 白芍 川芎 茯苓 党参 枸杞子 白术 牛膝 山药 泽泻 天麻 磁石 桑寄生 麦芽 蒺藜 首乌藤
-0.964097 0.319962 0.454617 0.589228 0.384553 0.309714 0.566879 0.480212 0.475113 0.378947 0.402859 0.401602
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.583333, recall: 0.437500, error: 0.416667
-65. 
-patient tongue id: 01042344242554_1_7
-label yaofang:
-甘草 独活 党参 白术 生地黄 杜仲 天麻 鳖甲 续断 蜈蚣 白花蛇舌 半枝莲 红豆杉
-0.976248 0.314882 0.446208 0.601254 0.399365 0.59991 0.490695 0.521922 0.385033 0.433705 0.473138
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.615385, error: 0.272727
-66. 
-patient tongue id: 02272220562979_1
-label yaofang:
-陈皮 当归 党参 黄芪 白术 海螵蛸 白芷 升麻 北柴胡 炙甘草
-0.361646 0.345397 0.466489 0.349049 0.311902 0.31138 0.309705 0.358496 0.531382
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.333333, recall: 0.300000, error: 0.666667
-67. 
-patient tongue id: 03151901022924_1
-label yaofang:
-桂枝 白芍 当归 茯苓 龙骨 牡蛎 党参 黄芪 白术 海螵蛸 砂仁 炙甘草
-0.337433 0.357275 0.466553 0.333403 0.319756 0.33642 0.399443 0.536518
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 0.625000, recall: 0.416667, error: 0.375000
-68. 
-patient tongue id: 02212127132845_4
-label yaofang:
-防风 薄荷 钩藤 荆芥穗 白芷 北柴胡 炙甘草 首乌藤 紫苏梗 广藿香 威灵仙 炒蔓荆子
-0.47053 0.765092 0.374668 0.922627 0.523293 0.684401 0.317391 0.422913 0.336371 0.435835 0.88052 0.900624 0.853197 0.903102 0.364676 0.949483 0.458454 0.457214 0.556625 0.753721
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.200000, recall: 0.333333, error: 0.800000
-69. 
-patient tongue id: 01040647112282_6_2_1
-label yaofang:
-甘草 白芍 川芎 麦冬 党参 白术 玄参 柏子仁 生地黄 牛膝 厚朴 天麻 全蝎 火麻仁
-0.987369 0.300651 0.474215 0.629912 0.369688 0.311401 0.316057 0.676981 0.599201 0.574836 0.480234 0.520769 0.552801
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.384615, recall: 0.357143, error: 0.615385
-70. 
-patient tongue id: 06041126505886_4
-label yaofang:
-法半夏 前胡 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
-0.375273 0.319967 0.447399 0.436467 0.455393 0.355914 0.35258 0.447646 0.410959 0.358169 0.36229 0.301839 0.51792
-predicted yaofang:
-甘草 陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.615385, recall: 0.500000, error: 0.384615
-71. 
-patient tongue id: 02241442382479_4
-label yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
-0.349232 0.300482
-predicted yaofang:
-党参 炙甘草
-
-------Score: precision: 0.500000, recall: 0.100000, error: 0.500000
-72. 
-patient tongue id: 03101921026061_6_2_7
-label yaofang:
-黄芪 白术 黄柏 郁金 泽泻 天麻 全蝎 桑寄生 芡实 金樱子 玉米须 合欢皮
-0.439483 0.332634 0.390495 0.305532 0.537452 0.498866 0.412289 0.372936 0.359787 0.423766 0.306681
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 厚朴 砂仁 鸡内金 北沙参 合欢皮
-
-------Score: precision: 0.272727, recall: 0.250000, error: 0.727273
-73. 
-patient tongue id: 02141849046928_4
-label yaofang:
-陈皮 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-0.395133 0.638189 0.409052 0.747743 0.453259 0.571644 0.320126 0.373341 0.332026 0.383227 0.706273 0.73492 0.702169 0.730262 0.351597 0.831696 0.386338 0.395108 0.466246 0.612541
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 1.000000, error: 0.300000
-74. 
-patient tongue id: 02191256242879_6_2
-label yaofang:
-甘草 柴胡 白芍 枳壳 木香 延胡索 郁金 天麻 鳖甲 鸡内金 北沙参 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.897588 0.398246 0.519551 0.30999 0.426039
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.400000, recall: 0.133333, error: 0.600000
-75. 
-patient tongue id: 04202014554214_7_5_1
-label yaofang:
-甘草 陈皮 茯苓 黄芪 枸杞子 白术 生地黄 海螵蛸 胆南星 车前子 厚朴 生半夏 砂仁 天麻 蜈蚣 鲜龙葵果
-0.306861 0.312983 0.386517 0.36551 0.357995 0.36329 0.304522 0.373155
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 泽泻 车前子
-
-------Score: precision: 0.375000, recall: 0.187500, error: 0.625000
-76. 
-patient tongue id: 02261921450466_1_5
-label yaofang:
-甘草 黄芩 橘红 牛蒡子 桃仁 远志 细辛 桑白皮 鳖甲 款冬花 川贝母 紫菀 苦杏仁 白花蛇舌
-0.942753 0.473015 0.556944 0.387835 0.312624 0.487851 0.423973 0.422125 0.324446 0.334393 0.308682
+甘草 白芍 黄芩 桔梗 麦冬 太子参 浙贝母 乌梅 鳖甲 北沙参 白花蛇舌 蜂房 岗梅根 四季青
+0.976237 0.57032 0.579795 0.433465 0.313176 0.576727 0.507013 0.500643 0.380769 0.402451 0.441507
 predicted yaofang:
 甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
-77. 
-patient tongue id: 06022237143554_1_4_6
-label yaofang:
-陈皮 半夏 牡蛎 远志 黄芪 枸杞子 白术 杜仲 郁金 菟丝子 北沙参 炙甘草 首乌藤 紫苏梗 骨碎补 红豆杉 合欢皮 预知子
-0.54511 0.336375 0.308933 0.368038 0.525962 0.531624 0.31171 0.393321 0.347742 0.328671 0.364155
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.454545, recall: 0.277778, error: 0.545455
-78. 
-patient tongue id: 06111030183679_1_6
-label yaofang:
-甘草 柴胡 白芍 枳壳 茯苓 党参 白术 生地黄 浙贝母 山楂 莱菔子 麦芽 建曲
-0.98327 0.470855 0.643957 0.370061 0.32964 0.310199 0.339284 0.676785 0.533357 0.52946 0.431823 0.456407 0.480612
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.384615, recall: 0.384615, error: 0.615385
-79. 
-patient tongue id: 04271549503123_1_4_7
-label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
-0.410085 0.328707 0.33393 0.396813
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.750000, recall: 0.250000, error: 0.250000
-80. 
-patient tongue id: 04142236233858_6_4_7
-label yaofang:
-甘草 枳壳 法半夏 茯苓 龙骨 党参 酸枣仁 丹参 黄连 山茱萸 薤白 天麻 全蝎 瓜蒌皮 麦芽
-0.990931 0.317387 0.465924 0.645741 0.360008 0.302734 0.309722 0.695226 0.589427 0.565529 0.473989 0.516477 0.528632
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.384615, recall: 0.333333, error: 0.615385
-81. 
-patient tongue id: 01070838157796_1_4_7
-label yaofang:
-当归 党参 黄芪 熟附子 乌药 山药 干姜 淫羊藿 吴茱萸 仙茅 益智 鹿角霜 煨诃子
-0.496002 0.360145 0.353815 0.442411 0.438473 0.306568 0.326826
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 北沙参
-
-------Score: precision: 0.285714, recall: 0.153846, error: 0.714286
-82. 
-patient tongue id: 05182214120526_1_4
-label yaofang:
-法半夏 茯苓 前胡 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄
-0.411155 0.572955 0.386251 0.704681 0.414504 0.543658 0.329296 0.333933 0.356145 0.663876 0.693748 0.676763 0.708667 0.397148 0.798324 0.391344 0.391919 0.422584 0.555268
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.684211, recall: 0.928571, error: 0.315789
-83. 
-patient tongue id: 04142240130644_6
-label yaofang:
-甘草 柴胡 茯苓 桃仁 黄芪 白术 酸枣仁 生地黄 桑螵蛸 益智 浮小麦 广升麻
-0.987468 0.311295 0.473861 0.627665 0.360948 0.305363 0.648075 0.561834 0.544917 0.446169 0.480778 0.48338
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.250000, error: 0.750000
-84. 
-patient tongue id: 02021017140721_1_4
-label yaofang:
-甘草 茯苓 黄芪 白术 胆南星 杜仲 白茅根 石菖蒲 大黄 厚朴 生半夏 火麻仁 鸡内金 稻芽
-0.350107 0.306087 0.392835 0.331523 0.307174 0.47881
-predicted yaofang:
-甘草 法半夏 茯苓 黄芪 北沙参 炙甘草
-
-------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
-85. 
-patient tongue id: 01192136512410_7_1_6
-label yaofang:
-甘草 法半夏 前胡 浙贝母 郁金 天麻 款冬花 紫菀 诃子 白花蛇舌草 丝瓜络 蜈蚣 半枝莲 醋鳖甲
-0.678628 0.42004 0.43698 0.349774 0.461356
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.200000, recall: 0.071429, error: 0.800000
-86. 
-patient tongue id: 05191952205989_6_2_1
-label yaofang:
-甘草 川芎 茯苓 羌活 桃仁 党参 浙贝母 山药 天麻 全蝎 粉葛 首乌藤 紫苏梗 猫爪草
-0.983542 0.305201 0.47082 0.615477 0.364398 0.306954 0.621626 0.540441 0.510774 0.432743 0.45261 0.433659
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-87. 
-patient tongue id: 04171840023037_7
-label yaofang:
-柴胡 川芎 茯苓 桔梗 薏苡仁 桃仁 党参 黄芪 白术 红花 乳香 熟地黄 黄柏 白茅根 干姜 地骨皮 天花粉 没药 败酱草 皂角刺 山萸肉 炙甘草 醋香附 大血藤
-0.944602 0.441899 0.546323 0.357009 0.471346 0.339307 0.382187
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.428571, recall: 0.125000, error: 0.571429
-88. 
-patient tongue id: 05191926128325_6_1
-label yaofang:
-甘草 茯苓 龙骨 牡蛎 远志 党参 酸枣仁 生地黄 天麻 鳖甲 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.981267 0.448838 0.627785 0.397981 0.322105 0.635681 0.52577 0.536393 0.409838 0.452578 0.475725
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.600000, error: 0.181818
-89. 
-patient tongue id: 01200648408446_1_7_5
-label yaofang:
-甘草 柴胡 蒲公英 黄芪 生地黄 天麻 白芷 天花粉 鳖甲 百部 王不留行 麦芽 皂角刺 蜈蚣 白花蛇舌 天山雪莲 半枝莲 广升麻
-0.496534 0.311914 0.436045 0.447194 0.333176 0.322116
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝
-
-------Score: precision: 0.333333, recall: 0.111111, error: 0.666667
-90. 
-patient tongue id: 03091958120659_5
-label yaofang:
-甘草 黄芩 前胡 桔梗 芦根 牛蒡子 浙贝母 天麻 鳖甲 款冬花 苦杏仁 板蓝根 蜈蚣 天山雪莲 半枝莲
-0.94995 0.454133 0.582488 0.454928 0.331753 0.49983 0.468959 0.523482 0.363568 0.399538 0.418094
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
-91. 
-patient tongue id: 04201415481479_1_2
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.407239 0.605666 0.441207 0.407303 0.629735 0.582927 0.563072 0.573805 0.607613 0.551138 0.673526 0.503051 0.612646 0.641155 0.648563
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.230769, error: 0.800000
-92. 
-patient tongue id: 01100248200851_1_2
-label yaofang:
-白芍 牛膝 全蝎 苏木 炙甘草 紫苏梗 蜈蚣 醋延胡索
-0.471812 0.302709 0.310915 0.376127 0.325631 0.356355
-predicted yaofang:
-甘草 白芍 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.166667, recall: 0.125000, error: 0.833333
-93. 
-patient tongue id: 03240614548861_6_2
-label yaofang:
-茯苓 龙骨 党参 丹参 生地黄 山茱萸 天麻 鳖甲 火麻仁 炙甘草 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.991235 0.300743 0.478047 0.654971 0.376433 0.314106 0.325425 0.70483 0.616356 0.597585 0.50249 0.53945 0.555133
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.615385, recall: 0.571429, error: 0.384615
-94. 
-patient tongue id: 04261934159961_4
-label yaofang:
-桂枝 茯苓 酸枣仁 神曲 泽泻 山楂 莱菔子 磁石 赤小豆 茯苓皮 猪苓 鸡内金 珍珠母 广藿香
-0.799607 0.380319 0.477938 0.387318
-predicted yaofang:
-甘草 茯苓 党参 白术
-
-------Score: precision: 0.250000, recall: 0.071429, error: 0.750000
-95. 
-patient tongue id: 02252059002883_1_4
-label yaofang:
-甘草 枸杞子 丹参 栀子 牡丹皮 天麻 鳖甲 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 木贼 有瓜石斛
-0.936474 0.409832 0.538317 0.504576 0.351769 0.425293
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 蜈蚣
-
-------Score: precision: 0.500000, recall: 0.200000, error: 0.500000
-96. 
-patient tongue id: 03012052108424_5_6
-label yaofang:
-甘草 法半夏 大枣 茯苓 桔梗 薏苡仁 葶苈子 浙贝母 款冬花 苇茎 苦杏仁
-0.955469 0.469619 0.30115 0.56214 0.467019 0.328291 0.451623 0.441115 0.501805 0.327996 0.34895 0.330071
-predicted yaofang:
-甘草 茯苓 薏苡仁 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.272727, error: 0.750000
-97. 
-patient tongue id: 03221335488711_2_4
-label yaofang:
-法半夏 茯苓 前胡 太子参 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.420987 0.642554 0.397316 0.775659 0.458434 0.589331 0.323422 0.393606 0.340359 0.416312 0.724474 0.765276 0.725923 0.750781 0.356349 0.862466 0.401544 0.407554 0.465578 0.619913
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 0.933333, error: 0.300000
-98. 
-patient tongue id: 03301359441832_1_4
-label yaofang:
-甘草 陈皮 法半夏 茯苓 前胡 麦冬 款冬花 紫菀 白前 百部 北沙参 广藿香 蜜麻黄
-0.351555 0.37284 0.391474 0.356771 0.300093 0.339605 0.339997 0.329993 0.383541 0.3539 0.386641 0.42921 0.634728
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.692308, recall: 0.692308, error: 0.307692
-99. 
-patient tongue id: 02182259505353_1_2_6
-label yaofang:
-甘草 柴胡 白芍 香附 茯苓 党参 酸枣仁 丹参 郁金 山药 砂仁 菟丝子 益母草 麦芽 白扁豆
-0.994498 0.4896 0.67755 0.387289 0.315362 0.33226 0.729752 0.643171 0.631118 0.518932 0.566702 0.582837
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.333333, error: 0.583333
-100. 
-patient tongue id: 04221848579766_2
-label yaofang:
-法半夏 葛根 前胡 桔梗 麦冬 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 威灵仙 人参叶
-0.380143 0.514988 0.413227 0.571574 0.396823 0.454012 0.312171 0.31453 0.535262 0.560256 0.520292 0.545375 0.386052 0.731467 0.324427 0.327901 0.418467
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 蜜麻黄
-
-------Score: precision: 0.588235, recall: 0.714286, error: 0.411765
-101. 
-patient tongue id: 06011956469720_5_7
-label yaofang:
-甘草 薏苡仁 鸡血藤 枸杞子 赤芍 杜仲 郁金 苍术 天麻 菟丝子 金樱子 桑螵蛸 决明子 沙苑子 覆盆子
-0.989501 0.306292 0.473313 0.648744 0.372483 0.35882 0.321372 0.35387 0.720431 0.609208 0.606975 0.499449 0.550161 0.609745
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.142857, recall: 0.133333, error: 0.857143
-102. 
-patient tongue id: 04172229427925_1
-label yaofang:
-柴胡 白芍 香附 陈皮 延胡索 川楝子 干姜 炙甘草 预知子
-0.386513 0.323845 0.428871 0.329768 0.332143 0.452649
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 炙甘草
-
-------Score: precision: 0.500000, recall: 0.333333, error: 0.500000
-103. 
-patient tongue id: 06031046424397_1_4
-label yaofang:
-甘草 柴胡 黄芩 金银花 连翘 蒲公英 浙贝母 牡丹皮 郁金 天花粉 瓜蒌皮 王不留行 皂角刺 路路通
-0.956659 0.315821 0.461539 0.557413 0.358248 0.502501 0.421436 0.409958 0.326212 0.327009
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲
-
-------Score: precision: 0.100000, recall: 0.071429, error: 0.900000
-104. 
-patient tongue id: 03152021467591_1_2_7
-label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
-0.411413 0.528083 0.42545 0.47348 0.576698 0.489576 0.531148 0.491907 0.52052 0.437592 0.549632 0.398051 0.503322 0.533679 0.508793
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.250000, error: 0.800000
-105. 
-patient tongue id: 05162041043829_7_1
-label yaofang:
-柴胡 白芍 香附 枳壳 桃仁 海螵蛸 浙贝母 白芷 豆蔻 姜半夏 炙甘草 紫苏梗 土茯苓
-0.433567 0.56406 0.444369 0.360198 0.329228 0.438669 0.32642 0.399938 0.665927 0.72767 0.307132 0.310961
-predicted yaofang:
-柴胡 白芍 香附 枳壳 柏子仁 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏叶 紫苏梗
-
-------Score: precision: 0.750000, recall: 0.692308, error: 0.250000
-106. 
-patient tongue id: 02191623352769_6_4
-label yaofang:
-甘草 薏苡仁 远志 党参 赤芍 郁金 山药 天麻 鳖甲 莪术 虎杖 蜈蚣 天山雪莲 红豆杉
-0.965569 0.465816 0.585028 0.370626 0.309216 0.533859 0.404817 0.41783 0.310422
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 天山雪莲
-
-------Score: precision: 0.777778, recall: 0.500000, error: 0.222222
-107. 
-patient tongue id: 02202228066799_1_6
-label yaofang:
-甘草 茯苓 远志 党参 白术 五味子 杜仲 山茱萸 车前子 菟丝子 巴戟天 金樱子 蛇床子 覆盆子
-0.964267 0.307073 0.433762 0.582932 0.392995 0.50759 0.400151 0.430909 0.315623 0.32244
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
-
-------Score: precision: 0.400000, recall: 0.285714, error: 0.600000
-108. 
-patient tongue id: 02020821107179_5
-label yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 鱼腥草 浙贝母 桑白皮 款冬花 紫菀 苇茎 苦杏仁 紫苏子 蜜麻黄
-0.978918 0.447278 0.614561 0.428072 0.306691 0.594024 0.521181 0.561438 0.406296 0.457834 0.507872
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
-109. 
-patient tongue id: 02272214146195_6_4
-label yaofang:
-柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
-0.311751 0.33664 0.375307
-predicted yaofang:
-甘草 党参 炙甘草
-
-------Score: precision: 0.333333, recall: 0.090909, error: 0.666667
-110. 
-patient tongue id: 05130652110081_2_6
-label yaofang:
-甘草 白芍 龙骨 党参 黄芪 白术 酸枣仁 山茱萸 地黄 天麻 糯稻根 蜈蚣 半枝莲 醋鳖甲
-0.960659 0.312811 0.440045 0.589605 0.369571 0.551987 0.439008 0.436223 0.337234 0.359693 0.359604
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.636364, recall: 0.500000, error: 0.363636
-111. 
-patient tongue id: 02182227538034_2_1
-label yaofang:
-甘草 白芍 酸枣仁 丹参 天麻 鳖甲 麦芽 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 木贼 谷精子
-0.989111 0.32527 0.441817 0.639777 0.376409 0.642982 0.511761 0.543484 0.374667 0.439488 0.476673
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.571429, error: 0.272727
-112. 
-patient tongue id: 02202244307088_5
-label yaofang:
-甘草 陈皮 法半夏 茯苓 前胡 鱼腥草 白术 桑白皮 款冬花 苦杏仁 紫苏梗
-0.953551 0.447662 0.577197 0.391355 0.313903 0.52861 0.424551 0.436781 0.32221 0.344032 0.342432
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.272727, error: 0.727273
-113. 
-patient tongue id: 05221904306881_4
-label yaofang:
-陈皮 半夏 薏苡仁 厚朴 蝉蜕 白鲜皮 土茯苓 木棉花
-0.626269 0.3248 0.407537 0.506168 0.564493 0.312839 0.353744 0.349564
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 杜仲 厚朴 砂仁
-
-------Score: precision: 0.125000, recall: 0.125000, error: 0.875000
-114. 
-patient tongue id: 03081821577831_1_7_4
-label yaofang:
-甘草 枳壳 太子参 黄芪 白术 海螵蛸 郁金 厚朴 山楂 砂仁 鸡内金 北沙参 紫苏梗
-0.476886 0.319776 0.393156 0.507955 0.365835 0.320255 0.303689
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 北沙参
-
-------Score: precision: 0.714286, recall: 0.384615, error: 0.285714
-115. 
-patient tongue id: 02272203463482_6
-label yaofang:
-甘草 川芎 陈皮 枳壳 茯苓 龙骨 牡蛎 远志 柏子仁 竹茹 肉桂 姜半夏 附片
-0.326281 0.367988 0.493899 0.322217 0.334817 0.313378 0.304743 0.307932 0.429581 0.562712
-predicted yaofang:
-甘草 柴胡 白芍 香附 党参 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.200000, recall: 0.153846, error: 0.800000
-116. 
-patient tongue id: 02182217015039_2_6
-label yaofang:
-甘草 白芍 麦冬 太子参 浙贝母 山药 白茅根 鳖甲 北沙参 辛夷 苍耳子 白花蛇舌 天山雪莲 蜂房 四季青
-0.997414 0.50451 0.699616 0.395422 0.325404 0.34606 0.750345 0.663788 0.664741 0.520564 0.5791 0.609893
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.333333, error: 0.583333
-117. 
-patient tongue id: 02171855235107_4
-label yaofang:
-甘草 防风 黄芪 细辛 荆芥穗 白芷 辛夷 紫苏梗 广藿香 炒苍耳子 麸炒白术
-0.442259 0.720324 0.397589 0.873733 0.513702 0.671241 0.303131 0.400885 0.33673 0.312789 0.445413 0.835025 0.854703 0.80167 0.854992 0.335319 0.914451 0.460879 0.447899 0.518514 0.710935
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.285714, recall: 0.545455, error: 0.714286
-118. 
-patient tongue id: 06170923445741_5_1_6
-label yaofang:
-甘草 桔梗 牛蒡子 海螵蛸 浙贝母 郁金 厚朴 砂仁 北沙参 木蝴蝶 猫爪草 稻芽
-0.462581 0.389182 0.491606
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.333333, recall: 0.083333, error: 0.666667
-119. 
-patient tongue id: 06181855225779_1_2
-label yaofang:
-甘草 川芎 龙骨 党参 牛膝 山药 天麻 鳖甲 麦芽 女贞子 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 墨旱莲
-0.986275 0.325044 0.453164 0.639284 0.359283 0.665813 0.551164 0.53883 0.434038 0.475134 0.485465
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.500000, error: 0.272727
-120. 
-patient tongue id: 06031125422178_5_1_7
-label yaofang:
-甘草 柴胡 白芍 连翘 薏苡仁 党参 白术 黄连 延胡索 浙贝母 乌梅 郁金 山药 仙鹤草 麦芽 白花蛇舌
-0.970794 0.334585 0.446619 0.562149 0.334903 0.505248 0.419092 0.401295 0.310666 0.322549
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲
-
-------Score: precision: 0.500000, recall: 0.312500, error: 0.500000
-121. 
-patient tongue id: 02241826013553_2_1
-label yaofang:
-法半夏 茯苓 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-0.454186 0.761232 0.381237 0.916318 0.529079 0.676975 0.312117 0.432476 0.349472 0.447469 0.878579 0.898483 0.853358 0.894505 0.352071 0.948104 0.457948 0.440014 0.539331 0.759327
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.750000, recall: 1.000000, error: 0.250000
-122. 
-patient tongue id: 02120817007164_1_7
-label yaofang:
-甘草 法半夏 茯苓 远志 党参 白术 杜仲 石菖蒲 天麻 菟丝子 补骨脂 桑螵蛸 益智 辛夷
-0.937879 0.310541 0.438628 0.554568 0.40465 0.464502 0.366398 0.416073
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.625000, recall: 0.357143, error: 0.375000
-123. 
-patient tongue id: 03151812056427_1_3_7
-label yaofang:
-甘草 法半夏 茯苓 橘红 桃仁 党参 黄芪 丹参 枳实 竹茹 胆南星 薤白 厚朴
-0.375668 0.550364 0.435566 0.455295 0.587757 0.521612 0.539846 0.537338 0.564136 0.50766 0.61196 0.437315 0.566099 0.592395 0.604398
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.333333, recall: 0.384615, error: 0.666667
-124. 
-patient tongue id: 04282232113156_5_6_1
-label yaofang:
-甘草 法半夏 茯苓 龙骨 党参 酸枣仁 地黄 天麻 白花蛇舌草 浮小麦 首乌藤 蜈蚣 半枝莲 醋鳖甲
-0.985639 0.30191 0.464021 0.630168 0.388031 0.310258 0.647873 0.567993 0.562397 0.456137 0.492948 0.506329
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
-125. 
-patient tongue id: 02202220357633_4
-label yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 浙贝母 栀子 桑白皮 莱菔子 茵陈 款冬花 麦芽 苦杏仁 紫苏子
-0.975779 0.315787 0.448886 0.639563 0.391634 0.323725 0.321472 0.638816 0.508839 0.510218 0.399365 0.440115 0.475442
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.153846, recall: 0.142857, error: 0.846154
-126. 
-patient tongue id: 02260214108926_1_6
-label yaofang:
-甘草 茯苓 党参 栀子 山药 天麻 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲 木贼 有瓜石斛
-0.885942 0.432003 0.527871 0.437521 0.303641 0.40139 0.302139 0.403059
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.875000, recall: 0.500000, error: 0.125000
-127. 
-patient tongue id: 02142151149145_6
-label yaofang:
-甘草 柴胡 白芍 木香 酸枣仁 山药 砂仁 天麻 白花蛇舌草 蜈蚣 半枝莲 醋鳖甲 麸炒枳壳
-0.919643 0.423675 0.537798 0.365095 0.452511 0.315096
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 蜈蚣
-
-------Score: precision: 0.500000, recall: 0.230769, error: 0.500000
-128. 
-patient tongue id: 01201946387318_2_6
-label yaofang:
-甘草 柴胡 白芍 枳壳 茯苓 党参 白术 酸枣仁 生地黄 砂仁 菟丝子 麦芽 女贞子 紫苏梗
-0.635217 0.305676 0.442219 0.306792 0.413375 0.31975 0.305861
-predicted yaofang:
-甘草 柴胡 白芍 茯苓 党参 白术 浙贝母
-
-------Score: precision: 0.857143, recall: 0.428571, error: 0.142857
-129. 
-patient tongue id: 05090816486962_1_4_7
-label yaofang:
-桂枝 龙骨 牡蛎 麦冬 党参 阿胶 五味子 熟地黄 火麻仁 炙甘草 牡荆子 黑枣
-0.432772 0.391901 0.408511 0.497548 0.437444 0.304915 0.389452 0.3347 0.324165
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 莱菔子
-
-------Score: precision: 0.111111, recall: 0.083333, error: 0.888889
-130. 
-patient tongue id: 02142001548586_4
-label yaofang:
-甘草 黄连 肉桂 干姜 附片
-0.784558 0.398796 0.394306 0.465937 0.33813
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.200000, recall: 0.200000, error: 0.800000
-131. 
-patient tongue id: 02272233112543_3
-label yaofang:
-党参 枸杞子 白术 熟地黄 杜仲 砂仁 菟丝子 巴戟天 桑寄生 鹿角霜 续断 制何首乌 艾叶
-0.508666 0.404424 0.309481 0.390766 0.330335
-predicted yaofang:
-甘草 白芍 茯苓 党参 炙甘草
-
-------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
-132. 
-patient tongue id: 03312043271548_1_6_4
-label yaofang:
-甘草 茯苓 羌活 独活 薏苡仁 白术 延胡索 郁金 山药 厚朴 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲
-0.753375 0.305228 0.440531 0.427036 0.322296
-predicted yaofang:
-甘草 法半夏 茯苓 党参 白术
-
-------Score: precision: 0.600000, recall: 0.187500, error: 0.400000
-133. 
-patient tongue id: 04182208380615_1_3_7
-label yaofang:
-甘草 当归 茯苓 党参 黄芪 白术 浙贝母 杜仲 厚朴 砂仁 款冬花 鸡内金 地龙 紫苏子 蜈蚣 鲜龙葵果
-0.604178 0.328312 0.447948 0.449482 0.329869
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 1.000000, recall: 0.312500, error: 0.000000
-134. 
-patient tongue id: 03151835363889_6_1
-label yaofang:
-龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 蝉蜕 姜半夏 炙甘草 浮小麦 百合 紫苏叶 蜈蚣 合欢皮
-0.481336 0.388747 0.377337 0.389958
-predicted yaofang:
-甘草 白芍 党参 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-135. 
-patient tongue id: 02182148324994_2_6
-label yaofang:
-甘草 党参 生地黄 郁金 山药 山茱萸 泽泻 车前子 海金沙 鸡内金 王不留行 川木瓜 广金钱草 土茯苓 石苇
-0.985598 0.484967 0.640912 0.387265 0.325901 0.63802 0.540948 0.521866 0.421294 0.454178 0.450823
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.200000, error: 0.727273
-136. 
-patient tongue id: 02020947100958_6_1
-label yaofang:
-甘草 柴胡 法半夏 茯苓 木香 蒲公英 白及 党参 白术 黄连 延胡索 五灵脂 旋覆花 鱼古 煅瓦楞子
-0.760438 0.42083 0.4815 0.382494
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.750000, recall: 0.200000, error: 0.250000
-137. 
-patient tongue id: 03111516539803_7_6
-label yaofang:
-甘草 柴胡 白芍 川芎 羌活 桃仁 红花 赤芍 栀子 牡丹皮 牛膝 细辛 天麻 全蝎 白芷
-0.946223 0.303824 0.440387 0.576849 0.385815 0.526752 0.417414 0.428318 0.320619 0.347541 0.350452
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.200000, error: 0.727273
-138. 
-patient tongue id: 06010208339212_6_4_7
-label yaofang:
-甘草 法半夏 茯苓 党参 白术 砂仁 天麻 鳖甲 紫苏梗 广藿香 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.984789 0.470035 0.639729 0.411787 0.345122 0.304554 0.357926 0.675145 0.569807 0.588902 0.46507 0.514815 0.567837
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.769231, recall: 0.714286, error: 0.230769
-139. 
-patient tongue id: 04232016402822_4
-label yaofang:
-麻黄 桂枝 荆芥 防风 独活 延胡索 乳香 没药 炙甘草 豨莶草 海风藤 海桐皮 鹿衔草 走马胎
-0.44702 0.31317 0.389257 0.464801 0.301589
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-140. 
-patient tongue id: 01061842504754_2_4
-label yaofang:
-甘草 茯苓 葛根 麦冬 玄参 牡丹皮 北沙参 百合 人参叶 干石斛
-0.434713 0.6397 0.408943 0.771196 0.452887 0.584394 0.351656 0.384006 0.335384 0.308034 0.39941 0.728636 0.744623 0.716088 0.761048 0.409746 0.833564 0.421411 0.424729 0.501161 0.628371
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.095238, recall: 0.200000, error: 0.904762
-141. 
-patient tongue id: 05312141258570_1_2_7
-label yaofang:
-甘草 桃仁 党参 酸枣仁 生地黄 天麻 鳖甲 女贞子 紫苏叶 蜈蚣 白花蛇舌 天山雪莲 半枝莲 贯众 龟甲
-0.998674 0.471996 0.744603 0.39885 0.359762 0.340535 0.824352 0.716503 0.752769 0.581811 0.669007 0.76067
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.750000, recall: 0.600000, error: 0.250000
-142. 
-patient tongue id: 02271231581169_1_7
-label yaofang:
-甘草 陈皮 法半夏 茯苓 桔梗 薏苡仁 白术 大腹皮 厚朴 藿香 白芷 六神曲
-0.447676 0.360703 0.308235 0.380034
-predicted yaofang:
-甘草 茯苓 党参 炙甘草
-
-------Score: precision: 0.500000, recall: 0.166667, error: 0.500000
-143. 
-patient tongue id: 01111919051363_1
-label yaofang:
-白芍 川芎 大枣 当归 党参 太子参 黄芪 枸杞子 熟地黄 郁金 干姜 北柴胡 炙甘草 续断 盐菟丝子 酒女贞子
-0.442263 0.720187 0.396288 0.881263 0.521715 0.65942 0.39911 0.332903 0.300588 0.416595 0.842035 0.859446 0.802321 0.853776 0.3037 0.923361 0.43959 0.429099 0.479123 0.705269
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.100000, recall: 0.125000, error: 0.900000
-144. 
-patient tongue id: 05232039238010_1
-label yaofang:
-柴胡 陈皮 当归 党参 黄芪 白术 车前子 砂仁 升麻 炙甘草
-0.36682 0.350452 0.463722 0.354726 0.377812 0.488353
-predicted yaofang:
-甘草 柴胡 白芍 党参 姜半夏 炙甘草
-
-------Score: precision: 0.500000, recall: 0.300000, error: 0.500000
-145. 
-patient tongue id: 04291454424177_6_5
-label yaofang:
-甘草 柴胡 白芍 木香 蒲公英 党参 黄连 槟榔 山药 砂仁 柿蒂 麦芽 麸炒枳壳
-0.996118 0.470568 0.706817 0.40777 0.359355 0.307226 0.343474 0.778063 0.673842 0.702563 0.543006 0.624933 0.707227
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.230769, recall: 0.230769, error: 0.769231
-146. 
-patient tongue id: 02212216574632_1_6
-label yaofang:
-甘草 白芍 枳壳 木香 白术 砂仁 莱菔子 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.885737 0.411661 0.487105 0.386287 0.319634
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.600000, recall: 0.214286, error: 0.400000
-147. 
-patient tongue id: 05262213296794_1_2_6
-label yaofang:
-甘草 枳壳 茯苓 桔梗 太子参 浙贝母 郁金 山药 鳖甲 鸡内金 夏枯草 麦芽 皂角刺 白花蛇舌 天山雪莲 猫爪草
-0.876885 0.40258 0.388579 0.500563 0.346761 0.305922 0.373612
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 浙贝母 天麻
-
-------Score: precision: 0.428571, recall: 0.187500, error: 0.571429
-148. 
-patient tongue id: 06141845556710_6_7
-label yaofang:
-川芎 茯苓 半夏 薏苡仁 白术 海螵蛸 牡丹皮 杜仲 桑寄生 莪术 续断 蜈蚣
-0.738999 0.433058 0.460863 0.326167 0.333415
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.400000, recall: 0.166667, error: 0.600000
-149. 
-patient tongue id: 03242124052755_4_6
-label yaofang:
-桂枝 牛蒡子 玉竹 海螵蛸 牛膝 大黄 砂仁 萆薢 土茯苓
-0.333621 0.367698 0.355568 0.423072
-predicted yaofang:
-甘草 白芍 党参 炙甘草
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-150. 
-patient tongue id: 03171206353723_1_4_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.374689 0.565084 0.443015 0.413844 0.600355 0.545802 0.54398 0.560173 0.578771 0.536238 0.636417 0.473182 0.589297 0.616133 0.63061
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.230769, error: 0.800000
-151. 
-patient tongue id: 05161938550890_2
-label yaofang:
-甘草 茯苓 葛根 麦冬 玉竹 玄参 生地黄 赤芍 牡丹皮 木瓜 北沙参 百合 干石斛
-0.455071 0.727694 0.386916 0.890453 0.527059 0.683362 0.30223 0.415566 0.343439 0.305936 0.467647 0.854507 0.874757 0.825058 0.867184 0.335996 0.937845 0.470335 0.444176 0.507304 0.718115
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.095238, recall: 0.153846, error: 0.904762
-152. 
-patient tongue id: 02010218494145_6_2
-label yaofang:
-甘草 酸枣仁 赤芍 山药 山茱萸 地黄 天麻 菟丝子 桑寄生 益母草 白花蛇舌草 蜈蚣 半枝莲 醋鳖甲
-0.969846 0.317799 0.46644 0.597018 0.362978 0.583952 0.481989 0.469272 0.371326 0.397746 0.388667
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.285714, error: 0.636364
-153. 
-patient tongue id: 02110749410392_1_2_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.587755 0.345132 0.42721 0.409843 0.418673
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.800000, recall: 0.307692, error: 0.200000
-154. 
-patient tongue id: 04291512242065_4_1
-label yaofang:
-甘草 党参 黄芪 白术 红花 天麻 鳖甲 威灵仙 地肤子 蜈蚣 白花蛇舌 天山雪莲 半枝莲 土茯苓
-0.987617 0.467376 0.635976 0.381022 0.31537 0.345239 0.667584 0.56942 0.574686 0.452241 0.49758 0.545177
+2. 
+patient tongue id: 06070237366457_1_2
+label yaofang:
+甘草 茯苓 龙骨 党参 白术 酸枣仁 杜仲 山药 石菖蒲 天麻 白花蛇舌草 蜈蚣 半枝莲 醋鳖甲
+0.950193 0.542173 0.551428 0.456395 0.300882 0.318336 0.559045 0.511546 0.520946 0.411622 0.43581 0.487155
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
-155. 
-patient tongue id: 05242250369845_1_6
+3. 
+patient tongue id: 05222128038888_7_2_1
 label yaofang:
-甘草 薏苡仁 党参 延胡索 赤芍 郁金 山药 天麻 鳖甲 莪术 虎杖 蜈蚣 白花蛇舌 红豆杉
-0.993028 0.304546 0.491711 0.644148 0.35822 0.308964 0.695224 0.625167 0.586566 0.499552 0.5291 0.514115
+牡蛎 蒲公英 黄芪 白术 浙贝母 砂仁 莪术 王不留行 麦芽 橘络 墨旱莲
+0.525798 0.403768 0.349818 0.321444 0.603635 0.622861 0.332454 0.42814 0.352301 0.307335 0.355403
 predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参
 
-------Score: precision: 0.583333, recall: 0.500000, error: 0.416667
-156. 
-patient tongue id: 02122215112909_1_4
+------Score: precision: 0.272727, recall: 0.272727, error: 0.727273
+4. 
+patient tongue id: 05182037284021_1_4
 label yaofang:
-甘草 独活 薏苡仁 远志 杜仲 牛膝 天麻 桑寄生 白花蛇舌草 首乌藤 蜈蚣 半枝莲 醋鳖甲 牛大力
-0.963147 0.414719 0.614875 0.62048
+柴胡 黄芩 党参 白术 泽泻 天麻 白芷 姜半夏 炙甘草 续断
+0.399286 0.479218 0.427207 0.372222 0.452636 0.404385 0.695354 0.766407 0.318079
 predicted yaofang:
-甘草 茯苓 党参 天麻
+柴胡 白芍 香附 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
 
-------Score: precision: 0.500000, recall: 0.142857, error: 0.500000
-157. 
-patient tongue id: 03021258034638_4
+------Score: precision: 0.444444, recall: 0.400000, error: 0.555556
+5. 
+patient tongue id: 05222054130477_1_2_6
 label yaofang:
-法半夏 前胡 防风 荆芥穗 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 蜜麻黄 炒苍耳子
-0.445107 0.730381 0.354021 0.895436 0.500772 0.696332 0.398499 0.339096 0.453342 0.853184 0.87665 0.840319 0.875726 0.312077 0.937785 0.48179 0.450039 0.507365 0.706002
+龙骨 黄芪 白术 五味子 海螵蛸 糯稻根 鸡内金 首乌藤 紫苏梗 合欢皮 墨旱莲 稻芽
+0.526254 0.424206 0.346484 0.485729 0.555809 0.322675
 predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+甘草 茯苓 党参 黄芪 白术 厚朴
 
-------Score: precision: 0.526316, recall: 0.769231, error: 0.473684
-158. 
-patient tongue id: 01211216530312_2
+------Score: precision: 0.333333, recall: 0.166667, error: 0.666667
+6. 
+patient tongue id: 06130818199397_1_2
 label yaofang:
-茯苓 龙骨 牡蛎 麦冬 党参 酸枣仁 柏子仁 附子 干姜 炙甘草
-0.458969 0.330035 0.309657 0.377272 0.337653
+川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.409591 0.355637 0.307772 0.400026 0.538474 0.333688 0.343937
 predicted yaofang:
-甘草 白芍 茯苓 党参 白术
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝
 
-------Score: precision: 0.400000, recall: 0.200000, error: 0.600000
-159. 
-patient tongue id: 06031132104638_1_7
+------Score: precision: 0.428571, recall: 0.250000, error: 0.571429
+7. 
+patient tongue id: 01132320412873_1
 label yaofang:
-桂枝 甘草 白芍 川芎 桃仁 黄芪 鸡血藤 生地黄 红花 赤芍 牛膝 天麻 威灵仙 木蝴蝶
-0.994245 0.488556 0.666026 0.378055 0.304541 0.326243 0.723559 0.635105 0.62481 0.513047 0.553131 0.569049
+桂枝 白芍 川芎 当归 党参 阿胶 红花 牡丹皮 吴茱萸 姜半夏 炙甘草 天山雪莲
+0.413319 0.38904 0.345681 0.373857 0.376615 0.491984
 predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 白芍 茯苓 党参 白术 炙甘草
 
-------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
-160. 
-patient tongue id: 03012006403838_4
+------Score: precision: 0.500000, recall: 0.250000, error: 0.500000
+8. 
+patient tongue id: 05262109501026_1_6
 label yaofang:
-陈皮 法半夏 茯苓 党参 黄芪 豆蔻 炙甘草 广藿香 麸炒白术 麸炒苍术 炒六神曲 甘松
-0.452875 0.739933 0.385775 0.887426 0.516304 0.659656 0.311988 0.415769 0.34381 0.433008 0.8515 0.872043 0.825042 0.869696 0.350526 0.926413 0.450175 0.451222 0.530833 0.726484
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.250000, recall: 0.416667, error: 0.750000
-161. 
-patient tongue id: 04112318500054_4
-label yaofang:
-麻黄 桂枝 白芍 法半夏 前胡 五味子 浙贝母 细辛 干姜 厚朴 款冬花 苦杏仁 炙甘草
-0.463712 0.343584 0.372521 0.39783
-predicted yaofang:
-甘草 白芍 党参 白术
-
-------Score: precision: 0.250000, recall: 0.076923, error: 0.750000
-162. 
-patient tongue id: 01312301217045_6_2
-label yaofang:
-甘草 法半夏 桔梗 党参 酸枣仁 丹参 浙贝母 牡丹皮 薤白 水蛭 瓜蒌皮 浮小麦 合欢花 麸炒枳壳
-0.981645 0.484201 0.614502 0.395974 0.327012 0.626451 0.575633 0.573881 0.460795 0.487858 0.489317
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
-163. 
-patient tongue id: 02272218279158_1
-label yaofang:
-枳壳 太子参 白术 神曲 山楂 砂仁 石斛 补骨脂 麦芽 百合 紫苏叶
-0.431049 0.593449 0.434818 0.318306 0.368228 0.324535 0.381275 0.663377 0.723404
-predicted yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.111111, recall: 0.090909, error: 0.888889
-164. 
-patient tongue id: 06132154043375_1_4
-label yaofang:
-柴胡 大枣 茯苓 防风 连翘 太子参 昆布 海藻 乌梅 桑叶 石斛 白花蛇舌草 浮小麦 猫爪草 山慈菇
-0.393605 0.535328 0.349644 0.334537 0.300444 0.550103 0.626215
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.142857, recall: 0.066667, error: 0.857143
-165. 
-patient tongue id: 02201755030112_1_4
-label yaofang:
-陈皮 法半夏 茯苓 党参 海螵蛸 干姜 豆蔻 炙甘草 广藿香 麸炒白术 麸炒苍术 炙黄芪 炒六神曲 甘松
-0.430403 0.678057 0.402822 0.817606 0.465353 0.62758 0.320961 0.388283 0.33206 0.30322 0.404894 0.768537 0.785436 0.747745 0.796686 0.3653 0.876481 0.429083 0.434371 0.506514 0.65532
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.285714, recall: 0.428571, error: 0.714286
-166. 
-patient tongue id: 06062305528235_5_7
-label yaofang:
-甘草 金银花 丹参 玄参 红花 延胡索 牡丹皮 细辛 天麻 鳖甲 忍冬藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.993139 0.300524 0.480806 0.671133 0.359406 0.315329 0.32216 0.715226 0.611746 0.579319 0.496766 0.52937 0.535905
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.538462, recall: 0.466667, error: 0.461538
-167. 
-patient tongue id: 05201925429684_5_1
-label yaofang:
-桂枝 甘草 大枣 竹茹 生牡蛎 石膏 浙贝
-0.509637 0.307094 0.362468 0.356357 0.575944 0.581955 0.337603 0.424754 0.388331 0.350977 0.349039 0.32073
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
-
-------Score: precision: 0.083333, recall: 0.142857, error: 0.916667
-168. 
-patient tongue id: 02182257533049_1_2_7
-label yaofang:
-甘草 桃仁 党参 鸡血藤 白术 酸枣仁 生地黄 天麻 菟丝子 糯稻根 益母草 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.989145 0.471219 0.636371 0.370142 0.665528 0.571158 0.548471 0.454417 0.48856 0.483242
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.900000, recall: 0.529412, error: 0.100000
-169. 
-patient tongue id: 06031047394681_1_2_7
-label yaofang:
-甘草 白芍 木香 薏苡仁 党参 牡丹皮 郁金 山药 鳖甲 莪术 虎杖 蜈蚣 白花蛇舌 天山雪莲 龙葵果
-0.979991 0.324241 0.470771 0.614492 0.354742 0.303131 0.628251 0.522497 0.486153 0.417898 0.440147 0.425162
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.666667, recall: 0.533333, error: 0.333333
-170. 
-patient tongue id: 05152106551307_6
-label yaofang:
-甘草 香附 茯苓 葛根 党参 白术 延胡索 海螵蛸 车前子 紫苏梗 瓦楞子 猫爪草 山慈菇
-0.352913 0.361304 0.459246 0.330003 0.329536 0.319983 0.333309 0.370095 0.526958
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 海螵蛸 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.444444, recall: 0.307692, error: 0.555556
-171. 
-patient tongue id: 05261952114880_1_4_7
-label yaofang:
-陈皮 当归 茯苓 半夏 黄芪 枸杞子 白术 山药 菟丝子 鸡内金 紫苏子 炙甘草 首乌藤 紫苏叶 黑枣
-0.516939 0.335848 0.378711 0.341663 0.528129 0.557371 0.332022 0.423912 0.383752 0.363791 0.390075 0.307503
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
-
-------Score: precision: 0.416667, recall: 0.333333, error: 0.583333
-172. 
-patient tongue id: 03231036155787_6_7
-label yaofang:
-甘草 白芍 川芎 香附 白术 丹参 牛膝 郁金 薤白 厚朴 砂仁 天麻 全蝎 瓜蒌皮 降香
-0.990264 0.301224 0.471174 0.640576 0.375087 0.305209 0.68737 0.587976 0.593234 0.469969 0.51643 0.550029
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
-173. 
-patient tongue id: 02151818584876_1_4_7
-label yaofang:
-桂枝 龙骨 牡蛎 麦冬 党参 酸枣仁 五味子 熟地黄 火麻仁 苦参 炙甘草 黑枣
-0.46385 0.348373 0.414622 0.410413 0.370972 0.342437 0.31427
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 天麻
-
-------Score: precision: 0.142857, recall: 0.083333, error: 0.857143
-174. 
-patient tongue id: 02271253152246_1_7
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.509765 0.409398 0.45081 0.345522 0.433313 0.378785 0.397867 0.318174 0.37642 0.360033 0.368867 0.417606 0.322774 0.336759 0.308513
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-175. 
-patient tongue id: 01190643310777_2_6
-label yaofang:
-甘草 柴胡 白芍 川芎 茯苓 酸枣仁 生地黄 牛膝 山药 山茱萸 细辛 天麻 全蝎 菟丝子 桑寄生 益母草
-0.898961 0.366851 0.406042 0.504713 0.350944 0.341706
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.666667, recall: 0.250000, error: 0.333333
-176. 
-patient tongue id: 01140817402376_5
-label yaofang:
-甘草 陈皮 黄芩 法半夏 茯苓 桔梗 浙贝母 细辛 莱菔子 瓜蒌皮 款冬花 紫菀 枇杷叶 苦杏仁
-0.975663 0.302176 0.478358 0.612763 0.401289 0.314659 0.357423 0.621072 0.551084 0.540822 0.448195 0.479015 0.499461
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.153846, recall: 0.142857, error: 0.846154
-177. 
-patient tongue id: 04201918516149_2_1
-label yaofang:
-白芍 川芎 当归 茯苓 太子参 黄芪 枸杞子 柏子仁 熟地黄 煅牡蛎 炙甘草 续断 盐菟丝子 酒女贞子 煅龙骨 炒酸枣仁
-0.462652 0.791522 0.374068 0.93869 0.539722 0.719503 0.406921 0.320739 0.432411 0.897335 0.914497 0.865705 0.915087 0.301025 0.961169 0.47424 0.45911 0.537684 0.771593
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.105263, recall: 0.125000, error: 0.894737
-178. 
-patient tongue id: 05241954463133_2_6
-label yaofang:
-甘草 党参 酸枣仁 生地黄 黄柏 山药 山茱萸 桑叶 荆芥穗 地骨皮 菟丝子 糯稻根 银柴胡 淫羊藿 女贞子 龟甲
-0.991215 0.478895 0.652584 0.380708 0.302177 0.317847 0.687146 0.599252 0.586354 0.485219 0.522335 0.537169
+甘草 陈皮 茯苓 防风 党参 白术 酸枣仁 山药 天麻 扁豆花 白花蛇舌草 蜈蚣 半枝莲 醋鳖甲
+0.952274 0.522779 0.572523 0.477936 0.325355 0.322487 0.609673 0.527034 0.575258 0.423132 0.46957 0.572985
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.333333, recall: 0.250000, error: 0.666667
-179. 
-patient tongue id: 03022129573516_2_6
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+9. 
+patient tongue id: 05182057208000_4
 label yaofang:
-甘草 白芍 牡蛎 玄参 天冬 柏子仁 川楝子 牛膝 茵陈 麦芽 赭石 浮小麦 龟甲
-0.432849 0.582353 0.430139 0.33911 0.395826 0.335888 0.373612 0.622001 0.692693
+龙骨 党参 枸杞子 白术 熟地黄 杜仲 车前子 砂仁 菟丝子 巴戟天 桑寄生 鹿角霜 续断 制何首乌 艾叶
+0.326663 0.313283 0.364621 0.3222 0.448853 0.398616 0.308287 0.439287
 predicted yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
+甘草 白芍 党参 黄芪 白术 海螵蛸 姜半夏 炙甘草
 
-------Score: precision: 0.111111, recall: 0.076923, error: 0.888889
-180. 
-patient tongue id: 01032112407541_6_7
+------Score: precision: 0.250000, recall: 0.133333, error: 0.750000
+10. 
+patient tongue id: 02231818378983_4_2
 label yaofang:
-甘草 独活 白术 酸枣仁 天麻 益母草 鳖甲 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 骨碎补 乌梢蛇
-0.975538 0.452022 0.60865 0.386332 0.305454 0.593079 0.427435 0.468745 0.316823 0.352425 0.374996
+甘草 法半夏 茯苓 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.407304 0.883704 0.462014 0.938064 0.544892 0.653162 0.421791 0.405084 0.300201 0.44457 0.896245 0.910674 0.858758 0.898444 0.983938 0.487202 0.311211 0.606492 0.54 0.816463
 predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
 
-------Score: precision: 0.727273, recall: 0.571429, error: 0.272727
-181. 
-patient tongue id: 01130654133756_2_1_6
+------Score: precision: 0.600000, recall: 0.800000, error: 0.400000
+11. 
+patient tongue id: 05162057467576_2_1
 label yaofang:
-甘草 桔梗 龙骨 桃仁 党参 酸枣仁 浙贝母 山茱萸 天麻 糯稻根 鳖甲 白花蛇舌 天山雪莲 半枝莲
-0.991097 0.306455 0.493611 0.646058 0.369081 0.31868 0.339926 0.706427 0.619148 0.599747 0.500754 0.536361 0.545579
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.615385, recall: 0.571429, error: 0.384615
-182. 
-patient tongue id: 03081816411947_1
-label yaofang:
-麻黄 桂枝 白芍 牛蒡子 五味子 柏子仁 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
-0.456387 0.381349 0.374641 0.390775 0.323443
-predicted yaofang:
-甘草 白芍 党参 白术 炙甘草
-
-------Score: precision: 0.400000, recall: 0.133333, error: 0.600000
-183. 
-patient tongue id: 04121836206568_1
-label yaofang:
-陈皮 法半夏 前胡 太子参 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.456449 0.794958 0.372833 0.941377 0.534884 0.710756 0.300896 0.419406 0.331335 0.43674 0.909994 0.92556 0.882733 0.927369 0.346587 0.962131 0.460289 0.456306 0.564741 0.795232
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 0.933333, error: 0.300000
-184. 
-patient tongue id: 05061437512906_6_5
-label yaofang:
-甘草 陈皮 茯苓 半夏 瓜蒌皮 川贝母 枇杷叶 夏枯草 北沙参 龙脷叶
-0.434884 0.487927 0.437881 0.508504 0.514604 0.433847 0.479899 0.408857 0.457523 0.365977 0.46163 0.399732 0.423031 0.450433 0.42872
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.133333, recall: 0.200000, error: 0.866667
-185. 
-patient tongue id: 03092002052317_4
-label yaofang:
-甘草 茯苓 葛根 麦冬 太子参 北沙参 百合 木贼 干石斛
-0.419855 0.648218 0.403915 0.803905 0.484683 0.581448 0.382191 0.320093 0.381538 0.756859 0.773845 0.72319 0.778041 0.331358 0.854609 0.405987 0.402164 0.448488 0.626256
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.105263, recall: 0.222222, error: 0.894737
-186. 
-patient tongue id: 05112017269712_1_4_6
-label yaofang:
-党参 黄芪 枸杞子 熟地黄 杜仲 山药 山茱萸 当归尾 砂仁 炙甘草 茺蔚子 路路通
-0.654698 0.359646 0.446334 0.383534 0.362491
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.400000, recall: 0.166667, error: 0.600000
-187. 
-patient tongue id: 06080123471129_4_1
-label yaofang:
-甘草 川芎 法半夏 茯苓 党参 白术 厚朴 天麻 鳖甲 蒺藜 粉葛 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.998488 0.473942 0.724244 0.406813 0.384703 0.310954 0.354634 0.830498 0.716745 0.756615 0.588171 0.672115 0.770734
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.769231, recall: 0.625000, error: 0.230769
-188. 
-patient tongue id: 03151848008043_6
-label yaofang:
-麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
-0.409233 0.540755 0.376056 0.311124 0.354423 0.3395 0.323668 0.534398 0.629286
-predicted yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.555556, recall: 0.357143, error: 0.444444
-189. 
-patient tongue id: 02231827583142_4_2
-label yaofang:
-麻黄 法半夏 前胡 桔梗 防风 薄荷 荆芥穗 北柴胡 款冬花 香薷 紫菀 辛夷 紫苏梗 广藿香 炒苍耳子
-0.35356 0.344109 0.382359 0.340753 0.30786 0.300451 0.358115 0.31794 0.363869 0.341654 0.372846 0.421804 0.550307
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.461538, recall: 0.400000, error: 0.538462
-190. 
-patient tongue id: 02151916068464_2_1
-label yaofang:
-法半夏 前胡 太子参 细辛 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
-0.42751 0.579857 0.427049 0.688884 0.448529 0.538633 0.344017 0.376927 0.334519 0.31606 0.389916 0.657029 0.664604 0.642428 0.678848 0.395208 0.765036 0.407917 0.408834 0.452496 0.567114
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.666667, recall: 0.933333, error: 0.333333
-191. 
-patient tongue id: 01201940535619_1_2_6
-label yaofang:
-甘草 党参 山药 山茱萸 地黄 天麻 菟丝子 益智仁 益母草 金樱子 白花蛇舌草 蜈蚣 棉萆薢 醋鳖甲
-0.996926 0.471607 0.689001 0.369065 0.306706 0.31359 0.759128 0.64546 0.63288 0.509379 0.565126 0.593373
+甘草 薏苡仁 远志 党参 浙贝母 天麻 鳖甲 款冬花 莪术 紫菀 诃子 紫苏梗 蜈蚣 白花蛇舌 天山雪莲
+0.959421 0.542928 0.572452 0.445828 0.30621 0.315308 0.570712 0.508094 0.505771 0.392997 0.421115 0.46258
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-192. 
-patient tongue id: 03151940332754_5_7
+------Score: precision: 0.583333, recall: 0.466667, error: 0.416667
+12. 
+patient tongue id: 05242226331835_2_4
 label yaofang:
-桃仁 太子参 黄芪 白术 浙贝母 杜仲 白茅根 生半夏 砂仁 土鳖虫 合欢皮 山慈菇 蛇舌草 鲜龙葵果
-0.593127 0.364542 0.419342 0.433039 0.415186
+甘草 桔梗 芦根 牛蒡子 麦冬 太子参 浙贝母 天麻 白花蛇舌草 北沙参 紫苏子 蜈蚣 半枝莲 醋鳖甲
+0.978458 0.569234 0.608292 0.431729 0.311101 0.315271 0.632234 0.551533 0.536512 0.42411 0.460824 0.519372
 predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
-193. 
-patient tongue id: 02272224553829_1
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+13. 
+patient tongue id: 05042137439481_6
 label yaofang:
-陈皮 当归 党参 黄芪 鸡血藤 白术 升麻 北柴胡 炙甘草 山慈菇
-0.387163 0.383113 0.509786 0.315897 0.358382 0.31058 0.323196 0.391383 0.502141
-predicted yaofang:
-甘草 柴胡 白芍 香附 党参 白术 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.333333, recall: 0.300000, error: 0.666667
-194. 
-patient tongue id: 02181635236970_6
-label yaofang:
-甘草 柴胡 白芍 法半夏 茯苓 党参 白术 黄连 乌梅 山药 干姜 麦芽 建曲 合欢花
-0.968852 0.357123 0.433227 0.588464 0.364947 0.537729 0.425253 0.437098 0.311276 0.343714 0.330733
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.357143, error: 0.545455
-195. 
-patient tongue id: 03020759122561_1_7
-label yaofang:
-甘草 白芍 茯苓 党参 生地黄 山药 山茱萸 厚朴 肉苁蓉 火麻仁 制川乌 天山雪莲 牛大力
-0.918629 0.332646 0.39843 0.525408 0.38151 0.407133 0.343551
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 蜈蚣
-
-------Score: precision: 0.571429, recall: 0.307692, error: 0.428571
-196. 
-patient tongue id: 05261929472402_5
-label yaofang:
-甘草 白芍 陈皮 桃仁 麦冬 党参 黄芪 丹参 红花 延胡索 牛膝 苏木 珍珠母 北沙参 浮小麦 威灵仙 宽筋藤
-0.724148 0.34192 0.482227 0.30877
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.500000, recall: 0.117647, error: 0.500000
-197. 
-patient tongue id: 03311652130497_6
-label yaofang:
-甘草 法半夏 龙齿 酸枣仁 柏子仁 栀子 淡豆豉 天麻 糯稻根 百合 紫苏叶 蜈蚣
-0.318873 0.378931 0.508301 0.328656 0.321808 0.328323 0.307997 0.30087 0.456295 0.577267
-predicted yaofang:
-甘草 柴胡 白芍 香附 党参 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.100000, recall: 0.083333, error: 0.900000
-198. 
-patient tongue id: 04222212283838_1_4
-label yaofang:
-陈皮 茯苓 前胡 桔梗 太子参 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.471315 0.81123 0.363861 0.949862 0.54499 0.739341 0.435463 0.339677 0.462483 0.916176 0.932855 0.891356 0.932349 0.327933 0.968325 0.485049 0.470283 0.567762 0.799917
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.684211, recall: 0.928571, error: 0.315789
-199. 
-patient tongue id: 01062333312019_1_4_7
-label yaofang:
-丹参 牛膝 钩藤 泽泻 莱菔子 决明子 夏枯草 制何首乌 盐车前子 燀桃仁天麻颗粒
-0.426316 0.344189 0.309734 0.349156 0.328028 0.322413 0.323017 0.50862 0.715305
-predicted yaofang:
-法半夏 茯苓 前胡 桔梗 细辛 干姜 款冬花 紫菀 炙甘草
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-200. 
-patient tongue id: 06130946493457_1_2
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌 红曲
-0.589913 0.460584 0.378793 0.318004 0.306253
-predicted yaofang:
-甘草 党参 黄芪 丹参 天麻
-
-------Score: precision: 0.400000, recall: 0.153846, error: 0.600000
-201. 
-patient tongue id: 03011832383913_1_4
-label yaofang:
-甘草 茯苓 葛根 桔梗 防风 麦冬 玄参 赤芍 白芷 北沙参 辛夷 广藿香 人参叶 炒六神曲 醋香附
-0.410406 0.572731 0.420357 0.665717 0.432141 0.522246 0.342415 0.372124 0.341536 0.306161 0.377373 0.623513 0.639343 0.600641 0.625959 0.367041 0.76745 0.372625 0.390349 0.400913 0.516652
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.333333, recall: 0.466667, error: 0.666667
-202. 
-patient tongue id: 02161849330929_1_6
-label yaofang:
-茯苓 前胡 麦冬 太子参 黄芪 郁金 北柴胡 款冬花 紫菀 百部 豆蔻 北沙参 炙甘草 人参叶
-0.433249 0.686387 0.424412 0.819166 0.498724 0.583262 0.345128 0.408456 0.35109 0.30482 0.395464 0.781354 0.792081 0.741845 0.788032 0.372866 0.866154 0.406501 0.413484 0.475888 0.663958
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.380952, recall: 0.571429, error: 0.619048
-203. 
-patient tongue id: 01042346471467_1_7
-label yaofang:
-桂枝 甘草 川芎 法半夏 党参 黄芪 丹参 红花 薤白 水蛭 莪术 地龙 麸炒枳壳
-0.990834 0.478148 0.651482 0.401567 0.305424 0.325571 0.676498 0.596546 0.596787 0.473487 0.517758 0.539311
+当归 木香 龙骨 远志 党参 黄芪 鸡血藤 白术 柏子仁 麦芽 炙甘草 百合 紫苏叶
+0.977832 0.565465 0.605772 0.444416 0.348551 0.324053 0.656393 0.562569 0.569494 0.446601 0.489579 0.567129
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.166667, recall: 0.153846, error: 0.833333
-204. 
-patient tongue id: 04251815414383_1_4
+14. 
+patient tongue id: 03091854342645_5_6
 label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 细辛 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.439911 0.689146 0.407963 0.831331 0.492828 0.595088 0.336703 0.420197 0.353636 0.402848 0.793506 0.814969 0.765372 0.808954 0.377559 0.887914 0.402554 0.412737 0.488674 0.683783
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 1.000000, error: 0.300000
-205. 
-patient tongue id: 05221938550126_6
-label yaofang:
-甘草 柴胡 川芎 香附 防风 牛蒡子 赤芍 海螵蛸 荆芥穗 白芷 郁李仁 芥子
-0.372352 0.528063 0.346613 0.319536 0.387711 0.559457 0.711928
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.428571, recall: 0.250000, error: 0.571429
-206. 
-patient tongue id: 01250628409091_1_6
-label yaofang:
-甘草 柴胡 白芍 法半夏 龙骨 远志 党参 酸枣仁 天麻 白花蛇舌草 麦芽 首乌藤 蜈蚣 半枝莲 醋鳖甲 麸炒枳壳
-0.979443 0.471631 0.623086 0.39517 0.323836 0.609516 0.501629 0.491705 0.373278 0.414085 0.427687
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.312500, error: 0.545455
-207. 
-patient tongue id: 04210755347441_1_3
-label yaofang:
-白芍 金银花 薏苡仁 桃仁 蒲公英 生地黄 苍术 百部 苦参 白鲜皮 关黄柏 地肤子
-0.486483 0.468876 0.446258 0.403817 0.495824 0.438662 0.45277 0.392626 0.436159 0.394622 0.447031 0.411231 0.403394 0.425694 0.396196
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.066667, recall: 0.083333, error: 0.933333
-208. 
-patient tongue id: 01312134327639_5_1
-label yaofang:
-麻黄 甘草 黄芩 法半夏 茯苓 前胡 薏苡仁 鱼腥草 天麻 鳖甲 款冬花 莪术 苦杏仁 蜈蚣 白花蛇舌 红豆杉 龙葵果
-0.978934 0.468656 0.612902 0.408732 0.317624 0.571798 0.509455 0.522903 0.387415 0.418625 0.413037
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.545455, recall: 0.352941, error: 0.454545
-209. 
-patient tongue id: 04122112302799_2_8_5
-label yaofang:
-甘草 黄芩 麦冬 玄参 生地黄 没药 鳖甲 火麻仁 淡竹叶 百合 蜈蚣 白花蛇舌 四季青 川木通
-0.992704 0.458324 0.667115 0.396662 0.343983 0.322911 0.722387 0.590012 0.630375 0.462905 0.543831 0.628659
+甘草 枳壳 桔梗 金银花 连翘 牛蒡子 白术 浙贝母 莱菔子 麦芽 苦杏仁 独脚金 稻芽
+0.953555 0.54778 0.553855 0.48061 0.312969 0.335103 0.557858 0.532171 0.546191 0.427317 0.463302 0.524277
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
-210. 
-patient tongue id: 04141810307623_1_4_3
+------Score: precision: 0.166667, recall: 0.153846, error: 0.833333
+15. 
+patient tongue id: 05311935319321_5
 label yaofang:
-甘草 茯苓 半夏 党参 白术 海螵蛸 杜仲 黄柏 郁金 山药 干姜 厚朴 砂仁 鸡内金 紫苏叶 黑枣
-0.631776 0.355534 0.42097 0.3357
+甘草 桔梗 金银花 连翘 薄荷 芦根 牛蒡子 桑白皮 淡豆豉 淡竹叶 射干 板蓝根 龙脷叶
+0.40912 0.361991 0.301171 0.604046 0.557095 0.302131 0.381751
 predicted yaofang:
-甘草 茯苓 党参 白术
+甘草 茯苓 党参 黄芪 白术 海螵蛸 厚朴
 
-------Score: precision: 1.000000, recall: 0.250000, error: 0.000000
-211. 
-patient tongue id: 03192303369214_4_6_1
+------Score: precision: 0.142857, recall: 0.076923, error: 0.857143
+16. 
+patient tongue id: 02211904112611_1_7
 label yaofang:
-甘草 白芍 川芎 法半夏 茯苓 独活 党参 白术 赤芍 山药 砂仁 天麻 忍冬藤 粉葛 威灵仙 白花蛇舌
-0.988134 0.472478 0.628437 0.360268 0.310155 0.654361 0.57823 0.55925 0.459107 0.496869 0.511703
+大枣 当归 茯苓 木香 远志 党参 黄芪 白术 柏子仁 仙鹤草 炙甘草
+0.407927 0.337723 0.375985 0.343051 0.379404 0.438824
 predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 白芍 茯苓 党参 白术 炙甘草
 
-------Score: precision: 0.636364, recall: 0.437500, error: 0.363636
-212. 
-patient tongue id: 02171942336723_2_5
+------Score: precision: 0.666667, recall: 0.363636, error: 0.333333
+17. 
+patient tongue id: 03021838351229_4
 label yaofang:
-甘草 柴胡 茯苓 桔梗 半夏 玄参 赤芍 海螵蛸 浙贝母 北沙参 木蝴蝶 猫爪草
-0.638674 0.394404 0.501772 0.378237 0.427178 0.36891 0.370335 0.331483 0.302562 0.473856
+麻黄 前胡 桔梗 半夏 防风 荆芥穗 款冬花 紫菀 白前 百部 紫苏子 炙甘草 辛夷 苍耳子
+0.456077 0.934098 0.452234 0.975498 0.599931 0.724265 0.424851 0.398025 0.453989 0.949672 0.95771 0.923071 0.95387 0.992994 0.559783 0.303585 0.658245 0.601778 0.885224
 predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 莱菔子 天麻
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
 
-------Score: precision: 0.100000, recall: 0.083333, error: 0.900000
-213. 
-patient tongue id: 04120804559897_1_3
+------Score: precision: 0.473684, recall: 0.642857, error: 0.526316
+18. 
+patient tongue id: 03281919403467_7
 label yaofang:
-白芍 金银花 薏苡仁 桃仁 蒲公英 生地黄 苍术 百部 苦参 白鲜皮 关黄柏 地肤子
-0.448974 0.41023 0.430238 0.38113 0.419097 0.35406 0.386838 0.335555 0.376115 0.38396 0.368149 0.340659 0.319931 0.342801 0.352931
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.066667, recall: 0.083333, error: 0.933333
-214. 
-patient tongue id: 05162026118169_4
-label yaofang:
-陈皮 桔梗 车前子 大腹皮 干姜 厚朴 白芷 豆蔻 蝉蜕 姜半夏 百合 紫苏叶 广藿香 合欢皮
-0.302816 0.36724 0.483329 0.302102 0.323147 0.349429 0.439366 0.628704
-predicted yaofang:
-甘草 柴胡 白芍 党参 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.250000, recall: 0.142857, error: 0.750000
-215. 
-patient tongue id: 04071930080627_4
-label yaofang:
-陈皮 法半夏 茯苓 前胡 太子参 黄芪 细辛 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香
-0.41578 0.550765 0.422183 0.627342 0.414666 0.524876 0.36577 0.33878 0.325543 0.353472 0.589863 0.623524 0.624932 0.626913 0.421237 0.746992 0.373299 0.378824 0.432736 0.540944
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.650000, recall: 0.928571, error: 0.350000
-216. 
-patient tongue id: 05081759003586_1
-label yaofang:
-柴胡 白芍 川芎 陈皮 枳壳 麦冬 郁金 瓜蒌皮 炙甘草 醋香附 合欢皮
-0.862301 0.372137 0.357568 0.496475 0.320355 0.368744
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.166667, recall: 0.090909, error: 0.833333
-217. 
-patient tongue id: 03152041314373_4_1_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.390076 0.344068 0.383496 0.445286 0.375744 0.354689 0.312752 0.31222
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 钩藤 泽泻
-
-------Score: precision: 0.375000, recall: 0.230769, error: 0.625000
-218. 
-patient tongue id: 02211436357130_1_3
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.420002 0.374445 0.416579 0.419589 0.404333 0.324296 0.365836 0.323197 0.341324 0.325172 0.337229 0.303627 0.321836 0.302617
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 夏枯草 制何首乌
-
-------Score: precision: 0.785714, recall: 0.916667, error: 0.214286
-219. 
-patient tongue id: 05222058310121_1_4_7
-label yaofang:
-陈皮 麦冬 鸡内金 莲子 布渣叶 莲房
-0.512277 0.329746 0.385461 0.473263 0.403534 0.312517
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-220. 
-patient tongue id: 02281303117022_1_2_4
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.447336 0.317204 0.374485 0.397594
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-221. 
-patient tongue id: 05260702508917_2_5
-label yaofang:
-甘草 柴胡 白芍 茯苓 党参 酸枣仁 生地黄 栀子 牡丹皮 天麻 鳖甲 蜈蚣 白花蛇舌 半枝莲 红豆杉
-0.948396 0.317868 0.434783 0.574208 0.381531 0.536058 0.412477 0.452121 0.323003 0.366014 0.411657
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.600000, error: 0.181818
-222. 
-patient tongue id: 03012125599670_6_1
-label yaofang:
-甘草 党参 酸枣仁 生地黄 杜仲 天麻 鳖甲 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 牛大力
-0.767022 0.43625 0.322229 0.46892 0.339351
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
-223. 
-patient tongue id: 05191947292297_6
-label yaofang:
-甘草 柴胡 白芍 茯苓 党参 白术 熟地黄 栀子 牡丹皮 山药 菟丝子 桑寄生 女贞子 首乌藤 合欢花 艾叶
-0.983747 0.319265 0.475022 0.626325 0.400063 0.320172 0.629446 0.55947 0.554455 0.450134 0.48465 0.486766
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.500000, recall: 0.375000, error: 0.500000
-224. 
-patient tongue id: 05050746292112_5
-label yaofang:
-甘草 黄芩 前胡 桔梗 浙贝母 细辛 桑白皮 干姜 鳖甲 款冬花 白前 苦杏仁 白花蛇舌 天山雪莲
-0.959419 0.334404 0.443283 0.590117 0.39338 0.563244 0.471063 0.482608 0.370392 0.406631 0.409721
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.285714, error: 0.636364
-225. 
-patient tongue id: 05221854083618_4
-label yaofang:
-当归 熟地黄 杜仲 山茱萸 钩藤 厚朴 天麻 巴戟天 茵陈 土茯苓
-0.616445 0.342546 0.416885
-predicted yaofang:
-甘草 茯苓 党参
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-226. 
-patient tongue id: 02150747509106_1_4_7
-label yaofang:
-桂枝 龙骨 牡蛎 麦冬 党参 五味子 熟地黄 火麻仁 苦参 炙甘草 黑枣
-0.358476 0.359869 0.341489
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.333333, recall: 0.090909, error: 0.666667
-227. 
-patient tongue id: 05261941409920_4_1_7
-label yaofang:
-甘草 党参 白术 浙贝母 乌梅 牛膝 郁金 山药 厚朴 菟丝子 天花粉 莪术 北沙参 桑椹 紫苏梗 红豆杉 预知子 鹿衔草
-0.677659 0.365967 0.417331 0.380147 0.489609
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.600000, recall: 0.166667, error: 0.400000
-228. 
-patient tongue id: 01012058558372_1_4
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.443929 0.452374 0.432658 0.4268 0.486276 0.40797 0.452492 0.426785 0.44343 0.397144 0.466345 0.377625 0.414235 0.448586 0.414587
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-229. 
-patient tongue id: 05290839556812_7_4_6
-label yaofang:
-甘草 柴胡 白芍 茯苓 远志 党参 丹参 胆南星 栀子 牡丹皮 川楝子 地黄 厚朴 麦芽 合欢花
-0.610316 0.307368 0.365106 0.397124 0.369284
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.800000, recall: 0.266667, error: 0.200000
-230. 
-patient tongue id: 03022218484889_1_6
-label yaofang:
-甘草 茯苓 桔梗 薏苡仁 党参 白术 浙贝母 桑叶 菊花 天麻 莪术 白花蛇舌草 蜈蚣 醋鳖甲
-0.99065 0.308336 0.495252 0.645152 0.379144 0.307961 0.338128 0.699429 0.63968 0.62612 0.524461 0.555188 0.565707
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.461538, recall: 0.428571, error: 0.538462
-231. 
-patient tongue id: 01081920390190_9_6
-label yaofang:
-柴胡 白芍 黄芩 当归 枳实 干姜 大黄 生地 法夏 旋复花冲剂
-0.977716 0.325905 0.474696 0.61419 0.400341 0.347144 0.316703 0.363844 0.672017 0.590051 0.585851 0.487612 0.535015 0.568226
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.071429, recall: 0.100000, error: 0.928571
-232. 
-patient tongue id: 01012100505502_1_3_7
-label yaofang:
-桂枝 甘草 法半夏 茯苓 橘红 桃仁 丹参 枳实 竹茹 胆南星 薤白 厚朴 瓜蒌皮
-0.557118 0.380647 0.432146 0.430878 0.374166
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.400000, recall: 0.153846, error: 0.600000
-233. 
-patient tongue id: 04200259240825_5
-label yaofang:
-甘草 法半夏 茯苓 桔梗 金银花 牛蒡子 浙贝母 山药 桑白皮 莱菔子 款冬花 紫菀 苦杏仁 紫苏子
-0.992738 0.488673 0.658159 0.410707 0.318547 0.348378 0.700402 0.629392 0.63101 0.506245 0.556031 0.584145
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
-234. 
-patient tongue id: 04111958516106_2_1
-label yaofang:
-桂枝 甘草 白芍 防风 薏苡仁 白术 天麻 桑寄生 鳖甲 补骨脂 麦芽 威灵仙 蜈蚣 白花蛇舌 天山雪莲
-0.992587 0.478528 0.660155 0.371879 0.308515 0.321243 0.704244 0.608155 0.599526 0.484825 0.530246 0.556262
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.583333, recall: 0.466667, error: 0.416667
-235. 
-patient tongue id: 05152107314539_6
-label yaofang:
-大枣 当归 茯苓 木香 远志 党参 黄芪 白术 酸枣仁 柏子仁 车前子 炙甘草 制白附子
-0.768007 0.364622 0.332025 0.451985 0.319489
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.600000, recall: 0.230769, error: 0.400000
-236. 
-patient tongue id: 03101948109701_4
-label yaofang:
-茯苓 防风 薄荷 钩藤 荆芥穗 白芷 香薷 炙甘草 首乌藤 紫苏梗 广藿香 威灵仙 炒蔓荆子 棉萆薢
-0.470957 0.753605 0.392205 0.893477 0.521998 0.649511 0.328351 0.417879 0.346787 0.422633 0.856899 0.872955 0.83182 0.862589 0.377722 0.937556 0.431625 0.434942 0.541525 0.735516
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.250000, recall: 0.357143, error: 0.750000
-237. 
-patient tongue id: 01061909494818_4_1
-label yaofang:
-陈皮 法半夏 前胡 防风 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄 炒蔓荆子
-0.398154 0.504718 0.378929 0.596947 0.384949 0.483458 0.334966 0.303582 0.322513 0.536905 0.600765 0.594373 0.626601 0.415409 0.746552 0.361604 0.347604 0.384393 0.462772
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.736842, recall: 0.875000, error: 0.263158
-238. 
-patient tongue id: 03151732024557_1_2_7
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.386891 0.423407 0.411641 0.471074 0.455499 0.363578 0.433014 0.375632 0.412945 0.372405 0.408354 0.316759 0.36478 0.394204 0.374681
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-239. 
-patient tongue id: 02161927452714_5
-label yaofang:
-橘红 荆芥 防风 桑叶 菊花 桑白皮 白芷 鸡内金 枇杷叶 辛夷 紫苏叶 苍耳子
-0.69738 0.424731 0.453274 0.335082 0.384356
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-240. 
-patient tongue id: 06171335241967_6
-label yaofang:
-枳壳 太子参 白术 神曲 山楂 砂仁 石斛 麦芽 紫苏叶 山慈菇
-0.651089 0.345473 0.480929 0.411484 0.309643 0.332649
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母
-
-------Score: precision: 0.166667, recall: 0.100000, error: 0.833333
-241. 
-patient tongue id: 04112035114460_2_6
-label yaofang:
-甘草 白芍 党参 白术 酸枣仁 柏子仁 厚朴 天麻 鳖甲 火麻仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.99175 0.308071 0.472683 0.661261 0.383585 0.321845 0.316724 0.716855 0.61396 0.612043 0.494402 0.544072 0.573887
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.846154, recall: 0.785714, error: 0.153846
-242. 
-patient tongue id: 05290831535119_6_7_4
-label yaofang:
-甘草 法半夏 茯苓 木香 薏苡仁 党参 白术 山药 灯心草 砂仁 茵陈 扁豆花 三棱 莪术 麦芽
-0.978307 0.324311 0.479725 0.630404 0.403423 0.339313 0.323991 0.352323 0.667509 0.577756 0.567507 0.480092 0.510451 0.515828
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.357143, recall: 0.333333, error: 0.642857
-243. 
-patient tongue id: 01312136500427_4_7
-label yaofang:
-甘草 法半夏 茯苓 薏苡仁 党参 白术 山药 厚朴 砂仁 三棱 莪术 豆蔻 麦芽 紫苏梗 广藿香
-0.695 0.394985 0.346686 0.372176
-predicted yaofang:
-甘草 白芍 茯苓 党参
-
-------Score: precision: 0.750000, recall: 0.200000, error: 0.250000
-244. 
-patient tongue id: 01201928567500_1_2_6
-label yaofang:
-甘草 党参 山药 山茱萸 地黄 天麻 菟丝子 益智仁 益母草 金樱子 白花蛇舌草 蜈蚣 棉萆薢 醋鳖甲
-0.996926 0.471607 0.689001 0.369065 0.306706 0.31359 0.759128 0.64546 0.63288 0.509379 0.565126 0.593373
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-245. 
-patient tongue id: 04211351094743_9
-label yaofang:
-法半夏 前胡 桔梗 防风 白芷 北柴胡 款冬花 紫菀 白前 百部 炙甘草 辛夷 百合 广藿香 蜜麻黄 炒苍耳子
-0.452611 0.748708 0.379847 0.902465 0.512038 0.6952 0.412712 0.338545 0.307783 0.443266 0.858871 0.879627 0.834084 0.879948 0.339088 0.938418 0.46873 0.456944 0.537367 0.735455
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.650000, recall: 0.812500, error: 0.350000
-246. 
-patient tongue id: 04141954078167_6_1
-label yaofang:
-甘草 柴胡 白芍 枳壳 法半夏 茯苓 党参 酸枣仁 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.989548 0.446581 0.672384 0.375179 0.311024 0.687377 0.52387 0.537387 0.392249 0.446602 0.4735
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.642857, error: 0.181818
-247. 
-patient tongue id: 02181633186933_5_7
-label yaofang:
-甘草 白芍 茯苓 葛根 羌活 连翘 党参 黄芪 白术 丹参 红花 赤芍 皂角刺 白鲜皮
-0.942008 0.31707 0.470081 0.549939 0.379643 0.308532 0.499825 0.417018 0.422344 0.3235 0.330294 0.310775
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-248. 
-patient tongue id: 03291640164304_6
-label yaofang:
-甘草 白术 酸枣仁 生地黄 郁金 天麻 菟丝子 益母草 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.956679 0.339793 0.434545 0.578695 0.355283 0.554608 0.443972 0.439658 0.344166 0.37016 0.368225
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.571429, error: 0.272727
-249. 
-patient tongue id: 03231605061969_1_4
-label yaofang:
-法半夏 前胡 桔梗 防风 黄芪 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 麸炒白术
-0.470316 0.799023 0.356606 0.945835 0.550981 0.735913 0.450783 0.362608 0.480937 0.913029 0.931368 0.890139 0.929049 0.322672 0.969852 0.494894 0.480163 0.552094 0.785972
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.857143, error: 0.368421
-250. 
-patient tongue id: 01172228557270_1_4_7
-label yaofang:
-甘草 连翘 党参 丹参 玄参 赤芍 浙贝母 天麻 鳖甲 皂角刺 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.964562 0.350374 0.428936 0.607687 0.324742 0.618369 0.431125 0.426066 0.326341 0.374512 0.41239
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.533333, error: 0.272727
-251. 
-patient tongue id: 03151837180467_6
-label yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗 猫爪草
-0.305101 0.305448 0.443312 0.327842 0.309738 0.323116 0.563961
-predicted yaofang:
-甘草 柴胡 白芍 白术 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 0.714286, recall: 0.454545, error: 0.285714
-252. 
-patient tongue id: 03090811520496_1_4
-label yaofang:
-甘草 茯苓 桔梗 荆芥 阿胶 白术 浙贝母 天麻 诃子 白花蛇舌草 麦芽 白鲜皮 半枝莲 醋鳖甲
-0.992026 0.473923 0.673986 0.401886 0.352138 0.359063 0.724497 0.622926 0.641568 0.503498 0.567034 0.637869
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-253. 
-patient tongue id: 04301133054923_4_7_1
-label yaofang:
-甘草 法半夏 茯苓 龙骨 党参 酸枣仁 丹参 黄连 山茱萸 天麻 全蝎 补骨脂 麦芽 川加皮
-0.986289 0.481439 0.630733 0.346197 0.317621 0.666797 0.565995 0.529859 0.455253 0.473414 0.465225
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.285714, error: 0.636364
-254. 
-patient tongue id: 05290841544761_6_2_4
-label yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 丹参 生地黄 牡丹皮 杜仲 菟丝子 桑寄生 益母草 补骨脂 女贞子
-0.955783 0.324738 0.424909 0.573226 0.350887 0.518632 0.387877 0.39576 0.302528
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲
-
-------Score: precision: 0.555556, recall: 0.333333, error: 0.444444
-255. 
-patient tongue id: 03062127052330_6
-label yaofang:
-甘草 白芍 酸枣仁 丹参 生地黄 山药 山茱萸 砂仁 天麻 桑寄生 鳖甲 浮小麦 首乌藤 蜈蚣 白花蛇舌 半枝莲
-0.990248 0.482659 0.637458 0.388893 0.314313 0.660046 0.588104 0.574248 0.464481 0.497362 0.493814
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.636364, recall: 0.437500, error: 0.363636
-256. 
-patient tongue id: 06082027497652_2
-label yaofang:
-甘草 枳壳 薏苡仁 桃仁 蒲公英 太子参 黄芪 白术 生地黄 牡丹皮 乌药 郁金 厚朴 僵蚕 莪术 蜈蚣 姜黄
-0.419256 0.302192 0.416134 0.583825 0.527607 0.423969 0.380207 0.355599 0.42212 0.312588
-predicted yaofang:
-甘草 茯苓 半夏 黄芪 白术 厚朴 砂仁 鸡内金 北沙参 合欢皮
-
-------Score: precision: 0.400000, recall: 0.235294, error: 0.600000
-257. 
-patient tongue id: 04202031084984_2_7
-label yaofang:
-甘草 柴胡 白芍 茯苓 白术 全蝎 猪苓 莪术 半枝莲 蜂房 瓦楞子 山豆根 半边莲
-0.341882 0.486456 0.339779 0.478317 0.632671
-predicted yaofang:
-柴胡 白芍 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 0.400000, recall: 0.153846, error: 0.600000
-258. 
-patient tongue id: 01041648186326_6_1
-label yaofang:
-龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 蝉蜕 姜半夏 炙甘草 浮小麦 百合 紫苏叶 蜈蚣 合欢皮
-0.637805 0.344538 0.446645 0.412945 0.443669
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-259. 
-patient tongue id: 03221629545678_1_4_6
-label yaofang:
-枳壳 半夏 黄芪 白术 赤芍 海螵蛸 砂仁 菟丝子 桑寄生 鸡内金 莲子 北沙参 红豆杉 合欢皮
-0.511451 0.373179 0.620317 0.531279 0.315059 0.405619 0.339759 0.3531 0.330465
-predicted yaofang:
-甘草 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.555556, recall: 0.357143, error: 0.444444
-260. 
-patient tongue id: 02202242230635_5
-label yaofang:
-甘草 黄芩 法半夏 茯苓 前胡 桔梗 牛蒡子 浙贝母 桑白皮 莱菔子 款冬花 枇杷叶 苦杏仁 紫苏子
-0.986624 0.487455 0.6051 0.359023 0.304647 0.584343 0.537724 0.494668 0.408863 0.422804 0.381838
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
-261. 
-patient tongue id: 06022133210397_5
-label yaofang:
-芦根 牛蒡子 薏苡仁 麦冬 黄连 佩兰 三七 茵陈 淡竹叶 扁豆花 百合 土茯苓 木棉花
-0.485963 0.308243 0.340247 0.331761 0.545189 0.536145 0.387528 0.353552 0.317208 0.355449
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-262. 
-patient tongue id: 03111439448754_6_2_1
-label yaofang:
-甘草 白芍 木香 薏苡仁 玉竹 党参 延胡索 砂仁 天麻 五灵脂 鳖甲 三棱 莪术 蜈蚣 白花蛇舌 天山雪莲 红豆杉
-0.983957 0.454483 0.638612 0.402192 0.313559 0.318416 0.657411 0.550507 0.566524 0.439305 0.493681 0.537725
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.583333, recall: 0.411765, error: 0.416667
-263. 
-patient tongue id: 05160609128726_1_4_6
-label yaofang:
-桂枝 桃仁 黄芪 白术 海螵蛸 牛膝 砂仁 桑寄生 续断 桑椹 首乌藤 土鳖虫 红豆杉 合欢皮
-0.51423 0.337773 0.346706 0.355121 0.527479 0.515106 0.300963 0.402542 0.360909 0.342507 0.395147
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
-264. 
-patient tongue id: 05201455401943_3_2
-label yaofang:
-柴胡 白芍 当归 茯苓 木香 远志 党参 黄芪 白术 熟附子 熟地黄 细辛 干姜 炙甘草 女贞子 广升麻 墨旱莲
-0.932947 0.434896 0.572419 0.421283 0.322065 0.503066 0.392011 0.440781 0.314442 0.322777
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
-
-------Score: precision: 0.300000, recall: 0.176471, error: 0.700000
-265. 
-patient tongue id: 05222104225178_4_1
-label yaofang:
-陈皮 当归 黄芪 白术 杜仲 苍术 厚朴 生半夏 僵蚕 鸡内金 枇杷叶 红豆杉 山慈菇 稻芽
-0.457092 0.469155 0.621364 0.597116 0.325554 0.354293 0.489313 0.454227 0.429649 0.493402 0.371226 0.312901
-predicted yaofang:
-甘草 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮 蛇舌草
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-266. 
-patient tongue id: 02020950137737_6_5
-label yaofang:
-甘草 柴胡 白芍 黄芩 当归 茯苓 党参 白术 酸枣仁 生地黄 栀子 牡丹皮 合欢花
-0.948206 0.45107 0.570671 0.356847 0.526854 0.431981 0.446144 0.319104 0.360798 0.375047
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.400000, recall: 0.307692, error: 0.600000
-267. 
-patient tongue id: 03240601247005_2_5
-label yaofang:
-甘草 茯苓 木香 黄连 生地黄 山茱萸 灯心草 山楂 莱菔子 莪术 海金沙 鸡内金 王不留行 广金钱草
-0.910792 0.429843 0.518299 0.388446 0.371129 0.324735
+白芍 当归 桃仁 鱼腥草 麦冬 玉竹 红花 熟地黄 栀子 黄柏 地黄 石菖蒲 滑石 茵陈 鸡内金 败酱草 北沙参 车前草
+0.877099 0.50833 0.511713 0.399495 0.449135 0.337522
 predicted yaofang:
 甘草 茯苓 党参 白术 天麻 蜈蚣
 
-------Score: precision: 0.333333, recall: 0.142857, error: 0.666667
-268. 
-patient tongue id: 03180134191340_6
-label yaofang:
-龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 蝉蜕 姜半夏 炙甘草 浮小麦 百合 紫苏叶 合欢皮
-0.308146 0.432037 0.315036 0.364914 0.370396 0.595168
-predicted yaofang:
-柴胡 白芍 白术 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 0.333333, recall: 0.153846, error: 0.666667
-269. 
-patient tongue id: 05260716182232_1_2_4
-label yaofang:
-甘草 黄芩 法半夏 茯苓 前胡 桔梗 浙贝母 细辛 天麻 鳖甲 款冬花 蜈蚣 天山雪莲 半枝莲 红豆杉
-0.998378 0.477641 0.732691 0.38406 0.368921 0.35289 0.812108 0.681909 0.709825 0.545838 0.624513 0.71419
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.583333, recall: 0.466667, error: 0.416667
-270. 
-patient tongue id: 04112235254672_4_6_7
-label yaofang:
-甘草 香附 茯苓 牛蒡子 白及 党参 白术 延胡索 海螵蛸 车前子 紫苏梗 半枝莲 瓦楞子 猫爪草 半边莲
-0.577484 0.304449 0.422898 0.395683 0.416756
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.800000, recall: 0.266667, error: 0.200000
-271. 
-patient tongue id: 05221956139677_2_1
-label yaofang:
-党参 黄芪 白术 附子 车前子 干姜 砂仁 桑寄生 炙甘草 紫苏叶
-0.312621 0.377074 0.528769 0.316513 0.321437 0.313993 0.301927 0.4778 0.593772
-predicted yaofang:
-甘草 柴胡 白芍 香附 党参 海螵蛸 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.333333, recall: 0.300000, error: 0.666667
-272. 
-patient tongue id: 01172237281672_1_5
-label yaofang:
-甘草 枳壳 茯苓 木香 蒲公英 白及 党参 白术 黄连 赤芍 砂仁 五灵脂 麦芽 白扁豆 稻芽
-0.989189 0.480581 0.655754 0.408024 0.329848 0.303646 0.361818 0.691276 0.613472 0.627423 0.492521 0.54251 0.584706
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.307692, recall: 0.266667, error: 0.692308
-273. 
-patient tongue id: 04122141045729_6_2
-label yaofang:
-甘草 白芍 当归 党参 生地黄 山药 山茱萸 天麻 糯稻根 鳖甲 续断 蜈蚣 白花蛇舌 天山雪莲 半枝莲 龟甲
-0.636551 0.360063 0.41731 0.37738 0.456373
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.400000, recall: 0.125000, error: 0.600000
-274. 
-patient tongue id: 06190648385281_6_7_4
-label yaofang:
-甘草 茯苓 木香 党参 白术 酸枣仁 牡丹皮 天麻 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红曲
-0.986285 0.472601 0.638939 0.428598 0.341708 0.35354 0.690785 0.611692 0.639844 0.503284 0.561706 0.624712
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
-275. 
-patient tongue id: 06070653154686_2_4_6
-label yaofang:
-甘草 法半夏 茯苓 桔梗 橘红 薏苡仁 太子参 酸枣仁 浙贝母 砂仁 鳖甲 火麻仁 莪术 麦芽 苦杏仁 白花蛇舌 天山雪莲
-0.97356 0.326367 0.466988 0.590678 0.368182 0.542246 0.492908 0.465142 0.38477 0.394611 0.35946
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.294118, error: 0.545455
-276. 
-patient tongue id: 03151954284682_1_4_7
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.485636 0.513569 0.449434 0.346203 0.515361 0.483659 0.454178 0.456334 0.476196 0.456022 0.525758 0.494402 0.468689 0.502875 0.497464
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-277. 
-patient tongue id: 02201815225007_1_6
-label yaofang:
-甘草 陈皮 茯苓 葛根 郁金 佩兰 北柴胡 茵陈 广藿香 干鱼腥草 炒白扁豆 麸炒白术 炒六神曲 布渣叶 木棉花
-0.413665 0.500131 0.420659 0.519111 0.362248 0.415003 0.496723 0.457193 0.439701 0.421868 0.468802
-predicted yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草
-
-------Score: precision: 0.181818, recall: 0.133333, error: 0.818182
-278. 
-patient tongue id: 02260652202101_5
-label yaofang:
-甘草 陈皮 枳壳 黄芩 法半夏 茯苓 桔梗 党参 浙贝母 桑白皮 款冬花 苦杏仁 广藿香
-0.919542 0.356493 0.432243 0.556027 0.362729 0.516506 0.397063 0.419013 0.3099 0.346056 0.380877
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.230769, error: 0.727273
-279. 
-patient tongue id: 05251957539151_1_4_6
-label yaofang:
-当归 半夏 党参 黄芪 白术 海螵蛸 厚朴 砂仁 石斛 鸡内金 紫苏梗 稻芽
-0.430654 0.323197 0.47409 0.461307 0.314571
-predicted yaofang:
-甘草 党参 黄芪 白术 厚朴
-
-------Score: precision: 0.800000, recall: 0.333333, error: 0.200000
-280. 
-patient tongue id: 05181033112886_6
-label yaofang:
-甘草 柴胡 香附 黄芩 法半夏 茯苓 党参 白术 砂仁 枇杷叶 麦芽 紫苏梗 广藿香
-0.980267 0.323671 0.44553 0.613216 0.36254 0.301689 0.623846 0.508452 0.504108 0.393852 0.434769 0.457991
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
-281. 
-patient tongue id: 03232205582219_2_7
-label yaofang:
-甘草 白芍 川芎 独活 党参 白术 延胡索 山茱萸 桑寄生 秦艽 浮小麦 威灵仙 合欢花 骨碎补
-0.970106 0.305419 0.458392 0.600826 0.371751 0.309143 0.587623 0.477801 0.467454 0.367228 0.396535 0.401859
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
-282. 
-patient tongue id: 03312022058407_6
-label yaofang:
-桂枝 甘草 柴胡 白芍 黄芩 法半夏 大枣 茯苓 牡蛎 白术 酸枣仁 竹茹 干姜 青蒿 浮小麦 首乌藤
-0.985507 0.484309 0.628621 0.373497 0.300511 0.326341 0.648655 0.561883 0.543117 0.447575 0.471908 0.471875
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.250000, error: 0.666667
-283. 
-patient tongue id: 05102150507876_1
-label yaofang:
-法半夏 前胡 防风 白芷 款冬花 紫菀 白前 百部 豆蔻 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄 麸炒白术
-0.36733 0.320348 0.37411 0.306542 0.309827 0.371889 0.318935 0.302248 0.340839 0.469059 0.566367
-predicted yaofang:
-陈皮 法半夏 茯苓 半夏 防风 黄芪 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
-284. 
-patient tongue id: 04201512393195_1_3
-label yaofang:
-当归 党参 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子 煨诃子
-0.450129 0.320752 0.381158 0.488329
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.500000, recall: 0.166667, error: 0.500000
-285. 
-patient tongue id: 03311649368516_4
-label yaofang:
-柴胡 黄芩 龙骨 党参 白术 泽泻 天麻 姜半夏 炙甘草 续断
-0.469735 0.667155 0.521931 0.360251 0.323632 0.448482 0.325863 0.424437 0.786538 0.836767 0.303503
-predicted yaofang:
-柴胡 白芍 香附 枳壳 柏子仁 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
-
-------Score: precision: 0.272727, recall: 0.300000, error: 0.727273
-286. 
-patient tongue id: 05312144431637_7_4_6
-label yaofang:
-甘草 川芎 龙骨 桃仁 红花 牛膝 薤白 水蛭 天麻 瓜蒌皮 莪术 蒺藜 沙苑子 酒女贞子 墨旱莲
-0.972767 0.404241 0.64745 0.337238 0.331845 0.670486 0.327478 0.413356 0.340768
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 天麻 鳖甲 蜈蚣 半枝莲
-
-------Score: precision: 0.222222, recall: 0.133333, error: 0.777778
-287. 
-patient tongue id: 02181602098808_6_4_7
-label yaofang:
-甘草 香附 枳壳 法半夏 丹参 黄连 延胡索 牛膝 薤白 砂仁 天麻 五灵脂 桑寄生 瓜蒌皮 柿蒂 蒺藜
-0.985627 0.446833 0.655643 0.389936 0.32048 0.309823 0.673688 0.521276 0.54552 0.398172 0.458415 0.513985
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.166667, recall: 0.125000, error: 0.833333
-288. 
-patient tongue id: 04121934187163_2_1
-label yaofang:
-甘草 白芍 薏苡仁 党参 赤芍 杜仲 天麻 鳖甲 佛手 蜈蚣 白花蛇舌 天山雪莲 半枝莲 宽筋藤
-0.995957 0.469615 0.695909 0.353669 0.359351 0.317145 0.335189 0.778829 0.643617 0.649831 0.522337 0.58756 0.667714
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.615385, recall: 0.571429, error: 0.384615
-289. 
-patient tongue id: 01092039473165_1_6
-label yaofang:
-甘草 柴胡 白芍 当归 茯苓 党参 白术 丹参 熟地黄 益母草 淫羊藿 仙茅 合欢花
-0.990179 0.304633 0.477878 0.642299 0.381079 0.304969 0.331438 0.678069 0.584269 0.573324 0.463459 0.510626 0.528207
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.384615, recall: 0.384615, error: 0.615385
-290. 
-patient tongue id: 06162245121306_1_4
-label yaofang:
-甘草 陈皮 茯苓 佩兰 砂仁 广藿香 炒白扁豆 麸炒白术 麸炒苍术 炒六神曲 布渣叶 炒稻芽 炒麦芽
-0.420105 0.683262 0.396211 0.844551 0.489736 0.601275 0.315658 0.381263 0.313657 0.390324 0.802254 0.819084 0.7782 0.833852 0.368659 0.888686 0.404326 0.407795 0.48954 0.685911
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.150000, recall: 0.230769, error: 0.850000
-291. 
-patient tongue id: 04122128100320_1_6
-label yaofang:
-甘草 薏苡仁 党参 黄芪 熟附子 山药 砂仁 天麻 鳖甲 莪术 败酱草 蜈蚣 天山雪莲 半枝莲
-0.566311 0.330969 0.418146 0.469708 0.413697
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.600000, recall: 0.214286, error: 0.400000
-292. 
-patient tongue id: 03302018324992_1_7
-label yaofang:
-甘草 当归 茯苓 半夏 党参 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 僵蚕 莪术 紫苏叶 蜈蚣 合欢皮 稻芽
-0.445005 0.400105 0.400444 0.397987
-predicted yaofang:
-甘草 法半夏 茯苓 炙甘草
-
-------Score: precision: 0.500000, recall: 0.117647, error: 0.500000
-293. 
-patient tongue id: 05251941547536_1
-label yaofang:
-甘草 白芍 陈皮 茯苓 半夏 薏苡仁 党参 黄芪 白术 海螵蛸 车前子 砂仁 白芷 莪术 鸭脚艾
-0.573962 0.303803 0.355368 0.460323 0.413547 0.388838 0.307104 0.350696 0.363804
-predicted yaofang:
-甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 天麻
-
-------Score: precision: 0.444444, recall: 0.266667, error: 0.555556
-294. 
-patient tongue id: 02182222408105_2_1_5
-label yaofang:
-甘草 黄芩 桔梗 牛蒡子 浙贝母 郁金 白茅根 茜草 鳖甲 鸡内金 白花蛇舌 蜂房 岗梅根 四季青
-0.992129 0.484583 0.658593 0.367815 0.3235 0.330763 0.719502 0.618917 0.599142 0.50495 0.543132 0.560252
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
-295. 
-patient tongue id: 05092043228184_1
-label yaofang:
-麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
-0.439486 0.585529 0.458098 0.338711 0.41554 0.346705 0.413016 0.696653 0.769735 0.318842
-predicted yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
-
-------Score: precision: 0.500000, recall: 0.357143, error: 0.500000
-296. 
-patient tongue id: 03231306169107_6_1_5
-label yaofang:
-甘草 川芎 党参 生地黄 赤芍 牡丹皮 天麻 鳖甲 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.996709 0.465065 0.702502 0.420594 0.355247 0.302785 0.347614 0.790985 0.699627 0.733789 0.574966 0.655467 0.744294
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.692308, recall: 0.692308, error: 0.307692
-297. 
-patient tongue id: 05160627084077_3_1_6
-label yaofang:
-茯苓 龙骨 熟地黄 牡丹皮 附子 肉桂 山药 山茱萸 干姜 补骨脂 金樱子 益智 黄精
-0.563437 0.327762 0.382462 0.507414 0.469959 0.342863 0.324859
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 北沙参
-
-------Score: precision: 0.142857, recall: 0.076923, error: 0.857143
-298. 
-patient tongue id: 03240604426244_6_2
-label yaofang:
-甘草 茯苓 薏苡仁 党参 玄参 生地黄 赤芍 浙贝母 郁金 厚朴 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲
-0.982827 0.46813 0.619833 0.379558 0.31057 0.604464 0.540637 0.525407 0.414055 0.445126 0.431848
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.727273, recall: 0.500000, error: 0.272727
-299. 
-patient tongue id: 03061502200607_1
-label yaofang:
-甘草 柴胡 白芍 枳壳 桔梗 黄芪 白术 生地黄 槟榔 厚朴 肉苁蓉 火麻仁 柿蒂 紫菀
-0.320027 0.31637 0.411101 0.318007 0.380675 0.385617 0.463927
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 海螵蛸 炙甘草
-
-------Score: precision: 0.571429, recall: 0.285714, error: 0.428571
-300. 
-patient tongue id: 05232016470375_1_7
-label yaofang:
-甘草 枳壳 茯苓 薏苡仁 蒲公英 白术 黄连 海螵蛸 郁金 厚朴 莪术 北沙参 紫苏叶 蜈蚣 红豆杉 合欢皮 姜黄 蛇舌草
-0.513223 0.31423 0.315447 0.357162 0.533974 0.511471 0.38069 0.328297 0.309044 0.336205
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.500000, recall: 0.277778, error: 0.500000
-301. 
-patient tongue id: 01070841443443_1_7
-label yaofang:
-甘草 柴胡 川芎 枳壳 当归 桔梗 桃仁 生地黄 红花 赤芍 牛膝 郁金 六神曲
-0.597419 0.349292 0.449771 0.332563 0.313082
-predicted yaofang:
-甘草 茯苓 党参 黄芪 天麻
-
-------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
-302. 
-patient tongue id: 05231931246053_1
-label yaofang:
-法半夏 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.464071 0.803354 0.379132 0.931478 0.553141 0.684929 0.333043 0.452519 0.367049 0.452643 0.901028 0.918322 0.882033 0.908179 0.370084 0.960624 0.447874 0.448532 0.564921 0.793071
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 1.000000, error: 0.300000
-303. 
-patient tongue id: 02211427346053_4_1_7
-label yaofang:
-桂枝 甘草 白芍 茯苓 麦冬 党参 黄芪 白术 五味子 熟附子 干姜 鸡内金
-0.569777 0.332427 0.462764 0.406979 0.311155
-predicted yaofang:
-甘草 茯苓 党参 黄芪 天麻
-
-------Score: precision: 0.800000, recall: 0.333333, error: 0.200000
-304. 
-patient tongue id: 04101907167307_1_4
-label yaofang:
-法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.351392 0.354012 0.372497 0.340263 0.350099 0.337798 0.301007 0.378339 0.365207 0.388881 0.423581 0.650396
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 防风 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
-305. 
-patient tongue id: 05140657474380_1
-label yaofang:
-甘草 川芎 当归 茯苓 党参 黄芪 鸡血藤 白术 山药 山茱萸 砂仁 天麻 桑螵蛸 麦芽 地龙
-0.471886 0.303113 0.325333 0.333174 0.516882 0.543494 0.367039 0.350896 0.300506
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 厚朴 砂仁 北沙参
-
-------Score: precision: 0.666667, recall: 0.400000, error: 0.333333
-306. 
-patient tongue id: 03021234054976_1_3
-label yaofang:
-川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.36606 0.362336 0.372167
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.666667, recall: 0.166667, error: 0.333333
-307. 
-patient tongue id: 05242000125657_5_2
-label yaofang:
-甘草 柴胡 白芍 黄芩 法半夏 茯苓 连翘 红花 牡丹皮 地黄 菟丝子 益母草 皂角刺 醋香附
-0.993242 0.309848 0.467529 0.664746 0.391803 0.304851 0.30663 0.716353 0.613671 0.625228 0.4875 0.544225 0.581758
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.230769, recall: 0.214286, error: 0.769231
-308. 
-patient tongue id: 01042308513562_4
-label yaofang:
-甘草 香附 茯苓 薏苡仁 党参 白术 海螵蛸 干姜 紫菀 白花蛇舌草 续断 瓦楞子
-0.6928 0.395667 0.459011 0.377274 0.488175 0.305313
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 蜈蚣
-
-------Score: precision: 0.666667, recall: 0.333333, error: 0.333333
-309. 
-patient tongue id: 02182240354089_6_3_1
-label yaofang:
-当归 桃仁 黄芪 白术 熟地黄 杜仲 附子 肉桂 山茱萸 厚朴 火麻仁 北沙参 首乌藤 地肤子 土鳖虫
-0.550002 0.382384 0.385989 0.40516 0.410775
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.400000, recall: 0.133333, error: 0.600000
-310. 
-patient tongue id: 04301140576662_1_2
-label yaofang:
-甘草 香附 枳壳 茯苓 龙骨 党参 酸枣仁 丹参 生地黄 郁金 浮小麦 首乌藤 合欢花
-0.979598 0.454695 0.636049 0.381245 0.307145 0.327896 0.64107 0.511745 0.510276 0.403061 0.441615 0.464132
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
-311. 
-patient tongue id: 02171848405438_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.466002 0.833982 0.364635 0.95703 0.558565 0.731508 0.452316 0.355899 0.46223 0.930362 0.945235 0.905078 0.942561 0.336788 0.97412 0.476433 0.461236 0.582193 0.825076
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.789474, recall: 1.000000, error: 0.210526
-312. 
-patient tongue id: 03261647030758_2_1
-label yaofang:
-甘草 白芍 香附 当归 茯苓 党参 黄芪 白术 郁金 山楂 蛇舌草
-0.421355 0.378884 0.545912 0.301939 0.306247
-predicted yaofang:
-甘草 党参 黄芪 丹参 厚朴
-
-------Score: precision: 0.600000, recall: 0.272727, error: 0.400000
-313. 
-patient tongue id: 01121848479995_2
-label yaofang:
-陈皮 前胡 防风 细辛 干姜 款冬花 白前 百部 炙甘草 炒紫苏子 蜜麻黄
-0.463524 0.770261 0.360412 0.924814 0.513375 0.708999 0.308962 0.420611 0.333246 0.442989 0.883205 0.90474 0.866549 0.910345 0.36207 0.952667 0.480869 0.470657 0.557744 0.751529
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.550000, recall: 1.000000, error: 0.450000
-314. 
-patient tongue id: 01121852311327_2
-label yaofang:
-法半夏 前胡 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 炒紫苏子 蜜麻黄
-0.56757 0.413031 0.397607 0.35328 0.315827
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
 ------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-315. 
-patient tongue id: 05222011393645_4
+19. 
+patient tongue id: 04062030120916_4
 label yaofang:
-枳壳 太子参 白术 海螵蛸 神曲 山楂 砂仁 石斛 紫菀 麦芽 百合 紫苏叶 独脚金
-0.370286 0.309474 0.479205
+甘草 陈皮 法半夏 前胡 防风 细辛 干姜 木瓜 款冬花 紫菀 白前 百部 紫苏梗 蜜麻黄
+0.387392 0.71351 0.473216 0.785633 0.469462 0.5313 0.327017 0.379919 0.360777 0.319275 0.384758 0.730491 0.733696 0.692515 0.7401 0.314858 0.888404 0.4191 0.490166 0.485582 0.663287
 predicted yaofang:
-白芍 党参 炙甘草
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
 
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-316. 
-patient tongue id: 04272315058824_7
+------Score: precision: 0.523810, recall: 0.785714, error: 0.476190
+20. 
+patient tongue id: 04261334490446_2_6
 label yaofang:
-当归 党参 黄芪 白术 丹参 生地黄 猪苓 鳖甲 虎杖 白花蛇舌草 瓦楞子
-0.354399 0.360299 0.49967 0.323697 0.323192 0.350289 0.386677 0.594971
+当归 木香 远志 党参 黄芪 鸡血藤 白术 柏子仁 栀子 淡豆豉 炙甘草 百合 紫苏叶
+0.406499 0.497258 0.426025 0.399871 0.486473 0.389739 0.72601 0.797289 0.308025
 predicted yaofang:
-甘草 柴胡 白芍 党参 浙贝母 干姜 姜半夏 炙甘草
+柴胡 白芍 香附 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
 
-------Score: precision: 0.125000, recall: 0.090909, error: 0.875000
-317. 
-patient tongue id: 06141843553587_6_2_5
+------Score: precision: 0.222222, recall: 0.153846, error: 0.777778
+21. 
+patient tongue id: 01032302546094_6_5
 label yaofang:
-茯苓 牡蛎 熟地黄 牡丹皮 郁金 山药 山茱萸 泽泻 莪术 蜈蚣 土茯苓 合欢皮 姜黄
-0.353652 0.340416 0.330162 0.34937 0.344427
+甘草 白芍 茯苓 薏苡仁 党参 白术 郁金 山药 天麻 鳖甲 莪术 蜈蚣 天山雪莲 半枝莲 红豆杉
+0.399489 0.435497 0.466709 0.362957 0.328944 0.34744 0.338363 0.510583
 predicted yaofang:
-甘草 茯苓 党参 黄芪 炙甘草
+甘草 法半夏 茯苓 前胡 桔梗 款冬花 紫菀 炙甘草
 
-------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
-318. 
-patient tongue id: 03302126207508_1_4
+------Score: precision: 0.250000, recall: 0.133333, error: 0.750000
+22. 
+patient tongue id: 04200637551984_5_6
 label yaofang:
-甘草 薏苡仁 牡丹皮 牛膝 郁金 山药 山茱萸 石菖蒲 天麻 白花蛇舌草 麦芽 蜈蚣 醋鳖甲 麸炒枳壳
-0.604549 0.316564 0.432658 0.316347
-predicted yaofang:
-甘草 法半夏 茯苓 党参
-
-------Score: precision: 0.250000, recall: 0.071429, error: 0.750000
-319. 
-patient tongue id: 03181800512206_6_4
-label yaofang:
-甘草 茯苓 薏苡仁 远志 党参 酸枣仁 浙贝母 郁金 天麻 鳖甲 莪术 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲
-0.703282 0.536589 0.45082 0.509305 0.385815 0.510027 0.410702
-predicted yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 款冬花 紫菀
-
-------Score: precision: 0.285714, recall: 0.125000, error: 0.714286
-320. 
-patient tongue id: 01050635298145_6_4
-label yaofang:
-甘草 川芎 法半夏 茯苓 桔梗 赤芍 浙贝母 天麻 僵蚕 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.989297 0.464512 0.647194 0.360628 0.310685 0.317977 0.684263 0.549057 0.542293 0.430123 0.479072 0.518933
+甘草 柴胡 法半夏 茯苓 龙骨 牡蛎 远志 党参 酸枣仁 丹参 黄连 胆南星 栀子 桑白皮 淡豆豉
+0.96952 0.548927 0.59729 0.463692 0.304086 0.311537 0.593207 0.542186 0.537145 0.418674 0.455053 0.502061
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
-321. 
-patient tongue id: 06132244037705_4_1
+------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
+23. 
+patient tongue id: 06190812318319_4_6_7
 label yaofang:
-柴胡 白芍 香附 枳壳 柏子仁 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗 山慈菇
-0.325066 0.391036 0.514992 0.337335 0.300572 0.308754 0.307083 0.320559 0.354099 0.337688 0.456649 0.613622
-predicted yaofang:
-甘草 柴胡 白芍 香附 枳壳 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.666667, recall: 0.666667, error: 0.333333
-322. 
-patient tongue id: 02142133158258_1_2
-label yaofang:
-麻黄 陈皮 茯苓 前胡 半夏 防风 钩藤 款冬花 紫菀 百部 紫苏子 蝉蜕 炙甘草
-0.453485 0.724703 0.36695 0.900886 0.496509 0.66357 0.368896 0.397426 0.850762 0.872534 0.828652 0.877124 0.325617 0.933373 0.438941 0.428896 0.501147 0.691079
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.444444, recall: 0.615385, error: 0.555556
-323. 
-patient tongue id: 04192231237159_6_2
-label yaofang:
-甘草 茯苓 党参 酸枣仁 生地黄 杜仲 天麻 桑寄生 鳖甲 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.971603 0.322489 0.442993 0.597332 0.348509 0.578515 0.448824 0.420047 0.346956 0.363606 0.353771
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.642857, error: 0.181818
-324. 
-patient tongue id: 03020735556122_1_4
-label yaofang:
-甘草 茯苓 党参 酸枣仁 山药 天麻 益母草 鳖甲 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.982097 0.461856 0.633091 0.403213 0.300167 0.327413 0.63001 0.547188 0.560647 0.443406 0.485891 0.525088
+甘草 茯苓 薏苡仁 党参 白术 杜仲 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 宽筋藤
+0.95038 0.540149 0.562454 0.479453 0.325314 0.334431 0.554258 0.525255 0.542784 0.434878 0.463809 0.529128
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.916667, recall: 0.785714, error: 0.083333
-325. 
-patient tongue id: 03152012263126_2_1_7
+24. 
+patient tongue id: 03180110107314_1
 label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
-0.372933 0.376829 0.390188 0.476867 0.401383 0.391478 0.327743 0.350035 0.310804 0.324583 0.30954
+桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 人参叶 龙脷叶
+0.329666 0.312315 0.33033 0.347171 0.313023 0.322936 0.559908
 predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝 钩藤 泽泻 车前子 莱菔子 夏枯草
-
-------Score: precision: 0.272727, recall: 0.250000, error: 0.727273
-326. 
-patient tongue id: 05181045176169_2_5
-label yaofang:
-甘草 桔梗 金银花 芦根 牛蒡子 浙贝母 乌梅 白茅根 天麻 鳖甲 诃子 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.990859 0.313434 0.453097 0.651914 0.355871 0.333172 0.310408 0.718423 0.576009 0.577342 0.455258 0.519593 0.582564
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.538462, recall: 0.466667, error: 0.461538
-327. 
-patient tongue id: 02252313550042_6_4
-label yaofang:
-甘草 柴胡 白芍 枳壳 法半夏 茯苓 连翘 党参 栀子 牡丹皮 山药 莱菔子 麦芽 合欢花
-0.955809 0.329165 0.43188 0.5735 0.398275 0.303662 0.545284 0.451157 0.470593 0.354705 0.392837 0.413984
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-328. 
-patient tongue id: 03170933073125_1_4_7
-label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
-0.425518 0.560483 0.427756 0.449012 0.585666 0.533389 0.520143 0.524249 0.556671 0.49832 0.606322 0.441721 0.57135 0.595414 0.604427
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.200000, recall: 0.250000, error: 0.800000
-329. 
-patient tongue id: 03191010531123_1_7_2
-label yaofang:
-蒲公英 黄芪 何首乌 白术 杜仲 砂仁 桑寄生 莪术 北沙参 橘核 桑椹 蜈蚣 红豆杉
-0.509869 0.314656 0.362715 0.512363 0.507473 0.379691 0.340088 0.318334 0.32158
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.444444, recall: 0.307692, error: 0.555556
-330. 
-patient tongue id: 05051927181768_5
-label yaofang:
-茯苓 蒲公英 赤芍 青皮 熟地黄 牡丹皮 郁金 山药 泽泻 莪术 山萸肉 醋香附 穿破石 醋三棱
-0.772785 0.354235 0.385 0.46593 0.309237 0.343037
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.166667, recall: 0.071429, error: 0.833333
-331. 
-patient tongue id: 04112000388796_1_2_7
-label yaofang:
-甘草 柴胡 黄芩 半夏 荆芥 丹参 杜仲 牛膝 郁金 厚朴 砂仁 菟丝子 火麻仁 紫苏叶 合欢皮 预知子
-0.599078 0.347075 0.393605 0.459885 0.511834 0.345381 0.322124
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁
-
-------Score: precision: 0.428571, recall: 0.187500, error: 0.571429
-332. 
-patient tongue id: 01061852563886_1
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.378649 0.579529 0.431929 0.659626 0.412833 0.491329 0.321676 0.335277 0.333107 0.61054 0.608372 0.584311 0.617234 0.354058 0.676262 0.357715 0.38674 0.342498 0.493961
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.736842, recall: 0.933333, error: 0.263158
-333. 
-patient tongue id: 02141935440123_5
-label yaofang:
-麻黄 甘草 防风 金银花 连翘 薄荷 芦根 桑叶 菊花 荆芥穗 干鱼腥草 炒苍耳子 炒牛蒡子 燀苦杏仁
-0.46902 0.825945 0.351963 0.957683 0.56344 0.755461 0.442745 0.342578 0.479605 0.930692 0.94516 0.906846 0.939531 0.978185 0.490146 0.46984 0.549916 0.808621
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.055556, recall: 0.071429, error: 0.944444
-334. 
-patient tongue id: 03141931116081_1_4
-label yaofang:
-陈皮 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.442717 0.679521 0.417712 0.818512 0.4992 0.626975 0.335235 0.413392 0.35482 0.324258 0.440406 0.777784 0.798963 0.748053 0.79171 0.364644 0.875925 0.44729 0.447314 0.504411 0.665682
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.666667, recall: 1.000000, error: 0.333333
-335. 
-patient tongue id: 02191444523221_4_6
-label yaofang:
-麻黄 甘草 法半夏 当归 茯苓 前胡 橘红 桃仁 远志 厚朴 射干 地龙 苦杏仁 紫苏子
-0.992025 0.491205 0.645666 0.375345 0.323202 0.67375 0.6099 0.584576 0.482771 0.518171 0.507814
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
-336. 
-patient tongue id: 02120942350280_1_5
-label yaofang:
-甘草 防风 金银花 薏苡仁 党参 黄芪 白术 生地黄 山药 荆芥穗 苦参 白鲜皮 浮小麦 地肤子
-0.986643 0.478394 0.654222 0.380785 0.330329 0.33887 0.673733 0.555651 0.531411 0.433564 0.475504 0.497032
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
-337. 
-patient tongue id: 02181953024383_4_1_6
-label yaofang:
-甘草 白芍 陈皮 法半夏 茯苓 前胡 桔梗 桃仁 党参 白术 莱菔子 款冬花 紫菀 白芥子 紫苏子
-0.744053 0.336971 0.418224 0.445171 0.316704
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 1.000000, recall: 0.333333, error: 0.000000
-338. 
-patient tongue id: 04250813486406_1_3_7
-label yaofang:
-甘草 陈皮 茯苓 桔梗 金银花 党参 白术 大腹皮 厚朴 藿香 白芷 六神曲 紫苏叶
-0.53212 0.404869 0.459416 0.417991 0.413036 0.342981 0.375972 0.339027 0.301623 0.326882 0.368783 0.306814
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 莱菔子 天麻 夏枯草
-
-------Score: precision: 0.166667, recall: 0.153846, error: 0.833333
-339. 
-patient tongue id: 04102047531677_1_2
-label yaofang:
-甘草 白芍 龙骨 牡蛎 玄参 天冬 川楝子 牛膝 茵陈 麦芽 赭石 浮小麦 龟甲
-0.398377 0.554235 0.384962 0.352127 0.324605 0.384404 0.594392 0.72846
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.125000, recall: 0.076923, error: 0.875000
-340. 
-patient tongue id: 02191235503344_4_1
-label yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄
-0.46443 0.787761 0.354577 0.93858 0.54428 0.739813 0.393136 0.302658 0.463082 0.904415 0.926654 0.879886 0.920126 0.964716 0.491115 0.455304 0.520773 0.754349
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.833333, recall: 0.937500, error: 0.166667
-341. 
-patient tongue id: 06191209312987_4
-label yaofang:
-甘草 川芎 法半夏 茯苓 酸枣仁 延胡索 竹茹 川楝子 杜仲 牛膝 天麻 桑寄生 茵陈 豆蔻
-0.969735 0.466997 0.562442 0.370507 0.492274 0.458536 0.437864 0.345894 0.349597 0.307977
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.300000, recall: 0.214286, error: 0.700000
-342. 
-patient tongue id: 03061509474924_6_7_1
-label yaofang:
-桂枝 甘草 柴胡 川芎 枳壳 当归 桔梗 桃仁 党参 枸杞子 白术 生地黄 红花 赤芍 熟地黄 杜仲 牛膝 附子 砂仁 菟丝子 巴戟天 桑寄生 鹿角霜 续断 制何首乌 徐长卿 艾叶
-0.691474 0.3836 0.349342 0.446518 0.359645
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.600000, recall: 0.111111, error: 0.400000
-343. 
-patient tongue id: 04250802507505_1_2_4
-label yaofang:
-甘草 法半夏 前胡 桔梗 橘红 金银花 薏苡仁 藿香 白前 枇杷叶 苦杏仁 干鱼腥草
-0.443127 0.302107 0.407383 0.423837
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.250000, recall: 0.083333, error: 0.750000
-344. 
-patient tongue id: 05222106103753_1_2_5
-label yaofang:
-甘草 茯苓 龙骨 牡蛎 党参 黄芪 白术 五味子 砂仁 糯稻根 北沙参
-0.68955 0.319292 0.383955 0.39322 0.478505
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 1.000000, recall: 0.454545, error: 0.000000
-345. 
-patient tongue id: 05102204108050_1_4
-label yaofang:
-陈皮 法半夏 前胡 太子参 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.469802 0.825012 0.369473 0.952196 0.577972 0.718647 0.441918 0.347149 0.452399 0.926331 0.940306 0.901429 0.932029 0.334658 0.974964 0.451691 0.438599 0.559814 0.817001
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.684211, recall: 0.866667, error: 0.315789
-346. 
-patient tongue id: 04112032569927_1_2
-label yaofang:
-甘草 白芍 茯苓 桔梗 薏苡仁 党参 白术 浙贝母 山药 砂仁 鳖甲 白扁豆 佛手 白花蛇舌
-0.986863 0.304021 0.468375 0.643258 0.372354 0.307419 0.323807 0.675809 0.587092 0.562107 0.471588 0.501755 0.509002
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.615385, recall: 0.571429, error: 0.384615
-347. 
-patient tongue id: 01070834571715_1_4_6
-label yaofang:
-甘草 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.653264 0.411371 0.329564 0.442799 0.37297
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.600000, recall: 0.250000, error: 0.400000
-348. 
-patient tongue id: 04291517035192_3_5
-label yaofang:
-桂枝 甘草 党参 丹参 赤芍 黄柏 郁金 山茱萸 淫羊藿 补骨脂 仙茅 鹿角霜 佛手 醋香附
-0.994336 0.476397 0.687242 0.391091 0.344864 0.347189 0.743169 0.627914 0.645572 0.506903 0.565227 0.630096
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
-349. 
-patient tongue id: 03012312250329_4_1
-label yaofang:
-桂枝 甘草 白芍 法半夏 茯苓 桃仁 鸡血藤 白术 酸枣仁 红花 赤芍 吴茱萸 麦芽 地龙
-0.917039 0.395248 0.394074 0.538635 0.360361 0.447019 0.357965
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 蜈蚣
-
-------Score: precision: 0.571429, recall: 0.285714, error: 0.428571
-350. 
-patient tongue id: 03171401451683_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 蜜麻黄
-0.391345 0.587986 0.412641 0.696982 0.417145 0.539156 0.30661 0.331446 0.348386 0.646795 0.647188 0.62979 0.66517 0.357769 0.750587 0.372222 0.385247 0.385452 0.507971
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.857143, error: 0.368421
-351. 
-patient tongue id: 02212003017639_6
-label yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 豆蔻 姜半夏 炙甘草 紫苏梗
-0.343493 0.474229 0.35453 0.448035 0.62585
-predicted yaofang:
-柴胡 白芍 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 1.000000, recall: 0.555556, error: 0.000000
-352. 
-patient tongue id: 03090807222395_1_7
-label yaofang:
-甘草 当归 茯苓 党参 鸡血藤 酸枣仁 浙贝母 郁金 山药 砂仁 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.938198 0.414339 0.585744 0.391956 0.300999 0.302364 0.546533 0.338462 0.421219 0.338825
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 半枝莲
-
-------Score: precision: 0.900000, recall: 0.562500, error: 0.100000
-353. 
-patient tongue id: 03311842452266_1_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 蜜麻黄 炒苍耳子
-0.465019 0.840437 0.339482 0.967393 0.581037 0.77063 0.442256 0.337955 0.490971 0.945458 0.958948 0.927611 0.956097 0.300948 0.984128 0.506291 0.45578 0.550149 0.832391
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.684211, recall: 0.866667, error: 0.315789
-354. 
-patient tongue id: 04271917216591_4
-label yaofang:
-陈皮 法半夏 前胡 桔梗 防风 麦冬 细辛 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.36766 0.550137 0.429514 0.602224 0.430963 0.456755 0.341841 0.337275 0.313674 0.329216 0.578885 0.602203 0.52493 0.572139 0.384493 0.728618 0.342703 0.35682 0.313709 0.468368
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 0.933333, error: 0.300000
-355. 
-patient tongue id: 03291618097049_6_4
-label yaofang:
-甘草 香附 枳壳 法半夏 茯苓 党参 丹参 郁金 薤白 水蛭 瓜蒌皮 莪术 紫苏梗
-0.976105 0.303002 0.441652 0.618807 0.381886 0.557546 0.462865 0.475795 0.343782 0.373557 0.378642
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.230769, error: 0.727273
-356. 
-patient tongue id: 03312021024146_1_6
-label yaofang:
-甘草 法半夏 茯苓 远志 党参 厚朴 天麻 鳖甲 紫苏梗 威灵仙 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.912781 0.435395 0.541853 0.413715 0.434746 0.330263 0.398115
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.857143, recall: 0.428571, error: 0.142857
-357. 
-patient tongue id: 01032052192556_1_5_6
-label yaofang:
-甘草 白芍 薏苡仁 党参 黄芪 白术 熟附子 山药 天麻 鳖甲 败酱草 蜈蚣 天山雪莲 半枝莲
-0.894075 0.301131 0.334266 0.45449 0.464456 0.320521 0.351744
-predicted yaofang:
-甘草 白芍 法半夏 茯苓 党参 白术 天麻
-
-------Score: precision: 0.714286, recall: 0.357143, error: 0.285714
-358. 
-patient tongue id: 01312251127996_1_2_6
-label yaofang:
-甘草 白芍 川芎 大枣 茯苓 党参 枸杞子 酸枣仁 熟地黄 黄柏 地黄 泽泻 菟丝子 益母草
-0.977414 0.303858 0.473032 0.608658 0.398962 0.329752 0.60122 0.517894 0.525072 0.40479 0.438651 0.451753
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
-359. 
-patient tongue id: 03062153101403_1_2_7
-label yaofang:
-半夏 黄芪 白术 海螵蛸 浙贝母 砂仁 鸡内金 紫苏梗 合欢皮 山慈菇 蛇舌草 稻芽
-0.569093 0.357146 0.366154 0.431659 0.484627 0.307524 0.311883
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁
-
-------Score: precision: 0.428571, recall: 0.250000, error: 0.571429
-360. 
-patient tongue id: 02142335506976_5
-label yaofang:
-甘草 茯苓 木香 党参 白术 丹参 山药 车前子 菟丝子 猪苓 茵陈 金樱子 虎杖 黄精
-0.934455 0.432756 0.558428 0.360024 0.533663 0.365331 0.388462 0.315954
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 半枝莲
-
-------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
-361. 
-patient tongue id: 02141956369706_1
-label yaofang:
-柴胡 黄芩 党参 白术 丹参 柏子仁 泽泻 天麻 白芷 姜半夏 炙甘草 续断
-0.439054 0.362 0.35838 0.352775 0.330794
-predicted yaofang:
-甘草 白芍 党参 白术 炙甘草
-
-------Score: precision: 0.600000, recall: 0.250000, error: 0.400000
-362. 
-patient tongue id: 06072250294527_1_2
-label yaofang:
-甘草 白芍 陈皮 薏苡仁 党参 白术 山药 天麻 鳖甲 白扁豆 建曲 蜈蚣 天山雪莲 半枝莲
-0.995518 0.463527 0.691822 0.372332 0.350781 0.302973 0.327953 0.760557 0.644768 0.669381 0.514592 0.596226 0.685586
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.692308, recall: 0.642857, error: 0.307692
-363. 
-patient tongue id: 04282314345354_1_5_7
-label yaofang:
-甘草 白芍 当归 连翘 薏苡仁 桃仁 党参 黄芪 熟地黄 牡丹皮 大黄 败酱草 皂角刺 女贞子 广升麻 墨旱莲
-0.96179 0.45077 0.550991 0.334545 0.512429 0.410518 0.387863 0.308618 0.322733 0.304255
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.200000, recall: 0.125000, error: 0.800000
-364. 
-patient tongue id: 05242350543862_2_6
-label yaofang:
-甘草 黄芩 薏苡仁 远志 生地黄 延胡索 细辛 茜草 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 红豆杉 龙葵果 制天南星
-0.97974 0.463818 0.64148 0.397429 0.352817 0.333083 0.365519 0.676842 0.574743 0.571447 0.472241 0.511114 0.554956
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.461538, recall: 0.375000, error: 0.538462
-365. 
-patient tongue id: 05131617382938_4_6_2
-label yaofang:
-甘草 法半夏 大枣 茯苓 前胡 龙骨 桃仁 葶苈子 远志 薤白 水蛭 瓜蒌皮 款冬花 莪术 白前
-0.984094 0.466221 0.635062 0.407817 0.314016 0.336816 0.658739 0.577682 0.606028 0.463569 0.512433 0.575908
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.166667, recall: 0.133333, error: 0.833333
-366. 
-patient tongue id: 05032301365799_5_6
-label yaofang:
-甘草 法半夏 茯苓 薏苡仁 远志 党参 酸枣仁 浙贝母 山药 淡豆豉 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.940114 0.420824 0.585706 0.433629 0.518696 0.389278 0.476562 0.333011 0.388862
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
-
-------Score: precision: 0.888889, recall: 0.500000, error: 0.111111
-367. 
-patient tongue id: 03221622080727_6
-label yaofang:
-甘草 香附 茯苓 党参 白术 酸枣仁 生地黄 黄柏 郁金 山茱萸 菟丝子 益母草 王不留行 浮小麦 合欢花
-0.985396 0.463342 0.625619 0.389836 0.315346 0.645248 0.566298 0.565104 0.449922 0.486358 0.503192
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.266667, error: 0.636364
-368. 
-patient tongue id: 05091912102957_4_1
-label yaofang:
-桂枝 白芍 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄 醋五味子
-0.314698 0.364189 0.425675 0.413981 0.42758 0.356772 0.380442 0.416627 0.454351 0.370762 0.40136 0.341368 0.621027
-predicted yaofang:
-甘草 陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.615385, recall: 0.500000, error: 0.384615
-369. 
-patient tongue id: 06182229164094_1_4
-label yaofang:
-甘草 茯苓 薏苡仁 党参 黄芪 白术 砂仁 白扁豆 紫苏梗 广藿香 稻芽 火炭母 手参
-0.761245 0.396368 0.448451 0.408449
-predicted yaofang:
-甘草 茯苓 党参 白术
-
-------Score: precision: 1.000000, recall: 0.307692, error: 0.000000
-370. 
-patient tongue id: 05262059584070_4_6
-label yaofang:
-甘草 白芍 法半夏 茯苓 牡蛎 白术 昆布 浙贝母 栀子 郁金 天花粉 瓜蒌皮 紫苏梗 猫爪草
-0.976731 0.30684 0.452838 0.618583 0.403366 0.323586 0.626946 0.537555 0.544105 0.433204 0.477211 0.511007
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
-371. 
-patient tongue id: 03142007111945_1_2
-label yaofang:
-麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 人参叶 龙脷叶
-0.345737 0.33532 0.466364 0.313764 0.345397 0.311625 0.304764 0.32561 0.508079
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 海螵蛸 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.444444, recall: 0.266667, error: 0.555556
-372. 
-patient tongue id: 06012058410151_1_7_5
-label yaofang:
-甘草 半夏 黄芪 黄连 杜仲 僵蚕 补骨脂 北沙参 赭石 辛夷 紫苏叶 蜈蚣 木蝴蝶
-0.822055 0.418268 0.498329 0.422213
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.250000, recall: 0.076923, error: 0.750000
-373. 
-patient tongue id: 03291952445184_7
-label yaofang:
-甘草 半夏 桃仁 蒲公英 黄芪 白术 浙贝母 厚朴 莪术 柿蒂 赭石 紫苏叶 蛇舌草
-0.665616 0.315378 0.488772 0.342321
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.250000, recall: 0.076923, error: 0.750000
-374. 
-patient tongue id: 05092231174107_6_1_5
-label yaofang:
-甘草 柴胡 陈皮 茯苓 薏苡仁 党参 赤芍 山药 砂仁 鳖甲 莪术 麦芽 白扁豆 白花蛇舌 红豆杉
-0.945633 0.338248 0.419458 0.568659 0.378275 0.539007 0.40433 0.433763 0.305399 0.335966 0.339608
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.333333, error: 0.545455
-375. 
-patient tongue id: 03111159067124_1_4_7
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.38225 0.408503 0.395415 0.422407 0.435787 0.339351 0.410502 0.368522 0.391723 0.378651 0.39434 0.340819 0.37158 0.366242
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.785714, recall: 0.916667, error: 0.214286
-376. 
-patient tongue id: 05232038297382_1
-label yaofang:
-甘草 白芍 桃仁 党参 枸杞子 白术 熟地黄 杜仲 砂仁 菟丝子 巴戟天 桑寄生 鳖甲 鹿角霜 续断
-0.40768 0.349894 0.489221 0.348984 0.301075 0.331867 0.317469 0.51452
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.500000, recall: 0.266667, error: 0.500000
-377. 
-patient tongue id: 03131245506352_1_2
-label yaofang:
-桂枝 白芍 法半夏 前胡 太子参 黄芪 细辛 干姜 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄 醋五味子
-0.405691 0.578588 0.394653 0.671793 0.421732 0.541317 0.314686 0.388369 0.355354 0.402693 0.623055 0.702025 0.609376 0.645997 0.315805 0.831777 0.361023 0.302575 0.413073 0.393157 0.516263
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.523810, recall: 0.733333, error: 0.476190
-378. 
-patient tongue id: 01122319400083_4_6
-label yaofang:
-甘草 川芎 法半夏 茯苓 党参 白术 赤芍 牛膝 石菖蒲 泽泻 仙鹤草 天麻 磁石 地龙
-0.978608 0.332808 0.464432 0.611315 0.36794 0.312884 0.611268 0.49244 0.46536 0.389202 0.417735 0.418464
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-379. 
-patient tongue id: 02182237155530_6_2
-label yaofang:
-甘草 柴胡 黄芩 法半夏 茯苓 桔梗 橘红 浙贝母 栀子 牡丹皮 款冬花 扁豆花 紫菀 贯众
-0.935067 0.352361 0.418882 0.544193 0.347776 0.451741 0.332526 0.35778
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.250000, recall: 0.142857, error: 0.750000
-380. 
-patient tongue id: 03311650265971_1
-label yaofang:
-柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
-0.365306 0.354412 0.466531 0.345547 0.305927 0.375315 0.529711
-predicted yaofang:
-甘草 柴胡 白芍 党参 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.571429, recall: 0.400000, error: 0.428571
-381. 
-patient tongue id: 04201443287889_1_3
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.440978 0.397747 0.420421
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-382. 
-patient tongue id: 04141247053435_1_4_3
-label yaofang:
-法半夏 防风 钩藤 白芷 石决明 豆蔻 炙甘草 首乌藤 广藿香 威灵仙 麸炒白术 甘松 炒蔓荆子 棉萆薢
-0.398823 0.507631 0.414902 0.563747 0.415017 0.470859 0.345329 0.347701 0.328159 0.356182 0.534553 0.596777 0.51545 0.559983 0.374085 0.744419 0.336486 0.306791 0.373102 0.345484 0.456963
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.238095, recall: 0.357143, error: 0.761905
-383. 
-patient tongue id: 04012014026840_6_3
-label yaofang:
-柴胡 白芍 香附 黄芪 枸杞子 五味子 郁金 厚朴 佩兰 菟丝子 糯稻根 桑寄生 女贞子 浮小麦 麻黄根 墨旱莲
-0.38825 0.352999 0.31053 0.371715
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.250000, recall: 0.062500, error: 0.750000
-384. 
-patient tongue id: 02141834106990_2
-label yaofang:
-陈皮 法半夏 前胡 防风 麦冬 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.472927 0.82502 0.36054 0.954567 0.561978 0.73888 0.435538 0.344365 0.442853 0.924324 0.93997 0.897219 0.936169 0.308641 0.976608 0.473144 0.456824 0.563962 0.808087
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.789474, recall: 0.937500, error: 0.210526
-385. 
-patient tongue id: 03012134200393_1_2
-label yaofang:
-甘草 柴胡 白芍 远志 党参 白术 酸枣仁 山药 车前子 荆芥穗 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.83499 0.3997 0.384658 0.472809 0.349271 0.327536 0.319551
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 浙贝母 天麻
-
-------Score: precision: 0.714286, recall: 0.312500, error: 0.285714
-386. 
-patient tongue id: 03272242098637_1_3_7
-label yaofang:
-桃仁 何首乌 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 夏枯草
-0.380385 0.388483
-predicted yaofang:
-甘草 党参
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-387. 
-patient tongue id: 06082053373204_5
-label yaofang:
-半夏 枸杞子 赤芍 牡丹皮 杜仲 白茅根 荷叶 砂仁 麦芽 赭石 合欢皮 稻芽
-0.441252 0.317902 0.323882 0.545036 0.561896 0.355397 0.400477 0.376655 0.315738 0.313338
-predicted yaofang:
-甘草 半夏 党参 黄芪 白术 海螵蛸 厚朴 砂仁 鸡内金 合欢皮
-
-------Score: precision: 0.300000, recall: 0.250000, error: 0.700000
-388. 
-patient tongue id: 03141250569552_1_3
-label yaofang:
-人参 当归 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子 煨诃子
-0.524725 0.322366 0.41437 0.428338
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.250000, recall: 0.083333, error: 0.750000
-389. 
-patient tongue id: 03062151385994_1_4
-label yaofang:
-当归 半夏 太子参 黄芪 鸡血藤 白术 海螵蛸 厚朴 砂仁 石斛 火麻仁 莪术 柿蒂 鸡内金 北沙参 紫苏梗 红豆杉 蛇舌草 稻芽
-0.641784 0.367939 0.454936 0.447934 0.426683 0.30439
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴
-
-------Score: precision: 0.500000, recall: 0.157895, error: 0.500000
-390. 
-patient tongue id: 01041832131333_1_4
-label yaofang:
-麻黄 前胡 桔梗 半夏 防风 薄荷 荆芥穗 款冬花 紫菀 百部 蝉蜕 炙甘草 辛夷 紫苏梗 苍耳子
-0.450086 0.771511 0.381583 0.923788 0.538071 0.710749 0.414044 0.332363 0.443151 0.888497 0.906919 0.858597 0.901719 0.316189 0.957799 0.467009 0.452207 0.531133 0.763826
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.421053, recall: 0.533333, error: 0.578947
-391. 
-patient tongue id: 03232313160518_2_5_6
-label yaofang:
-甘草 茯苓 党参 枸杞子 酸枣仁 丹参 黄连 生地黄 栀子 山茱萸 砂仁 女贞子 粉葛
-0.944654 0.305892 0.450619 0.577451 0.378179 0.310635 0.523278 0.415028 0.413959 0.316728 0.34087 0.329764
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.230769, error: 0.750000
-392. 
-patient tongue id: 05092142378900_2
-label yaofang:
-法半夏 茯苓 前胡 太子参 柏子仁 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 制远志 炒紫苏子 蜜麻黄
-0.480022 0.829307 0.381011 0.955381 0.570984 0.72026 0.30812 0.446912 0.353098 0.454399 0.934593 0.947665 0.905365 0.940145 0.34777 0.975389 0.454677 0.45311 0.570845 0.829671
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.700000, recall: 0.875000, error: 0.300000
-393. 
-patient tongue id: 05102146051069_2_1
-label yaofang:
-白芍 太子参 枸杞子 柏子仁 郁金 北柴胡 煅牡蛎 北沙参 山萸肉 炙甘草 沙苑子 制远志 盐菟丝子 酒女贞子 煅龙骨 炒酸枣仁
-0.404837 0.570734 0.425028 0.658947 0.437575 0.501984 0.32147 0.34364 0.303014 0.346036 0.62449 0.629604 0.594662 0.620705 0.371659 0.759832 0.358112 0.373118 0.378067 0.502201
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.150000, recall: 0.187500, error: 0.850000
-394. 
-patient tongue id: 03061458189619_2_1
-label yaofang:
-甘草 防风 鸡血藤 熟地黄 牡丹皮 乌梅 木瓜 莪术 珍珠母 蝉蜕 地肤子 土茯苓 徐长卿
-0.379762 0.52561 0.352949 0.379915 0.349791 0.389513 0.494633 0.734537 0.315277
-predicted yaofang:
-柴胡 白芍 香附 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-395. 
-patient tongue id: 02111353379767_1_2
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
-0.549302 0.351561 0.425506 0.412849
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-396. 
-patient tongue id: 03290700340959_2_6
-label yaofang:
-甘草 枳壳 法半夏 茯苓 连翘 党参 白术 黄连 槟榔 砂仁 莱菔子 天花粉 麦芽 紫苏梗 合欢花
-0.939423 0.366519 0.423346 0.560298 0.359706 0.494573 0.365354 0.393437
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.500000, recall: 0.266667, error: 0.500000
-397. 
-patient tongue id: 04062008003574_7_4
-label yaofang:
-黄芩 茯苓 羌活 栀子 杜仲 牛膝 钩藤 天麻 石决明 桑寄生 益母草 首乌藤 鹿衔草
-0.405347 0.544154 0.369061 0.315823 0.310206 0.385311 0.343249 0.329594 0.536267 0.650255
-predicted yaofang:
-柴胡 白芍 香附 枳壳 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-398. 
-patient tongue id: 04171835521873_3_1
-label yaofang:
-白芍 川芎 当归 茯苓 党参 白术 玄参 熟地黄 杜仲 山药 地骨皮 菟丝子 桑寄生 山萸肉 炙甘草
-0.654769 0.312892 0.435007 0.40844 0.341648
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术
-
-------Score: precision: 0.600000, recall: 0.200000, error: 0.400000
-399. 
-patient tongue id: 03101740290818_2_4
-label yaofang:
-法半夏 茯苓 前胡 太子参 款冬花 紫菀 白前 百部 豆蔻 北沙参 炙甘草 广藿香 麸炒白术 炒六神曲
-0.38355 0.471875 0.413507 0.523356 0.383643 0.412271 0.32214 0.301801 0.50274 0.519105 0.495721 0.515523 0.390688 0.637019 0.322126 0.309074 0.393397
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 蜜麻黄
-
-------Score: precision: 0.647059, recall: 0.785714, error: 0.352941
-400. 
-patient tongue id: 03022141039631_4
-label yaofang:
-甘草 香附 茯苓 葛根 党参 白术 延胡索 海螵蛸 车前子 紫苏梗 瓦楞子 猫爪草
-0.32166 0.388509 0.520535 0.343475 0.304885 0.331714 0.323267 0.326835 0.352029 0.485441 0.599154
-predicted yaofang:
-甘草 柴胡 白芍 香附 枳壳 党参 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.363636, recall: 0.333333, error: 0.636364
-401. 
-patient tongue id: 02222338291741_6_2_1
-label yaofang:
-黄芪 白术 砂仁 珍珠母 夏枯草 北沙参 橘核 赭石 首乌藤 紫苏梗 红豆杉 合欢皮 墨旱莲
-0.322676 0.332254 0.389769
-predicted yaofang:
-甘草 茯苓 黄芪
-
-------Score: precision: 0.333333, recall: 0.076923, error: 0.666667
-402. 
-patient tongue id: 06191148483905_5
-label yaofang:
-甘草 法半夏 茯苓 前胡 浙贝母 细辛 桑白皮 天麻 鳖甲 款冬花 麦芽 苦杏仁 紫苏子 炙麻黄 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.983095 0.306111 0.459161 0.632026 0.372269 0.310383 0.638935 0.549398 0.521693 0.438562 0.469164 0.4684
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.666667, recall: 0.444444, error: 0.333333
-403. 
-patient tongue id: 03271408358225_1_4
-label yaofang:
-法半夏 前胡 桔梗 防风 薄荷 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 蜜麻黄
-0.451351 0.761264 0.394231 0.89661 0.527577 0.674554 0.416772 0.345453 0.422506 0.857986 0.878019 0.821301 0.866205 0.331389 0.941913 0.429254 0.436363 0.527703 0.730614
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.631579, recall: 0.857143, error: 0.368421
-404. 
-patient tongue id: 06031133028843_4_6
-label yaofang:
-甘草 枳壳 法半夏 茯苓 桔梗 党参 浙贝母 郁金 厚朴 鳖甲 火麻仁 款冬花 苦杏仁 白花蛇舌 天山雪莲
-0.990675 0.484076 0.649367 0.376492 0.325827 0.681134 0.599371 0.583504 0.480073 0.515595 0.523865
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
-405. 
-patient tongue id: 01132115243283_2_7_1
-label yaofang:
-甘草 薏苡仁 丹参 浙贝母 薤白 瓜蒌皮 鳖甲 款冬花 莪术 紫菀 苦杏仁 降香 蜈蚣 白花蛇舌 红豆杉 龙葵果
-0.982598 0.467722 0.639287 0.341667 0.314154 0.632507 0.436738 0.429095 0.315371 0.338346 0.347402
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.250000, error: 0.636364
-406. 
-patient tongue id: 03272002583273_4_1
-label yaofang:
-前胡 桔梗 防风 钩藤 荆芥穗 白芷 香薷 百部 炙甘草 首乌藤 广藿香 威灵仙 炒蔓荆子 棉萆薢
-0.382244 0.399909 0.388046 0.427986 0.314756 0.386815 0.309488 0.320201 0.372722 0.425262 0.421215 0.465738 0.449824 0.645194 0.300673
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草 蜜麻黄
-
-------Score: precision: 0.333333, recall: 0.357143, error: 0.666667
-407. 
-patient tongue id: 04181159203581_1_2_7
-label yaofang:
-甘草 茯苓 木香 牡蛎 麦冬 党参 黄芪 酸枣仁 丹参 草豆蔻 浮小麦 首乌藤 制远志
-0.525629 0.407867 0.472737 0.374313 0.428395 0.376112 0.393935 0.307638 0.364504 0.331253 0.35876 0.436865 0.3073 0.314991
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草
-
-------Score: precision: 0.285714, recall: 0.307692, error: 0.714286
-408. 
-patient tongue id: 06051108214309_1_7_4
-label yaofang:
-当归 党参 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子
-0.404255 0.521567 0.441291 0.418233 0.5538 0.490549 0.498637 0.492262 0.522447 0.481594 0.568489 0.425273 0.516482 0.542717 0.549675
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.133333, recall: 0.181818, error: 0.866667
-409. 
-patient tongue id: 02171959301394_2
-label yaofang:
-法半夏 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
-0.314989 0.462719 0.391254 0.457718 0.313525 0.442956 0.411775 0.434151 0.474434 0.461847 0.319626 0.653396
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 北沙参 炙甘草
-
-------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
-410. 
-patient tongue id: 02151816080847_1_4_7
-label yaofang:
-甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
-0.660886 0.361471 0.429021 0.687788 0.620228 0.634728 0.725495 0.682757 0.641201 0.771147 0.439765 0.714536 0.757674 0.770569
-predicted yaofang:
-桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.142857, recall: 0.153846, error: 0.857143
-411. 
-patient tongue id: 05042121273771_1_4
-label yaofang:
-甘草 当归 茯苓 牛蒡子 党参 白术 海螵蛸 干姜 补骨脂 浮小麦 瓦楞子
-0.351886 0.451873 0.303257 0.361136 0.470801 0.584205
-predicted yaofang:
-柴胡 白芍 党参 海螵蛸 姜半夏 炙甘草
-
-------Score: precision: 0.333333, recall: 0.181818, error: 0.666667
-412. 
-patient tongue id: 05140652280503_4_1
-label yaofang:
-甘草 茯苓 独活 党参 鸡血藤 白术 红花 山药 天麻 鳖甲 扁豆花 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.973361 0.304534 0.460715 0.590627 0.360193 0.303992 0.573906 0.466803 0.453997 0.361068 0.382346 0.37997
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
-413. 
-patient tongue id: 02231751486195_1_6
-label yaofang:
-白芍 川芎 法半夏 当归 茯苓 木香 丹参 川楝子 郁金 北柴胡 炙甘草 麸炒白术 醋香附 麸炒枳壳
-0.441958 0.652306 0.419632 0.796242 0.486771 0.606773 0.331089 0.398442 0.343039 0.318025 0.421727 0.758064 0.774018 0.72793 0.768008 0.369134 0.861027 0.434841 0.429352 0.483047 0.644417
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.142857, recall: 0.214286, error: 0.857143
-414. 
-patient tongue id: 02231911171128_4
-label yaofang:
-陈皮 法半夏 葛根 前胡 桔梗 麦冬 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子
-0.40915 0.663276 0.413501 0.796043 0.470552 0.58216 0.309927 0.366543 0.309314 0.362443 0.752256 0.765259 0.723131 0.760273 0.338615 0.85563 0.384267 0.388838 0.463435 0.632133
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.600000, recall: 0.857143, error: 0.400000
-415. 
-patient tongue id: 03111744118922_1_6_7
-label yaofang:
-甘草 桔梗 桃仁 远志 党参 浙贝母 山药 旋覆花 莪术 紫菀 白花蛇舌草 地龙 丝瓜络 醋鳖甲
-0.963851 0.302703 0.452191 0.590134 0.385005 0.310288 0.555677 0.455675 0.46045 0.349704 0.374608 0.380248
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
-416. 
-patient tongue id: 05140849462443_5
-label yaofang:
-甘草 柴胡 黄芩 前胡 桔梗 金银花 连翘 牛蒡子 浙贝母 桑叶 款冬花 苦杏仁 炙麻黄 大青叶 青天葵
-0.972338 0.307641 0.452656 0.589184 0.367691 0.568404 0.464686 0.449758 0.353261 0.373174 0.352419
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.090909, recall: 0.066667, error: 0.909091
-417. 
-patient tongue id: 06171319062069_6_1_4
-label yaofang:
-甘草 炮山甲
-0.882792 0.32985 0.339449 0.522053 0.350838 0.374501
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.166667, recall: 0.500000, error: 0.833333
-418. 
-patient tongue id: 04071920526043_1_4
-label yaofang:
-甘草 陈皮 茯苓 薏苡仁 佩兰 赤小豆 芡实 豆蔻 广藿香 炒白扁豆 麸炒白术 麸炒苍术 炒六神曲 布渣叶
-0.321106 0.320621 0.353555 0.384076 0.430401 0.445417 0.387753
-predicted yaofang:
-甘草 陈皮 茯苓 半夏 黄芪 北沙参 炙甘草
+白芍 茯苓 党参 白术 海螵蛸 姜半夏 炙甘草
 
 ------Score: precision: 0.428571, recall: 0.214286, error: 0.571429
-419. 
-patient tongue id: 04071426139150_4_2
+25. 
+patient tongue id: 02260707247775_1_4
 label yaofang:
-法半夏 前胡 防风 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香 炒紫苏子 蜜麻黄
-0.370107 0.369265 0.339099 0.302222 0.314997 0.303633 0.550198
+甘草 前胡 桔梗 浙贝母 桑白皮 天麻 鳖甲 款冬花 枇杷叶 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 田七末
+0.991755 0.585833 0.62439 0.507589 0.345052 0.336789 0.704936 0.637423 0.670768 0.493791 0.555052 0.663917
 predicted yaofang:
-法半夏 茯苓 防风 黄芪 白前 北沙参 炙甘草
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.714286, recall: 0.357143, error: 0.285714
-420. 
-patient tongue id: 04062017143715_4_6
+------Score: precision: 0.583333, recall: 0.437500, error: 0.416667
+26. 
+patient tongue id: 05140851543837_6_2_7
 label yaofang:
-白芍 当归 木香 党参 白术 海螵蛸 肉桂 肉豆蔻 诃子 炙甘草
-0.445811 0.377645 0.409267 0.345522
-predicted yaofang:
-甘草 党参 黄芪 白术
-
-------Score: precision: 0.500000, recall: 0.200000, error: 0.500000
-421. 
-patient tongue id: 01211233218159_4
-label yaofang:
-黄芩 前胡 桔梗 牛蒡子 桑白皮 天花粉 淡竹叶 旋覆花 枇杷叶 赭石 紫苏叶 化橘红
-0.530029 0.34908 0.327374 0.395947 0.304461
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-422. 
-patient tongue id: 01172349445113_1
-label yaofang:
-甘草 半夏 黄芪 白术 海螵蛸 浙贝母 杜仲 厚朴 石斛 鸡内金 紫苏梗 合欢皮 蛇舌草 云芝
-0.859003 0.429582 0.50938 0.424918 0.375469 0.337335
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 蜈蚣
-
-------Score: precision: 0.333333, recall: 0.142857, error: 0.666667
-423. 
-patient tongue id: 04282300052667_7_1_6
-label yaofang:
-甘草 川芎 枸杞子 酸枣仁 生地黄 赤芍 杜仲 牛膝 天麻 全蝎 桑寄生 麦芽 蒺藜 女贞子 粉葛
-0.991079 0.470402 0.662803 0.377073 0.318123 0.319367 0.699185 0.576351 0.567442 0.458659 0.500152 0.525603
+甘草 茯苓 龙骨 麦冬 太子参 酸枣仁 丹参 五味子 红花 山茱萸 补骨脂 女贞子 鹿角霜 浮小麦 墨旱莲
+0.975187 0.548383 0.590732 0.457555 0.310439 0.304697 0.610457 0.528111 0.545202 0.403574 0.43885 0.503079
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
-424. 
-patient tongue id: 05140847204491_5_6
+27. 
+patient tongue id: 03240601247005_2_5
 label yaofang:
-甘草 黄芩 法半夏 茯苓 前胡 桔梗 青皮 浙贝母 郁金 天花粉 瓜蒌皮 款冬花 苦杏仁 紫苏梗
-0.975569 0.351794 0.433347 0.606712 0.364219 0.595179 0.474847 0.477517 0.360536 0.402925 0.402789
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
-425. 
-patient tongue id: 03012032234830_6_5
-label yaofang:
-甘草 茯苓 木香 党参 白术 黄连 砂仁 天麻 鳖甲 柿蒂 粉葛 建曲 蜈蚣 白花蛇舌 天山雪莲 瓦楞子
-0.609537 0.318749 0.421546 0.366274
-predicted yaofang:
-甘草 茯苓 党参 白术
-
-------Score: precision: 1.000000, recall: 0.250000, error: 0.000000
-426. 
-patient tongue id: 05131640337311_5_6
-label yaofang:
-甘草 法半夏 茯苓 薏苡仁 党参 白术 厚朴 莱菔子 天麻 扁豆花 豆蔻 苦杏仁 紫苏子
-0.967629 0.320232 0.4491 0.59375 0.331435 0.616671 0.428915 0.4556 0.321464 0.360226 0.408705
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.454545, recall: 0.384615, error: 0.545455
-427. 
-patient tongue id: 03222002224981_1_4
-label yaofang:
-甘草 白芍 川芎 独活 杜仲 牛膝 细辛 车前子 干姜 广藿香 蜈蚣 姜黄 海桐皮 鹿衔草
-0.578855 0.355902 0.490483 0.379821 0.32011 0.333674 0.321647
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母 炙甘草
-
-------Score: precision: 0.285714, recall: 0.142857, error: 0.714286
-428. 
-patient tongue id: 05180837279222_2_7_6
-label yaofang:
-甘草 党参 酸枣仁 丹参 浙贝母 郁金 山药 天麻 鳖甲 白花蛇舌草 蜈蚣 天山雪莲 合欢花 半枝莲
-0.9947 0.468085 0.679062 0.385005 0.35959 0.328673 0.765667 0.636922 0.664059 0.513225 0.589436 0.675565
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
-429. 
-patient tongue id: 05140841095315_1_2_6
-label yaofang:
-甘草 茯苓 独活 党参 酸枣仁 生地黄 红花 天麻 桑寄生 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.981752 0.466103 0.623878 0.375603 0.317311 0.639381 0.537123 0.525865 0.426846 0.456533 0.466852
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.818182, recall: 0.600000, error: 0.181818
-430. 
-patient tongue id: 04291507408301_2_6
-label yaofang:
-甘草 远志 山茱萸 厚朴 荷叶 天麻 磁石 肉苁蓉 火麻仁 补骨脂 白花蛇舌草 浮小麦 蜈蚣 半枝莲 醋鳖甲
-0.989322 0.457509 0.65949 0.389492 0.34238 0.339294 0.702842 0.581056 0.601158 0.466219 0.526632 0.601285
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
-431. 
-patient tongue id: 04132048179517_1_4
-label yaofang:
-甘草 枳壳 茯苓 木香 独活 党参 白术 砂仁 天麻 鳖甲 补骨脂 莪术 麦芽 蜈蚣 白花蛇舌 天山雪莲
-0.751264 0.374976 0.360864 0.484047 0.320094 0.333593
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.833333, recall: 0.312500, error: 0.166667
-432. 
-patient tongue id: 04131804334165_2_7
-label yaofang:
-甘草 党参 黄芪 酸枣仁 生地黄 牡丹皮 山茱萸 天麻 金樱子 桑螵蛸 地龙 浮小麦 首乌藤
-0.978797 0.302711 0.472048 0.610652 0.391806 0.309457 0.593698 0.519785 0.51804 0.412671 0.436169 0.429815
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.250000, recall: 0.230769, error: 0.750000
-433. 
-patient tongue id: 06082052056015_1_6
-label yaofang:
-桂枝 枳壳 桃仁 太子参 白术 丹参 郁金 厚朴 僵蚕 莪术 柿蒂 北沙参 赭石 蜈蚣 合欢皮 预知子
-0.430789 0.59503 0.423048 0.713065 0.444986 0.536442 0.353298 0.360242 0.314535 0.362426 0.676608 0.692964 0.670588 0.712885 0.418959 0.774905 0.384841 0.397113 0.460697 0.588576
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.100000, recall: 0.125000, error: 0.900000
-434. 
-patient tongue id: 01090020278958_1
-label yaofang:
-桂枝 白芍 大枣 茯苓 白术 附子 大黄 天麻 天山雪莲
-0.488208 0.404395 0.31455
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-435. 
-patient tongue id: 03041405102724_1_6_8
-label yaofang:
-甘草 白芍 陈皮 黄芩 法半夏 茯苓 前胡 桔梗 白术 款冬花 白前 枇杷叶 紫苏梗 广藿香 浙贝母粉
-0.985005 0.326253 0.452328 0.637428 0.376202 0.633526 0.541636 0.525622 0.431655 0.466877 0.467566
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.363636, recall: 0.266667, error: 0.636364
-436. 
-patient tongue id: 01211258129104_7_1
-label yaofang:
-白芍 川芎 香附 当归 白术 丹参 熟地黄 益母草 茺蔚子 艾叶
-0.341862 0.33521 0.456168 0.342973 0.307127 0.369383 0.541054
-predicted yaofang:
-甘草 柴胡 白芍 党参 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.142857, recall: 0.100000, error: 0.857143
-437. 
-patient tongue id: 02191442503443_1_7
-label yaofang:
-甘草 茯苓 桃仁 熟地黄 牡丹皮 杜仲 郁金 山药 山茱萸 泽泻 桑寄生 三棱 莪术 王不留行
-0.986991 0.477086 0.614623 0.370449 0.324922 0.631882 0.559975 0.542996 0.437823 0.470483 0.48074
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
-438. 
-patient tongue id: 02142145154899_1_2
-label yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 天麻 鳖甲 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.990666 0.464175 0.670429 0.378564 0.373916 0.31987 0.359861 0.744955 0.615177 0.632817 0.496317 0.564312 0.646483
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.923077, recall: 0.857143, error: 0.076923
-439. 
-patient tongue id: 04111956262245_2_4
-label yaofang:
-甘草 白芍 龙骨 牡蛎 玄参 天冬 川楝子 车前子 麦芽 茺蔚子 赭石 泽兰 龟甲
-0.989112 0.475638 0.64879 0.38713 0.30384 0.334353 0.687156 0.599692 0.590819 0.482396 0.520301 0.538522
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.083333, recall: 0.076923, error: 0.916667
-440. 
-patient tongue id: 05182038500290_4
-label yaofang:
-枳壳 桔梗 牛蒡子 党参 白术 旋覆花 紫菀 百部 北沙参 紫苏子 炙甘草 紫苏梗 化橘红
-0.387984 0.522607 0.335602 0.348603 0.363832 0.493269 0.660056
-predicted yaofang:
-柴胡 白芍 香附 浙贝母 干姜 姜半夏 炙甘草
-
-------Score: precision: 0.142857, recall: 0.076923, error: 0.857143
-441. 
-patient tongue id: 03291647313649_1_2_6
-label yaofang:
-甘草 党参 酸枣仁 生地黄 山药 山茱萸 天麻 桑寄生 鳖甲 补骨脂 续断 蜈蚣 白花蛇舌 天山雪莲 半枝莲 牛大力
-0.882456 0.411587 0.531571 0.352428 0.423873
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.600000, recall: 0.187500, error: 0.400000
-442. 
-patient tongue id: 03012051032875_6_7
-label yaofang:
-甘草 柴胡 白芍 香附 党参 酸枣仁 生地黄 桑寄生 女贞子 续断 合欢花 鱼古
-0.949029 0.387644 0.387212 0.53688 0.356344 0.300741 0.389791 0.355006
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 浙贝母 天麻 蜈蚣
-
-------Score: precision: 0.375000, recall: 0.250000, error: 0.625000
-443. 
-patient tongue id: 03181802505956_1_6
-label yaofang:
-甘草 茯苓 薏苡仁 党参 白术 郁金 山药 天麻 鳖甲 莪术 续断 蜈蚣 天山雪莲 半枝莲 骨碎补
-0.934427 0.302888 0.46141 0.540316 0.385937 0.303993 0.473941 0.418114 0.425879 0.325951 0.329878 0.308002
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.833333, recall: 0.666667, error: 0.166667
-444. 
-patient tongue id: 02191440325559_6_4
-label yaofang:
-甘草 川芎 茯苓 党参 白术 酸枣仁 栀子 杜仲 钩藤 天麻 桑寄生 补骨脂 麦芽 红景天
-0.993069 0.488778 0.673072 0.410271 0.314819 0.339864 0.693872 0.613383 0.611341 0.486615 0.533725 0.552919
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
-445. 
-patient tongue id: 05222207555699_4
-label yaofang:
-防风 钩藤 荆芥穗 白芷 香薷 炙甘草 辛夷 首乌藤 紫苏梗 广藿香 威灵仙 炒苍耳子 炒蔓荆子 棉萆薢
-0.305657 0.442807 0.404977 0.327855 0.340169 0.321813 0.31111 0.419932 0.306204 0.629911
-predicted yaofang:
-甘草 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 炙甘草
-
-------Score: precision: 0.200000, recall: 0.142857, error: 0.800000
-446. 
-patient tongue id: 04132049296799_7_5
-label yaofang:
-桂枝 甘草 川芎 当归 金银花 蒲公英 紫花地丁 黄芪 生地黄 红花 赤芍 吴茱萸 白鲜皮 地肤子
-0.862949 0.379355 0.39151 0.534571 0.337031 0.422366
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻
-
-------Score: precision: 0.166667, recall: 0.071429, error: 0.833333
-447. 
-patient tongue id: 05140851543837_6_2_7
-label yaofang:
-甘草 茯苓 龙骨 麦冬 太子参 酸枣仁 丹参 五味子 红花 山茱萸 补骨脂 女贞子 鹿角霜 浮小麦 墨旱莲
-0.993524 0.474209 0.654615 0.368458 0.689316 0.603893 0.578774 0.480933 0.514719 0.512638
+甘草 茯苓 木香 黄连 生地黄 山茱萸 灯心草 山楂 莱菔子 莪术 海金沙 鸡内金 王不留行 广金钱草
+0.95686 0.555505 0.543953 0.438298 0.492442 0.458858 0.453788 0.345232 0.357767 0.377053
 predicted yaofang:
 甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.200000, recall: 0.133333, error: 0.800000
-448. 
-patient tongue id: 03211940081317_3_6
+------Score: precision: 0.200000, recall: 0.142857, error: 0.800000
+28. 
+patient tongue id: 04261327508651_1_6
 label yaofang:
-桂枝 甘草 海螵蛸 肉桂 干姜 砂仁 吴茱萸 附片 徐长卿
-0.373179 0.524283 0.333773 0.345773 0.396395 0.594638 0.762574
+龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 姜半夏 炙甘草 浮小麦 百合 紫苏叶 蜈蚣 合欢皮
+0.384263 0.332217 0.326342 0.363366 0.459242 0.312581 0.422208
 predicted yaofang:
-柴胡 白芍 香附 海螵蛸 干姜 姜半夏 炙甘草
+甘草 白芍 茯苓 党参 白术 海螵蛸 炙甘草
 
-------Score: precision: 0.285714, recall: 0.222222, error: 0.714286
-449. 
-patient tongue id: 04181146080517_1_4_7
+------Score: precision: 0.142857, recall: 0.076923, error: 0.857143
+29. 
+patient tongue id: 03231105005908_5
 label yaofang:
-甘草 枳壳 法半夏 当归 茯苓 木香 党参 黄芪 丹参 厚朴 鸡内金 草豆蔻 麦芽
-0.454932 0.31102 0.411592 0.383502 0.344843 0.31468
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 牛膝
-
-------Score: precision: 0.666667, recall: 0.307692, error: 0.333333
-450. 
-patient tongue id: 03020723417286_1_2
-label yaofang:
-甘草 茯苓 太子参 酸枣仁 山药 天麻 鳖甲 北沙参 白扁豆 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-0.993381 0.461849 0.683723 0.416051 0.342921 0.355514 0.73782 0.608415 0.650063 0.483281 0.555022 0.635011
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.833333, recall: 0.714286, error: 0.166667
-451. 
-patient tongue id: 02212022235456_2_7
-label yaofang:
-甘草 白芍 生地黄 红花 延胡索 赤芍 杜仲 牛膝 山茱萸 蒺藜 续断 浮小麦 骨碎补 宽筋藤 牛大力
-0.98966 0.305399 0.473826 0.651317 0.369384 0.307954 0.313332 0.687441 0.579505 0.56676 0.460562 0.501239 0.519281
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.153846, recall: 0.133333, error: 0.846154
-452. 
-patient tongue id: 04062022569165_4
-label yaofang:
-法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-0.308395 0.357005 0.446659 0.419626 0.441252 0.363748 0.434085 0.300533 0.311965 0.419704 0.47728 0.412997 0.42224 0.324616 0.643422 0.321344 0.332359
-predicted yaofang:
-甘草 陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香 蜜麻黄
-
-------Score: precision: 0.705882, recall: 0.857143, error: 0.294118
-453. 
-patient tongue id: 05032242183271_6_1_2
-label yaofang:
-甘草 陈皮 茯苓 党参 白术 酸枣仁 山药 天麻 菟丝子 益母草 白花蛇舌草 蜈蚣 半枝莲 醋鳖甲
-0.995197 0.455839 0.694509 0.337735 0.333541 0.309846 0.769657 0.638324 0.617106 0.512748 0.573039 0.62699
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
-454. 
-patient tongue id: 03020849497259_6_4
-label yaofang:
-桂枝 甘草 柴胡 白芍 黄芩 法半夏 茯苓 龙骨 党参 白术 酸枣仁 干姜 扁豆花 浮小麦
-0.931598 0.388207 0.530464 0.538658 0.300977 0.330958 0.439255
-predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 蜈蚣
-
-------Score: precision: 0.571429, recall: 0.285714, error: 0.428571
-455. 
-patient tongue id: 01250640459767_4_6
-label yaofang:
-甘草 前胡 橘红 薏苡仁 桃仁 远志 浙贝母 细辛 桑白皮 紫菀 苇茎 北沙参 苦杏仁 瓜蒌子 炙麻黄
-0.981662 0.452941 0.643741 0.382958 0.318627 0.333901 0.649245 0.455697 0.491208 0.336966 0.37914 0.414995
-predicted yaofang:
-甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.083333, recall: 0.066667, error: 0.916667
-456. 
-patient tongue id: 06140824471832_1_3_5
-label yaofang:
-甘草 桔梗 防风 金银花 太子参 藿香 白前 白鲜皮 六神曲 蜜百部 干鱼腥草 地肤子
-0.359653 0.423207 0.408439 0.343965 0.464277 0.357631 0.417512 0.398545 0.436818 0.359963 0.304937 0.318497 0.33643 0.362153
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.071429, recall: 0.083333, error: 0.928571
-457. 
-patient tongue id: 01111850402783_1
-label yaofang:
-甘草 陈皮 茯苓 佩兰 广藿香 炒白扁豆 麸炒白术 麸炒苍术 炒六神曲 布渣叶 炒稻芽 炒鸡内金 木棉花 炒麦芽
-0.475461 0.864027 0.338229 0.974536 0.594713 0.790375 0.44324 0.325348 0.490193 0.955112 0.967838 0.935544 0.962671 0.986507 0.505717 0.485377 0.571793 0.845512
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.166667, recall: 0.214286, error: 0.833333
-458. 
-patient tongue id: 02212036343235_1_2
-label yaofang:
-甘草 茯苓 党参 黄芪 鸡血藤 丹参 生地黄 延胡索 杜仲 山药 桑寄生 补骨脂 地龙 续断 牛大力
-0.643923 0.375637 0.395279 0.416783 0.548201 0.316401 0.319207
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴 砂仁
-
-------Score: precision: 0.571429, recall: 0.266667, error: 0.428571
-459. 
-patient tongue id: 05181043267137_6_2_7
-label yaofang:
-桂枝 甘草 党参 黄芪 白术 红花 赤芍 地黄 天麻 白花蛇舌草 忍冬藤 蜈蚣 半枝莲 醋鳖甲
-0.991946 0.306728 0.458342 0.648542 0.366465 0.351504 0.312685 0.337846 0.726112 0.606988 0.609349 0.49023 0.554057 0.621718
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.428571, recall: 0.428571, error: 0.571429
-460. 
-patient tongue id: 01110351380577_1
-label yaofang:
-茯苓 麦冬 阿胶 酸枣仁 五味子 泽泻 滑石 猪苓
-0.307683 0.362906 0.570234
-predicted yaofang:
-甘草 白芍 炙甘草
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-461. 
-patient tongue id: 03022140224422_6
-label yaofang:
-陈皮 桔梗 车前子 大腹皮 干姜 厚朴 白芷 鳖甲 姜半夏 紫苏叶 广藿香
-0.598012 0.31092 0.383224 0.385955
-predicted yaofang:
-甘草 白芍 茯苓 党参
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-462. 
-patient tongue id: 04131822166239_6_2_1
-label yaofang:
-甘草 桔梗 薏苡仁 白及 太子参 仙鹤草 茜草 天麻 鳖甲 补骨脂 蜈蚣 白花蛇舌 天山雪莲 红豆杉 龙葵果
-0.966826 0.44966 0.609195 0.428164 0.329404 0.573731 0.459206 0.510097 0.351418 0.384095 0.411728
+甘草 黄芩 法半夏 茯苓 桔梗 鱼腥草 浙贝母 细辛 桑白皮 款冬花 紫菀 苇茎 苦杏仁 瓜蒌子
+0.944755 0.5371 0.550059 0.491033 0.316806 0.531291 0.496753 0.529055 0.393512 0.431354 0.499068
 predicted yaofang:
 甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
-463. 
-patient tongue id: 05272345494049_4_1_6
+------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
+30. 
+patient tongue id: 04172001566944_4_1
 label yaofang:
-黄芪 白术 砂仁 桑寄生 莲子 白鲜皮 续断 橘络 首乌藤 土鳖虫 红豆杉 合欢皮 山慈菇
-0.463965 0.313196 0.376121 0.40833
+法半夏 茯苓 前胡 桔梗 防风 麦冬 款冬花 紫菀 百部 炙甘草 紫苏梗 蜜麻黄
+0.432685 0.820909 0.457759 0.905008 0.52732 0.614102 0.326891 0.395826 0.373656 0.300284 0.389594 0.855409 0.863624 0.822482 0.871843 0.321069 0.952019 0.481432 0.30442 0.568037 0.545858 0.779754
 predicted yaofang:
-甘草 茯苓 党参 黄芪
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
 
-------Score: precision: 0.250000, recall: 0.076923, error: 0.750000
-464. 
-patient tongue id: 03292132476263_4
+------Score: precision: 0.500000, recall: 0.916667, error: 0.500000
+31. 
+patient tongue id: 05092125018057_6_4
 label yaofang:
-麻黄 陈皮 荆芥 防风 石菖蒲 僵蚕 紫菀 白前 百部 炙甘草 辛夷 苍耳子 芥子 青果 咸竹蜂
-0.494567 0.377058 0.434802 0.395231 0.400686 0.316541 0.36846 0.321055 0.303202 0.322639
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 天麻
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-465. 
-patient tongue id: 06111111314336_7_5
-label yaofang:
-甘草 当归 金银花 紫花地丁 党参 黄芪 鸡血藤 白术 生地黄 红花 赤芍 细辛 白芷 吴茱萸 麦芽 忍冬藤 白花蛇舌
-0.888467 0.404771 0.478037 0.34409
-predicted yaofang:
-甘草 茯苓 党参 天麻
-
-------Score: precision: 0.500000, recall: 0.117647, error: 0.500000
-466. 
-patient tongue id: 01121854577887_2
-label yaofang:
-陈皮 法半夏 前胡 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子
-0.414522 0.642153 0.405742 0.776384 0.453024 0.611753 0.356694 0.304551 0.391581 0.733147 0.752523 0.713886 0.757303 0.337867 0.85063 0.414826 0.41199 0.468605 0.613665
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.684211, recall: 0.928571, error: 0.315789
-467. 
-patient tongue id: 03062146371053_3_1_4
-label yaofang:
-桂枝 甘草 枳壳 当归 茯苓 黄芪 白术 干姜 厚朴 僵蚕 磁石 肉苁蓉 鸡内金 辛夷
-0.621161 0.39899 0.423388 0.37396 0.372171
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.800000, recall: 0.285714, error: 0.200000
-468. 
-patient tongue id: 01052205228854_6_1_7
-label yaofang:
-甘草 茯苓 半夏 橘红 黄芪 白术 厚朴 砂仁 桑寄生 女贞子 桑枝 土鳖虫 墨旱莲 素馨花
-0.776607 0.305687 0.409815 0.417807 0.318564
-predicted yaofang:
-甘草 法半夏 茯苓 党参 白术
-
-------Score: precision: 0.600000, recall: 0.214286, error: 0.400000
-469. 
-patient tongue id: 04261349477632_5_1_7
-label yaofang:
-当归 牡蛎 党参 黄芪 白术 丹参 延胡索 赤芍 山药 仙鹤草 砂仁 补骨脂 红豆杉 三七粉
-0.355881 0.300182 0.319465 0.360692
-predicted yaofang:
-甘草 茯苓 党参 黄芪
-
-------Score: precision: 0.500000, recall: 0.142857, error: 0.500000
-470. 
-patient tongue id: 01180623249871_2_6_4
-label yaofang:
-甘草 法半夏 当归 茯苓 桃仁 远志 天麻 鳖甲 款冬花 川贝母 苦杏仁 紫苏子 炙麻黄 蜈蚣 白花蛇舌 半枝莲
-0.892842 0.432442 0.496433 0.421944 0.31461 0.333529
+甘草 茯苓 桔梗 薏苡仁 白术 浙贝母 郁金 佩兰 天麻 鳖甲 广藿香 蜈蚣 白花蛇舌 四季青
+0.86378 0.499575 0.498888 0.431012 0.37156 0.336009
 predicted yaofang:
 甘草 茯苓 党参 白术 天麻 蜈蚣
 
-------Score: precision: 0.666667, recall: 0.250000, error: 0.333333
-471. 
-patient tongue id: 06132017147509_2_5
+------Score: precision: 0.833333, recall: 0.357143, error: 0.166667
+32. 
+patient tongue id: 05112035227912_6_7_4
 label yaofang:
-甘草 半夏 蒲公英 赤芍 牡丹皮 郁金 僵蚕 没药 莪术 柿蒂 北沙参 蜈蚣 冬凌草
-0.56693 0.333259 0.30791 0.37993 0.506026 0.568154 0.301124 0.333123 0.401158 0.401124 0.324248 0.330651 0.30652
+甘草 茯苓 牡蛎 党参 黄芪 枸杞子 白术 海螵蛸 浙贝母 厚朴 生半夏 砂仁 北沙参 蜈蚣 合欢皮 鲜龙葵果
+0.492294 0.371693 0.343647 0.338901 0.662363 0.646003 0.329492 0.353867 0.471346 0.370211 0.358181 0.338429 0.333994
 predicted yaofang:
 甘草 茯苓 半夏 党参 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
 
-------Score: precision: 0.230769, recall: 0.230769, error: 0.769231
-472. 
-patient tongue id: 01312129035283_6_4
+------Score: precision: 0.769231, recall: 0.625000, error: 0.230769
+33. 
+patient tongue id: 01061616560202_5
 label yaofang:
-甘草 陈皮 法半夏 茯苓 薏苡仁 白术 厚朴 豆蔻 麦芽 丝瓜络 紫苏梗 广藿香 麸炒枳壳
-0.96595 0.307652 0.475074 0.572614 0.385821 0.315223 0.515664 0.456975 0.442172 0.353919 0.358263 0.323941
+甘草 薏苡仁 黄连 石膏 苍术 天麻 鳖甲 麦芽 广藿香 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.957981 0.302574 0.563888 0.556528 0.424497 0.318823 0.520875 0.481107 0.455844 0.371286 0.381368 0.395128
 predicted yaofang:
-甘草 白芍 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 法半夏 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.250000, recall: 0.230769, error: 0.750000
-473. 
-patient tongue id: 03012206012293_2_6
+------Score: precision: 0.583333, recall: 0.538462, error: 0.416667
+34. 
+patient tongue id: 04121855583643_1_7
 label yaofang:
-甘草 白芍 党参 酸枣仁 生地黄 乌药 山药 山茱萸 泽泻 鳖甲 芡实 桑螵蛸 益智 五倍子 路路通
-0.992629 0.301235 0.475697 0.672166 0.38727 0.319983 0.307734 0.340674 0.722835 0.622438 0.611668 0.504209 0.549763 0.565305
+甘草 半夏 桃仁 蒲公英 党参 黄芪 白术 厚朴 僵蚕 莪术 柿蒂 北沙参 赭石 蛇舌草
+0.844172 0.343228 0.441077 0.502475 0.451744 0.388272 0.347391
 predicted yaofang:
-甘草 白芍 茯苓 党参 白术 酸枣仁 生地黄 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 白芍 茯苓 党参 白术 天麻 蜈蚣
 
-------Score: precision: 0.500000, recall: 0.466667, error: 0.500000
-474. 
-patient tongue id: 06111033158055_4_1
+------Score: precision: 0.428571, recall: 0.214286, error: 0.571429
+35. 
+patient tongue id: 01172243587825_5_6_7
 label yaofang:
-甘草 独活 党参 黄芪 丹参 生地黄 杜仲 牛膝 山茱萸 水蛭 桑寄生 补骨脂 鹿角霜 续断 川加皮 牛大力
-0.984486 0.4754 0.625335 0.390615 0.320566 0.61424 0.537697 0.535766 0.421895 0.446199 0.44465
+甘草 陈皮 法半夏 茯苓 龙骨 牡蛎 党参 丹参 黄连 竹茹 胆南星 磁石 补骨脂 麦芽 紫苏梗
+0.918294 0.505319 0.538443 0.455457 0.30443 0.498461 0.362222 0.416893 0.335171
 predicted yaofang:
-甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 半枝莲
 
-------Score: precision: 0.181818, recall: 0.125000, error: 0.818182
-475. 
-patient tongue id: 04271515340045_1_2_7
+------Score: precision: 0.333333, recall: 0.200000, error: 0.666667
+36. 
+patient tongue id: 03101853053004_6
 label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.366159 0.382721 0.40353 0.446344 0.436002 0.322784 0.399613 0.372103 0.368437 0.334686 0.368338 0.315679 0.361042 0.344994
+柴胡 白芍 香附 枳壳 柏子仁 海螵蛸 干姜 豆蔻 姜半夏 炙甘草 紫苏梗
+0.316414 0.348188 0.395257 0.359989 0.757306 0.337274
 predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
+白芍 茯苓 干姜 紫菀 炙甘草 紫苏梗
 
-------Score: precision: 0.785714, recall: 0.916667, error: 0.214286
-476. 
-patient tongue id: 02281201118459_1_2_7
+------Score: precision: 0.666667, recall: 0.363636, error: 0.333333
+37. 
+patient tongue id: 04271429367693_1_3
 label yaofang:
-甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 郁金 山药 天花粉 北沙参
-0.567402 0.315781 0.435514 0.529811 0.388167 0.327209
+甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
+0.430602 0.359849 0.42824 0.433044 0.541878 0.442201 0.367779 0.440121 0.368239 0.433395 0.42474 0.419943 0.345302 0.441794 0.445178 0.439841
 predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 厚朴
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
 
-------Score: precision: 0.500000, recall: 0.250000, error: 0.500000
-477. 
-patient tongue id: 02212027220836_2_6
+------Score: precision: 0.187500, recall: 0.250000, error: 0.812500
+38. 
+patient tongue id: 05050746292112_5
 label yaofang:
-甘草 茯苓 薏苡仁 党参 白术 苍术 山药 厚朴 扁豆花 三棱 豆蔻 麦芽 苦杏仁
-0.983027 0.441832 0.626829 0.359113 0.626939 0.485189 0.483975 0.363945 0.402243 0.418132
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
-
-------Score: precision: 0.400000, recall: 0.307692, error: 0.600000
-478. 
-patient tongue id: 04202207212477_2_4_5
-label yaofang:
-甘草 白芍 前胡 橘红 太子参 丹参 五味子 赤芍 浙贝母 山药 桑白皮 茵陈 紫菀 虎杖 黄精 白花蛇舌
-0.84674 0.389199 0.50137 0.379659 0.366478
-predicted yaofang:
-甘草 茯苓 党参 白术 天麻
-
-------Score: precision: 0.200000, recall: 0.062500, error: 0.800000
-479. 
-patient tongue id: 06181657246058_5
-label yaofang:
-甘草 薏苡仁 蒲公英 黄芪 白术 丹参 赤芍 牡丹皮 郁金 厚朴 僵蚕 莪术 虎杖 北沙参 蒺藜 郁李仁 紫苏叶 预知子 蛇舌草
-0.3981 0.336671 0.382898 0.491232 0.408278 0.395895
-predicted yaofang:
-甘草 茯苓 半夏 黄芪 白术 北沙参
-
-------Score: precision: 0.666667, recall: 0.210526, error: 0.333333
-480. 
-patient tongue id: 04210741513835_1_4_7
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.753313 0.387201 0.424328 0.313961 0.470857
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-481. 
-patient tongue id: 04211339438450_2_4
-label yaofang:
-白芍 川芎 法半夏 当归 茯苓 木香 丹参 川楝子 郁金 北柴胡 豆蔻 炙甘草 广藿香 麸炒白术 醋香附 麸炒枳壳
-0.430208 0.650784 0.415472 0.759753 0.466064 0.573476 0.354416 0.399752 0.359927 0.407161 0.724467 0.756516 0.701898 0.738754 0.386857 0.85616 0.411477 0.418117 0.480006 0.633789
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.200000, recall: 0.250000, error: 0.800000
-482. 
-patient tongue id: 05232121505972_1_4_7
-label yaofang:
-甘草 陈皮 薏苡仁 党参 白术 海螵蛸 浙贝母 牡丹皮 厚朴 紫草 夏枯草 白鲜皮 紫苏叶 土茯苓
-0.41084 0.330942 0.316709 0.320765 0.511372 0.363239 0.331019 0.383454
-predicted yaofang:
-甘草 茯苓 半夏 党参 黄芪 白术 厚朴 北沙参
-
-------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
-483. 
-patient tongue id: 02020824487538_2_7_6
-label yaofang:
-甘草 木香 党参 酸枣仁 熟地黄 砂仁 天麻 鳖甲 三棱 莪术 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
-0.988388 0.4589 0.635604 0.447871 0.30013 0.33102 0.648543 0.582534 0.6332 0.454662 0.522551 0.585936
+甘草 黄芩 前胡 桔梗 浙贝母 细辛 桑白皮 干姜 鳖甲 款冬花 白前 苦杏仁 白花蛇舌 天山雪莲
+0.967868 0.550528 0.586727 0.438755 0.302682 0.310122 0.592555 0.503091 0.501029 0.378937 0.413387 0.459804
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
-------Score: precision: 0.750000, recall: 0.600000, error: 0.250000
-484. 
-patient tongue id: 01172250080546_2_7
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+39. 
+patient tongue id: 02201311365886_6
 label yaofang:
-甘草 桃仁 党参 丹参 生地黄 红花 赤芍 牡丹皮 车前子 益母草 决明子 麦芽 木贼 有瓜石斛
-0.826779 0.326064 0.408363 0.472726 0.331483
+甘草 柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 肉桂 豆蔻 制川乌 姜半夏 炙甘草 紫苏梗
+0.457886 0.330189 0.42554 0.329385 0.399361 0.397382 0.33928 0.442602
 predicted yaofang:
-甘草 白芍 茯苓 党参 天麻
+甘草 柴胡 白芍 茯苓 党参 白术 姜半夏 炙甘草
 
-------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
-485. 
-patient tongue id: 03282205087340_6
+------Score: precision: 0.625000, recall: 0.357143, error: 0.375000
+40. 
+patient tongue id: 01140445488548_6_7
 label yaofang:
-龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 珍珠母 姜半夏 炙甘草 浮小麦 百合 紫苏叶 蜈蚣 合欢皮
-0.330751 0.367178 0.513304 0.308409 0.304636 0.432764 0.566536
-predicted yaofang:
-甘草 柴胡 白芍 党参 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.285714, recall: 0.142857, error: 0.714286
-486. 
-patient tongue id: 04271825429299_5
-label yaofang:
-麻黄 甘草 柴胡 黄芩 牛蒡子 厚朴 川贝母 枇杷叶 地龙 苦杏仁 蝉蜕 岗梅
-0.451759 0.305371 0.329988 0.484161 0.507687 0.305562 0.360357 0.33098
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术 海螵蛸 厚朴 砂仁
-
-------Score: precision: 0.250000, recall: 0.166667, error: 0.750000
-487. 
-patient tongue id: 06132027237493_1_4_6
-label yaofang:
-陈皮 前胡 半夏 荆芥 浙贝母 僵蚕 百部 苦杏仁 紫苏子 蝉蜕 紫苏叶 人参叶 紫苑
-0.431966 0.34431 0.312778 0.559468 0.494957 0.398603 0.332357 0.357623 0.370007
-predicted yaofang:
-甘草 半夏 党参 黄芪 白术 厚朴 砂仁 鸡内金 北沙参
-
-------Score: precision: 0.111111, recall: 0.076923, error: 0.888889
-488. 
-patient tongue id: 04181954003347_6_4
-label yaofang:
-甘草 柴胡 白芍 香附 当归 茯苓 薄荷 枸杞子 白术 车前子 菟丝子 麦芽 续断 广藿香
-0.626733 0.334326 0.456529 0.400161 0.358127 0.319832
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母
-
-------Score: precision: 0.666667, recall: 0.285714, error: 0.333333
-489. 
-patient tongue id: 05090825133960_1_2
-label yaofang:
-桂枝 甘草 白芍 茯苓 麦冬 党参 黄芪 白术 五味子 熟附子 泽泻 干姜
-0.549258 0.314917 0.310342 0.451645
-predicted yaofang:
-甘草 白芍 茯苓 党参
-
-------Score: precision: 1.000000, recall: 0.333333, error: 0.000000
-490. 
-patient tongue id: 04201421035590_1_2
-label yaofang:
-桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-0.465451 0.421965 0.4631 0.393327 0.450405 0.387045 0.403514 0.346305 0.400154 0.365948 0.407446 0.418462 0.358996 0.383259 0.360754
-predicted yaofang:
-甘草 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
-
-------Score: precision: 0.800000, recall: 1.000000, error: 0.200000
-491. 
-patient tongue id: 04141811589020_1_4_6
-label yaofang:
-半夏 党参 黄芪 枸杞子 白术 赤芍 海螵蛸 杜仲 牛膝 山药 厚朴 砂仁 僵蚕 莪术 鸡内金 麦芽 紫苏梗 鲜龙葵果
-0.507027 0.383449 0.337831 0.390729 0.339584
-predicted yaofang:
-甘草 茯苓 党参 黄芪 白术
-
-------Score: precision: 0.600000, recall: 0.166667, error: 0.400000
-492. 
-patient tongue id: 04202057308588_6
-label yaofang:
-柴胡 大枣 茯苓 防风 连翘 牛蒡子 太子参 昆布 海藻 乌梅 石斛 白花蛇舌草 猫爪草 山慈菇 黄药子
-0.300668 0.345068 0.302477
-predicted yaofang:
-甘草 党参 黄芪
-
-------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
-493. 
-patient tongue id: 04241859190325_1_4
-label yaofang:
-麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
-0.399344 0.36017 0.47389 0.330055 0.318166 0.335511 0.338644 0.504184
-predicted yaofang:
-甘草 柴胡 白芍 党参 白术 浙贝母 姜半夏 炙甘草
-
-------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
-494. 
-patient tongue id: 03211847446186_4_1
-label yaofang:
-法半夏 茯苓 前胡 防风 钩藤 白芷 款冬花 百部 炙甘草 首乌藤 广藿香 威灵仙 炒蔓荆子
-0.375734 0.575837 0.423693 0.639666 0.419708 0.512411 0.307011 0.32294 0.303589 0.338507 0.60013 0.610376 0.593282 0.601285 0.363291 0.759594 0.344761 0.360408 0.357792 0.484104
-predicted yaofang:
-陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
-
-------Score: precision: 0.450000, recall: 0.692308, error: 0.550000
-495. 
-patient tongue id: 04200629521828_1
-label yaofang:
-甘草 白芍 独活 党参 白术 生地黄 红花 延胡索 桑寄生 补骨脂 锁阳 续断 牛大力 千斤拔
-0.940972 0.342547 0.427658 0.558244 0.38512 0.478052 0.380341 0.400705
-predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
-
-------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
-496. 
-patient tongue id: 04291457028674_4_1
-label yaofang:
-甘草 党参 杜仲 郁金 地黄 天麻 桑寄生 莪术 白花蛇舌草 续断 蜈蚣 半枝莲 醋鳖甲 炒鸡内金
-0.993377 0.464303 0.6714 0.406681 0.326031 0.338431 0.725464 0.616297 0.644062 0.490112 0.556738 0.633012
+甘草 柴胡 白芍 枳壳 茯苓 桃仁 党参 白术 酸枣仁 延胡索 川楝子 五灵脂 麦芽 首乌藤
+0.958153 0.547273 0.567066 0.47003 0.320644 0.339638 0.56508 0.539538 0.537489 0.439131 0.466788 0.514602
 predicted yaofang:
 甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
-497. 
-patient tongue id: 04271908230481_4
+41. 
+patient tongue id: 04282202376289_5_1
 label yaofang:
-法半夏 前胡 桔梗 防风 细辛 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香
-0.43658 0.347027 0.353881 0.367049 0.343343 0.3149
+甘草 柴胡 前胡 羌活 金银花 薏苡仁 赤芍 郁金 桑白皮 水牛角 天麻 鳖甲 苦杏仁 蜈蚣 白花蛇舌 龙葵果
+0.947489 0.523961 0.550817 0.515099 0.321508 0.526213 0.473562 0.541218 0.354243 0.392413 0.449175
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.454545, recall: 0.312500, error: 0.545455
+42. 
+patient tongue id: 02111355251651_1_4_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.652566 0.426659 0.480364 0.411172 0.357879 0.319715 0.408503
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 丹参 天麻
+
+------Score: precision: 0.285714, recall: 0.166667, error: 0.714286
+43. 
+patient tongue id: 03221622080727_6
+label yaofang:
+甘草 香附 茯苓 党参 白术 酸枣仁 生地黄 黄柏 郁金 山茱萸 菟丝子 益母草 王不留行 浮小麦 合欢花
+0.950252 0.533479 0.550222 0.445301 0.523331 0.436652 0.457407 0.323537 0.345289 0.387909
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.400000, recall: 0.266667, error: 0.600000
+44. 
+patient tongue id: 04301136059351_2_6
+label yaofang:
+甘草 柴胡 白芍 木香 党参 太子参 黄连 延胡索 砂仁 五灵脂 麦芽 北沙参 鱼古 瓦楞子
+0.950577 0.539238 0.572687 0.461235 0.302021 0.536461 0.494269 0.493298 0.379117 0.409097 0.447473
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
+45. 
+patient tongue id: 04131719335955_1_3
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.347557 0.345087 0.34312 0.371495 0.565849 0.372205 0.376491 0.316028 0.329193 0.31121 0.311522 0.316557 0.331632 0.321466
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.285714, recall: 0.307692, error: 0.714286
+46. 
+patient tongue id: 02020954233530_1_4
+label yaofang:
+甘草 白芍 川芎 法半夏 党参 白术 赤芍 钩藤 天麻 木瓜 决明子 地龙 首乌藤 沙苑子 宽筋藤
+0.93893 0.543866 0.530753 0.431558 0.479618 0.397017 0.416576 0.305266 0.336378
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.444444, recall: 0.266667, error: 0.555556
+47. 
+patient tongue id: 04201954060958_2_6_1
+label yaofang:
+桂枝 甘草 川芎 茯苓 白术 牛膝 山药 车前子 天麻 菟丝子 益母草 猪苓 泽兰
+0.819228 0.346405 0.429139 0.488862 0.455369 0.343586
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻
+
+------Score: precision: 0.666667, recall: 0.307692, error: 0.333333
+48. 
+patient tongue id: 01250629444905_1_5
+label yaofang:
+甘草 白芍 当归 木香 蒲公英 白及 茜草 天麻 赤石脂 白头翁 鳖甲 蜈蚣 天山雪莲 半枝莲
+0.965463 0.552443 0.575671 0.458829 0.300546 0.316613 0.578146 0.532295 0.538965 0.419558 0.446109 0.506268
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+49. 
+patient tongue id: 06182032076538_1_2
+label yaofang:
+薏苡仁 黄芪 白术 黄柏 牛膝 苍术 砂仁 桑寄生 首乌藤 桑枝 宽筋藤 合欢皮
+0.486893 0.404101 0.322378 0.571261 0.600566 0.372714 0.31025 0.34933
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 厚朴 砂仁 北沙参
+
+------Score: precision: 0.375000, recall: 0.250000, error: 0.625000
+50. 
+patient tongue id: 03012125599670_6_1
+label yaofang:
+甘草 党参 酸枣仁 生地黄 杜仲 天麻 鳖甲 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 牛大力
+0.715342 0.355638 0.426472 0.459147 0.428078
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+51. 
+patient tongue id: 03282242173733_4
+label yaofang:
+甘草 白芍 川芎 羌活 细辛 干姜 豆蔻 蜈蚣 姜黄 海桐皮 鹿衔草
+0.403016 0.389469 0.349732 0.374748 0.378619 0.47401
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.333333, recall: 0.181818, error: 0.666667
+52. 
+patient tongue id: 04181939084290_6
+label yaofang:
+甘草 当归 党参 黄连 牡丹皮 牛膝 知母 石膏 山药 细辛 地黄 白芷 升麻 麦芽
+0.95211 0.546671 0.571111 0.452757 0.314813 0.328059 0.554268 0.491499 0.495896 0.388483 0.417475 0.467361
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+53. 
+patient tongue id: 04071316549792_4
+label yaofang:
+甘草 法半夏 前胡 桔梗 防风 薄荷 荆芥穗 北柴胡 香薷 紫菀 辛夷 紫苏梗 广藿香 炒苍耳子
+0.458466 0.931639 0.44455 0.975125 0.599909 0.724974 0.43506 0.409241 0.466557 0.949047 0.958724 0.920459 0.952951 0.992746 0.567894 0.308095 0.645554 0.60597 0.880761
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.421053, recall: 0.571429, error: 0.578947
+54. 
+patient tongue id: 04181942494246_6
+label yaofang:
+甘草 柴胡 白芍 黄芩 法半夏 当归 茯苓 龙骨 白术 酸枣仁 川楝子 佛手 浮小麦 合欢花
+0.980708 0.568241 0.605017 0.47471 0.300458 0.313278 0.595105 0.555277 0.553981 0.419566 0.453647 0.503733
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+55. 
+patient tongue id: 05021912082838_3
+label yaofang:
+桂枝 白芍 法半夏 防风 玄参 五味子 细辛 干姜 白芷 款冬花 川贝母 射干 蝉蜕 炙甘草 蜜麻黄 木蝴蝶
+0.487894 0.389819 0.345522 0.456026 0.569278 0.312976 0.3288
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 海螵蛸 厚朴
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+56. 
+patient tongue id: 01062041205222_6_5
+label yaofang:
+甘草 白芍 陈皮 防风 薏苡仁 党参 白术 熟附子 天麻 鳖甲 败酱草 蜈蚣 天山雪莲 半枝莲 姜黄
+0.972405 0.566301 0.57448 0.46008 0.325973 0.569281 0.543422 0.538878 0.418235 0.44212 0.486793
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.533333, error: 0.272727
+57. 
+patient tongue id: 03301936137931_1_4
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 广藿香 蜜麻黄 炒蔓荆子
+0.45963 0.428338 0.394483 0.323327 0.384784 0.365589 0.395406 0.427006 0.407281 0.686738 0.315159 0.319582
+predicted yaofang:
+法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草 广藿香 蜜麻黄
+
+------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
+58. 
+patient tongue id: 05232222235011_1_4
+label yaofang:
+茯苓 前胡 桔梗 太子参 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.39587 0.735686 0.462339 0.817659 0.484294 0.548297 0.330915 0.391597 0.372001 0.321586 0.3864 0.7623 0.769113 0.727062 0.773922 0.313224 0.90978 0.428769 0.302467 0.505557 0.501177 0.690985
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.590909, recall: 1.000000, error: 0.409091
+59. 
+patient tongue id: 02260649080182_1_6
+label yaofang:
+甘草 远志 党参 黄芪 白术 酸枣仁 生地黄 天麻 鳖甲 续断 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.991053 0.585204 0.635247 0.449612 0.341571 0.32219 0.700367 0.581315 0.597556 0.432109 0.491074 0.599408
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.714286, error: 0.166667
+60. 
+patient tongue id: 05131626542431_6_1
+label yaofang:
+甘草 茯苓 薏苡仁 太子参 白术 郁金 山药 砂仁 天麻 鳖甲 莪术 紫苏梗 广藿香 蜈蚣 白花蛇舌 天山雪莲
+0.981846 0.547723 0.605076 0.473096 0.308429 0.302957 0.630859 0.547895 0.575456 0.42365 0.467809 0.550581
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.562500, error: 0.250000
+61. 
+patient tongue id: 03171503401181_4_1
+label yaofang:
+甘草 法半夏 前胡 防风 薄荷 荆芥穗 白芷 百部 豆蔻 辛夷 紫苏梗 广藿香 炒苍耳子 麸炒白术
+0.427715 0.739095 0.451475 0.830211 0.493135 0.579515 0.336801 0.383426 0.377596 0.326346 0.397967 0.77846 0.788315 0.749579 0.800713 0.329278 0.913547 0.461097 0.315857 0.532491 0.510149 0.707842
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.409091, recall: 0.642857, error: 0.590909
+62. 
+patient tongue id: 03222002224981_1_4
+label yaofang:
+甘草 白芍 川芎 独活 杜仲 牛膝 细辛 车前子 干姜 广藿香 蜈蚣 姜黄 海桐皮 鹿衔草
+0.404245 0.317329 0.413632 0.332555 0.382444 0.407599 0.368928 0.491328
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 姜半夏 炙甘草
+
+------Score: precision: 0.250000, recall: 0.142857, error: 0.750000
+63. 
+patient tongue id: 03081821199316_1_7_6
+label yaofang:
+桃仁 黄芪 白术 海螵蛸 浙贝母 砂仁 秦艽 北沙参 桑枝 土鳖虫 红豆杉 合欢皮 山慈菇 预知子 蛇舌草
+0.455753 0.426084 0.496272 0.478095 0.352532
+predicted yaofang:
+甘草 茯苓 黄芪 白术 北沙参
+
+------Score: precision: 0.600000, recall: 0.200000, error: 0.400000
+64. 
+patient tongue id: 05162106199672_2_6_7
+label yaofang:
+甘草 丹参 杜仲 郁金 天麻 桑寄生 鳖甲 莪术 诃子 威灵仙 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.96542 0.546579 0.580614 0.46778 0.30491 0.31805 0.596956 0.536566 0.550812 0.41176 0.450169 0.513044
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.583333, recall: 0.500000, error: 0.416667
+65. 
+patient tongue id: 01042341105713_1_7
+label yaofang:
+甘草 党参 白术 红花 赤芍 山药 天麻 鳖甲 续断 蜈蚣 白花蛇舌 天山雪莲 半枝莲 狗脊
+0.970916 0.55456 0.581448 0.446946 0.308743 0.31472 0.592219 0.507261 0.516652 0.389649 0.426252 0.494347
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.714286, error: 0.166667
+66. 
+patient tongue id: 01101808080037_1_4
+label yaofang:
+陈皮 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.434317 0.875796 0.459954 0.940053 0.550352 0.662201 0.308675 0.417699 0.399386 0.305306 0.437359 0.898388 0.911678 0.865413 0.905856 0.979167 0.510879 0.313398 0.605642 0.564218 0.820501
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.619048, recall: 0.928571, error: 0.380952
+67. 
+patient tongue id: 03311621410847_5_4_7
+label yaofang:
+牡蛎 薏苡仁 桃仁 黄芪 白术 浙贝母 杜仲 牛膝 厚朴 砂仁 北沙参 土鳖虫 红豆杉 山慈菇 蛇舌草
+0.691542 0.438305 0.378916 0.406063 0.605943 0.366772
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.333333, recall: 0.133333, error: 0.666667
+68. 
+patient tongue id: 02020832320086_1_6_5
+label yaofang:
+甘草 白芍 黄芩 当归 茯苓 党参 白术 黄柏 地黄 菟丝子 益母草 续断 醋香附
+0.492166 0.319734 0.362713 0.417872 0.41911
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 1.000000, recall: 0.384615, error: 0.000000
+69. 
+patient tongue id: 03101922172879_5_7
+label yaofang:
+甘草 陈皮 茯苓 桔梗 薏苡仁 鱼腥草 黄芪 海螵蛸 浙贝母 苍术 生半夏 莪术 北沙参 蜈蚣 红豆杉
+0.373987 0.51135 0.449118 0.577996 0.37416 0.401919 0.313188 0.509662 0.527905 0.494278 0.56634 0.374541 0.739842 0.347656 0.35145 0.305605 0.447823
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.235294, recall: 0.266667, error: 0.764706
+70. 
+patient tongue id: 04111905410371_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 款冬花 紫菀 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.432552 0.906633 0.45487 0.96069 0.571911 0.687335 0.421587 0.399807 0.438724 0.927167 0.937307 0.895736 0.933657 0.98824 0.520922 0.300062 0.626316 0.577456 0.854668
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.631579, recall: 1.000000, error: 0.368421
+71. 
+patient tongue id: 04131358566698_4_7_6
+label yaofang:
+甘草 法半夏 茯苓 桔梗 远志 党参 丹参 黄连 竹茹 浙贝母 栀子 牡丹皮 厚朴 浮小麦 紫苏梗
+0.990087 0.589465 0.634765 0.44982 0.332506 0.329399 0.675959 0.591914 0.590948 0.45271 0.497966 0.567318
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+72. 
+patient tongue id: 05160613207537_1_3_6
+label yaofang:
+甘草 龙骨 牡蛎 黄芪 五味子 厚朴 糯稻根 桑寄生 火麻仁 浮小麦 首乌藤 黑枣 合欢皮 墨旱莲
+0.403933 0.433609 0.437232 0.381709 0.32522
+predicted yaofang:
+甘草 茯苓 黄芪 白术 北沙参
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+73. 
+patient tongue id: 05140832195840_6_7_1
+label yaofang:
+甘草 川芎 党参 鸡血藤 杜仲 牛膝 山药 山茱萸 钩藤 泽泻 天麻 桑寄生 豆蔻 蒺藜 首乌藤
+0.970216 0.555345 0.593641 0.451304 0.324543 0.323008 0.607859 0.544477 0.536105 0.427552 0.462218 0.50947
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
+74. 
+patient tongue id: 02190642028124_2_6_1
+label yaofang:
+甘草 党参 酸枣仁 丹参 生地黄 山药 天麻 菟丝子 益母草 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 贯众
+0.953482 0.545079 0.543098 0.453364 0.305273 0.516792 0.488349 0.49207 0.382651 0.402394 0.44428
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.818182, recall: 0.600000, error: 0.181818
+75. 
+patient tongue id: 03142047540413_4
+label yaofang:
+甘草 防风 丹参 生地黄 牡丹皮 乌梅 紫草 莪术 珍珠母 白鲜皮 紫苏叶 土茯苓 徐长卿
+0.447413 0.32424 0.373319 0.370572 0.430547 0.344974
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.166667, recall: 0.076923, error: 0.833333
+76. 
+patient tongue id: 02202318375561_5
+label yaofang:
+枳壳 黄芩 黄连 海螵蛸 厚朴 山楂 火麻仁 鸡内金 枇杷叶 北沙参 紫苏梗 布渣叶
+0.502415 0.39585 0.413722 0.616651 0.649821 0.345579 0.454925 0.364285 0.30041 0.401449 0.30103
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.272727, recall: 0.250000, error: 0.727273
+77. 
+patient tongue id: 05021432333785_1_3
+label yaofang:
+甘草 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.480693 0.426237 0.35864 0.473243 0.425884
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.800000, recall: 0.333333, error: 0.200000
+78. 
+patient tongue id: 03152021467591_1_2_7
+label yaofang:
+甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
+0.392361 0.382803 0.319026 0.590442 0.346262
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.600000, recall: 0.250000, error: 0.400000
+79. 
+patient tongue id: 02122108129471_6_2
+label yaofang:
+甘草 白芍 法半夏 茯苓 白术 酸枣仁 牛膝 白茅根 地黄 天麻 桑寄生 百合 建曲
+0.922347 0.522728 0.521142 0.432467 0.459368 0.390945 0.416356 0.307261 0.335535
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.444444, recall: 0.307692, error: 0.555556
+80. 
+patient tongue id: 05102011484721_1
+label yaofang:
+甘草 陈皮 法半夏 大枣 当归 茯苓 防风 党参 熟地黄 炒紫苏子 醋五味子
+0.413856 0.813414 0.453931 0.892706 0.514864 0.61092 0.316793 0.401612 0.385273 0.314266 0.417429 0.841348 0.855568 0.805973 0.854162 0.957783 0.471459 0.312864 0.557514 0.52854 0.763974
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.238095, recall: 0.454545, error: 0.761905
+81. 
+patient tongue id: 03221817596943_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.366565 0.667388 0.466502 0.729542 0.440434 0.513319 0.317096 0.359354 0.352924 0.31171 0.37541 0.676185 0.674919 0.65274 0.690953 0.307247 0.857576 0.394706 0.464261 0.466388 0.616984
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.666667, recall: 1.000000, error: 0.333333
+82. 
+patient tongue id: 01062342105694_1_3
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.535074 0.436794 0.401916 0.3828
+predicted yaofang:
+甘草 茯苓 党参 黄芪
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+83. 
+patient tongue id: 03101954444297_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 薄荷 荆芥穗 北柴胡 款冬花 紫菀 白前 百部 炙甘草 蜜麻黄
+0.426882 0.441249 0.317003 0.337287 0.500607
+predicted yaofang:
+法半夏 茯苓 防风 白前 炙甘草
+
+------Score: precision: 0.800000, recall: 0.285714, error: 0.200000
+84. 
+patient tongue id: 01042308513562_4
+label yaofang:
+甘草 香附 茯苓 薏苡仁 党参 白术 海螵蛸 干姜 紫菀 白花蛇舌草 续断 瓦楞子
+0.838604 0.306624 0.46804 0.483208 0.475851 0.384763 0.307215 0.394494
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.500000, recall: 0.333333, error: 0.500000
+85. 
+patient tongue id: 04271850594482_1_6
+label yaofang:
+甘草 枳壳 茯苓 半夏 龙骨 薏苡仁 黄芪 白术 赤芍 浙贝母 郁金 厚朴 砂仁 莪术 麦芽 合欢皮 预知子 冬凌草
+0.383893 0.400746 0.363792 0.576463 0.522815 0.363675 0.410686
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.857143, recall: 0.333333, error: 0.142857
+86. 
+patient tongue id: 03231042469629_6_2_7
+label yaofang:
+白芍 党参 延胡索 杜仲 天麻 菟丝子 五灵脂 鳖甲 火麻仁 补骨脂 麦芽 炙甘草 蜈蚣 天山雪莲 合欢花 半枝莲 姜黄
+0.989562 0.581493 0.618754 0.44456 0.307086 0.310793 0.664073 0.588017 0.585513 0.447554 0.483064 0.549643
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.352941, error: 0.500000
+87. 
+patient tongue id: 04260445471322_1_6
+label yaofang:
+甘草 茯苓 龙骨 牡蛎 党参 丹参 竹茹 胆南星 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.972355 0.555412 0.60719 0.419701 0.325594 0.316796 0.630538 0.492811 0.482574 0.355442 0.40234 0.445794
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+88. 
+patient tongue id: 04112315282386_1
+label yaofang:
+当归 木香 远志 党参 黄芪 鸡血藤 白术 柏子仁 郁金 鸡内金 炙甘草 百合 紫苏叶
+0.362961 0.449557 0.351429 0.349095 0.381931 0.345769 0.350729 0.550575 0.644787
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.333333, recall: 0.230769, error: 0.666667
+89. 
+patient tongue id: 03312121440579_1_4
+label yaofang:
+甘草 茯苓 木香 远志 党参 白术 酸枣仁 天麻 鳖甲 麦芽 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.993757 0.606087 0.642751 0.442813 0.31362 0.322493 0.697196 0.627813 0.615736 0.478177 0.519155 0.591982
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
+90. 
+patient tongue id: 03291622503569_6_7
+label yaofang:
+甘草 白芍 川芎 茯苓 羌活 黄芪 酸枣仁 生地黄 赤芍 牛膝 细辛 天麻 白芷 蒿苯
+0.970578 0.565602 0.588928 0.451045 0.312441 0.581466 0.549745 0.530031 0.425349 0.45523 0.495008
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
+91. 
+patient tongue id: 04020814309348_5_6
+label yaofang:
+甘草 柴胡 白芍 蒲公英 白及 党参 白术 黄连 延胡索 五灵脂 莪术 麦芽 皂角刺 建曲 合欢花 姜黄
+0.894244 0.494645 0.526539 0.466925 0.467544 0.367905 0.430808 0.328399
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.375000, recall: 0.187500, error: 0.625000
+92. 
+patient tongue id: 03271536347983_4_5
+label yaofang:
+桂枝 甘草 柴胡 白芍 黄芩 大枣 当归 牡蛎 防风 麦冬 党参 黄连 生地黄 栀子 糯稻根 生石膏 鸡内金 姜半夏 浮小麦 广藿香 蜈蚣 红芪
+0.913091 0.49972 0.539451 0.456838 0.476683 0.386687 0.429492 0.311627 0.350594
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.136364, error: 0.666667
+93. 
+patient tongue id: 03091855486678_1_6_5
+label yaofang:
+甘草 茯苓 党参 白术 丹参 赤芍 杜仲 山药 鳖甲 茵陈 虎杖 麦芽 黄精
+0.922742 0.500091 0.540245 0.542569 0.312923 0.503499 0.470237 0.548859 0.36394 0.410409 0.483627
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.545455, recall: 0.461538, error: 0.454545
+94. 
+patient tongue id: 01042327249414_6_1_5
+label yaofang:
+甘草 连翘 党参 白术 槟榔 砂仁 莱菔子 天麻 火麻仁 白花蛇舌草 首乌藤 蜈蚣 半枝莲 醋鳖甲 麸炒枳壳
+0.601377 0.42256 0.400142 0.394136 0.503901
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.600000, recall: 0.200000, error: 0.400000
+95. 
+patient tongue id: 03062131282000_6_2
+label yaofang:
+甘草 白芍 法半夏 茯苓 牛蒡子 党参 白术 浙贝母 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲 贯众
+0.984498 0.574585 0.629525 0.457998 0.340519 0.327298 0.67476 0.600254 0.593645 0.465674 0.513632 0.581576
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+96. 
+patient tongue id: 03311803378194_4
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 蜜麻黄
+0.394159 0.66936 0.458759 0.741838 0.452696 0.519667 0.333328 0.373466 0.368525 0.322574 0.379682 0.686603 0.689282 0.668689 0.708208 0.330973 0.843633 0.416154 0.300541 0.478352 0.482187 0.63739
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.681818, recall: 1.000000, error: 0.318182
+97. 
+patient tongue id: 04202039135681_2_6_1
+label yaofang:
+桂枝 甘草 党参 黄芪 黄连 赤芍 石膏 山药 山茱萸 天花粉 补骨脂 桑螵蛸 益智 粉葛
+0.976851 0.564443 0.595061 0.481132 0.34405 0.342926 0.633484 0.569479 0.58946 0.452527 0.503959 0.589272
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+98. 
+patient tongue id: 06080203217118_2_7
+label yaofang:
+甘草 茯苓 酸枣仁 玄参 生地黄 牡丹皮 山药 山茱萸 天麻 鳖甲 建曲 蜈蚣 半枝莲 龙葵果
+0.983449 0.553017 0.609006 0.492391 0.329201 0.321243 0.660674 0.584633 0.631084 0.462676 0.509231 0.612144
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+99. 
+patient tongue id: 06080144204730_1_2
+label yaofang:
+甘草 党参 丹参 生地黄 浙贝母 天麻 益母草 鳖甲 虎杖 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.967333 0.529431 0.600496 0.398963 0.343756 0.31769 0.662277 0.416088 0.439133 0.342996 0.416415
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.636364, recall: 0.500000, error: 0.363636
+100. 
+patient tongue id: 04282207188400_2_6
+label yaofang:
+桂枝 甘草 香附 茯苓 桃仁 生地黄 牡丹皮 山药 山茱萸 益母草 决明子 红曲
+0.972945 0.561304 0.576085 0.420014 0.577028 0.500513 0.505768 0.380169 0.401735 0.458958
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.200000, recall: 0.166667, error: 0.800000
+101. 
+patient tongue id: 04260658431213_1_4_6
+label yaofang:
+甘草 柴胡 法半夏 薏苡仁 党参 赤芍 青蒿 天麻 瓜蒌皮 鳖甲 莪术 蜈蚣 白花蛇舌 红豆杉 龙葵果
+0.908219 0.498604 0.513572 0.515361 0.300452 0.404188 0.3121 0.441211
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.625000, recall: 0.333333, error: 0.375000
+102. 
+patient tongue id: 03020849497259_6_4
+label yaofang:
+桂枝 甘草 柴胡 白芍 黄芩 法半夏 茯苓 龙骨 党参 白术 酸枣仁 干姜 扁豆花 浮小麦
+0.932037 0.52391 0.526766 0.564561 0.327755 0.429833 0.451296 0.559673 0.341087 0.380934 0.436086
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.285714, error: 0.636364
+103. 
+patient tongue id: 06071900303961_2
+label yaofang:
+甘草 陈皮 半夏 龙骨 牡蛎 远志 酸枣仁 五味子 黄连 竹茹 山药 糯稻根 珍珠母 浮小麦 黄精 合欢皮
+0.439101 0.402499 0.343576 0.502373 0.45349 0.305919
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴
+
+------Score: precision: 0.166667, recall: 0.062500, error: 0.833333
+104. 
+patient tongue id: 01180612303331_2_6
+label yaofang:
+甘草 桔梗 麦冬 太子参 玄参 浙贝母 桑叶 白茅根 地黄 茜草 白花蛇舌草 蜂房 岗梅根 醋鳖甲
+0.953253 0.534656 0.572339 0.481948 0.304535 0.321357 0.555808 0.464449 0.494388 0.349816 0.383577 0.428462
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.083333, recall: 0.071429, error: 0.916667
+105. 
+patient tongue id: 05162151387474_6_1_2
+label yaofang:
+甘草 川芎 桃仁 酸枣仁 红花 赤芍 杜仲 牛膝 天麻 桑寄生 益母草 补骨脂 续断 牛大力
+0.981747 0.577685 0.621821 0.455396 0.343235 0.343563 0.667034 0.583866 0.580556 0.449809 0.499124 0.567795
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+106. 
+patient tongue id: 05232009207607_1
+label yaofang:
+桂枝 白芍 枳壳 半夏 薏苡仁 黄芪 枸杞子 白术 海螵蛸 杜仲 郁金 厚朴 砂仁 莪术 蜈蚣 五指毛桃 蛇舌草 稻芽
+0.476946 0.372493 0.42308 0.668263 0.684285 0.345267 0.36247 0.493115 0.395722 0.351525 0.378859 0.368955
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.583333, recall: 0.388889, error: 0.416667
+107. 
+patient tongue id: 01070845025107_1_4
+label yaofang:
+川芎 香附 法半夏 当归 桃仁 丹参 生地黄 红花 延胡索 赤芍 青皮 鸡内金
+0.469104 0.40647 0.377537 0.484047 0.434972
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+108. 
+patient tongue id: 06031113103621_4_6
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 薏苡仁 桃仁 远志 五味子 浙贝母 细辛 鳖甲 款冬花 苦杏仁 炙麻黄 白花蛇舌
+0.979861 0.555933 0.60698 0.446633 0.329799 0.315404 0.644371 0.548222 0.557651 0.424896 0.464764 0.537268
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.250000, error: 0.666667
+109. 
+patient tongue id: 03231310554451_1_5
+label yaofang:
+甘草 白芍 薏苡仁 党参 白术 熟附子 山药 天麻 巴戟天 鳖甲 莪术 败酱草 蜈蚣 天山雪莲 半枝莲
+0.958448 0.552482 0.557543 0.435446 0.304119 0.520076 0.461036 0.469784 0.350249 0.368863 0.406137
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.818182, recall: 0.600000, error: 0.181818
+110. 
+patient tongue id: 06132009531066_1_7
+label yaofang:
+甘草 枳壳 薏苡仁 黄芪 阿胶 白术 黄连 浙贝母 杜仲 郁金 厚朴 生半夏 莪术 柿蒂 赭石 紫苏叶 蜈蚣 蛇舌草
+0.444348 0.350049 0.454715 0.644954 0.707055 0.355635 0.363697 0.492504 0.405567 0.311086 0.396554 0.395735
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.416667, recall: 0.277778, error: 0.583333
+111. 
+patient tongue id: 06190152201086_2_3
+label yaofang:
+甘草 茯苓 党参 黄连 熟附子 赤芍 熟地黄 牡丹皮 肉桂 山药 山茱萸 泽泻 粉葛
+0.980336 0.55776 0.628255 0.42666 0.341873 0.327457 0.673507 0.491163 0.49763 0.334766 0.401085 0.466222
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
+112. 
+patient tongue id: 04261336505310_7
+label yaofang:
+甘草 柴胡 川芎 枳壳 当归 桔梗 桃仁 生地黄 红花 赤芍 牛膝
+0.334217 0.310958 0.328603 0.46442 0.339963 0.49341
+predicted yaofang:
+甘草 白芍 茯苓 白术 海螵蛸 炙甘草
+
+------Score: precision: 0.166667, recall: 0.090909, error: 0.833333
+113. 
+patient tongue id: 03012033364823_7_4
+label yaofang:
+甘草 党参 白术 郁金 山药 天麻 鳖甲 茵陈 莪术 虎杖 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.972845 0.555036 0.580809 0.485256 0.311532 0.322528 0.584423 0.552783 0.569379 0.438125 0.467019 0.515312
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+114. 
+patient tongue id: 01062335078914_1_4_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草
+0.941746 0.542531 0.549261 0.379691 0.305606 0.545675 0.356665 0.375204 0.313999
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.111111, recall: 0.090909, error: 0.888889
+115. 
+patient tongue id: 04301141524707_6_4
+label yaofang:
+甘草 白芍 党参 酸枣仁 黄连 杜仲 黄柏 牛膝 山茱萸 天麻 菟丝子 桑寄生 续断
+0.959365 0.534617 0.576421 0.455541 0.333073 0.316276 0.607518 0.527525 0.539126 0.410162 0.448157 0.507023
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
+116. 
+patient tongue id: 01031834204300_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 炒苍耳子
+0.426694 0.76007 0.458002 0.851079 0.497078 0.584932 0.33492 0.391467 0.37404 0.326577 0.408815 0.797108 0.80484 0.762481 0.814398 0.327335 0.916877 0.473199 0.31104 0.535027 0.523041 0.719883
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.590909, recall: 0.928571, error: 0.409091
+117. 
+patient tongue id: 03230737255157_6_2
+label yaofang:
+甘草 柴胡 白芍 茯苓 桃仁 党参 何首乌 酸枣仁 丹参 牡丹皮 郁金 莪术 女贞子 首乌藤 合欢花
+0.989502 0.588712 0.634215 0.45523 0.346687 0.345586 0.688093 0.603279 0.603289 0.466016 0.508321 0.584938
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
+118. 
+patient tongue id: 03181802505956_1_6
+label yaofang:
+甘草 茯苓 薏苡仁 党参 白术 郁金 山药 天麻 鳖甲 莪术 续断 蜈蚣 天山雪莲 半枝莲 骨碎补
+0.84531 0.472952 0.49544 0.461037 0.402745 0.370579
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 1.000000, recall: 0.400000, error: 0.000000
+119. 
+patient tongue id: 06031742008962_1_4
+label yaofang:
+法半夏 前胡 桔梗 防风 薄荷 荆芥穗 北柴胡 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 蜜麻黄
+0.435754 0.850891 0.44486 0.928059 0.539949 0.643563 0.313602 0.409554 0.391737 0.413474 0.883886 0.897751 0.851611 0.895324 0.97009 0.492413 0.306192 0.58865 0.558275 0.804285
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.550000, recall: 0.785714, error: 0.450000
+120. 
+patient tongue id: 01061853443097_1_4
+label yaofang:
+陈皮 法半夏 前胡 太子参 黄芪 干姜 款冬花 白前 百部 豆蔻 北沙参 炙甘草 广藿香 炒紫苏子 麸炒白术 甘松
+0.429586 0.779687 0.459785 0.86205 0.489891 0.60464 0.321119 0.395783 0.384067 0.323362 0.42896 0.809676 0.82282 0.779062 0.826421 0.313632 0.938976 0.483715 0.31064 0.545996 0.538013 0.736094
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.545455, recall: 0.750000, error: 0.454545
+121. 
+patient tongue id: 02201756231562_4
+label yaofang:
+法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.441056 0.902732 0.460451 0.957387 0.568812 0.681345 0.302259 0.422806 0.392737 0.437314 0.921471 0.932796 0.887732 0.925638 0.984728 0.527508 0.306076 0.620761 0.583373 0.845434
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.700000, recall: 1.000000, error: 0.300000
+122. 
+patient tongue id: 05262206226520_1_2_7
+label yaofang:
+甘草 茯苓 党参 白术 熟附子 杜仲 黄柏 牛膝 山茱萸 车前子 天麻 补骨脂 桑螵蛸 地龙 益智 女贞子
+0.804283 0.476657 0.505699 0.38058 0.443066
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻
+
+------Score: precision: 1.000000, recall: 0.312500, error: 0.000000
+123. 
+patient tongue id: 02171933452205_1_7_4
+label yaofang:
+桃仁 黄芪 鸡血藤 白术 浙贝母 杜仲 山药 砂仁 淫羊藿 莪术 玉米须 土鳖虫 合欢皮 山慈菇 预知子
+0.490366 0.391813 0.414119 0.320828 0.654941 0.649587 0.31543 0.368823 0.497323 0.387661 0.376515 0.395841 0.354604
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.384615, recall: 0.333333, error: 0.615385
+124. 
+patient tongue id: 04181141248791_1_3_4
+label yaofang:
+甘草 法半夏 茯苓 橘红 桃仁 党参 黄芪 丹参 枳实 竹茹 胆南星 厚朴
+0.328877 0.320159 0.474023 0.315856 0.395229 0.594205 0.488659 0.375708 0.485357 0.460901 0.486481 0.478646 0.492321 0.511261 0.513886 0.504757
+predicted yaofang:
+甘草 茯苓 桃仁 麦冬 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.375000, recall: 0.500000, error: 0.625000
+125. 
+patient tongue id: 02260020275618_1_2
+label yaofang:
+甘草 党参 白术 生地黄 杜仲 山药 天麻 桑寄生 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.935111 0.526852 0.512175 0.413161 0.470876 0.321294 0.365753
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.857143, recall: 0.428571, error: 0.142857
+126. 
+patient tongue id: 02021010331063_1_5
+label yaofang:
+甘草 茯苓 玉竹 党参 白术 浙贝母 杜仲 牛膝 砂仁 天麻 桑寄生 珍珠母 预知子
+0.352401 0.605639 0.45014 0.652528 0.398537 0.473796 0.301477 0.310308 0.317259 0.599539 0.593473 0.620193 0.64776 0.322208 0.82189 0.36061 0.416465 0.414327 0.55812
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.052632, recall: 0.076923, error: 0.947368
+127. 
+patient tongue id: 05221905448655_2
+label yaofang:
+甘草 芦根 麦冬 玉竹 黄柏 知母 钩藤 桑叶 天麻 天花粉 鳖甲 北沙参 白扁豆 龟甲
+0.828294 0.458539 0.464716 0.351914 0.582187 0.443176
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.166667, recall: 0.071429, error: 0.833333
+128. 
+patient tongue id: 03291358321471_5_1_6
+label yaofang:
+甘草 柴胡 白芍 枳壳 法半夏 茯苓 党参 杜仲 郁金 山药 石菖蒲 桑寄生 益智 蜈蚣 鹿衔草
+0.926297 0.509298 0.572297 0.376887 0.567073 0.322712
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.266667, error: 0.333333
+129. 
+patient tongue id: 04251950373840_2_1
+label yaofang:
+甘草 桔梗 黄芪 白术 柏子仁 枳实 槟榔 厚朴 肉苁蓉 火麻仁 紫菀
+0.397503 0.316627 0.417131 0.343234 0.385117 0.402287 0.343838 0.512149
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 姜半夏 炙甘草
+
+------Score: precision: 0.250000, recall: 0.181818, error: 0.750000
+130. 
+patient tongue id: 01042314293995_1
+label yaofang:
+甘草 白芍 枳壳 桔梗 黄芪 白术 枳实 槟榔 厚朴 肉苁蓉 火麻仁 紫菀 郁李仁
+0.566143 0.346887 0.387495 0.432605 0.429112
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.600000, recall: 0.230769, error: 0.400000
+131. 
+patient tongue id: 03111450108273_5
+label yaofang:
+甘草 黄芩 法半夏 前胡 桔梗 薏苡仁 鱼腥草 浙贝母 厚朴 款冬花 苇茎 苦杏仁 炙麻黄
+0.945273 0.544769 0.557415 0.476325 0.301939 0.333139 0.540487 0.518575 0.525709 0.416296 0.443192 0.490617
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.083333, recall: 0.076923, error: 0.916667
+132. 
+patient tongue id: 04120008338976_7_4
+label yaofang:
+甘草 香附 茯苓 葛根 党参 白术 延胡索 海螵蛸 车前子 紫苏梗 瓦楞子 猫爪草
+0.313829 0.3431 0.323675 0.494701 0.41402 0.309734 0.330659 0.522891 0.300617
+predicted yaofang:
+甘草 白芍 党参 白术 海螵蛸 浙贝母 姜半夏 炙甘草 紫苏叶
+
+------Score: precision: 0.444444, recall: 0.333333, error: 0.555556
+133. 
+patient tongue id: 05161931009416_4
+label yaofang:
+法半夏 茯苓 前胡 防风 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 蝉蜕 炙甘草 广藿香 麸炒白术
+0.431399 0.839413 0.454911 0.917809 0.540067 0.626877 0.327136 0.413009 0.390906 0.300984 0.409568 0.870383 0.885144 0.833521 0.882974 0.301139 0.96577 0.48802 0.316923 0.578877 0.545254 0.791571
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.545455, recall: 0.800000, error: 0.454545
+134. 
+patient tongue id: 03291509437282_1
+label yaofang:
+甘草 茯苓 木香 薏苡仁 党参 白术 砂仁 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 红豆杉 龙葵果
+0.97945 0.572847 0.611141 0.4594 0.318641 0.326666 0.642277 0.569385 0.568764 0.434007 0.479604 0.54059
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+135. 
+patient tongue id: 02142148471120_6_4
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 牛蒡子 浙贝母 天麻 鳖甲 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.984412 0.571404 0.611951 0.427437 0.360817 0.343487 0.681296 0.56366 0.566518 0.44617 0.48479 0.568035
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+136. 
+patient tongue id: 06111036539798_4_5_6
+label yaofang:
+甘草 柴胡 茯苓 牡蛎 连翘 蒲公英 玄参 浙贝母 郁金 蔓荆子 莪术 麦芽 辛夷 苍耳子 蜂房 猫爪草
+0.91043 0.524434 0.526276 0.421932 0.468757 0.374983 0.385851 0.312174
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.250000, recall: 0.125000, error: 0.750000
+137. 
+patient tongue id: 03221316088197_1_6_2
+label yaofang:
+甘草 川芎 茯苓 党参 白术 生地黄 杜仲 天麻 桑寄生 鳖甲 威灵仙 蜈蚣 天山雪莲 半枝莲 骨碎补 红豆杉
+0.901379 0.496911 0.530358 0.449338 0.513688 0.409569 0.43876 0.313339 0.339787 0.376371
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.900000, recall: 0.562500, error: 0.100000
+138. 
+patient tongue id: 03011845172788_4
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.59599 0.419924 0.401407 0.388618 0.519277
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+139. 
+patient tongue id: 01062332507065_1_7
+label yaofang:
+甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
+0.616569 0.31266 0.419241 0.449109 0.322702 0.344407
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻
+
+------Score: precision: 0.333333, recall: 0.166667, error: 0.666667
+140. 
+patient tongue id: 05042033497300_4_1
+label yaofang:
+甘草 柴胡 白芍 香附 黄芩 当归 茯苓 薄荷 白术 黄连 麦芽 广藿香
+0.708085 0.439121 0.467539 0.435068 0.349037
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻
+
+------Score: precision: 0.600000, recall: 0.250000, error: 0.400000
+141. 
+patient tongue id: 05201510246732_6_4
+label yaofang:
+柴胡 法半夏 茯苓 木香 蒲公英 白及 党参 黄连 竹茹 干姜 厚朴 柿蒂 麦芽 紫苏梗
+0.917596 0.493678 0.563483 0.421859 0.326285 0.302981 0.587218 0.346833 0.403422 0.34651
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.200000, recall: 0.142857, error: 0.800000
+142. 
+patient tongue id: 03021848107399_1_4
+label yaofang:
+枳壳 当归 枸杞子 白术 海螵蛸 浙贝母 厚朴 生半夏 火麻仁 鸡内金 北沙参 山慈菇 蛇舌草
+0.462899 0.421824 0.340374 0.465961 0.403704
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
+143. 
+patient tongue id: 01202015416381_1_4
+label yaofang:
+太子参 黄芪 白术 海螵蛸 浙贝母 山药 砂仁 石斛 鸡内金 紫苏梗 红豆杉 稻芽
+0.843676 0.471857 0.475727 0.358601 0.544045 0.314993 0.387053
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 天麻 蜈蚣
+
+------Score: precision: 0.285714, recall: 0.166667, error: 0.714286
+144. 
+patient tongue id: 04111936070295_1_4_6
+label yaofang:
+当归 半夏 党参 黄芪 枸杞子 白术 杜仲 山药 大腹皮 厚朴 僵蚕 白芷 桑寄生 鸡内金 紫苏叶 鲜龙葵果
+0.428437 0.380757 0.361398 0.539778 0.374449
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.600000, recall: 0.187500, error: 0.400000
+145. 
+patient tongue id: 04131815291922_6_2
+label yaofang:
+甘草 独活 党参 白术 生地黄 天麻 桑寄生 鳖甲 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
+0.853958 0.501708 0.443093 0.527131 0.425582
+predicted yaofang:
+甘草 茯苓 党参 白术 蜈蚣
+
+------Score: precision: 0.800000, recall: 0.285714, error: 0.200000
+146. 
+patient tongue id: 04282318301211_7_1_6
+label yaofang:
+甘草 白芍 茯苓 党参 枸杞子 白术 生地黄 杜仲 山茱萸 菟丝子 补骨脂 女贞子 续断
+0.954047 0.529258 0.555798 0.447618 0.53964 0.442371 0.476475 0.324205 0.350778 0.40432
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.400000, recall: 0.307692, error: 0.600000
+147. 
+patient tongue id: 01250654172977_2_1
+label yaofang:
+甘草 黄芩 桔梗 芦根 远志 酸枣仁 浙贝母 郁金 天麻 鳖甲 蜈蚣 白花蛇舌 蜂房 四季青
+0.951611 0.530945 0.542709 0.405989 0.487183 0.384226 0.395813 0.31277
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
+148. 
+patient tongue id: 05111913083848_5
+label yaofang:
+甘草 薏苡仁 蒲公英 麦冬 枸杞子 黄连 厚朴 生半夏 补骨脂 莪术 麦芽 北沙参 苇根 蛤壳 粉葛 蜈蚣 蛇舌草 冬凌草
+0.31716 0.395006 0.377622 0.578004 0.497258 0.328654 0.425022
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.428571, recall: 0.166667, error: 0.571429
+149. 
+patient tongue id: 05140649284527_1_5
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 薏苡仁 鱼腥草 党参 浙贝母 天麻 鳖甲 款冬花 苦杏仁 紫苏子 炙麻黄 蜈蚣 白花蛇舌 天山雪莲
+0.977531 0.573392 0.58322 0.439795 0.306699 0.569338 0.526224 0.51691 0.40266 0.423756 0.46701
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.444444, error: 0.272727
+150. 
+patient tongue id: 05272349588036_1_2_5
+label yaofang:
+茯苓 黄芪 白术 延胡索 海螵蛸 浙贝母 山药 砂仁 三七 补骨脂 枇杷叶 北沙参 紫苏梗
+0.327562 0.507053 0.532719 0.309725 0.303285
+predicted yaofang:
+茯苓 黄芪 白术 海螵蛸 炙甘草
+
+------Score: precision: 0.800000, recall: 0.307692, error: 0.200000
+151. 
+patient tongue id: 04131904345463_1_4
+label yaofang:
+甘草 陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 百部 紫苏梗 广藿香
+0.428115 0.788494 0.458525 0.883423 0.507176 0.589966 0.317062 0.357563 0.3302 0.35623 0.823566 0.834189 0.789702 0.847008 0.34621 0.935822 0.465249 0.308459 0.534004 0.522335 0.745425
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.523810, recall: 0.916667, error: 0.476190
+152. 
+patient tongue id: 04151221485307_1_2_4
+label yaofang:
+桂枝 白芍 法半夏 茯苓 前胡 麦冬 太子参 细辛 干姜 紫菀 北沙参 炙甘草 炒紫苏子 蜜麻黄 醋五味子
+0.311779 0.357658 0.426342 0.311104 0.30423 0.306765 0.336628 0.345396 0.319982 0.304077 0.635154
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 黄芪 紫菀 百部 北沙参 炙甘草
+
+------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
+153. 
+patient tongue id: 04101940126145_1_4_2
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 麦冬 玉竹 太子参 郁金 北柴胡 款冬花 紫菀 芡实 北沙参 人参叶
+0.446168 0.871273 0.44778 0.940862 0.547632 0.66194 0.312659 0.413221 0.396692 0.426148 0.900228 0.911751 0.872712 0.910381 0.978718 0.507805 0.305622 0.60951 0.571367 0.825046
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.350000, recall: 0.466667, error: 0.650000
+154. 
+patient tongue id: 03012247157400_6_2_4
+label yaofang:
+甘草 黄芩 桔梗 芦根 薏苡仁 党参 浙贝母 郁金 天麻 鳖甲 诃子 板蓝根 蜈蚣 白花蛇舌 天山雪莲
+0.982948 0.585211 0.59478 0.419659 0.305479 0.585945 0.519555 0.49299 0.391691 0.409181 0.437735
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.636364, recall: 0.466667, error: 0.363636
+155. 
+patient tongue id: 04112158211623_5
+label yaofang:
+甘草 前胡 桔梗 金银花 浙贝母 荆芥穗 天麻 鳖甲 款冬花 白前 蜈蚣 白花蛇舌 天山雪莲 半枝莲 贯众
+0.855528 0.478037 0.53788 0.390007 0.309282 0.301456 0.53115
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻
+
+------Score: precision: 0.285714, recall: 0.133333, error: 0.714286
+156. 
+patient tongue id: 02181958375831_6_5_7
+label yaofang:
+甘草 龙骨 独活 白术 丹参 黄连 红花 延胡索 细辛 僵蚕 桑寄生 秦艽 补骨脂 麦芽 牛大力 千斤拔
+0.913319 0.528678 0.522196 0.453673 0.304352 0.457147 0.432873 0.448209 0.329407 0.352196 0.382099
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.181818, recall: 0.125000, error: 0.818182
+157. 
+patient tongue id: 02202246296718_1_6_2
+label yaofang:
+甘草 白芍 枸杞子 酸枣仁 生地黄 山茱萸 菊花 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 木贼
+0.896192 0.505289 0.515743 0.478037 0.437097 0.405223 0.448787 0.314525 0.332181 0.35692
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.700000, recall: 0.500000, error: 0.300000
+158. 
+patient tongue id: 01140806328188_5_6
+label yaofang:
+甘草 川芎 茯苓 党参 白术 丹参 赤芍 杜仲 牛膝 天麻 蔓荆子 桑寄生 地龙 蒺藜
+0.953303 0.537176 0.564076 0.506458 0.32406 0.328166 0.5744 0.543469 0.580345 0.440938 0.479718 0.549848
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
+159. 
+patient tongue id: 04111844323899_1_4
+label yaofang:
+陈皮 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.396648 0.806135 0.472861 0.880107 0.507195 0.582296 0.318025 0.405191 0.390671 0.402579 0.828015 0.838906 0.785643 0.834891 0.952287 0.44476 0.538535 0.524044 0.749595
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.684211, recall: 0.928571, error: 0.315789
+160. 
+patient tongue id: 03012323333606_7_6
+label yaofang:
+桂枝 甘草 白芍 茯苓 薏苡仁 党参 红花 赤芍 知母 地黄 忍冬藤 桑枝 牛大力 千斤拔
+0.96616 0.551282 0.582367 0.440738 0.306802 0.312657 0.585413 0.5231 0.513966 0.408064 0.435744 0.479458
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+161. 
+patient tongue id: 06071937388774_2_5_6
+label yaofang:
+桂枝 甘草 川芎 茯苓 桃仁 党参 生地黄 牡丹皮 天麻 磁石 桑寄生 麦芽 女贞子 墨旱莲
+0.967917 0.540494 0.59827 0.454762 0.326198 0.316845 0.621344 0.51149 0.524127 0.385438 0.429885 0.491595
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+162. 
+patient tongue id: 03041119063783_4_1
+label yaofang:
+陈皮 法半夏 前胡 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.355079 0.697538 0.443091 0.742772 0.418025 0.533896 0.317348 0.34615 0.302578 0.367899 0.688803 0.691157 0.688453 0.713384 0.884903 0.403462 0.468166 0.463933 0.624511
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.736842, recall: 1.000000, error: 0.263158
+163. 
+patient tongue id: 05310759345798_1_4_7
+label yaofang:
+白芍 当归 茯苓 木香 党参 黄芪 丹参 熟附子 山药 高良姜 鸡内金 草豆蔻 麦芽
+0.344781 0.307018 0.356313 0.428539 0.40972 0.386985 0.311538 0.410077 0.403179 0.467784 0.32023 0.315819 0.3357 0.330861 0.349691
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.266667, recall: 0.307692, error: 0.733333
+164. 
+patient tongue id: 06082042297182_5
+label yaofang:
+甘草 连翘 薏苡仁 蒲公英 黄连 赤芍 浙贝母 牡丹皮 水蛭 僵蚕 莪术 北沙参 忍冬藤 蜂房 猫爪草 姜黄 山慈菇 冬凌草
+0.544383 0.421181 0.304801 0.342458 0.55107 0.577905 0.309134 0.386265 0.320908 0.341186
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 北沙参
+
+------Score: precision: 0.200000, recall: 0.111111, error: 0.800000
+165. 
+patient tongue id: 06082001004237_1_7
+label yaofang:
+白芍 桃仁 麦冬 黄芪 丹参 红花 延胡索 牛膝 三七 珍珠母 北沙参 浮小麦 威灵仙 宽筋藤 黑老虎 制草乌
+0.313972 0.487941 0.452069 0.481316 0.379061 0.337939 0.451849 0.462507 0.346939 0.409657 0.687846 0.322124 0.30509
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草 广藿香 蜜麻黄
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+166. 
+patient tongue id: 01112024451603_1
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄 炒苍耳子
+0.470421 0.958778 0.457786 0.987179 0.637359 0.763768 0.44213 0.406822 0.480936 0.969779 0.976047 0.947627 0.971391 0.996837 0.600118 0.311174 0.697621 0.62165 0.913399
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.684211, recall: 0.866667, error: 0.315789
+167. 
+patient tongue id: 01201953419882_1
+label yaofang:
+甘草 川芎 茯苓 酸枣仁 生地黄 牡丹皮 牛膝 山药 山茱萸 天麻 益母草 女贞子 浮小麦 墨旱莲
+0.967733 0.556415 0.587153 0.45433 0.312589 0.329885 0.576728 0.514794 0.514541 0.39877 0.42763 0.478067
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
+168. 
+patient tongue id: 01122224439561_1_2_7
+label yaofang:
+甘草 川芎 党参 酸枣仁 杜仲 山药 山茱萸 天麻 肉苁蓉 桑寄生 补骨脂 地龙 续断 首乌藤
+0.758036 0.459974 0.417472 0.383217 0.488753
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+169. 
+patient tongue id: 06031053412668_1_7_6
+label yaofang:
+甘草 白芍 当归 薏苡仁 党参 黄芪 山药 天麻 鳖甲 补骨脂 莪术 皂角刺 建曲 蜈蚣 白花蛇舌 龙葵果
+0.852659 0.487603 0.463494 0.500287 0.30414 0.36967
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.250000, error: 0.333333
+170. 
+patient tongue id: 05191920567686_1_2
+label yaofang:
+甘草 川芎 茯苓 太子参 浙贝母 郁金 山药 天麻 鳖甲 女贞子 沙苑子 蜈蚣 白花蛇舌 天山雪莲 墨旱莲
+0.936584 0.531326 0.54345 0.450302 0.300828 0.508963 0.471228 0.469896 0.373276 0.389193 0.412449
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.533333, error: 0.272727
+171. 
+patient tongue id: 04141304546821_4
+label yaofang:
+法半夏 前胡 桔梗 太子参 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
+0.427564 0.912299 0.460764 0.960898 0.56603 0.691324 0.42001 0.405736 0.454994 0.927898 0.938475 0.896459 0.931934 0.990644 0.513421 0.631442 0.568245 0.855849
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.722222, recall: 0.812500, error: 0.277778
+172. 
+patient tongue id: 06052015342367_2
+label yaofang:
+甘草 芦根 麦冬 玉竹 生地黄 知母 桑叶 天花粉 北沙参 白扁豆 布渣叶
+0.463903 0.389693 0.347866 0.433491 0.529452
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.090909, error: 0.800000
+173. 
+patient tongue id: 03040844543696_5
+label yaofang:
+甘草 白芍 川芎 金银花 何首乌 酸枣仁 玄参 黄连 生地黄 红花 火麻仁 白鲜皮 浮小麦 百合
+0.983877 0.570175 0.627076 0.501864 0.332358 0.328374 0.642376 0.611773 0.617417 0.480163 0.528399 0.593382
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
+174. 
+patient tongue id: 03282238173263_2_6
+label yaofang:
+党参 白术 枳实 附子 干姜 桑寄生 火麻仁 炙甘草 紫苏叶
+0.519227 0.378666 0.370221 0.390342 0.38819 0.3523
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.500000, recall: 0.333333, error: 0.500000
+175. 
+patient tongue id: 04201438535233_1_4_7
+label yaofang:
+甘草 麦冬 太子参 枸杞子 丹参 玄参 生地黄 牡丹皮 知母 山药 天花粉 北沙参
+0.445173 0.364576 0.399598 0.563062 0.370821 0.303529 0.328868
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 丹参 牛膝
+
+------Score: precision: 0.285714, recall: 0.166667, error: 0.714286
+176. 
+patient tongue id: 03101921374709_1_4
+label yaofang:
+当归 太子参 黄芪 鸡血藤 白术 海螵蛸 浙贝母 山药 砂仁 补骨脂 女贞子 山慈菇 蛇舌草 稻芽
+0.337695 0.400994 0.328909 0.552441 0.450159 0.434743
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 北沙参
+
+------Score: precision: 0.333333, recall: 0.142857, error: 0.666667
+177. 
+patient tongue id: 01040654075894_5_6
+label yaofang:
+甘草 法半夏 茯苓 薏苡仁 茜草 天麻 鳖甲 款冬花 紫菀 百部 苦杏仁 蜈蚣 白花蛇舌 红豆杉 龙葵果
+0.883991 0.302539 0.507122 0.479681 0.371135 0.390921
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻
+
+------Score: precision: 0.500000, recall: 0.200000, error: 0.500000
+178. 
+patient tongue id: 04282037541702_5
+label yaofang:
+陈皮 黄芩 黄连 赤芍 黄柏 郁金 白茅根 枇杷叶 夏枯草 北沙参 白扁豆 东风桔 咸竹蜂
+0.340893 0.352206 0.321823 0.504798 0.330823
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+179. 
+patient tongue id: 03290656123143_3_4
+label yaofang:
+甘草 川芎 薏苡仁 党参 黄芪 白术 熟附子 赤芍 山药 干姜 白芷 菟丝子 蔓荆子 鳖甲 蒺藜 土鳖虫
+0.975339 0.56661 0.595196 0.456249 0.314099 0.329815 0.613359 0.54475 0.542978 0.415209 0.450369 0.503568
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.312500, error: 0.583333
+180. 
+patient tongue id: 06190149568031_1_2
+label yaofang:
+甘草 茯苓 党参 白术 酸枣仁 丹参 山药 天麻 菟丝子 益母草 鳖甲 蜈蚣 天山雪莲 半枝莲 红豆杉
+0.982875 0.56721 0.608302 0.44648 0.325462 0.319468 0.659151 0.557268 0.562222 0.424135 0.469282 0.539279
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
+181. 
+patient tongue id: 03221944325654_1_4
+label yaofang:
+甘草 白芍 茯苓 生地黄 杜仲 山药 山茱萸 车前子 天麻 桑寄生 猪苓 茺蔚子 泽兰
+0.827132 0.443117 0.46055 0.418852 0.586165 0.401726
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.333333, recall: 0.153846, error: 0.666667
+182. 
+patient tongue id: 06072239555962_4
+label yaofang:
+甘草 柴胡 白芍 枳壳 黄芩 丹参 苍术 山药 车前子 菟丝子 益母草 补骨脂 女贞子
+0.897726 0.507104 0.518923 0.454668 0.306772 0.50749 0.43849 0.467089 0.354621 0.375362 0.429506
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.181818, recall: 0.153846, error: 0.818182
+183. 
+patient tongue id: 04272306317116_9
+label yaofang:
+麻黄 前胡 半夏 防风 细辛 白芷 白前 百部 紫苏子 炙甘草 辛夷 紫苏梗 广藿香 苍耳子
+0.413956 0.860775 0.468132 0.926579 0.538518 0.632726 0.302538 0.408088 0.387302 0.421117 0.881636 0.893279 0.840414 0.888533 0.974329 0.485985 0.302696 0.579474 0.543302 0.798139
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.500000, recall: 0.714286, error: 0.500000
+184. 
+patient tongue id: 03151940332754_5_7
+label yaofang:
+桃仁 太子参 黄芪 白术 浙贝母 杜仲 白茅根 生半夏 砂仁 土鳖虫 合欢皮 山慈菇 蛇舌草 鲜龙葵果
+0.379955 0.374736 0.543411 0.46004 0.322503 0.314698
+predicted yaofang:
+甘草 茯苓 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.333333, recall: 0.142857, error: 0.666667
+185. 
+patient tongue id: 05131456329234_1_2
+label yaofang:
+甘草 茯苓 党参 酸枣仁 生地黄 赤芍 天麻 鳖甲 补骨脂 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.98904 0.586329 0.637615 0.469593 0.346491 0.336779 0.6886 0.623946 0.62385 0.481108 0.534256 0.608294
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.714286, error: 0.166667
+186. 
+patient tongue id: 05251937575866_1_2
+label yaofang:
+甘草 柴胡 枳壳 黄芩 枸杞子 杜仲 郁金 厚朴 莪术 麦芽 北沙参 蜈蚣 合欢皮 预知子
+0.624062 0.432653 0.356303 0.516273 0.623152 0.325828 0.375009 0.337851 0.304296 0.319334
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 杜仲 厚朴 砂仁 北沙参 蜈蚣
+
+------Score: precision: 0.500000, recall: 0.357143, error: 0.500000
+187. 
+patient tongue id: 02190530393201_2_6
+label yaofang:
+甘草 茯苓 荆芥 金银花 牡丹皮 山药 山茱萸 地黄 天麻 白花蛇舌草 白鲜皮 蜈蚣 半枝莲 醋鳖甲
+0.992285 0.591528 0.647938 0.504971 0.350555 0.348484 0.708125 0.640714 0.65743 0.496539 0.55648 0.652862
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+188. 
+patient tongue id: 05092059497731_4
+label yaofang:
+甘草 黄芩 法半夏 茯苓 桔梗 金银花 连翘 鱼腥草 浙贝母 桑白皮 款冬花 紫菀 苦杏仁 紫苏梗
+0.981186 0.562206 0.62242 0.446981 0.336652 0.319506 0.664437 0.568286 0.571128 0.427528 0.477109 0.54846
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
+189. 
+patient tongue id: 02182015027796_1_6
+label yaofang:
+甘草 柴胡 白芍 当归 茯苓 党参 鸡血藤 白术 酸枣仁 黄连 乌梅 补骨脂 麸炒枳壳
+0.9561 0.533928 0.562734 0.447452 0.540602 0.450787 0.465221 0.333716 0.359328 0.398287
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.400000, recall: 0.307692, error: 0.600000
+190. 
+patient tongue id: 05042016057503_7_4_6
+label yaofang:
+甘草 龙骨 牡蛎 党参 赤芍 莪术 北沙参 女贞子 首乌藤 木蝴蝶 合欢皮 墨旱莲
+0.466887 0.367447 0.350036 0.445247 0.507636 0.371783 0.371537 0.333016 0.347739 0.308816
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝 泽泻 车前子 天麻
+
+------Score: precision: 0.200000, recall: 0.166667, error: 0.800000
+191. 
+patient tongue id: 04182001138946_2_5
+label yaofang:
+甘草 陈皮 法半夏 茯苓 桔梗 芦根 牛蒡子 浙贝母 苍术 厚朴 鳖甲 板蓝根 忍冬藤 白花蛇舌 天山雪莲 岗梅根
+0.941974 0.537911 0.561869 0.460342 0.301252 0.508704 0.48058 0.477917 0.368043 0.395201 0.422952
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.454545, recall: 0.312500, error: 0.545455
+192. 
+patient tongue id: 02202219177280_6_4
+label yaofang:
+甘草 法半夏 党参 酸枣仁 竹茹 浙贝母 郁金 天麻 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 合欢花 半枝莲
+0.934702 0.533238 0.552879 0.44465 0.317325 0.521433 0.44031 0.453267 0.333585 0.357733 0.393615
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.533333, error: 0.272727
+193. 
+patient tongue id: 03180154085892_6
+label yaofang:
+柴胡 大枣 茯苓 防风 连翘 太子参 昆布 海藻 乌梅 石斛 白花蛇舌草 猫爪草 山慈菇
+0.33987 0.311932 0.346283 0.304799 0.384311 0.372025 0.373233 0.554986
+predicted yaofang:
+白芍 茯苓 党参 黄芪 白术 海螵蛸 姜半夏 炙甘草
+
+------Score: precision: 0.125000, recall: 0.076923, error: 0.875000
+194. 
+patient tongue id: 04120519530407_1_2_6
+label yaofang:
+甘草 白芍 大枣 茯苓 薏苡仁 党参 郁金 山药 天麻 鳖甲 虎杖 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.981568 0.568331 0.599065 0.477557 0.303681 0.318793 0.608704 0.578174 0.579225 0.451783 0.483333 0.536512
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.600000, error: 0.250000
+195. 
+patient tongue id: 06111039383433_4_6
+label yaofang:
+甘草 柴胡 白芍 法半夏 茯苓 党参 昆布 海藻 浙贝母 牡丹皮 郁金 山药 莪术 夏枯草 白花蛇舌 黄药子
+0.966069 0.559283 0.594847 0.453881 0.308872 0.328472 0.598425 0.529343 0.523586 0.397213 0.439775 0.481103
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.312500, error: 0.583333
+196. 
+patient tongue id: 06031532032162_1_2
+label yaofang:
+法半夏 前胡 桔梗 防风 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 炒紫苏子 蜜麻黄 麸炒白术
+0.414523 0.86654 0.457546 0.932526 0.53879 0.643982 0.307346 0.417047 0.396117 0.423823 0.889129 0.901653 0.852395 0.895986 0.977063 0.485566 0.583694 0.555252 0.81077
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.684211, recall: 0.812500, error: 0.315789
+197. 
+patient tongue id: 04072024072540_1_4_7
+label yaofang:
+陈皮 茯苓 黄芪 白术 熟地黄 牡丹皮 郁金 山药 山茱萸 砂仁 鸡内金 北沙参 益智
+0.543109 0.386288 0.394926 0.328568 0.664817 0.664491 0.378595 0.476049 0.369738 0.327935 0.369654 0.315743
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.500000, recall: 0.461538, error: 0.500000
+198. 
+patient tongue id: 04151218075798_1_4
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 蜜麻黄
+0.386189 0.316813 0.68775
+predicted yaofang:
+茯苓 黄芪 炙甘草
+
+------Score: precision: 0.333333, recall: 0.066667, error: 0.666667
+199. 
+patient tongue id: 04222240029844_2_4
+label yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 麦冬 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.437749 0.82765 0.456997 0.910513 0.529622 0.629325 0.328593 0.401472 0.381573 0.303716 0.40448 0.862997 0.875525 0.831465 0.879871 0.314195 0.959683 0.490281 0.307999 0.575652 0.55541 0.787856
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.636364, recall: 0.933333, error: 0.363636
+200. 
+patient tongue id: 01182120071674_6_4
+label yaofang:
+甘草 茯苓 薏苡仁 远志 党参 丹参 浙贝母 郁金 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲
+0.784326 0.500655 0.432377 0.393773
+predicted yaofang:
+甘草 茯苓 党参 白术
+
+------Score: precision: 0.750000, recall: 0.214286, error: 0.250000
+201. 
+patient tongue id: 04141855449311_1_4
+label yaofang:
+法半夏 茯苓 前胡 桔梗 防风 薄荷 荆芥穗 款冬花 紫菀 百部 炙甘草 紫苏梗 蜜麻黄
+0.416721 0.821282 0.450416 0.897414 0.509664 0.617544 0.316004 0.398863 0.387607 0.305325 0.414677 0.848277 0.859324 0.814683 0.862189 0.960736 0.468185 0.561972 0.540756 0.774962
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.550000, recall: 0.846154, error: 0.450000
+202. 
+patient tongue id: 02142147380561_2_1_4
+label yaofang:
+甘草 白芍 川芎 枸杞子 白术 杜仲 牛膝 菊花 天麻 蔓荆子 桑寄生 麦芽 地龙 蒺藜 粉葛
+0.953859 0.545266 0.558237 0.467102 0.317824 0.326066 0.570518 0.522512 0.538807 0.42175 0.454818 0.521024
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+203. 
+patient tongue id: 01122347198413_6_4
+label yaofang:
+甘草 柴胡 白芍 香附 枳壳 法半夏 茯苓 党参 丹参 郁金 山药 薤白 降香 川加皮
+0.97258 0.566463 0.588772 0.469744 0.313928 0.338021 0.580239 0.541991 0.538297 0.418016 0.447724 0.490657
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+204. 
+patient tongue id: 02191640433472_4_6_7
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 桃仁 远志 浙贝母 薤白 瓜蒌皮 款冬花 紫菀 白前 降香 骨碎补
+0.806683 0.470513 0.449383 0.406866 0.310385
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻
+
+------Score: precision: 0.400000, recall: 0.133333, error: 0.600000
+205. 
+patient tongue id: 01091940447099_1_4
+label yaofang:
+甘草 枳壳 茯苓 薏苡仁 远志 党参 白术 郁金 山药 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.896266 0.510325 0.48997 0.504849 0.302627 0.350252 0.345116 0.454257
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣
+
+------Score: precision: 1.000000, recall: 0.500000, error: 0.000000
+206. 
+patient tongue id: 03091907518402_4_1
+label yaofang:
+甘草 茯苓 党参 白术 酸枣仁 丹参 生地黄 天麻 鳖甲 莪术 浮小麦 首乌藤 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.965654 0.524294 0.564829 0.572442 0.313779 0.550296 0.515947 0.623532 0.391775 0.450566 0.552309
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.909091, recall: 0.625000, error: 0.090909
+207. 
+patient tongue id: 02202304283951_7
+label yaofang:
+甘草 柴胡 茯苓 桃仁 党参 延胡索 赤芍 牡丹皮 川楝子 杜仲 乌药 菟丝子 五灵脂 吴茱萸
+0.984529 0.57409 0.608936 0.473721 0.316779 0.320304 0.635557 0.590198 0.589767 0.457053 0.493664 0.553482
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+208. 
+patient tongue id: 04052125326499_6
+label yaofang:
+陈皮 枳壳 党参 延胡索 川楝子 乌药 佛手 紫苏梗
+0.415884 0.394078 0.353285
+predicted yaofang:
+甘草 茯苓 党参
+
+------Score: precision: 0.333333, recall: 0.125000, error: 0.666667
+209. 
+patient tongue id: 03231111289022_5_6
+label yaofang:
+甘草 黄芩 法半夏 金银花 牛蒡子 薏苡仁 荆芥穗 天麻 鳖甲 苦杏仁 蜈蚣 天山雪莲 半枝莲 红豆杉 贯众
+0.566098 0.400251 0.408248 0.478189 0.481381
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.066667, error: 0.800000
+210. 
+patient tongue id: 02161931499928_6_2
+label yaofang:
+甘草 白术 柏子仁 枳实 肉桂 大黄 附片
+0.532558 0.373302 0.375078 0.411867 0.424886 0.314695
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+211. 
+patient tongue id: 02212111194915_4_1
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.368775 0.591581 0.469935 0.647463 0.416012 0.473454 0.331365 0.342221 0.330669 0.351892 0.597613 0.588672 0.567425 0.612379 0.332795 0.767556 0.382551 0.446455 0.431905 0.550832
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.750000, recall: 1.000000, error: 0.250000
+212. 
+patient tongue id: 05022127203511_6_4
+label yaofang:
+甘草 川芎 党参 生地黄 杜仲 牛膝 细辛 天麻 全蝎 桑寄生 鳖甲 续断 天山雪莲 半枝莲
+0.53822 0.374299 0.489764 0.311241
+predicted yaofang:
+甘草 法半夏 茯苓 炙甘草
+
+------Score: precision: 0.250000, recall: 0.071429, error: 0.750000
+213. 
+patient tongue id: 06190210439274_2_1
+label yaofang:
+甘草 茯苓 桔梗 太子参 鸡血藤 白术 浙贝母 白茅根 地黄 补骨脂 白花蛇舌草 醋鳖甲 岗梅
+0.866901 0.308158 0.502072 0.509851 0.430261 0.426536 0.328427 0.367261
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.375000, recall: 0.230769, error: 0.625000
+214. 
+patient tongue id: 06022234091124_1_4_7
+label yaofang:
+甘草 陈皮 茯苓 半夏 党参 白术 海螵蛸 杜仲 厚朴 僵蚕 桑寄生 鸡内金 苦杏仁 紫苏子 紫苏叶 三七粉
+0.509977 0.39784 0.3704 0.562938 0.475406 0.333779
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴
+
+------Score: precision: 0.833333, recall: 0.312500, error: 0.166667
+215. 
+patient tongue id: 05172109374413_2_6
+label yaofang:
+甘草 茯苓 太子参 白术 酸枣仁 红花 山药 山茱萸 天麻 白花蛇舌草 首乌藤 蜈蚣 半枝莲 醋鳖甲
+0.996105 0.622001 0.676417 0.472032 0.341427 0.328701 0.742189 0.683685 0.669852 0.518427 0.575282 0.656623
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+216. 
+patient tongue id: 05042129390042_6_4
+label yaofang:
+白芍 当归 木香 党参 白术 酸枣仁 肉桂 肉苁蓉 诃子 炙甘草
+0.718112 0.430022 0.441302 0.34717 0.473816
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.400000, recall: 0.200000, error: 0.600000
+217. 
+patient tongue id: 06080138238120_4_6
+label yaofang:
+甘草 川芎 法半夏 茯苓 龙骨 远志 党参 鸡血藤 酸枣仁 龙眼肉 丹参 知母 浮小麦 合欢花
+0.835508 0.471402 0.515447 0.424712 0.461124 0.334347
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
+218. 
+patient tongue id: 02212030556008_2_5
+label yaofang:
+甘草 白芍 川芎 桔梗 浙贝母 牛膝 天花粉 夏枯草 白花蛇舌草 浮小麦 蜂房 醋鳖甲 骨碎补 南杏仁
+0.948518 0.536879 0.560355 0.443674 0.300473 0.316686 0.547259 0.468047 0.474443 0.361782 0.386413 0.427751
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.083333, recall: 0.071429, error: 0.916667
+219. 
+patient tongue id: 05042056275507_4
+label yaofang:
+甘草 防风 丹参 生地黄 牡丹皮 乌梅 紫草 莪术 珍珠母 白鲜皮 紫苏叶 土茯苓 徐长卿
+0.705017 0.378642 0.389466 0.467762 0.442243
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
+220. 
+patient tongue id: 01250650350883_5
+label yaofang:
+甘草 川芎 茯苓 桔梗 荆芥 防风 金银花 浙贝母 桑白皮 款冬花 苦杏仁 辛夷 炒苍耳子 贯众
+0.974345 0.562383 0.603271 0.470879 0.338195 0.345151 0.623199 0.560075 0.56196 0.440206 0.476867 0.5327
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.166667, recall: 0.142857, error: 0.833333
+221. 
+patient tongue id: 06191332022646_2
+label yaofang:
+甘草 茯苓 远志 党参 酸枣仁 生地黄 牡丹皮 杜仲 山药 山茱萸 鳖甲 金樱子 桑螵蛸 锁阳 益智 合欢花
+0.978462 0.564661 0.599003 0.437945 0.31306 0.315668 0.634227 0.543783 0.533875 0.408554 0.444176 0.493802
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.375000, error: 0.500000
+222. 
+patient tongue id: 06041110499392_2_4
+label yaofang:
+法半夏 茯苓 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.361367 0.507784 0.456955 0.55972 0.380916 0.422632 0.318319 0.308896 0.309858 0.511803 0.534745 0.513344 0.562752 0.346762 0.767332 0.335854 0.384457 0.382818 0.487243
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.736842, recall: 0.933333, error: 0.263158
+223. 
+patient tongue id: 02202242230635_5
+label yaofang:
+甘草 黄芩 法半夏 茯苓 前胡 桔梗 牛蒡子 浙贝母 桑白皮 莱菔子 款冬花 枇杷叶 苦杏仁 紫苏子
+0.927388 0.540237 0.518872 0.402946 0.442996 0.36917 0.374963
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.285714, recall: 0.142857, error: 0.714286
+224. 
+patient tongue id: 03141922419578_4
+label yaofang:
+甘草 法半夏 茯苓 前胡 桔梗 防风 薄荷 荆芥穗 紫菀 百部 紫苏梗 广藿香
+0.425972 0.870841 0.460611 0.93466 0.551004 0.650273 0.308623 0.418992 0.402444 0.303974 0.438898 0.890718 0.906237 0.85296 0.897295 0.976651 0.502459 0.318642 0.595187 0.55672 0.810411
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.476190, recall: 0.833333, error: 0.523810
+225. 
+patient tongue id: 06181859076194_6_1
+label yaofang:
+甘草 茯苓 党参 黄芪 白术 丹参 山药 菟丝子 益母草 鳖甲 虎杖 建曲 黄精 川加皮 土鳖虫 鹿衔草
+0.646665 0.400169 0.49106 0.332186 0.311414 0.316377 0.394805
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 丹参 天麻
+
+------Score: precision: 0.857143, recall: 0.375000, error: 0.142857
+226. 
+patient tongue id: 03161414543342_1_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 太子参 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.35136 0.658327 0.473841 0.708783 0.421089 0.488689 0.311345 0.340182 0.32164 0.345313 0.653685 0.635749 0.621203 0.653307 0.308162 0.812135 0.380635 0.444966 0.430763 0.58491
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.750000, recall: 0.937500, error: 0.250000
+227. 
+patient tongue id: 04252005127007_1_6
+label yaofang:
+甘草 白芍 川芎 羌活 独活 牛膝 细辛 车前子 干姜 仙茅 蜈蚣 姜黄 海桐皮 鹿衔草
+0.401586 0.477433 0.415129 0.334738 0.429958 0.432002 0.359912 0.660401 0.687443
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.222222, recall: 0.142857, error: 0.777778
+228. 
+patient tongue id: 04071943149083_5
+label yaofang:
+柴胡 香附 陈皮 半夏 薏苡仁 玄参 枳实 莱菔子 火麻仁 茵陈 扁豆花 鸡内金 虎杖 珍珠母
+0.395684 0.355036 0.345542 0.384938 0.480735 0.317504 0.328354
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 海螵蛸 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+229. 
+patient tongue id: 06171333445688_1_4
+label yaofang:
+当归 木香 龙骨 远志 党参 黄芪 鸡血藤 白术 柏子仁 栀子 淡豆豉 炙甘草 百合 紫苏叶
+0.548875 0.309999 0.396026 0.381496 0.433498
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+230. 
+patient tongue id: 04071911519201_4
+label yaofang:
+法半夏 茯苓 前胡 防风 细辛 白芷 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.375935 0.620096 0.45299 0.704189 0.401368 0.484165 0.315743 0.302418 0.633237 0.629433 0.627253 0.683485 0.357136 0.822275 0.381952 0.423231 0.424312 0.584615
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.722222, recall: 0.928571, error: 0.277778
+231. 
+patient tongue id: 02272223316068_6_1
+label yaofang:
+麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 青蒿 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
+0.392335 0.463518 0.40961 0.343834 0.423117 0.438636 0.343316 0.631411 0.659854 0.300761
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.400000, recall: 0.266667, error: 0.600000
+232. 
+patient tongue id: 06051116119107_1_2
+label yaofang:
+甘草 枳壳 木香 党参 黄芪 丹参 海螵蛸 厚朴 莱菔子 鸡内金 草豆蔻 六神曲
+0.442319 0.335105 0.329685 0.456738 0.371545 0.363344 0.300006 0.371682 0.35967 0.409262 0.347555 0.314953
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 天麻 制何首乌
+
+------Score: precision: 0.333333, recall: 0.333333, error: 0.666667
+233. 
+patient tongue id: 01190647240629_6_4_2
+label yaofang:
+甘草 白芍 陈皮 葛根 木香 羌活 苍术 厚朴 砂仁 天麻 豆蔻 紫苏梗 广藿香 蜈蚣 半枝莲 醋鳖甲
+0.973262 0.569254 0.577015 0.446468 0.31617 0.552858 0.511202 0.4993 0.388439 0.409006 0.441836
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.250000, error: 0.636364
+234. 
+patient tongue id: 01061618022755_5_6
+label yaofang:
+甘草 枳壳 法半夏 当归 茯苓 连翘 远志 党参 白术 黄连 胆南星 莱菔子 白芷 麦芽
+0.731359 0.41749 0.32043 0.497833 0.45455 0.364431 0.321694 0.466133
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝 天麻
+
+------Score: precision: 0.375000, recall: 0.214286, error: 0.625000
+235. 
+patient tongue id: 05042018320795_1_4_7
+label yaofang:
+甘草 牡蛎 黄芪 白术 赤芍 浙贝母 郁金 芡实 鸡内金 北沙参 紫苏梗 土鳖虫 红豆杉 山慈菇 蛇舌草
+0.449358 0.340382 0.675193 0.600254 0.435845 0.326865
+predicted yaofang:
+甘草 茯苓 黄芪 白术 厚朴 鸡内金
+
+------Score: precision: 0.666667, recall: 0.266667, error: 0.333333
+236. 
+patient tongue id: 03171447453456_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 蜜麻黄
+0.417103 0.817432 0.456552 0.896745 0.520929 0.608775 0.311095 0.404934 0.392538 0.311709 0.414558 0.845848 0.859332 0.80881 0.858379 0.955082 0.472097 0.30988 0.558287 0.538096 0.769207
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.619048, recall: 0.928571, error: 0.380952
+237. 
+patient tongue id: 01061619043480_1_2_4
+label yaofang:
+甘草 法半夏 茯苓 薏苡仁 黄芪 白术 熟附子 天麻 鳖甲 败酱草 蜈蚣 半枝莲 红豆杉
+0.947362 0.543491 0.551029 0.459534 0.312754 0.531693 0.482681 0.487823 0.374992 0.398239 0.437184
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.636364, recall: 0.538462, error: 0.363636
+238. 
+patient tongue id: 03152039295956_1_3
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.475226 0.372591 0.419437 0.361225 0.34107
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.800000, recall: 0.307692, error: 0.200000
+239. 
+patient tongue id: 05262057517765_4_6
+label yaofang:
+甘草 黄芩 法半夏 前胡 五味子 细辛 桑白皮 干姜 款冬花 川贝母 白前 苦杏仁 紫苏子 炙麻黄
+0.921711 0.525202 0.530682 0.465324 0.322565 0.5369 0.493495 0.520444 0.397612 0.425784 0.491257
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.090909, recall: 0.071429, error: 0.909091
+240. 
+patient tongue id: 02020818582951_2_7_6
+label yaofang:
+甘草 茯苓 龙骨 牡蛎 桃仁 酸枣仁 杜仲 黄柏 知母 钩藤 桑寄生 淫羊藿 仙茅 浮小麦 谷精草
+0.993623 0.592834 0.641978 0.496765 0.349737 0.339821 0.713914 0.648095 0.669306 0.505275 0.559561 0.655284
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+241. 
+patient tongue id: 01042346471467_1_7
+label yaofang:
+桂枝 甘草 川芎 法半夏 党参 黄芪 丹参 红花 薤白 水蛭 莪术 地龙 麸炒枳壳
+0.983973 0.564374 0.609773 0.494046 0.359255 0.338616 0.678093 0.598116 0.625541 0.467687 0.524906 0.62118
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.166667, recall: 0.153846, error: 0.833333
+242. 
+patient tongue id: 06190521032351_1_4
+label yaofang:
+甘草 柴胡 当归 薏苡仁 党参 黄芪 丹参 熟地黄 牡丹皮 川楝子 败酱草 皂角刺 女贞子 广升麻
+0.944306 0.530663 0.559946 0.457683 0.302811 0.530243 0.48561 0.492064 0.377317 0.406762 0.443832
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.181818, recall: 0.142857, error: 0.818182
+243. 
+patient tongue id: 04062219418873_1_2_4
+label yaofang:
+当归 党参 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子
+0.499258 0.402945 0.434361 0.407269 0.310293 0.325686
+predicted yaofang:
+甘草 茯苓 党参 黄芪 丹参 天麻
+
+------Score: precision: 0.333333, recall: 0.181818, error: 0.666667
+244. 
+patient tongue id: 01132133136618_1_6_7
+label yaofang:
+甘草 龙骨 远志 党参 何首乌 酸枣仁 生地黄 栀子 牡丹皮 天麻 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.93439 0.516571 0.532715 0.440678 0.534165 0.444622 0.474009 0.34946 0.369751 0.426363
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.800000, recall: 0.500000, error: 0.200000
+245. 
+patient tongue id: 03090806214320_1_4
+label yaofang:
+甘草 薏苡仁 党参 鸡血藤 牡丹皮 山药 天麻 鳖甲 扁豆花 浮小麦 蜈蚣 白花蛇舌 天山雪莲 合欢花 半枝莲
+0.934333 0.514759 0.534457 0.480821 0.50886 0.478158 0.510431 0.377282 0.403018 0.461602
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.800000, recall: 0.533333, error: 0.200000
+246. 
+patient tongue id: 05262051059841_1_6
+label yaofang:
+甘草 黄芩 法半夏 前胡 桔梗 浙贝母 细辛 桑白皮 天麻 鳖甲 款冬花 建曲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.982595 0.564566 0.61455 0.494334 0.340439 0.332645 0.657643 0.582894 0.612615 0.452006 0.513328 0.615415
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.583333, recall: 0.437500, error: 0.416667
+247. 
+patient tongue id: 04150552024120_1_2_6
+label yaofang:
+甘草 当归 党参 黄芪 鸡血藤 丹参 生地黄 砂仁 天麻 鳖甲 补骨脂 紫苏梗 蜈蚣 天山雪莲 半枝莲
+0.821186 0.458586 0.522932 0.302811 0.418413 0.46483
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 天麻
+
+------Score: precision: 0.666667, recall: 0.266667, error: 0.333333
+248. 
+patient tongue id: 05191959444025_2_6
+label yaofang:
+甘草 香附 茯苓 桔梗 远志 党参 酸枣仁 浙贝母 知母 桑白皮 瓜蒌皮 枇杷叶 苦杏仁 合欢花
+0.982511 0.583604 0.606023 0.444802 0.30352 0.316417 0.616595 0.586641 0.560848 0.453996 0.485648 0.526612
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+249. 
+patient tongue id: 06130809082072_1_2
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.358941 0.360332 0.375328 0.300031 0.368511 0.568474 0.404766 0.393419 0.369795 0.353687 0.326405 0.329676 0.341769 0.353796 0.327648
+predicted yaofang:
+甘草 茯苓 桃仁 麦冬 党参 黄芪 丹参 牛膝 钩藤 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.666667, recall: 0.833333, error: 0.333333
+250. 
+patient tongue id: 01090030437084_1_3_6
+label yaofang:
+桂枝 白芍 川芎 当归 麦冬 党参 阿胶 牡丹皮 吴茱萸 姜半夏 炙甘草
+0.395309 0.335865 0.394096 0.330097 0.344445 0.482785
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.500000, recall: 0.272727, error: 0.500000
+251. 
+patient tongue id: 03151923165052_4_6
+label yaofang:
+甘草 茯苓 薏苡仁 白术 海螵蛸 山药 砂仁 姜半夏
+0.610091 0.407288 0.404235 0.323806 0.49096
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.600000, recall: 0.375000, error: 0.400000
+252. 
+patient tongue id: 06012133591797_6_4_7
+label yaofang:
+桂枝 甘草 茯苓 羌活 鸡血藤 白术 红花 赤芍 牡丹皮 天麻 僵蚕 粉葛 蜈蚣
+0.984978 0.57478 0.616388 0.456113 0.320458 0.314707 0.635906 0.572585 0.574396 0.438606 0.479027 0.547571
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.384615, error: 0.583333
+253. 
+patient tongue id: 04020804118017_6_4
+label yaofang:
+甘草 柴胡 白芍 陈皮 白术 山药 车前子 荆芥穗 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.835547 0.469223 0.485571 0.476951 0.363555 0.346165
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.285714, error: 0.333333
+254. 
+patient tongue id: 03151923561595_4_6
+label yaofang:
+柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
+0.443452 0.345174 0.412336 0.46699 0.439227 0.42109 0.367919 0.422673 0.314669 0.421328 0.467071 0.393534 0.379643 0.402139 0.398819 0.430462
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+255. 
+patient tongue id: 06190750555727_2_5
+label yaofang:
+甘草 前胡 桔梗 牛蒡子 浙贝母 天麻 瓜蒌皮 枇杷叶 白花蛇舌草 苦杏仁 蜈蚣 半枝莲 醋鳖甲 大青叶
+0.971538 0.550296 0.589989 0.492911 0.341148 0.332296 0.628768 0.575981 0.600961 0.464763 0.510431 0.594995
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+256. 
+patient tongue id: 06052025526771_5
+label yaofang:
+甘草 金银花 连翘 芦根 蒲公英 小蓟 荷叶 野菊花 香薷 百合 四季青 车前草
+0.430836 0.715176 0.452336 0.80745 0.486328 0.563538 0.34633 0.391958 0.380976 0.340513 0.403397 0.753497 0.763251 0.722434 0.775925 0.342473 0.888261 0.463294 0.330813 0.525431 0.510564 0.688184 0.315065
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+257. 
+patient tongue id: 02151909348614_4
+label yaofang:
+陈皮 法半夏 前胡 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.386694 0.775741 0.476537 0.848834 0.498497 0.548799 0.31537 0.396871 0.363982 0.300142 0.388686 0.792354 0.800181 0.735686 0.787885 0.908062 0.440829 0.516375 0.468557 0.697725
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.550000, recall: 0.916667, error: 0.450000
+258. 
+patient tongue id: 04150840560973
+label yaofang:
+桂枝 葛根 桃仁 延胡索 杜仲 桑寄生 桑枝 盐山萸肉 蚕沙 威灵仙 豨莶草 炒山楂
+0.39732 0.338262 0.462635 0.317159 0.43607 0.557175 0.472354 0.403745 0.474481 0.419881 0.473151 0.468365 0.473002 0.351558 0.486866 0.487174 0.488812
+predicted yaofang:
+甘草 茯苓 桃仁 麦冬 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.058824, recall: 0.083333, error: 0.941176
+259. 
+patient tongue id: 04241859190325_1_4
+label yaofang:
+麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
+0.356926 0.442305 0.344855 0.320381 0.393589 0.37929 0.300473 0.365641 0.539005 0.656505 0.312122
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.454545, recall: 0.357143, error: 0.545455
+260. 
+patient tongue id: 02161857328336_4
+label yaofang:
+法半夏 前胡 防风 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.411292 0.747631 0.457273 0.83432 0.482553 0.575631 0.323953 0.379465 0.362934 0.312465 0.394862 0.781465 0.782479 0.752528 0.798086 0.32469 0.909931 0.452108 0.522799 0.51467 0.710535
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.666667, recall: 1.000000, error: 0.333333
+261. 
+patient tongue id: 06072124090365_4_1
+label yaofang:
+甘草 枳壳 连翘 党参 白术 酸枣仁 山药 莱菔子 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.969123 0.544621 0.575886 0.4818 0.30377 0.578986 0.533924 0.567519 0.424946 0.459633 0.539481
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.909091, recall: 0.714286, error: 0.090909
+262. 
+patient tongue id: 02241408255759_1_4
+label yaofang:
+桂枝 白芍 大枣 当归 黄芪 细辛 通草 水蛭 炙甘草
+0.569264 0.373929 0.394527 0.424572 0.444774
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.200000, recall: 0.111111, error: 0.800000
+263. 
+patient tongue id: 02221240487142_1_2
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.337679 0.428158 0.377101 0.437919
+predicted yaofang:
+甘草 茯苓 黄芪 炙甘草
+
+------Score: precision: 0.750000, recall: 0.230769, error: 0.250000
+264. 
+patient tongue id: 02190456571456_5_6
+label yaofang:
+甘草 柴胡 川芎 黄芩 桔梗 金银花 白术 浙贝母 白芷 皂角刺 辛夷 苍耳子 蜂房
+0.9527 0.530321 0.542921 0.412147 0.501058 0.403213 0.424587 0.309435 0.346741
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.222222, recall: 0.153846, error: 0.777778
+265. 
+patient tongue id: 02190534212581_1_7_2
+label yaofang:
+甘草 茯苓 薏苡仁 党参 白术 山药 砂仁 天麻 鳖甲 莪术 白扁豆 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.969222 0.540403 0.598262 0.481232 0.346282 0.332252 0.638616 0.54469 0.5732 0.419951 0.478281 0.571448
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.916667, recall: 0.733333, error: 0.083333
+266. 
+patient tongue id: 06132026186905_1_4_6
+label yaofang:
+甘草 陈皮 半夏 黄芪 白术 海螵蛸 杜仲 牛膝 山药 厚朴 僵蚕 桑寄生 鸡内金 紫苏梗 蜈蚣 红豆杉
+0.440233 0.385318 0.317167 0.563117 0.597503 0.374736 0.311149 0.345803
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 厚朴 砂仁 北沙参
+
+------Score: precision: 0.625000, recall: 0.312500, error: 0.375000
+267. 
+patient tongue id: 03221305244162_1_2
+label yaofang:
+甘草 党参 浙贝母 山药 天麻 鳖甲 扁豆花 白扁豆 浮小麦 百合 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.870651 0.312921 0.4742 0.500663 0.435726 0.389705 0.321182
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.571429, recall: 0.285714, error: 0.428571
+268. 
+patient tongue id: 04131847561813_4_7
+label yaofang:
+甘草 川芎 茯苓 半夏 薏苡仁 黄芪 白术 浙贝母 杜仲 泽泻 僵蚕 白芷 蝉蜕 辛夷 紫苏叶 猫爪草 冬凌草
+0.550286 0.437646 0.352727 0.324769 0.374907
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.800000, recall: 0.235294, error: 0.200000
+269. 
+patient tongue id: 03301357578344_4
+label yaofang:
+甘草 陈皮 法半夏 葛根 前胡 桔梗 麦冬 玉竹 山药 款冬花 紫菀 北沙参 人参叶
+0.433868 0.785939 0.458304 0.878534 0.511522 0.593167 0.321604 0.377491 0.370681 0.38389 0.823109 0.838491 0.790054 0.847009 0.323931 0.943723 0.470268 0.31695 0.550799 0.519462 0.746468
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.333333, recall: 0.538462, error: 0.666667
+270. 
+patient tongue id: 06181704221521_2_1
+label yaofang:
+甘草 半夏 黄芪 枸杞子 黄连 牡丹皮 杜仲 僵蚕 莪术 柿蒂 枇杷叶 北沙参 赭石 紫苏叶 合欢皮 蛇舌草
+0.484293 0.420248 0.355787 0.512057 0.550733 0.358516 0.363662
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.571429, recall: 0.250000, error: 0.428571
+271. 
+patient tongue id: 04071240154242_2_4
+label yaofang:
+陈皮 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.324771 0.455778 0.46142 0.461275 0.342559 0.371569 0.305503 0.424535 0.422502 0.418538 0.451395 0.334562 0.676255 0.33994 0.301067 0.393992
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.687500, recall: 0.785714, error: 0.312500
+272. 
+patient tongue id: 06111044584201_7_2
+label yaofang:
+甘草 芦根 桃仁 远志 酸枣仁 生地黄 浙贝母 天麻 鳖甲 紫菀 蜈蚣 白花蛇舌 天山雪莲 半枝莲 土鳖虫
+0.991519 0.605145 0.655882 0.454154 0.36143 0.349389 0.715441 0.631672 0.621988 0.480323 0.536936 0.618421
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.533333, error: 0.333333
+273. 
+patient tongue id: 05201511329088_5
+label yaofang:
+甘草 茯苓 前胡 桔梗 金银花 浙贝母 天麻 鳖甲 诃子 苦杏仁 蜈蚣 木蝴蝶 白花蛇舌 天山雪莲 半枝莲 红豆杉
+0.989513 0.595526 0.631472 0.472706 0.325409 0.333301 0.666826 0.630717 0.619402 0.485742 0.529163 0.593357
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.500000, error: 0.333333
+274. 
+patient tongue id: 03061813160290_2_5
+label yaofang:
+甘草 桔梗 荆芥 金银花 玄参 浙贝母 地黄 天麻 白花蛇舌草 麦芽 白鲜皮 蜈蚣 蜂房 岗梅根 醋鳖甲
+0.9842 0.58174 0.602444 0.48951 0.309436 0.332807 0.608519 0.593553 0.594315 0.466257 0.496216 0.550768
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+275. 
+patient tongue id: 02212002549775_1_6
+label yaofang:
+甘草 茯苓 党参 黄芪 白术 山药 干姜 砂仁 天麻 鳖甲 豆蔻 白扁豆 蜈蚣 天山雪莲 半枝莲
+0.958214 0.529393 0.557819 0.443561 0.300831 0.303016 0.558546 0.415833 0.465652 0.325268 0.3823
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.909091, recall: 0.666667, error: 0.090909
+276. 
+patient tongue id: 06190134137826_6
+label yaofang:
+甘草 柴胡 白芍 茯苓 酸枣仁 竹茹 郁金 灯心草 厚朴 浮小麦 首乌藤 合欢花 麸炒枳壳
+0.868081 0.5131 0.486554 0.419564 0.395413 0.334988 0.357816
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.285714, recall: 0.153846, error: 0.714286
+277. 
+patient tongue id: 04112217493264_2_6
+label yaofang:
+甘草 龙骨 党参 白术 生地黄 黄柏 山药 山茱萸 地骨皮 糯稻根 银柴胡 胡黄连 淫羊藿 首乌藤 龟甲
+0.977557 0.567647 0.589544 0.446475 0.303093 0.321956 0.597114 0.528876 0.531608 0.400561 0.432963 0.489824
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
+278. 
+patient tongue id: 02211854096249_6
+label yaofang:
+龙骨 柏子仁 栀子 干姜 淡豆豉 天麻 蝉蜕 姜半夏 炙甘草 浮小麦 百合 紫苏叶 蜈蚣 合欢皮
+0.356381 0.425175 0.336408 0.315602 0.417957 0.395885 0.301041 0.33133 0.53257 0.648071 0.312291
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
+279. 
+patient tongue id: 02182318365359_1_2_6
+label yaofang:
+甘草 茯苓 党参 白术 生地黄 山药 青蒿 天麻 地骨皮 鳖甲 浮小麦 建曲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.928375 0.533598 0.521177 0.416893 0.457838 0.3917 0.406181 0.304037 0.335697
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 1.000000, recall: 0.562500, error: 0.000000
+280. 
+patient tongue id: 03012139128664_6_1
+label yaofang:
+甘草 茯苓 远志 党参 白术 山药 砂仁 天麻 赤石脂 鳖甲 建曲 蜈蚣 天山雪莲 半枝莲
+0.914255 0.518777 0.542972 0.460288 0.307872 0.485503 0.367056 0.413655 0.321142
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 1.000000, recall: 0.642857, error: 0.000000
+281. 
+patient tongue id: 03040910180364_2_7_6
+label yaofang:
+甘草 茯苓 连翘 薏苡仁 桃仁 党参 郁金 山药 砂仁 鳖甲 莪术 麦芽 紫苏梗 白花蛇舌
+0.975396 0.554992 0.58575 0.456705 0.310219 0.309556 0.607178 0.531852 0.543356 0.404655 0.439031 0.499748
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+282. 
+patient tongue id: 02202245359230_1_4_6
+label yaofang:
+甘草 前胡 黄连 浙贝母 细辛 厚朴 砂仁 鳖甲 白前 枇杷叶 粉葛 紫苏梗 蜈蚣 白花蛇舌 天山雪莲
+0.951599 0.545903 0.567142 0.472266 0.313362 0.327104 0.552946 0.51287 0.517948 0.406137 0.432723 0.475069
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.333333, error: 0.583333
+283. 
+patient tongue id: 04252320339922_2_4
+label yaofang:
+甘草 芦根 生地黄 浙贝母 郁金 天麻 鳖甲 蝉蜕 紫苏梗 威灵仙 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.950774 0.535752 0.568123 0.438081 0.310709 0.552237 0.476094 0.47037 0.364347 0.392419 0.422963
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.545455, recall: 0.428571, error: 0.454545
+284. 
+patient tongue id: 02182310202535_1_6
+label yaofang:
+甘草 独活 生地黄 延胡索 赤芍 细辛 天麻 桑寄生 鳖甲 补骨脂 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.919509 0.514527 0.52429 0.511195 0.33605 0.463396 0.418866 0.502155 0.317195 0.348193 0.397467
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.636364, recall: 0.500000, error: 0.363636
+285. 
+patient tongue id: 04301138541182_5_6
+label yaofang:
+甘草 川芎 羌活 党参 白术 酸枣仁 杜仲 牛膝 钩藤 菊花 天麻 白芷 桑寄生 麦芽 谷精子
+0.943097 0.531418 0.564261 0.439757 0.305517 0.536113 0.433637 0.446498 0.327779 0.355275 0.389781
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.266667, error: 0.636364
+286. 
+patient tongue id: 02161936191444_1_4
+label yaofang:
+麻黄 桂枝 白芍 川芎 当归 黄芪 鸡血藤 红花 嫩桑枝 威灵仙 蜈蚣 土鳖虫 姜黄
+0.339866 0.424125 0.323217 0.301563 0.350199 0.398799 0.38029 0.363438 0.485361 0.624738 0.313239
+predicted yaofang:
+柴胡 白芍 香附 茯苓 党参 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.090909, recall: 0.076923, error: 0.909091
+287. 
+patient tongue id: 05260624039219_1_7
+label yaofang:
+甘草 柴胡 党参 丹参 生地黄 延胡索 赤芍 青皮 天麻 鳖甲 王不留行 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.941479 0.536228 0.543953 0.481762 0.317981 0.510707 0.482529 0.508165 0.375591 0.406986 0.462277
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.500000, error: 0.272727
+288. 
+patient tongue id: 03312032190490_2_5
+label yaofang:
+甘草 川芎 黄芩 桔梗 麦冬 太子参 浙贝母 天花粉 鳖甲 广藿香 苍耳子 白花蛇舌 蜂房 四季青
+0.732406 0.407133 0.439007 0.479144
+predicted yaofang:
+甘草 茯苓 党参 白术
+
+------Score: precision: 0.250000, recall: 0.071429, error: 0.750000
+289. 
+patient tongue id: 06072116185055_4
+label yaofang:
+甘草 陈皮 薏苡仁 远志 党参 白术 牛膝 苍术 厚朴 佩兰 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.967793 0.551659 0.58551 0.439571 0.346046 0.331787 0.632244 0.536059 0.539636 0.421979 0.460492 0.526576
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.562500, error: 0.250000
+290. 
+patient tongue id: 03111527124442_1_6
+label yaofang:
+甘草 枳壳 茯苓 酸枣仁 丹参 山药 山茱萸 薤白 砂仁 瓜蒌皮 补骨脂 首乌藤 降香 合欢花
+0.953632 0.537404 0.570545 0.481234 0.320847 0.330346 0.582669 0.509595 0.547389 0.386332 0.435017 0.508286
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+291. 
+patient tongue id: 03111433583975_7_6
+label yaofang:
+甘草 白芍 当归 桃仁 党参 鸡血藤 白术 生地黄 熟附子 红花 延胡索 赤芍 全蝎 制川乌 麦芽 忍冬藤 络石藤
+0.964044 0.556065 0.564146 0.450705 0.308649 0.538538 0.515797 0.512408 0.409855 0.430125 0.474595
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.176471, error: 0.727273
+292. 
+patient tongue id: 03090840391203_6_1_2
+label yaofang:
+甘草 大枣 当归 茯苓 木香 远志 太子参 黄芪 白术 酸枣仁 地黄 砂仁 浮小麦 合欢花
+0.825447 0.306393 0.502973 0.445916 0.380904 0.331836
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻
+
+------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
+293. 
+patient tongue id: 02161927452714_5
+label yaofang:
+橘红 荆芥 防风 桑叶 菊花 桑白皮 白芷 鸡内金 枇杷叶 辛夷 紫苏叶 苍耳子
+0.573494 0.419544 0.322135 0.378437 0.546096 0.592787 0.355391 0.414267 0.352111 0.30568 0.328071 0.305045
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 蜈蚣
+
+------Score: precision: 0.083333, recall: 0.083333, error: 0.916667
+294. 
+patient tongue id: 04130629414181_6_2
+label yaofang:
+甘草 木香 党参 白术 玄参 厚朴 砂仁 天麻 肉苁蓉 鳖甲 火麻仁 麦芽 蜈蚣 天山雪莲 半枝莲
+0.775641 0.445584 0.421546 0.37854 0.541828 0.304509
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.266667, error: 0.333333
+295. 
+patient tongue id: 01141832049702_1_5_6
+label yaofang:
+甘草 茯苓 党参 白术 生地黄 牡丹皮 杜仲 山药 山茱萸 白茅根 茜草 女贞子 续断 广金钱草
+0.943263 0.536277 0.546732 0.477514 0.311103 0.327704 0.54648 0.509493 0.528965 0.407666 0.438425 0.4945
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
+296. 
+patient tongue id: 03231024504978_1_6
+label yaofang:
+甘草 茯苓 党参 白术 酸枣仁 杜仲 山药 天麻 桑寄生 白扁豆 续断 蜈蚣 半枝莲 醋鳖甲
+0.981974 0.562826 0.612971 0.497666 0.306158 0.322578 0.620544 0.566954 0.592769 0.429849 0.478221 0.554498
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+297. 
+patient tongue id: 02211903260256_1
+label yaofang:
+大枣 茯苓 薏苡仁 党参 白术 海螵蛸 山药 石斛 白扁豆 炙甘草
+0.520083 0.305056 0.404394 0.358863 0.414636 0.423844 0.300631 0.383319
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 浙贝母 炙甘草
+
+------Score: precision: 0.500000, recall: 0.400000, error: 0.500000
+298. 
+patient tongue id: 02191630582725_6
+label yaofang:
+甘草 茯苓 桃仁 麦冬 党参 赤芍 牡丹皮 山药 鳖甲 茵陈 虎杖 麦芽 黄精 土鳖虫
+0.5301 0.314114 0.430082 0.35798 0.365565 0.355697
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
+299. 
+patient tongue id: 02212012276430_1_7
+label yaofang:
+甘草 大枣 黄芪 鸡血藤 酸枣仁 生地黄 杜仲 山药 山茱萸 天麻 桑寄生 补骨脂 地龙 浮小麦 灯盏细辛
+0.988694 0.578066 0.633727 0.492597 0.358162 0.34775 0.682016 0.623337 0.633648 0.492918 0.538457 0.618121
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.266667, error: 0.666667
+300. 
+patient tongue id: 01211300052209_7
+label yaofang:
+甘草 白芍 胆南星 钩藤 僵蚕 地龙 蝉蜕 嫩桑枝 丝瓜络 豨莶草 宽筋藤 海风藤 徐长卿 三七粉
+0.35332 0.320543 0.382588 0.351814 0.309867 0.315656 0.622803 0.32105
+predicted yaofang:
+白芍 茯苓 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.125000, recall: 0.071429, error: 0.875000
+301. 
+patient tongue id: 03101902205051_6
+label yaofang:
+柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 乌药 豆蔻 姜半夏 炙甘草 紫苏梗
+0.586281 0.401029 0.420567 0.445821 0.447412
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+302. 
+patient tongue id: 05271854469478_2
+label yaofang:
+甘草 白芍 香附 丹参 五味子 栀子 钩藤 厚朴 天麻 菟丝子 金樱子 蒺藜 合欢皮
+0.898664 0.495642 0.487405 0.559234 0.364108 0.487943
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.333333, recall: 0.153846, error: 0.666667
+303. 
+patient tongue id: 05161925032456_1_5
+label yaofang:
+甘草 防风 金银花 薏苡仁 生地黄 牡丹皮 荆芥穗 皂角刺 蝉蜕 蒺藜 干鱼腥草 地肤子 麸炒苍术 炒僵蚕
+0.4173 0.691445 0.455932 0.784507 0.485591 0.549694 0.352368 0.395923 0.388185 0.34573 0.405507 0.735191 0.74859 0.698979 0.758511 0.339715 0.873895 0.459029 0.336781 0.510015 0.49779 0.670069 0.320772
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
+
+------Score: precision: 0.086957, recall: 0.142857, error: 0.913043
+304. 
+patient tongue id: 01090020278958_1
+label yaofang:
+桂枝 白芍 大枣 茯苓 白术 附子 大黄 天麻 天山雪莲
+0.495296 0.343324 0.383654 0.382548 0.398451 0.34319
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.500000, recall: 0.333333, error: 0.500000
+305. 
+patient tongue id: 02020849336048_2_7
+label yaofang:
+甘草 薏苡仁 党参 酸枣仁 熟附子 赤芍 山药 天麻 赤石脂 鳖甲 莪术 败酱草 蜈蚣 天山雪莲 合欢花 半枝莲
+0.983174 0.56593 0.610692 0.483016 0.335016 0.328897 0.648773 0.58598 0.60646 0.462664 0.505196 0.588479
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.562500, error: 0.250000
+306. 
+patient tongue id: 03141838487453_4
+label yaofang:
+陈皮 法半夏 茯苓 党参 黄芪 海螵蛸 肉桂 干姜 砂仁 炙甘草 广藿香 麸炒白术 麸炒苍术 甘松
+0.351548 0.555612 0.453056 0.596918 0.391257 0.416226 0.300845 0.547144 0.542721 0.506623 0.576403 0.346747 0.7355 0.340897 0.375158 0.357662 0.491369
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.294118, recall: 0.357143, error: 0.705882
+307. 
+patient tongue id: 03291902183138_4
+label yaofang:
+法半夏 前胡 桔梗 防风 荆芥穗 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 蜜麻黄 炒苍耳子
+0.33377 0.680703 0.457453 0.72314 0.412584 0.501782 0.316394 0.671213 0.652675 0.650906 0.675897 0.836484 0.369259 0.432228 0.40274 0.572974
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.687500, recall: 0.785714, error: 0.312500
+308. 
+patient tongue id: 03101846119948_4_1
+label yaofang:
+玉竹 丹参 海螵蛸 浙贝母 川牛膝 土茯苓 山慈菇 粉萆薢
+0.474347 0.352472 0.442387 0.302885 0.323865 0.407091 0.43179 0.315098 0.364677 0.457106
+predicted yaofang:
+甘草 柴胡 白芍 香附 茯苓 党参 白术 浙贝母 姜半夏 炙甘草
+
+------Score: precision: 0.100000, recall: 0.125000, error: 0.900000
+309. 
+patient tongue id: 01250630558797_1_4
+label yaofang:
+甘草 陈皮 薏苡仁 党参 山药 砂仁 天麻 鳖甲 茵陈 莪术 白扁豆 紫苏梗 广藿香 蜈蚣 天山雪莲 半枝莲
+0.933313 0.505812 0.553973 0.359274 0.321552 0.600422 0.304419
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 天麻 蜈蚣
+
+------Score: precision: 0.571429, recall: 0.250000, error: 0.428571
+310. 
+patient tongue id: 04131902036042_1_4_7
+label yaofang:
+麦冬 生地黄 牡丹皮 郁金 白茅根 大腹皮 猪苓 柿蒂 北沙参 赭石 玉米须 预知子 半边莲
+0.422085 0.797029 0.459336 0.881205 0.509615 0.585216 0.309576 0.35945 0.335463 0.354461 0.825565 0.832531 0.780276 0.843804 0.319508 0.942508 0.455579 0.300462 0.534553 0.512037 0.747067
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.047619, recall: 0.076923, error: 0.952381
+311. 
+patient tongue id: 06171159505866_1_4
+label yaofang:
+法半夏 前胡 防风 麦冬 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.410394 0.655674 0.462126 0.749437 0.451037 0.508391 0.339816 0.346892 0.328618 0.34648 0.688803 0.695274 0.655411 0.718487 0.360743 0.843052 0.419391 0.310587 0.475612 0.461672 0.626198
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.714286, recall: 0.937500, error: 0.285714
+312. 
+patient tongue id: 06111047385908_2_4
+label yaofang:
+甘草 川芎 桃仁 党参 杜仲 黄柏 肉桂 山药 菟丝子 益智仁 益母草 桑螵蛸 麦芽 醋香附 合欢花
+0.985549 0.575233 0.625089 0.452444 0.337711 0.332272 0.669173 0.580805 0.587111 0.443609 0.489924 0.574646
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+313. 
+patient tongue id: 06022217022998_1_4_7
+label yaofang:
+陈皮 当归 龙骨 黄芪 枸杞子 白术 杜仲 牛膝 山药 车前子 厚朴 麦芽 桑椹 紫苏叶 预知子
+0.413175 0.360524 0.354138 0.458364 0.479273 0.313923
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 海螵蛸
+
+------Score: precision: 0.333333, recall: 0.133333, error: 0.666667
+314. 
+patient tongue id: 03311656017417_1_6
+label yaofang:
+桃仁 党参 枸杞子 白术 熟地黄 杜仲 牛膝 砂仁 菟丝子 巴戟天 桑寄生 续断 制何首乌 艾叶
+0.446277 0.352343 0.413686 0.343309 0.367234
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+315. 
+patient tongue id: 01211203028841_7_4
+label yaofang:
+桂枝 柴胡 黄芩 牡蛎 干姜 天花粉 升麻 炙甘草
+0.783883 0.485343 0.430784 0.343982 0.329919
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+316. 
+patient tongue id: 04071432258249_3_4
+label yaofang:
+陈皮 法半夏 茯苓 党参 黄芪 海螵蛸 砂仁 炙甘草 广藿香 麸炒白术 麸炒苍术 甘松
+0.325422 0.500536 0.413427 0.489019 0.346632 0.386088 0.422561 0.518083 0.449872 0.490457 0.804257 0.350158 0.338232
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草 广藿香 蜜麻黄
+
+------Score: precision: 0.384615, recall: 0.416667, error: 0.615385
+317. 
+patient tongue id: 03151848008043_6
+label yaofang:
+麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 射干 紫菀 苦杏仁 姜半夏 炙甘草 龙脷叶
+0.325791 0.374711 0.441596 0.361271 0.305515 0.35918 0.433211 0.391172 0.333644 0.356292 0.523799 0.610054 0.313177
+predicted yaofang:
+甘草 柴胡 白芍 香附 茯苓 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.384615, recall: 0.357143, error: 0.615385
+318. 
+patient tongue id: 02281931253064_4
+label yaofang:
+大枣 党参 海藻 苍术 泽泻 荷叶 决明子 紫苏叶 焦山楂 芥子
+0.36597 0.346858 0.428052 0.328525 0.321673 0.378634 0.398872 0.337574 0.305688 0.340826 0.456029 0.551348
+predicted yaofang:
+甘草 柴胡 白芍 香附 茯苓 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.083333, recall: 0.100000, error: 0.916667
+319. 
+patient tongue id: 06082011522058_1_4
+label yaofang:
+甘草 茯苓 半夏 薏苡仁 黄芪 白术 浙贝母 牡丹皮 杜仲 石菖蒲 泽泻 僵蚕 莪术 蝉蜕 赭石 辛夷 紫苏叶 猫爪草 冬凌草
+0.590656 0.424457 0.364338 0.341798 0.557323 0.638202 0.343631 0.402037 0.359823 0.356981 0.318776
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 北沙参 蜈蚣
+
+------Score: precision: 0.545455, recall: 0.315789, error: 0.454545
+320. 
+patient tongue id: 05221914346645_1_4
+label yaofang:
+法半夏 茯苓 前胡 桔梗 防风 黄芪 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 蜜麻黄 麸炒白术
+0.441647 0.867818 0.452244 0.936456 0.548297 0.657268 0.309681 0.41282 0.401718 0.304678 0.444163 0.895603 0.910191 0.860128 0.904459 0.978732 0.512321 0.312514 0.601801 0.562297 0.814537
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.619048, recall: 0.866667, error: 0.380952
+321. 
+patient tongue id: 04272311010970_6
+label yaofang:
+柴胡 白芍 香附 枳壳 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
+0.632336 0.335491 0.355497 0.463589 0.452245
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.200000, recall: 0.100000, error: 0.800000
+322. 
+patient tongue id: 03141630584108_1_3_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.398549 0.348757 0.383689 0.431756 0.466498 0.411492 0.342791 0.404244 0.352463 0.406191 0.429205 0.371942 0.328235 0.382555 0.384649 0.387282
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.750000, recall: 1.000000, error: 0.250000
+323. 
+patient tongue id: 05220907253136_1_2
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.375146 0.360893 0.464749
+predicted yaofang:
+茯苓 黄芪 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+324. 
+patient tongue id: 02212011270440_2
+label yaofang:
+甘草 白芍 当归 白术 栀子 牡丹皮 牛膝 山药 山茱萸 地黄 天麻 肉苁蓉 火麻仁 珍珠母 浮小麦 制何首乌
+0.969722 0.561631 0.575242 0.463252 0.325461 0.575078 0.533095 0.539292 0.412409 0.443341 0.499331
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.250000, error: 0.636364
+325. 
+patient tongue id: 01132141507251_6_1
+label yaofang:
+甘草 党参 白术 酸枣仁 丹参 大腹皮 砂仁 天麻 鳖甲 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉
+0.955555 0.534513 0.563342 0.513822 0.334043 0.349364 0.579178 0.528447 0.570521 0.412908 0.462785 0.540233
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.666667, error: 0.166667
+326. 
+patient tongue id: 06121758067022_1
+label yaofang:
+甘草 川芎 当归 龙骨 牡蛎 桃仁 党参 黄芪 酸枣仁 红花 泽泻 磁石 糯稻根 浮小麦
+0.636842 0.448482 0.418551 0.413675
+predicted yaofang:
+甘草 茯苓 党参 白术
+
+------Score: precision: 0.500000, recall: 0.142857, error: 0.500000
+327. 
+patient tongue id: 05130635525900_2_1_4
+label yaofang:
+甘草 茯苓 防风 薏苡仁 党参 黄芪 白术 酸枣仁 五味子 郁金 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲
+0.967133 0.5633 0.563053 0.399275 0.3034 0.575639 0.466084 0.451857 0.342466 0.362723 0.390149
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.818182, recall: 0.562500, error: 0.181818
+328. 
+patient tongue id: 04071611410545_1_4
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.35611 0.366927 0.310728 0.492185
+predicted yaofang:
+甘草 茯苓 党参 黄芪
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+329. 
+patient tongue id: 06191331054339_1_4
+label yaofang:
+甘草 薏苡仁 党参 黄芪 赤芍 郁金 山茱萸 天麻 鳖甲 地龙 黄精 白花蛇舌 天山雪莲 红豆杉
+0.926154 0.527019 0.537793 0.433135 0.495205 0.387467 0.415305 0.305551 0.342458
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.555556, recall: 0.357143, error: 0.444444
+330. 
+patient tongue id: 05092058517993_7_6
+label yaofang:
+甘草 柴胡 白芍 川芎 枳壳 羌活 枸杞子 赤芍 牛膝 细辛 砂仁 天麻 白芷 决明子 麦芽 女贞子
+0.735733 0.485197 0.42738 0.42119
+predicted yaofang:
+甘草 茯苓 党参 白术
+
+------Score: precision: 0.250000, recall: 0.062500, error: 0.750000
+331. 
+patient tongue id: 05221902373110_3
+label yaofang:
+枳壳 桔梗 荆芥 防风 羌活 牛蒡子 细辛 淡竹叶 款冬花 紫菀 苦杏仁 蝉蜕 紫苏叶
+0.696934 0.444186 0.44051 0.474901 0.31624
+predicted yaofang:
+甘草 茯苓 党参 白术 蜈蚣
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+332. 
+patient tongue id: 01041317288799_6
+label yaofang:
+柴胡 白芍 当归 茯苓 薄荷 白术 栀子 淡豆豉 炙甘草 首乌藤
+0.56942 0.330198 0.371273 0.421931 0.416853
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.600000, recall: 0.300000, error: 0.400000
+333. 
+patient tongue id: 03171158048943_1_2
+label yaofang:
+桂枝 葛根 桃仁 延胡索 杜仲 桑寄生 桑枝 盐山萸肉 蚕沙 威灵仙 豨莶草 炒山楂
+0.407413 0.341289 0.469169 0.302076 0.446093 0.514747 0.485283 0.423856 0.481336 0.439314 0.496047 0.499803 0.486994 0.389709 0.510173 0.509323 0.515782
+predicted yaofang:
+甘草 茯苓 桃仁 麦冬 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.058824, recall: 0.083333, error: 0.941176
+334. 
+patient tongue id: 01312115248826_6_1_2
+label yaofang:
+甘草 川芎 茯苓 党参 白术 酸枣仁 丹参 地黄 天麻 白花蛇舌草 麦芽 首乌藤 蜈蚣 半枝莲 醋鳖甲
+0.971357 0.554527 0.562907 0.42947 0.539722 0.464891 0.468654 0.340489 0.360279 0.395913
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.700000, recall: 0.466667, error: 0.300000
+335. 
+patient tongue id: 02190546131497_5_6
+label yaofang:
+甘草 鱼腥草 党参 生地黄 乌药 山药 白茅根 菟丝子 益母草 鳖甲 建曲 蜈蚣 半枝莲 广金钱草 红豆杉
+0.975904 0.56468 0.560716 0.46298 0.311485 0.562389 0.545058 0.550114 0.425636 0.441936 0.491138
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.545455, recall: 0.400000, error: 0.454545
+336. 
+patient tongue id: 02190526587057_2_6
+label yaofang:
+甘草 川芎 法半夏 茯苓 羌活 牛膝 苍术 细辛 天麻 全蝎 白芷 蔓荆子 麦芽 蒿苯
+0.935782 0.53601 0.543297 0.459957 0.301887 0.329245 0.531056 0.481476 0.4912 0.386166 0.412787 0.46172
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.214286, error: 0.750000
+337. 
+patient tongue id: 04150809486316_1_4_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.407846 0.388645 0.340952 0.345363 0.619551
+predicted yaofang:
+法半夏 茯苓 防风 白前 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+338. 
+patient tongue id: 03161848267142_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 蜜麻黄
+0.350476 0.406582 0.375597 0.45089
+predicted yaofang:
+法半夏 茯苓 钩藤 炙甘草
+
+------Score: precision: 0.500000, recall: 0.133333, error: 0.500000
+339. 
+patient tongue id: 02120826159409_5_6
+label yaofang:
+甘草 柴胡 白芍 枳壳 党参 白术 郁金 钩藤 大黄 厚朴 火麻仁 豆蔻 决明子 苦杏仁 谷精子
+0.974748 0.565603 0.59558 0.494843 0.325169 0.575815 0.517421 0.538876 0.371307 0.418995 0.474354
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.200000, error: 0.727273
+340. 
+patient tongue id: 04011953317462_2
+label yaofang:
+甘草 川芎 桔梗 荆芥 防风 芦根 牛蒡子 桑叶 菊花 紫苏叶 黑枣 木蝴蝶 四季青
+0.705405 0.439391 0.433954 0.350601 0.49078
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
+341. 
+patient tongue id: 02251122563013_4
+label yaofang:
+陈皮 茯苓 防风 黄芪 荆芥穗 白芷 炙甘草 辛夷 紫苏梗 广藿香 麸炒白术
+0.426878 0.823988 0.459033 0.900798 0.521882 0.611212 0.317243 0.394918 0.371839 0.393041 0.849935 0.859765 0.812941 0.859587 0.311623 0.951152 0.477493 0.300744 0.553367 0.544881 0.770944
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.380952, recall: 0.727273, error: 0.619048
+342. 
+patient tongue id: 02142152203344_6_1_2
+label yaofang:
+甘草 党参 白术 山药 天麻 鳖甲 扁豆花 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 木棉花
+0.963144 0.543027 0.565162 0.440704 0.315784 0.313296 0.581924 0.473835 0.49922 0.359232 0.389971 0.456881
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.714286, error: 0.166667
+343. 
+patient tongue id: 03192239366050_1_2_6
+label yaofang:
+甘草 茯苓 党参 酸枣仁 熟地黄 牡丹皮 黄柏 山药 山茱萸 泽泻 菟丝子 益智仁 桑螵蛸
+0.983458 0.575989 0.611668 0.455611 0.31079 0.31901 0.620715 0.527072 0.540882 0.390425 0.423277 0.487718
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.384615, error: 0.583333
+344. 
+patient tongue id: 04151213515221_1_4
+label yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.427111 0.933504 0.446135 0.974172 0.577596 0.721857 0.423391 0.404649 0.467592 0.947693 0.955804 0.921601 0.951654 0.994013 0.534443 0.649761 0.5979 0.884923
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.777778, recall: 0.875000, error: 0.222222
+345. 
+patient tongue id: 01211240516602_7_4
+label yaofang:
+桂枝 柴胡 白芍 黄芩 茯苓 牡蛎 薏苡仁 桃仁 鸡血藤 牡丹皮 干姜 全蝎 天花粉 炙甘草 蜈蚣 土鳖虫 狗脊
+0.360557 0.316934 0.410644 0.342454 0.365316 0.381678 0.329441 0.376808 0.558344
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.555556, recall: 0.294118, error: 0.444444
+346. 
+patient tongue id: 02210450457672_5_1
+label yaofang:
+薏苡仁 黄芪 白术 浙贝母 厚朴 地榆 槐花 瓜蒌皮 鸡内金 北沙参 红豆杉 预知子 蛇舌草 稻芽
+0.397665 0.426819 0.332376 0.478661 0.410741 0.394635
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 北沙参
+
+------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
+347. 
+patient tongue id: 02261922523541_2_5_6
+label yaofang:
+甘草 茯苓 远志 党参 枸杞子 栀子 牡丹皮 山药 山茱萸 泽泻 金樱子 王不留行 蛇床子 浮小麦 沙苑子
+0.935525 0.538075 0.558526 0.409493 0.312995 0.534896 0.38607 0.395662 0.303076 0.332143
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.400000, recall: 0.266667, error: 0.600000
+348. 
+patient tongue id: 04061843117190_4
+label yaofang:
+法半夏 茯苓 前胡 桔梗 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 广藿香 蜜麻黄
+0.316661 0.432546 0.43526 0.38729 0.381095
+predicted yaofang:
+甘草 茯苓 黄芪 北沙参 炙甘草
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+349. 
+patient tongue id: 04222204329164_2_4
+label yaofang:
+法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 紫菀 白前 百部 炙甘草 紫苏梗 广藿香 蜜麻黄
+0.400444 0.7284 0.464361 0.819248 0.473238 0.540527 0.320095 0.366713 0.347122 0.352608 0.7561 0.76845 0.721094 0.779633 0.325923 0.896259 0.425791 0.300189 0.496482 0.486924 0.684086
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.666667, recall: 1.000000, error: 0.333333
+350. 
+patient tongue id: 03291624470070_1_2_6
+label yaofang:
+甘草 桔梗 薏苡仁 浙贝母 天麻 鳖甲 紫菀 百部 苦杏仁 炙麻黄 蜈蚣 白花蛇舌 红豆杉 龙葵果
+0.851547 0.306152 0.511617 0.49007 0.416903 0.40548 0.345075 0.359228
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.500000, recall: 0.285714, error: 0.500000
+351. 
+patient tongue id: 02260709320621_5_1_6
+label yaofang:
+甘草 陈皮 黄芩 法半夏 茯苓 桔梗 党参 浙贝母 细辛 砂仁 鳖甲 款冬花 苦杏仁 炙麻黄 白花蛇舌 四季青
+0.980673 0.560711 0.59671 0.463333 0.322715 0.317627 0.645747 0.524827 0.547514 0.390274 0.440428 0.514989
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.312500, error: 0.583333
+352. 
+patient tongue id: 03021135241660_1_2_7
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.348734 0.368119 0.348503 0.436803
+predicted yaofang:
+甘草 茯苓 党参 黄芪
+
+------Score: precision: 1.000000, recall: 0.307692, error: 0.000000
+353. 
+patient tongue id: 01052135261906_2_6
+label yaofang:
+甘草 党参 黄芪 黄连 生地黄 熟地黄 黄柏 鳖甲 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲 龟甲
+0.86248 0.474418 0.543903 0.365547 0.318339 0.561994
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 天麻
+
+------Score: precision: 0.333333, recall: 0.142857, error: 0.666667
+354. 
+patient tongue id: 05241954463133_2_6
+label yaofang:
+甘草 党参 酸枣仁 生地黄 黄柏 山药 山茱萸 桑叶 荆芥穗 地骨皮 菟丝子 糯稻根 银柴胡 淫羊藿 女贞子 龟甲
+0.971115 0.560956 0.583735 0.452166 0.311208 0.578911 0.54231 0.538581 0.419371 0.44804 0.500272
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.187500, error: 0.727273
+355. 
+patient tongue id: 04272254599804_4_7
+label yaofang:
+黄芩 丹参 牛膝 钩藤 白茅根 车前子 厚朴 石决明 猪苓 姜半夏 广藿香
+0.311449 0.391032 0.470311 0.389845 0.359178 0.432581 0.379809 0.311465 0.338326 0.591397 0.616436
+predicted yaofang:
+甘草 柴胡 白芍 香附 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.090909, recall: 0.090909, error: 0.909091
+356. 
+patient tongue id: 04112355407926_6
+label yaofang:
+甘草 柴胡 白芍 海藻 海螵蛸 枳实 乌梅 大腹皮 莪术 豆蔻 败酱草 姜半夏 土鳖虫 猫爪草 木贼 山慈菇
+0.695241 0.454956 0.417157 0.309894 0.445408
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.062500, error: 0.800000
+357. 
+patient tongue id: 02202314152655_1_7_2
+label yaofang:
+桂枝 当归 黄芪 鸡血藤 白术 海螵蛸 厚朴 砂仁 菟丝子 桑寄生 北沙参 蜈蚣 合欢皮
+0.842337 0.474528 0.427276 0.37278 0.60045 0.434164
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.500000, recall: 0.230769, error: 0.500000
+358. 
+patient tongue id: 02150742467256_1_3
+label yaofang:
+法半夏 橘红 防风 金银花 薏苡仁 桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 藿香 莱菔子 天麻 白前 鸡内金 决明子 夏枯草 苦杏仁 六神曲 制何首乌 蜜百部 干鱼腥草
+0.366026 0.455333 0.379648
+predicted yaofang:
+茯苓 黄芪 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+359. 
+patient tongue id: 02272239202252_4_1
+label yaofang:
+麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 砂仁 射干 紫菀 苦杏仁 姜半夏 炙甘草 人参叶 龙脷叶
+0.330313 0.408355 0.317613 0.316253 0.340728 0.322644 0.618324
+predicted yaofang:
+甘草 白芍 茯苓 党参 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.571429, recall: 0.250000, error: 0.428571
+360. 
+patient tongue id: 03092256474879_6_7
+label yaofang:
+甘草 法半夏 茯苓 葛根 独活 桃仁 黄芪 鸡血藤 红花 延胡索 天麻 五灵脂 麦芽 地龙 威灵仙
+0.902002 0.527394 0.524349 0.438248 0.322508 0.499817 0.432388 0.454563 0.342325 0.364754 0.414179
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.200000, error: 0.727273
+361. 
+patient tongue id: 03231437076546_4
+label yaofang:
+陈皮 法半夏 前胡 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄
+0.408077 0.685663 0.460459 0.773285 0.466046 0.535324 0.334096 0.363028 0.339923 0.308306 0.367156 0.718355 0.710948 0.686176 0.737288 0.344498 0.84678 0.433936 0.304639 0.49223 0.482803 0.651615
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.681818, recall: 1.000000, error: 0.318182
+362. 
+patient tongue id: 03141542060287_1_3_7
+label yaofang:
+法半夏 橘红 防风 金银花 薏苡仁 荆芥穗 白前 鸡内金 紫苏梗 蜜百部 蜜枇杷叶 干鱼腥草
+0.532932 0.368955 0.379033 0.571913 0.555451 0.354017
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+363. 
+patient tongue id: 04202217444247_1_6
+label yaofang:
+甘草 茯苓 木香 薏苡仁 远志 党参 白术 山药 天麻 鳖甲 扁豆花 麦芽 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.915457 0.526475 0.538822 0.463096 0.321312 0.506201 0.46364 0.473209 0.370409 0.396577 0.433979
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 1.000000, recall: 0.687500, error: 0.000000
+364. 
+patient tongue id: 04102102317750_2_5
+label yaofang:
+甘草 桔梗 天冬 浙贝母 桑白皮 紫菀 百部 枇杷叶 苦杏仁 紫苏子
+0.476534 0.396482 0.333982 0.584584 0.533073 0.384912 0.313319 0.325746
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴 鸡内金 北沙参
+
+------Score: precision: 0.125000, recall: 0.100000, error: 0.875000
+365. 
+patient tongue id: 04102057362916_1_6
+label yaofang:
+龙骨 丹参 柏子仁 栀子 干姜 淡豆豉 天麻 蝉蜕 姜半夏 炙甘草 浮小麦 百合 紫苏叶 合欢皮
+0.494868 0.333186 0.419323 0.342796 0.427294 0.450211 0.304231 0.321972 0.391292
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 浙贝母 姜半夏 炙甘草
+
+------Score: precision: 0.222222, recall: 0.142857, error: 0.777778
+366. 
+patient tongue id: 04182153410414_2_7
+label yaofang:
+甘草 酸枣仁 生地黄 黄柏 山茱萸 天麻 糯稻根 鳖甲 女贞子 蜈蚣 白花蛇舌 天山雪莲 半枝莲 龟甲
+0.922578 0.520607 0.55289 0.472717 0.307619 0.30825 0.538707 0.458014 0.500518 0.350251 0.391507 0.448911
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+367. 
+patient tongue id: 03311616152078_1_4_7
+label yaofang:
+甘草 薏苡仁 太子参 黄芪 白术 海螵蛸 浙贝母 生半夏 砂仁 巴戟天 鸡内金 北沙参 蜈蚣 山慈菇 鲜龙葵果
+0.303678 0.577995 0.311976
+predicted yaofang:
+党参 黄芪 白术
+
+------Score: precision: 0.666667, recall: 0.133333, error: 0.333333
+368. 
+patient tongue id: 04121844039717_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.451778 0.923218 0.44346 0.972843 0.5967 0.710276 0.302773 0.428653 0.38885 0.420083 0.946844 0.9562 0.91977 0.953048 0.991131 0.530753 0.639594 0.607232 0.880579
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.789474, recall: 1.000000, error: 0.210526
+369. 
+patient tongue id: 06091950127204_3
+label yaofang:
+当归 枸杞子 熟地黄 杜仲 附子 肉桂 山药 山茱萸 菟丝子 巴戟天 芡实 鹿角霜 广藿香 沙苑子
+0.513917 0.408796 0.362239 0.499757 0.538795 0.310244
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+370. 
+patient tongue id: 05222124106125_2_1_7
+label yaofang:
+蒲公英 龙齿 太子参 黄芪 白术 延胡索 海螵蛸 郁金 砂仁 三七 桑寄生 鸡内金 北沙参 首乌藤
+0.447593 0.355833 0.365216 0.70147 0.653979 0.303312 0.349113 0.494282 0.36258 0.360559 0.393321 0.326056
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+371. 
+patient tongue id: 06012053018938_1_7
+label yaofang:
+甘草 枳壳 半夏 黄芪 牡丹皮 杜仲 牛膝 郁金 厚朴 僵蚕 莪术 蜈蚣
+0.476484 0.359198 0.473247 0.694466 0.722653 0.300845 0.384656 0.517008 0.405553 0.346551 0.425119 0.366227
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.416667, recall: 0.416667, error: 0.583333
+372. 
+patient tongue id: 03012032372955_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 荆芥穗 款冬花 紫菀 白前 百部 炙甘草 辛夷 蜜麻黄 炒苍耳子
+0.384285 0.395073 0.33829 0.30865 0.372408 0.470051 0.762594 0.313822 0.320227
+predicted yaofang:
+法半夏 茯苓 桔梗 防风 干姜 紫菀 炙甘草 紫苏梗 广藿香
+
+------Score: precision: 0.555556, recall: 0.357143, error: 0.444444
+373. 
+patient tongue id: 01041840522397_1_3
+label yaofang:
+法半夏 前胡 桔梗 防风 干姜 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.440242 0.903896 0.461204 0.958254 0.566846 0.685073 0.42279 0.396215 0.439238 0.923092 0.934168 0.892506 0.928029 0.986325 0.522792 0.301722 0.627273 0.582937 0.84677
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.736842, recall: 1.000000, error: 0.263158
+374. 
+patient tongue id: 06031123351548_2_6
+label yaofang:
+甘草 枸杞子 山茱萸 地黄 天麻 糯稻根 白花蛇舌草 浮小麦 首乌藤 醋龟甲 蜈蚣 半枝莲 醋鳖甲 酒女贞子
+0.90361 0.472849 0.549842 0.446517 0.480467 0.331804 0.390819
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.428571, recall: 0.214286, error: 0.571429
+375. 
+patient tongue id: 05162221261895_4
+label yaofang:
+麻黄 前胡 半夏 防风 黄芪 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 苍耳子
+0.466925 0.946276 0.444224 0.983081 0.618256 0.745996 0.424207 0.391243 0.437048 0.963218 0.970489 0.941949 0.967587 0.995688 0.559594 0.678284 0.616608 0.904896
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.611111, recall: 0.733333, error: 0.388889
+376. 
+patient tongue id: 03151919252520_1_2_5
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.348214 0.312006 0.339835 0.41139 0.396304 0.360303 0.383305 0.376444 0.441397 0.300641 0.303634 0.30638 0.33698
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝 泽泻 车前子 莱菔子 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.307692, recall: 0.307692, error: 0.692308
+377. 
+patient tongue id: 05201504259416_5_7_6
+label yaofang:
+甘草 蒲公英 党参 红花 浙贝母 郁金 厚朴 天麻 天花粉 瓜蒌皮 鳖甲 麦芽 蜈蚣 白花蛇舌 半枝莲 红豆杉 猫爪草
+0.930116 0.520552 0.535802 0.441176 0.304515 0.311133 0.537453 0.429406 0.454264 0.329624 0.350225 0.389597
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.583333, recall: 0.411765, error: 0.416667
+378. 
+patient tongue id: 01312047227859_1_2
+label yaofang:
+甘草 茯苓 桔梗 薏苡仁 桃仁 鱼腥草 党参 浙贝母 杜仲 天麻 鳖甲 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.956658 0.532438 0.555373 0.442206 0.304221 0.555262 0.36255 0.426195 0.322409
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.777778, recall: 0.437500, error: 0.222222
+379. 
+patient tongue id: 02191227233340_4
+label yaofang:
+甘草 黄芩 前胡 桔梗 牛蒡子 桃仁 远志 浙贝母 桑白皮 蔓荆子 款冬花 苦杏仁 辛夷 贯众
+0.879633 0.503576 0.465508 0.429705 0.365387 0.311158 0.370425
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.142857, recall: 0.071429, error: 0.857143
+380. 
+patient tongue id: 03092002052317_4
+label yaofang:
+甘草 茯苓 葛根 麦冬 太子参 北沙参 百合 木贼 干石斛
+0.421064 0.840376 0.463806 0.914205 0.533266 0.617449 0.317159 0.407584 0.387193 0.404277 0.866213 0.877507 0.828391 0.876854 0.963977 0.481525 0.307999 0.572107 0.54409 0.788209
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.100000, recall: 0.222222, error: 0.900000
+381. 
+patient tongue id: 01031827288533_2
+label yaofang:
+茯苓 防风 薄荷 钩藤 荆芥穗 白芷 北柴胡 炙甘草 首乌藤 广藿香 威灵仙 香薰 炒蔓荆子 棉萆薢
+0.376432 0.564887 0.46361 0.613019 0.412381 0.467198 0.34052 0.352794 0.335677 0.312657 0.354607 0.575352 0.555939 0.556888 0.582836 0.345936 0.713082 0.38968 0.43382 0.437017 0.542592
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.285714, recall: 0.428571, error: 0.714286
+382. 
+patient tongue id: 04272311526137_1
+label yaofang:
+麻黄 桂枝 白芍 牛蒡子 五味子 浙贝母 细辛 干姜 苦杏仁 姜半夏 炙甘草 龙脷叶
+0.48606 0.365289 0.356924 0.409347 0.487112 0.33302
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.333333, recall: 0.166667, error: 0.666667
+383. 
+patient tongue id: 01101804013477_1_4
+label yaofang:
+陈皮 法半夏 前胡 防风 荆芥穗 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄 炒苍耳子
+0.452845 0.906559 0.443463 0.960627 0.572082 0.70241 0.423843 0.404618 0.304692 0.457287 0.92798 0.939927 0.900179 0.934837 0.988308 0.537015 0.313784 0.639047 0.581892 0.856931
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.650000, recall: 0.928571, error: 0.350000
+384. 
+patient tongue id: 05241944573562_1_4
+label yaofang:
+甘草 茯苓 前胡 党参 黄芪 熟附子 细辛 天麻 鳖甲 白前 诃子 蜈蚣 天山雪莲 半枝莲
+0.987284 0.571376 0.633867 0.507896 0.340281 0.336231 0.673658 0.615573 0.634086 0.47414 0.530236 0.615296
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+385. 
+patient tongue id: 01090003183397_1_4
+label yaofang:
+桂枝 白芍 茯苓 薏苡仁 桃仁 牡丹皮
+0.370908 0.305306 0.355388 0.74445 0.310971
+predicted yaofang:
+茯苓 干姜 紫菀 炙甘草 紫苏梗
+
+------Score: precision: 0.200000, recall: 0.166667, error: 0.800000
+386. 
+patient tongue id: 04142221442064_6_4
+label yaofang:
+甘草 陈皮 法半夏 茯苓 前胡 桃仁 党参 黄芪 白术 浙贝母 山药 桑白皮 地骨皮 紫菀 百部 丝瓜络
+0.972778 0.533253 0.579901 0.483399 0.585961 0.496322 0.535306 0.366272 0.402439 0.467142
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.400000, recall: 0.250000, error: 0.600000
+387. 
+patient tongue id: 03291342120022_2
+label yaofang:
+甘草 茯苓 党参 生地黄 黄柏 知母 山药 山茱萸 地骨皮 糯稻根 秦艽 淫羊藿 龟甲
+0.988748 0.584599 0.643145 0.45213 0.338932 0.327807 0.688116 0.607533 0.599978 0.463519 0.514276 0.585915
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
+388. 
+patient tongue id: 06071946473887_5_7_3
+label yaofang:
+甘草 羌活 连翘 薏苡仁 蒲公英 党参 天麻 鳖甲 麦芽 蜈蚣 白花蛇舌 半枝莲 红豆杉 制天南星
+0.79278 0.462555 0.49584 0.309541 0.42531 0.405079
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 天麻
+
+------Score: precision: 0.500000, recall: 0.214286, error: 0.500000
+389. 
+patient tongue id: 02271852313817_4
+label yaofang:
+陈皮 法半夏 前胡 防风 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 炒紫苏子 蜜麻黄
+0.363844 0.441019 0.444548 0.469896 0.348229 0.38231 0.320284 0.34756 0.42371 0.437776 0.438969 0.495869 0.383024 0.677069 0.336596 0.339601 0.319164 0.400411
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 黄芪 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.666667, recall: 0.857143, error: 0.333333
+390. 
+patient tongue id: 03222003292779_6_7
+label yaofang:
+甘草 法半夏 茯苓 远志 党参 酸枣仁 黄连 郁金 石菖蒲 桑螵蛸 益智 浮小麦 首乌藤 百合
+0.957537 0.546622 0.566685 0.474717 0.321751 0.5488 0.502729 0.520435 0.395306 0.425937 0.485887
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
+391. 
+patient tongue id: 04142225288206_6_1
+label yaofang:
+甘草 白芍 党参 酸枣仁 生地黄 天麻 鳖甲 佛手 浮小麦 蜈蚣 白花蛇舌 天山雪莲 合欢花 半枝莲
+0.84139 0.494794 0.463825 0.4571 0.319489 0.364087
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.285714, error: 0.333333
+392. 
+patient tongue id: 04260635535885_6_1
+label yaofang:
+甘草 柴胡 白芍 枳壳 法半夏 茯苓 远志 党参 酸枣仁 黄连 桑螵蛸 益智 佛手 首乌藤
+0.979952 0.568772 0.596334 0.422754 0.304425 0.613599 0.52975 0.514072 0.399455 0.42844 0.47999
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
+393. 
+patient tongue id: 05182054080989_6_4
+label yaofang:
+柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗 广金钱草
+0.409612 0.320312 0.428398 0.33081 0.372812 0.380633 0.307905 0.384814 0.523476
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.444444, recall: 0.333333, error: 0.555556
+394. 
+patient tongue id: 03232315273562_4_7
+label yaofang:
+甘草 茯苓 独活 党参 白术 山药 细辛 菟丝子 桑寄生 益母草 补骨脂 扁豆花 威灵仙
+0.917373 0.518044 0.516488 0.423617 0.486032 0.383258 0.411645 0.30746 0.35126
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.444444, recall: 0.307692, error: 0.555556
+395. 
+patient tongue id: 04121908213877_4
+label yaofang:
+甘草 桃仁 党参 白术 玄参 海螵蛸 郁金 生半夏 莪术 枇杷叶 北沙参 辛夷 木蝴蝶 土鳖虫 猫爪草 冬凌草
+0.469356 0.381833 0.370227 0.352938 0.49878
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.600000, recall: 0.187500, error: 0.400000
+396. 
+patient tongue id: 02151923362184_4
+label yaofang:
+法半夏 茯苓 前胡 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.466943 0.963116 0.447404 0.989301 0.633401 0.768998 0.445824 0.409351 0.466232 0.974057 0.979398 0.956741 0.975909 0.997524 0.579536 0.700008 0.645637 0.925363
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.777778, recall: 1.000000, error: 0.222222
+397. 
+patient tongue id: 05182102403420_4
+label yaofang:
+陈皮 桔梗 牛蒡子 车前子 大腹皮 干姜 厚朴 白芷 姜半夏 紫苏叶 广藿香 天山雪莲
+0.494543 0.362808 0.362445 0.38956 0.451336 0.359044
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+398. 
+patient tongue id: 04062136327627_1
+label yaofang:
+甘草 陈皮 茯苓 桔梗 白术 大腹皮 厚朴 藿香 白芷 麦芽 六神曲 紫苏叶
+0.427885 0.429126 0.488374 0.457152 0.353965
+predicted yaofang:
+甘草 茯苓 黄芪 白术 北沙参
+
+------Score: precision: 0.600000, recall: 0.250000, error: 0.400000
+399. 
+patient tongue id: 01182059117737_6_5
+label yaofang:
+甘草 法半夏 茯苓 桔梗 桃仁 党参 赤芍 浙贝母 山药 鳖甲 虎杖 麦芽 土鳖虫
+0.960152 0.530984 0.583748 0.467909 0.32312 0.330352 0.586466 0.507957 0.523547 0.39228 0.429468 0.487975
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.384615, error: 0.583333
+400. 
+patient tongue id: 04141245475060_4
+label yaofang:
+白芍 法半夏 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 蜜麻黄
+0.392409 0.748839 0.46938 0.826604 0.490989 0.556034 0.313075 0.391386 0.376787 0.319167 0.407363 0.770027 0.786323 0.713898 0.777267 0.922472 0.438471 0.315329 0.517744 0.471805 0.689163
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.571429, recall: 0.857143, error: 0.428571
+401. 
+patient tongue id: 03231049194042_2_6
+label yaofang:
+甘草 薏苡仁 党参 酸枣仁 生地黄 杜仲 天麻 桑寄生 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲 合欢花
+0.964223 0.541312 0.571064 0.464066 0.311264 0.31216 0.585464 0.529104 0.547442 0.417682 0.449847 0.51918
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+402. 
+patient tongue id: 01140816310922_1_2_6
+label yaofang:
+甘草 茯苓 龙骨 党参 酸枣仁 黄柏 牛膝 山药 山茱萸 地黄 青蒿 浮小麦 醋龟甲 合欢花
+0.922913 0.526365 0.542643 0.45587 0.310323 0.329154 0.527357 0.422229 0.45833 0.321602 0.348436 0.394297
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.357143, error: 0.583333
+403. 
+patient tongue id: 06111013056390_1_6
+label yaofang:
+甘草 党参 玄参 柏子仁 厚朴 天麻 鳖甲 火麻仁 苦杏仁 郁李仁 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲 龟甲
+0.978048 0.570787 0.606022 0.448043 0.314978 0.32213 0.624842 0.561625 0.545212 0.429681 0.467622 0.513514
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.500000, error: 0.333333
+404. 
+patient tongue id: 01062343023572_1_4_7
+label yaofang:
+柴胡 黄芩 法半夏 桔梗 防风 金银花 薏苡仁 党参 鸡内金 紫苏梗 蜜百部 干鱼腥草
+0.59719 0.374464 0.481751 0.337044 0.334133 0.302902 0.305318 0.302981 0.395315
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 丹参 牛膝 车前子 天麻
+
+------Score: precision: 0.111111, recall: 0.083333, error: 0.888889
+405. 
+patient tongue id: 03151941497802_4_7_6
+label yaofang:
+甘草 陈皮 茯苓 半夏 黄芪 白术 昆布 海藻 当归尾 珍珠母 威灵仙 蜈蚣 合欢皮
+0.432567 0.377446 0.61228 0.528405 0.379839 0.337558
+predicted yaofang:
+甘草 茯苓 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.666667, recall: 0.307692, error: 0.333333
+406. 
+patient tongue id: 02170749540550_1_6
+label yaofang:
+当归 党参 黄芪 乌药 山药 淫羊藿 桑螵蛸 仙茅 益智 鹿角霜 覆盆子
+0.369985 0.381588 0.343102
+predicted yaofang:
+茯苓 黄芪 炙甘草
+
+------Score: precision: 0.333333, recall: 0.090909, error: 0.666667
+407. 
+patient tongue id: 04101915294867_4
+label yaofang:
+川芎 独活 党参 黄芪 细辛 防己 木瓜 豆蔻 川牛膝 炙甘草 续断 首乌藤 威灵仙 盐菟丝子
+0.399569 0.797607 0.467231 0.870508 0.506332 0.588147 0.317735 0.399955 0.383837 0.315203 0.412214 0.817421 0.832161 0.777945 0.826915 0.94939 0.452001 0.308585 0.538519 0.518577 0.739615
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.095238, recall: 0.142857, error: 0.904762
+408. 
+patient tongue id: 02191635271463_6_5_7
+label yaofang:
+桂枝 甘草 柴胡 法半夏 茯苓 龙骨 牡蛎 党参 白术 酸枣仁 竹茹 牡丹皮 珍珠母 麦芽
+0.946633 0.550229 0.547891 0.424983 0.301497 0.508367 0.457559 0.440529 0.349266 0.36371 0.380945
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.285714, error: 0.636364
+409. 
+patient tongue id: 06031629434247_1_4
+label yaofang:
+法半夏 前胡 桔梗 防风 细辛 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.414803 0.871815 0.468291 0.937854 0.546317 0.641872 0.391773 0.37379 0.406306 0.897608 0.909223 0.85842 0.904805 0.97972 0.474929 0.602881 0.535718 0.812815
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.833333, recall: 1.000000, error: 0.166667
+410. 
+patient tongue id: 03240614548861_6_2
+label yaofang:
+茯苓 龙骨 党参 丹参 生地黄 山茱萸 天麻 鳖甲 火麻仁 炙甘草 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.985962 0.580767 0.62665 0.466243 0.333946 0.333642 0.663771 0.601755 0.601056 0.468184 0.513834 0.587017
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+411. 
+patient tongue id: 03171358422777_4
+label yaofang:
+法半夏 茯苓 前胡 防风 钩藤 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 广藿香 威灵仙 炒紫苏子 蜜麻黄
+0.404009 0.854981 0.463615 0.920541 0.527146 0.632322 0.300791 0.3999 0.379058 0.418336 0.8747 0.886595 0.832355 0.882866 0.970896 0.474784 0.567172 0.549284 0.795495
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.684211, recall: 0.812500, error: 0.315789
+412. 
+patient tongue id: 05191944211282_5_1_6
+label yaofang:
+甘草 茯苓 木香 薏苡仁 党参 黄连 山药 砂仁 天麻 鳖甲 鸡内金 麦芽 紫苏梗 广藿香 蜈蚣 白花蛇舌 天山雪莲
+0.989677 0.599813 0.607271 0.434186 0.304001 0.606352 0.564349 0.543445 0.417353 0.445335 0.480891
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.818182, recall: 0.529412, error: 0.181818
+413. 
+patient tongue id: 05231925462449_1_2
+label yaofang:
+法半夏 茯苓 前胡 桔梗 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 广藿香 炒紫苏子 蜜麻黄
+0.394401 0.576681 0.459791 0.645181 0.42357 0.480351 0.345183 0.356871 0.363186 0.310497 0.363857 0.598554 0.614664 0.590336 0.635793 0.350588 0.796691 0.393824 0.324454 0.456354 0.448448 0.571037
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.636364, recall: 1.000000, error: 0.363636
+414. 
+patient tongue id: 01061557292574_1_4
+label yaofang:
+桂枝 甘草 白芍 黄芪 白术 赤芍 山药 山茱萸 车前子 菟丝子 益母草 猪苓 桑螵蛸 益智 泽兰 广升麻
+0.963473 0.54677 0.573456 0.490212 0.315896 0.3327 0.583534 0.537081 0.560353 0.41918 0.462974 0.534796
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.187500, error: 0.750000
+415. 
+patient tongue id: 01182133515805_6_4
+label yaofang:
+甘草 香附 党参 丹参 生地黄 郁金 薤白 天麻 瓜蒌皮 鳖甲 莪术 蜈蚣 天山雪莲 半枝莲
+0.904734 0.325092 0.490682 0.518658 0.472779 0.309623 0.415332 0.35133 0.412516
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 浙贝母 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.555556, recall: 0.357143, error: 0.444444
+416. 
+patient tongue id: 03171354538015_2
+label yaofang:
+白芍 茯苓 太子参 枸杞子 柏子仁 郁金 北柴胡 煅牡蛎 北沙参 炙甘草 制远志 酒女贞子 煅龙骨 炒酸枣仁
+0.449564 0.895821 0.454202 0.954027 0.574215 0.678293 0.303803 0.428203 0.412127 0.303868 0.455463 0.916575 0.930153 0.882594 0.922135 0.985402 0.533181 0.321226 0.622825 0.571528 0.839017
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.142857, recall: 0.214286, error: 0.857143
+417. 
+patient tongue id: 02151808350975_1_4_7
+label yaofang:
+桂枝 葛根 桃仁 杜仲 牛膝 桑寄生 桑枝 盐山萸肉 蚕沙 威灵仙 豨莶草 炒山楂
+0.43672 0.37026 0.395138 0.480513 0.314046 0.307901
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 牛膝
+
+------Score: precision: 0.166667, recall: 0.083333, error: 0.833333
+418. 
+patient tongue id: 05232034462395_1_6
+label yaofang:
+甘草 枳壳 桔梗 半夏 薏苡仁 黄芪 白术 厚朴 淡豆豉 砂仁 僵蚕 莪术 麦芽 紫苏叶 蛇舌草
+0.506662 0.382769 0.487116 0.693934 0.707283 0.315597 0.387072 0.519298 0.401502 0.344536 0.420503 0.355596
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.500000, recall: 0.400000, error: 0.500000
+419. 
+patient tongue id: 02261213511690_1
+label yaofang:
+甘草 茯苓 党参 白术 丹参 山楂 砂仁 茵陈 虎杖 白花蛇舌草 麦芽 白扁豆 女贞子 天山雪莲
+0.945863 0.545158 0.551902 0.468678 0.31668 0.519783 0.498735 0.509085 0.395005 0.420079 0.468984
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.454545, recall: 0.357143, error: 0.545455
+420. 
+patient tongue id: 03081815010155_3
+label yaofang:
+黄芪 白术 附子 干姜 砂仁 桑寄生 炙甘草 紫苏叶
+0.395929 0.412803 0.300461 0.373076 0.383357 0.36642
 predicted yaofang:
 甘草 茯苓 党参 黄芪 白术 炙甘草
 
-------Score: precision: 0.166667, recall: 0.071429, error: 0.833333
-498. 
-patient tongue id: 04102102518658_7_6
+------Score: precision: 0.500000, recall: 0.375000, error: 0.500000
+421. 
+patient tongue id: 05092010330173_4
 label yaofang:
-桂枝 龙骨 麦冬 党参 丹参 生地黄 海螵蛸 车前子 仙鹤草 砂仁 淫羊藿 火麻仁 炙甘草
-0.404371 0.359213 0.501888 0.34056 0.30362
+甘草 柴胡 白芍 当归 茯苓 白术 栀子 牡丹皮 牛膝 苏木 败酱草 车前草 墨旱莲 鹿衔草
+0.577965 0.381648 0.394819 0.489058 0.442041 0.431621 0.371895 0.406855 0.393132 0.384406 0.360996 0.467995 0.369109 0.364408 0.327936
 predicted yaofang:
-甘草 黄芪 白术 海螵蛸 浙贝母
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
 
-------Score: precision: 0.200000, recall: 0.076923, error: 0.800000
-499. 
-patient tongue id: 03020659163910_5_6
+------Score: precision: 0.200000, recall: 0.214286, error: 0.800000
+422. 
+patient tongue id: 01052134176852_1_6
 label yaofang:
-甘草 陈皮 黄芩 法半夏 茯苓 前胡 桃仁 远志 五味子 细辛 干姜 款冬花 白前 炙麻黄 苍耳子
-0.965436 0.327085 0.468896 0.57503 0.380878 0.525817 0.48035 0.466368 0.380718 0.398628 0.376041
+甘草 白芍 香附 茯苓 党参 白术 酸枣仁 丹参 生地黄 山茱萸 天麻 菟丝子 益母草 合欢花
+0.970212 0.559143 0.576738 0.477479 0.325092 0.335415 0.595863 0.565263 0.574527 0.454243 0.489672 0.558527
 predicted yaofang:
-甘草 白芍 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+423. 
+patient tongue id: 04111954257717_4_6
+label yaofang:
+甘草 法半夏 茯苓 党参 白术 五味子 细辛 天麻 鳖甲 款冬花 炙麻黄 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.947168 0.528842 0.558729 0.446916 0.523924 0.437159 0.452457 0.324107 0.347199 0.382888
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.900000, recall: 0.600000, error: 0.100000
+424. 
+patient tongue id: 03141556479906_1_4_7
+label yaofang:
+桂枝 甘草 法半夏 茯苓 橘红 桃仁 党参 黄芪 丹参 枳实 竹茹 胆南星 厚朴
+0.32671 0.52475 0.306647 0.418 0.60887 0.535654 0.440939 0.539576 0.510608 0.554706 0.560764 0.556461 0.309603 0.594413 0.612913 0.61117
+predicted yaofang:
+甘草 桃仁 麦冬 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.312500, recall: 0.384615, error: 0.687500
+425. 
+patient tongue id: 05191930092323_1_6_4
+label yaofang:
+甘草 白芍 木香 薏苡仁 党参 黄芪 白术 熟附子 天麻 巴戟天 鳖甲 莪术 蜈蚣 天山雪莲 半枝莲
+0.992278 0.58955 0.648834 0.457307 0.338576 0.335646 0.703148 0.605058 0.606032 0.451184 0.502021 0.578731
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.533333, error: 0.333333
+426. 
+patient tongue id: 05182218098243_1_2
+label yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 太子参 钩藤 款冬花 紫菀 白前 百部 北沙参 蝉蜕 炙甘草 炒紫苏子 蜜麻黄
+0.39271 0.639249 0.451309 0.720452 0.436162 0.49253 0.326863 0.335027 0.329933 0.331948 0.662749 0.670762 0.636564 0.699395 0.340393 0.857784 0.388524 0.451819 0.444845 0.610721
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.700000, recall: 0.875000, error: 0.300000
+427. 
+patient tongue id: 03221623129249_1_2
+label yaofang:
+甘草 茯苓 桔梗 太子参 白术 黄连 浙贝母 砂仁 鳖甲 枇杷叶 麦芽 紫苏梗 白花蛇舌 蜂房 有瓜石斛
+0.895881 0.521116 0.513127 0.440776 0.421241 0.359102 0.38671
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.571429, recall: 0.266667, error: 0.428571
+428. 
+patient tongue id: 05191017063065_1_3
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌 牡荆子
+0.341431 0.322191 0.544915 0.333509 0.417481 0.536367 0.57023 0.49421 0.543808 0.609625 0.593701 0.585984 0.611315 0.395785 0.641495 0.649453 0.650044 0.303569
+predicted yaofang:
+甘草 茯苓 桃仁 麦冬 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌 制远志
+
+------Score: precision: 0.666667, recall: 0.923077, error: 0.333333
+429. 
+patient tongue id: 02181606257339_6_4_7
+label yaofang:
+柴胡 白芍 茯苓 党参 酸枣仁 五味子 牡丹皮 山药 地黄 菟丝子 益母草 麦芽 首乌藤 酒黄精
+0.958917 0.545178 0.551338 0.473429 0.309539 0.319173 0.564979 0.543741 0.561481 0.446044 0.471498 0.539906
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.285714, error: 0.666667
+430. 
+patient tongue id: 04062156032847_1_4_7
+label yaofang:
+甘草 法半夏 橘红 防风 金银花 太子参 藿香 白前 鸡内金 辛夷 蜜百部 干鱼腥草
+0.362049 0.446767 0.412337 0.356549 0.392323
+predicted yaofang:
+甘草 茯苓 黄芪 北沙参 炙甘草
+
+------Score: precision: 0.200000, recall: 0.083333, error: 0.800000
+431. 
+patient tongue id: 04112206192412_6
+label yaofang:
+甘草 柴胡 白芍 枳壳 茯苓 木香 蒲公英 党参 白术 延胡索 山药 五灵脂 麦芽 佛手 建曲 姜黄
+0.989248 0.581514 0.636033 0.478941 0.3425 0.336847 0.68059 0.615014 0.62096 0.470268 0.51997 0.597571
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.312500, error: 0.583333
+432. 
+patient tongue id: 05131709465111_6_2
+label yaofang:
+桂枝 甘草 白芍 茯苓 薏苡仁 桃仁 党参 黄芪 青皮 牡丹皮 山药 车前子 菟丝子 益母草 王不留行 白扁豆
+0.959716 0.54753 0.553965 0.47765 0.315194 0.512696 0.439254 0.487484 0.324972 0.351161 0.409085
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.250000, error: 0.636364
+433. 
+patient tongue id: 05250457504045_4_6
+label yaofang:
+甘草 黄芩 法半夏 茯苓 桔梗 芦根 桃仁 麦冬 浙贝母 细辛 射干 诃子 蝉蜕
+0.631669 0.4396 0.430195 0.383687 0.425272
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.400000, recall: 0.153846, error: 0.600000
+434. 
+patient tongue id: 03231217024315_4
+label yaofang:
+陈皮 茯苓 前胡 桔梗 防风 荆芥穗 白芷 款冬花 紫菀 百部 炙甘草 辛夷 广藿香
+0.443543 0.843443 0.456382 0.921631 0.538019 0.644075 0.32097 0.409508 0.388904 0.313542 0.428454 0.874714 0.888014 0.840323 0.887978 0.311038 0.965327 0.511296 0.314881 0.58136 0.562703 0.79615
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.590909, recall: 1.000000, error: 0.409091
+435. 
+patient tongue id: 01192123268404_4_6
+label yaofang:
+甘草 茯苓 桔梗 远志 党参 白术 酸枣仁 浙贝母 山药 天麻 鳖甲 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.950288 0.535015 0.559042 0.493173 0.315633 0.320851 0.573686 0.531681 0.562021 0.428518 0.471805 0.549096
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 1.000000, recall: 0.750000, error: 0.000000
+436. 
+patient tongue id: 05171936528913_5
+label yaofang:
+甘草 桔梗 荆芥 防风 紫菀 白前 百部 蝉蜕 蒸陈皮
+0.779942 0.479532 0.443814 0.320618 0.509409 0.354028
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.166667, recall: 0.111111, error: 0.833333
+437. 
+patient tongue id: 02142343086820_4_1
+label yaofang:
+甘草 白芍 薏苡仁 白术 赤芍 附子 天麻 僵蚕 鳖甲 木瓜 败酱草 蜈蚣 半枝莲 宽筋藤
+0.812219 0.507481 0.433807 0.406937 0.310204 0.315139
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.285714, error: 0.333333
+438. 
+patient tongue id: 02212243253194_6_4
+label yaofang:
+桂枝 甘草 柴胡 白芍 茯苓 桃仁 白术 栀子 牡丹皮 郁金 地黄 益母草 火麻仁 麦芽
+0.944236 0.533201 0.557286 0.446987 0.316463 0.526605 0.476905 0.474376 0.370919 0.39554 0.431378
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.272727, recall: 0.214286, error: 0.727273
+439. 
+patient tongue id: 05232033267763_1
+label yaofang:
+甘草 当归 半夏 薏苡仁 黄芪 枸杞子 白术 赤芍 海螵蛸 杜仲 厚朴 肉苁蓉 巴戟天 桑寄生 补骨脂 紫苏叶 骨碎补
+0.532844 0.391312 0.526852 0.644653 0.724329 0.328811 0.422837 0.529249 0.432905 0.303003 0.328787 0.323716 0.428086 0.316757 0.360229 0.340359
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 僵蚕 莪术 鸡内金 北沙参 蜈蚣 合欢皮 蛇舌草
+
+------Score: precision: 0.437500, recall: 0.411765, error: 0.562500
+440. 
+patient tongue id: 06130821015785_1_3_7
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.533617 0.384798 0.415648 0.473457 0.469657 0.452961 0.398621 0.425231 0.39197 0.420212 0.413092 0.402688 0.465722 0.426548 0.410972 0.382588
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+
+------Score: precision: 0.250000, recall: 0.307692, error: 0.750000
+441. 
+patient tongue id: 05182214120526_1_4
+label yaofang:
+法半夏 茯苓 前胡 防风 细辛 干姜 款冬花 紫菀 白前 百部 炙甘草 辛夷 炒紫苏子 蜜麻黄
+0.405714 0.627763 0.430139 0.76346 0.422057 0.461322 0.326334 0.685581 0.698122 0.648693 0.753464 0.385701 0.869833 0.375922 0.399328 0.409614 0.608529
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.705882, recall: 0.857143, error: 0.294118
+442. 
+patient tongue id: 05312145463004_4_6
+label yaofang:
+甘草 枳壳 法半夏 茯苓 木香 党参 白术 丹参 薤白 砂仁 天麻 瓜蒌皮 紫苏梗
+0.988242 0.587287 0.614061 0.47966 0.330828 0.335559 0.670793 0.615915 0.629559 0.479627 0.528703 0.609533
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.384615, error: 0.583333
+443. 
+patient tongue id: 01061912211386_5_7_6
+label yaofang:
+甘草 柴胡 黄芩 法半夏 茯苓 白术 浙贝母 郁金 天麻 鳖甲 皂角刺 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.991459 0.579707 0.647078 0.490869 0.357245 0.328671 0.722639 0.619946 0.649013 0.468695 0.534035 0.638788
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.562500, error: 0.250000
+444. 
+patient tongue id: 05111932256193_1_4
+label yaofang:
+甘草 枳壳 茯苓 半夏 薏苡仁 黄芪 枸杞子 牡丹皮 杜仲 厚朴 桑寄生 莪术 续断 蜈蚣 预知子 蛇舌草
+0.717742 0.429151 0.429892 0.449103 0.548456 0.332532
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 蜈蚣
+
+------Score: precision: 0.666667, recall: 0.250000, error: 0.333333
+445. 
+patient tongue id: 02120935206767_1_2
+label yaofang:
+甘草 白芍 茯苓 党参 鸡血藤 生地黄 山药 天麻 菟丝子 益母草 鳖甲 蜈蚣 天山雪莲 半枝莲
+0.959959 0.555284 0.57125 0.466844 0.311493 0.333227 0.56272 0.518318 0.524709 0.406307 0.431843 0.479325
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+446. 
+patient tongue id: 02110731073939_1_6_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.676989 0.403864 0.470846 0.466646 0.481469 0.304052
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 天麻
+
+------Score: precision: 0.166667, recall: 0.083333, error: 0.833333
+447. 
+patient tongue id: 04062006567525_6_4
+label yaofang:
+柴胡 白芍 香附 枳壳 延胡索 海螵蛸 浙贝母 豆蔻 姜半夏 炙甘草 紫苏梗
+0.349283 0.312281 0.399919 0.316927 0.37926 0.388535 0.383492 0.51767
+predicted yaofang:
+甘草 柴胡 白芍 茯苓 党参 白术 姜半夏 炙甘草
+
+------Score: precision: 0.500000, recall: 0.363636, error: 0.500000
+448. 
+patient tongue id: 05140704079259_5_6
+label yaofang:
+甘草 薏苡仁 党参 白术 牡丹皮 郁金 山药 天麻 鳖甲 莪术 豆蔻 浮小麦 蜈蚣 天山雪莲 半枝莲
+0.991379 0.586575 0.656996 0.450612 0.362479 0.33797 0.734234 0.607007 0.60647 0.446184 0.518315 0.604461
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.600000, error: 0.250000
+449. 
+patient tongue id: 03151911128003_7_6
+label yaofang:
+柴胡 陈皮 当归 党参 黄芪 白术 丹参 石菖蒲 泽泻 蝉蜕 炙甘草
+0.351211 0.352611 0.433854 0.318475 0.301289 0.363243 0.429193 0.343486 0.321289 0.317767 0.464625 0.563022
+predicted yaofang:
+甘草 柴胡 白芍 香附 茯苓 党参 白术 海螵蛸 浙贝母 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.333333, recall: 0.363636, error: 0.666667
+450. 
+patient tongue id: 03151821347662_1_8
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.341168 0.347285 0.378047 0.311391 0.355912
+predicted yaofang:
+甘草 茯苓 党参 黄芪 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+451. 
+patient tongue id: 06070650144825_4_1
+label yaofang:
+甘草 黄芩 桔梗 芦根 牛蒡子 紫花地丁 浙贝母 鳖甲 紫菀 苦杏仁 浮小麦 白花蛇舌 蜂房 岗梅根 四季青
+0.988789 0.572209 0.628014 0.483001 0.340318 0.324185 0.677458 0.615867 0.631421 0.481796 0.528394 0.610326
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.250000, recall: 0.200000, error: 0.750000
+452. 
+patient tongue id: 01050655588497_4_7_1
+label yaofang:
+甘草 法半夏 桃仁 白术 郁金 山药 石菖蒲 车前子 大腹皮 天麻 地龙 首乌藤 泽兰
+0.89187 0.516195 0.489782 0.447394 0.393641 0.348452 0.392163 0.300041
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.375000, recall: 0.230769, error: 0.625000
+453. 
+patient tongue id: 02190501013285_4_6
+label yaofang:
+甘草 川芎 法半夏 茯苓 薏苡仁 白术 钩藤 厚朴 天麻 僵蚕 麦芽 地龙 蒺藜 首乌藤 谷精草
+0.970912 0.55606 0.580436 0.403148 0.300948 0.572567 0.467547 0.450352 0.344438 0.366228 0.395231
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.363636, recall: 0.266667, error: 0.636364
+454. 
+patient tongue id: 03101856141892_6
+label yaofang:
+当归 木香 远志 党参 黄芪 鸡血藤 白术 柏子仁 海螵蛸 砂仁 炙甘草 百合 紫苏叶
+0.358282 0.326977 0.301162 0.37157 0.31219 0.322919 0.328904 0.612602
+predicted yaofang:
+白芍 茯苓 党参 白术 海螵蛸 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.500000, recall: 0.307692, error: 0.500000
+455. 
+patient tongue id: 02151916068464_2_1
+label yaofang:
+法半夏 前胡 太子参 细辛 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
+0.414345 0.779458 0.458164 0.863871 0.496529 0.592325 0.322799 0.393343 0.37635 0.313214 0.402665 0.808651 0.818514 0.777327 0.825145 0.315628 0.926709 0.466616 0.303805 0.541714 0.533864 0.737394
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.636364, recall: 0.933333, error: 0.363636
+456. 
+patient tongue id: 02241844306873_4
+label yaofang:
+陈皮 法半夏 前胡 防风 海螵蛸 白芷 百部 豆蔻 炙甘草 辛夷 紫苏梗 广藿香 麸炒白术 甘松
+0.408449 0.76737 0.45884 0.853494 0.496776 0.568763 0.328042 0.386304 0.363341 0.300083 0.376324 0.797355 0.803016 0.758679 0.81076 0.31908 0.920441 0.442319 0.523567 0.517659 0.723669
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.428571, recall: 0.642857, error: 0.571429
+457. 
+patient tongue id: 02021017140721_1_4
+label yaofang:
+甘草 茯苓 黄芪 白术 胆南星 杜仲 白茅根 石菖蒲 大黄 厚朴 生半夏 火麻仁 鸡内金 稻芽
+0.488016 0.408886 0.320753 0.486901 0.475813 0.304187 0.311764
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴 北沙参
+
+------Score: precision: 0.714286, recall: 0.357143, error: 0.285714
+458. 
+patient tongue id: 04131904379916_5_7
+label yaofang:
+甘草 薏苡仁 蒲公英 白术 赤芍 海螵蛸 牡丹皮 黄柏 厚朴 僵蚕 莪术 白鲜皮 土茯苓 车前草 姜黄 蛇舌草 龙胆 鸭脚艾
+0.513007 0.371794 0.386732 0.640682 0.439119 0.363043
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 厚朴
+
+------Score: precision: 0.500000, recall: 0.166667, error: 0.500000
+459. 
+patient tongue id: 03020740287195_1_4_7
+label yaofang:
+桃仁 丹参 红花 牛膝 钩藤 泽泻 车前子 莱菔子 天麻 决明子 夏枯草 制何首乌
+0.662466 0.41197 0.344883 0.50479 0.390566 0.384761 0.332501 0.348668 0.322832 0.303483 0.491986
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 天麻
+
+------Score: precision: 0.636364, recall: 0.583333, error: 0.363636
+460. 
+patient tongue id: 04121331423736_4
+label yaofang:
+麻黄 前胡 桔梗 半夏 太子参 黄芪 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 紫苏子 炙甘草
+0.444444 0.883828 0.450807 0.949333 0.561478 0.667097 0.316267 0.417695 0.385839 0.417044 0.910664 0.92216 0.87833 0.920857 0.978704 0.522381 0.305543 0.600624 0.582438 0.835245
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.500000, recall: 0.666667, error: 0.500000
+461. 
+patient tongue id: 04291624182539_1_2_6
+label yaofang:
+甘草 生地黄 红花 牡丹皮 山茱萸 天麻 地骨皮 鳖甲 火麻仁 浮小麦 首乌藤 蜈蚣 天山雪莲 半枝莲
+0.980496 0.552539 0.599691 0.488621 0.338495 0.3266 0.662756 0.589614 0.617449 0.462916 0.507687 0.59225
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+462. 
+patient tongue id: 01041307169732_5
+label yaofang:
+桂枝 白芍 茯苓 桃仁 阿胶 海螵蛸 牡丹皮 茜草
+0.386048 0.32364 0.435576 0.441341 0.333597 0.372443 0.332063 0.421022 0.32212
+predicted yaofang:
+甘草 桃仁 党参 黄芪 丹参 牛膝 泽泻 车前子 制何首乌
+
+------Score: precision: 0.111111, recall: 0.125000, error: 0.888889
+463. 
+patient tongue id: 05251917109192_3
+label yaofang:
+麻黄 桂枝 黄芩 党参 黄芪 白芷 辛夷 苍耳子 路路通
+0.630605 0.431435 0.39592 0.309285 0.417744
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.400000, recall: 0.222222, error: 0.600000
+464. 
+patient tongue id: 03131248131953_4
+label yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 款冬花 紫菀 白前 百部 炙甘草 紫苏梗 广藿香 蜜麻黄
+0.317544 0.434568 0.40778 0.38264 0.450106
+predicted yaofang:
+甘草 茯苓 黄芪 北沙参 炙甘草
+
+------Score: precision: 0.400000, recall: 0.142857, error: 0.600000
+465. 
+patient tongue id: 04261349477632_5_1_7
+label yaofang:
+当归 牡蛎 党参 黄芪 白术 丹参 延胡索 赤芍 山药 仙鹤草 砂仁 补骨脂 红豆杉 三七粉
+0.332664 0.672514
+predicted yaofang:
+茯苓 炙甘草
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+466. 
+patient tongue id: 04102040402642_4_6
+label yaofang:
+陈皮 桔梗 车前子 大腹皮 干姜 厚朴 白芷 蝉蜕 姜半夏 紫苏叶 广藿香 鹿衔草
+0.38399 0.465199 0.382453 0.336794 0.395726 0.391198 0.37367 0.599239 0.681169 0.308957
+predicted yaofang:
+柴胡 白芍 香附 党参 白术 海螵蛸 干姜 姜半夏 炙甘草 紫苏梗
+
+------Score: precision: 0.200000, recall: 0.166667, error: 0.800000
+467. 
+patient tongue id: 05192003512103_2_6
+label yaofang:
+甘草 法半夏 茯苓 龙骨 远志 党参 酸枣仁 知母 菟丝子 益母草 女贞子 浮小麦 首乌藤
+0.972345 0.561206 0.602143 0.448292 0.330802 0.339042 0.624327 0.544322 0.534829 0.417196 0.461911 0.51211
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.333333, recall: 0.307692, error: 0.666667
+468. 
+patient tongue id: 01042338301780_6_4
+label yaofang:
+甘草 桔梗 酸枣仁 生地黄 浙贝母 天麻 菟丝子 益母草 鳖甲 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.988953 0.58643 0.626733 0.5039 0.345306 0.346115 0.682781 0.623004 0.641929 0.489172 0.551859 0.645255
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.666667, recall: 0.571429, error: 0.333333
+469. 
+patient tongue id: 03302123058100_4_6
+label yaofang:
+甘草 法半夏 芦根 薏苡仁 党参 白术 浙贝母 郁金 细辛 天麻 鳖甲 莪术 威灵仙 蜈蚣 白花蛇舌 天山雪莲
+0.937084 0.492032 0.563094 0.400486 0.3136 0.603658 0.324887 0.375499 0.310483
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 天麻 鳖甲 蜈蚣 半枝莲
+
+------Score: precision: 0.666667, recall: 0.375000, error: 0.333333
+470. 
+patient tongue id: 03291353005293_1_4
+label yaofang:
+甘草 法半夏 薏苡仁 党参 白术 厚朴 天麻 鳖甲 豆蔻 苦杏仁 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.977953 0.564963 0.596397 0.447452 0.314106 0.317883 0.631181 0.533271 0.545816 0.397768 0.443589 0.50975
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.750000, recall: 0.642857, error: 0.250000
+471. 
+patient tongue id: 06191215484649_7_2_4
+label yaofang:
+甘草 远志 党参 酸枣仁 杜仲 山药 天麻 桑寄生 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲 红豆杉 牛大力
+0.948429 0.541504 0.561642 0.458217 0.514642 0.420954 0.458372 0.329213 0.373353
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.777778, recall: 0.466667, error: 0.222222
+472. 
+patient tongue id: 05131439581912_1_2
+label yaofang:
+甘草 黄芩 桔梗 党参 白术 浙贝母 乌梅 山药 鳖甲 鹿角霜 白花蛇舌 蜂房 岗梅根 四季青
+0.982642 0.566135 0.628178 0.494463 0.3403 0.338436 0.664812 0.600708 0.606069 0.455601 0.513066 0.5828
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+473. 
+patient tongue id: 01092324346108_2_4_1
+label yaofang:
+甘草 茯苓 五味子 细辛 干姜 苦杏仁 姜半夏
+0.697295 0.437511 0.45644 0.407959 0.340802
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻
+
+------Score: precision: 0.400000, recall: 0.285714, error: 0.600000
+474. 
+patient tongue id: 03312024487699_1_2_7
+label yaofang:
+甘草 柴胡 白芍 茯苓 薏苡仁 党参 白术 郁金 山药 天麻 鳖甲 莪术 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.944319 0.500773 0.553767 0.466284 0.505667 0.414831 0.458884 0.323342 0.35993
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣 天山雪莲 半枝莲
+
+------Score: precision: 0.888889, recall: 0.500000, error: 0.111111
+475. 
+patient tongue id: 03291902228451_1_6
+label yaofang:
+甘草 香附 茯苓 党参 白术 延胡索 海螵蛸 车前子 干姜 紫苏梗 瓦楞子 猫爪草
+0.659775 0.313809 0.406532 0.461005 0.426259
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术
+
+------Score: precision: 0.800000, recall: 0.333333, error: 0.200000
+476. 
+patient tongue id: 03101900089120_6
+label yaofang:
+麻黄 桂枝 柴胡 白芍 香附 枳壳 牛蒡子 五味子 海螵蛸 浙贝母 细辛 干姜 射干 紫菀 豆蔻 苦杏仁 姜半夏 炙甘草 紫苏梗 龙脷叶
+0.536453 0.379928 0.326623 0.500225 0.691107 0.314787 0.333781 0.331927 0.324693
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术 海螵蛸 厚朴 砂仁 蜈蚣
+
+------Score: precision: 0.111111, recall: 0.050000, error: 0.888889
+477. 
+patient tongue id: 05102206155763_1_2
+label yaofang:
+陈皮 法半夏 前胡 桔梗 太子参 细辛 干姜 款冬花 紫菀 白前 百部 北沙参 炙甘草 炒紫苏子 蜜麻黄
+0.37534 0.58163 0.463195 0.642019 0.405262 0.46885 0.327828 0.329962 0.327384 0.345208 0.584986 0.592664 0.570424 0.623832 0.344522 0.798277 0.376834 0.443085 0.438819 0.558628
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.750000, recall: 1.000000, error: 0.250000
+478. 
+patient tongue id: 04071923454830_4
+label yaofang:
+桂枝 陈皮 法半夏 前胡 太子参 细辛 干姜 款冬花 紫菀 白前 百部 豆蔻 北沙参 炙甘草 炒紫苏子 蜜麻黄 醋五味子
+0.3209 0.30406 0.33021 0.444153 0.370534 0.358298 0.508336
+predicted yaofang:
+甘草 陈皮 法半夏 茯苓 黄芪 北沙参 炙甘草
+
+------Score: precision: 0.571429, recall: 0.235294, error: 0.428571
+479. 
+patient tongue id: 04071412414750_1_2_7
+label yaofang:
+甘草 川芎 茯苓 牡蛎 麦冬 党参 黄芪 酸枣仁 郁金 浮小麦 首乌藤 百合 制远志
+0.461071 0.369142 0.373395 0.475704 0.414076
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.800000, recall: 0.307692, error: 0.200000
+480. 
+patient tongue id: 03171155068628_1_3_7
+label yaofang:
+甘草 麦冬 党参 黄芪 枸杞子 玄参 生地黄 牡丹皮 山药 天花粉 北沙参 玉米须
+0.493411 0.394426 0.406494 0.474198 0.316044 0.304579
+predicted yaofang:
+甘草 茯苓 党参 黄芪 丹参 牛膝
+
+------Score: precision: 0.500000, recall: 0.250000, error: 0.500000
+481. 
+patient tongue id: 05311940552021_1
+label yaofang:
+甘草 桔梗 半夏 橘红 芦根 薏苡仁 桑叶 菊花 苦杏仁 蝉蜕 野马追 东风桔
+0.648344 0.413997 0.343066 0.506576 0.381109 0.40575 0.334103 0.358683 0.330762 0.311342 0.303301 0.499798
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 红花 牛膝 泽泻 车前子 莱菔子 天麻
+
+------Score: precision: 0.083333, recall: 0.083333, error: 0.916667
+482. 
+patient tongue id: 05092114255831_2_7
+label yaofang:
+甘草 薏苡仁 桃仁 酸枣仁 生地黄 山药 天麻 鳖甲 款冬花 莪术 紫菀 桑螵蛸 百合 蜈蚣 白花蛇舌 红豆杉
+0.950913 0.521294 0.568373 0.51179 0.30038 0.522999 0.469704 0.515613 0.346559 0.383201 0.430332
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.545455, recall: 0.375000, error: 0.454545
+483. 
+patient tongue id: 05261921468148_5
+label yaofang:
+甘草 金银花 薏苡仁 赤小豆 野菊花 茵陈 扁豆花 木棉花 鸡蛋花
+0.458455 0.399429 0.348843 0.447136 0.395751
+predicted yaofang:
+甘草 茯苓 党参 黄芪 白术
+
+------Score: precision: 0.200000, recall: 0.111111, error: 0.800000
+484. 
+patient tongue id: 05232110096111_1_4_6
+label yaofang:
+柴胡 荆芥 薄荷 浙贝母 僵蚕 百部 苦杏仁 紫苏子 辛夷 紫苏叶 木蝴蝶 紫苑
+0.536389 0.394184 0.434778 0.313235 0.651506 0.691585 0.387988 0.487762 0.398484 0.333616 0.389811 0.339023
+predicted yaofang:
+甘草 茯苓 半夏 党参 黄芪 白术 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.000000, recall: 0.000000, error: 1.000000
+485. 
+patient tongue id: 05092124050849_6_4
+label yaofang:
+甘草 茯苓 薏苡仁 远志 党参 黄芪 酸枣仁 天麻 鳖甲 白扁豆 佛手 浮小麦 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.977553 0.573327 0.612209 0.45011 0.330088 0.33215 0.639818 0.572496 0.559786 0.441786 0.48259 0.540546
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.833333, recall: 0.625000, error: 0.166667
+486. 
+patient tongue id: 04200634514551_5_1_6
+label yaofang:
+甘草 薏苡仁 党参 山药 天麻 鳖甲 茵陈 扁豆花 莪术 虎杖 蜈蚣 白花蛇舌 天山雪莲 红豆杉
+0.963757 0.559127 0.559853 0.440059 0.304622 0.548234 0.516406 0.50023 0.400578 0.422715 0.452228
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.727273, recall: 0.571429, error: 0.272727
+487. 
+patient tongue id: 03062146371053_3_1_4
+label yaofang:
+桂枝 甘草 枳壳 当归 茯苓 黄芪 白术 干姜 厚朴 僵蚕 磁石 肉苁蓉 鸡内金 辛夷
+0.472969 0.394562 0.306953 0.422021 0.492346 0.341299 0.32936 0.300144
+predicted yaofang:
+甘草 茯苓 桃仁 党参 黄芪 丹参 牛膝 天麻
+
+------Score: precision: 0.375000, recall: 0.214286, error: 0.625000
+488. 
+patient tongue id: 03032027453727_4
+label yaofang:
+法半夏 前胡 桔梗 防风 薄荷 荆芥穗 北柴胡 款冬花 紫菀 百部 炙甘草 辛夷 紫苏梗 广藿香
+0.44525 0.815885 0.456087 0.900851 0.531013 0.622301 0.326691 0.396956 0.385648 0.315444 0.418781 0.85166 0.864664 0.81497 0.86634 0.31618 0.955985 0.492916 0.31861 0.576359 0.542418 0.769538
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄
+
+------Score: precision: 0.545455, recall: 0.857143, error: 0.454545
+489. 
+patient tongue id: 03061451369138_2_7
+label yaofang:
+甘草 当归 茯苓 龙骨 牛蒡子 柏子仁 熟地黄 乌梅 紫菀 紫苏子 姜半夏 百合 蜜枇杷叶 化橘红
+0.329844 0.357899 0.356168 0.311915 0.612296
+predicted yaofang:
+茯苓 黄芪 白术 海螵蛸 炙甘草
+
+------Score: precision: 0.200000, recall: 0.071429, error: 0.800000
+490. 
+patient tongue id: 04120125056619_2_5_7
+label yaofang:
+甘草 柴胡 白芍 法半夏 茯苓 党参 白术 生地黄 黄柏 胡黄连 淡竹叶 麦芽 佛手 广藿香
+0.861983 0.512212 0.463356 0.411301 0.381291 0.308581 0.347783
+predicted yaofang:
+甘草 茯苓 党参 白术 天麻 鳖甲 蜈蚣
+
+------Score: precision: 0.571429, recall: 0.285714, error: 0.428571
+491. 
+patient tongue id: 06072126078339_4_1
+label yaofang:
+桂枝 甘草 柴胡 枳壳 法半夏 党参 丹参 赤芍 川楝子 郁金 薤白 瓜蒌皮 补骨脂 麦芽 田七末
+0.986984 0.582606 0.599891 0.457798 0.309689 0.624954 0.566705 0.580542 0.439895 0.474389 0.55074
+predicted yaofang:
+甘草 茯苓 党参 白术 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
 
 ------Score: precision: 0.181818, recall: 0.133333, error: 0.818182
-------Average Score: average precision: 0.438274, average recall: 0.337112, error: 0.561726
+492. 
+patient tongue id: 01041301307309_6_1
+label yaofang:
+茯苓 麦冬 党参 酸枣仁 柏子仁 附子 干姜 磁石 炙甘草
+0.439818 0.314995 0.407786 0.323994 0.317497 0.427829
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 炙甘草
+
+------Score: precision: 0.500000, recall: 0.333333, error: 0.500000
+493. 
+patient tongue id: 03081855589569_4
+label yaofang:
+陈皮 法半夏 前胡 桔梗 防风 款冬花 紫菀 白前 百部 豆蔻 炙甘草 辛夷 广藿香 炒紫苏子 蜜麻黄
+0.434692 0.692394 0.444106 0.791189 0.479558 0.553638 0.353748 0.386361 0.380438 0.322185 0.386492 0.737181 0.744152 0.716254 0.764808 0.358206 0.874689 0.451896 0.332252 0.519988 0.503742 0.677991 0.309023
+predicted yaofang:
+陈皮 法半夏 茯苓 前胡 桔梗 防风 太子参 细辛 干姜 荆芥穗 白芷 款冬花 紫菀 白前 百部 北沙参 炙甘草 辛夷 紫苏梗 广藿香 炒紫苏子 蜜麻黄 炒苍耳子
+
+------Score: precision: 0.608696, recall: 0.933333, error: 0.391304
+494. 
+patient tongue id: 02182217015039_2_6
+label yaofang:
+甘草 白芍 麦冬 太子参 浙贝母 山药 白茅根 鳖甲 北沙参 辛夷 苍耳子 白花蛇舌 天山雪莲 蜂房 四季青
+0.984407 0.57612 0.608607 0.496185 0.329327 0.338357 0.627519 0.593649 0.606427 0.466276 0.506655 0.575875
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.416667, recall: 0.333333, error: 0.583333
+495. 
+patient tongue id: 05222124534209_1_4_7
+label yaofang:
+当归 黄芪 鸡血藤 白术 丹参 厚朴 砂仁 肉苁蓉 火麻仁 鸡内金 北沙参 稻芽 冬凌草 红参
+0.484584 0.371678 0.42636 0.695722 0.678255 0.322059 0.379279 0.513635 0.397845 0.381372 0.39764 0.369893
+predicted yaofang:
+甘草 茯苓 半夏 黄芪 白术 海螵蛸 杜仲 厚朴 砂仁 鸡内金 北沙参 合欢皮
+
+------Score: precision: 0.500000, recall: 0.428571, error: 0.500000
+496. 
+patient tongue id: 05042121273771_1_4
+label yaofang:
+甘草 当归 茯苓 牛蒡子 党参 白术 海螵蛸 干姜 补骨脂 浮小麦 瓦楞子
+0.30205 0.372342 0.320033 0.375098 0.389957 0.313203 0.470972 0.61756
+predicted yaofang:
+柴胡 白芍 党参 白术 海螵蛸 干姜 姜半夏 炙甘草
+
+------Score: precision: 0.500000, recall: 0.363636, error: 0.500000
+497. 
+patient tongue id: 03090802565431_6
+label yaofang:
+甘草 法半夏 茯苓 远志 党参 酸枣仁 天麻 鳖甲 浮小麦 百合 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+0.941899 0.311678 0.545052 0.548772 0.454951 0.305536 0.33048 0.537831 0.529241 0.521557 0.44177 0.457154 0.500325
+predicted yaofang:
+甘草 白芍 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.769231, recall: 0.714286, error: 0.230769
+498. 
+patient tongue id: 01182058059521_4_6_7
+label yaofang:
+甘草 川芎 法半夏 茯苓 白术 红花 栀子 牛膝 天麻 鳖甲 粉葛 首乌藤 白花蛇舌 半枝莲
+0.940941 0.532757 0.544216 0.474766 0.308026 0.327894 0.541264 0.51171 0.527842 0.410109 0.436698 0.487996
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.583333, recall: 0.500000, error: 0.416667
+499. 
+patient tongue id: 03221308433062_1_6_7
+label yaofang:
+甘草 麦冬 党参 太子参 五味子 牛膝 郁金 天麻 鳖甲 淫羊藿 蒺藜 鹿角霜 蜈蚣 天山雪莲 半枝莲 鹿衔草
+0.991605 0.591083 0.648723 0.505065 0.352981 0.344524 0.703195 0.644498 0.654234 0.498401 0.555383 0.635378
+predicted yaofang:
+甘草 茯苓 党参 白术 酸枣仁 山药 天麻 鳖甲 蜈蚣 白花蛇舌 天山雪莲 半枝莲
+
+------Score: precision: 0.583333, recall: 0.437500, error: 0.416667
+------Average Score: average precision: 0.459094, average recall: 0.363537, error: 0.540906
