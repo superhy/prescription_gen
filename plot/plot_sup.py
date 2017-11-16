@@ -44,7 +44,7 @@ def get_losshis_avgmaxmin(his_file_paths_1tuple):
         his_lines = his_file.readlines()
         his_file.close()
         
-        val_loss_his = [5.0]
+        val_loss_his = [0.1]
         for line in his_lines:
             val_loss = float(line.split(', ')[2])
             val_loss_his.append(val_loss)
@@ -79,6 +79,12 @@ def prod_line_csv():
                                   'max_his': max_val_loss_his,
                                   'min_his': min_val_loss_his})
         dataframe.to_csv(plot_hiscsv_folder + his_csvs[i], index=True)
+        
+        # print
+        print("{0}:".format(i))
+        print("avg_his: {0}".format(average_val_loss_his))
+        print("max_his: {0}".format(max_val_loss_his))
+        print("min_his: {0}".format(min_val_loss_his))
 
 prod_line_csv()
     
