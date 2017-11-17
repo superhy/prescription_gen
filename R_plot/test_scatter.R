@@ -14,6 +14,6 @@ df$z <- factor(df$z)
 
 ppi <- 200
 # png('/home/superhy/文档/code/workspace/prescription_gen/R_plot/test.png', width = 4*ppi, height=4*ppi)
-ggplot(data = df, mapping = aes(x = x, y = y, colour=z)) + geom_line()
+ggplot(data = df, mapping = aes(x = x, y = y, colour=z)) + geom_point() + theme_bw()
 # qplot(x, y, geom="line")
 # dev.off()
