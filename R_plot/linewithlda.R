@@ -53,6 +53,7 @@ sp <- ggplot(data=df, mapping=aes(x=epochs, y=loss, colour=loss_type, group=loss
 		geom_line(size=0.8) + 
 		geom_hline(yintercept=val_loss_minrecord, colour="red", linetype="dashed", size=0.4)
 		# geom_point(x=val_loss_minX, y=val_loss_minrecord, col="red", shape=1, size=3)
+sp <- sp + theme(legend.title=element_text(size=16)) + theme(legend.text=element_text(size=16))
 sp <- sp + annotate("rect", xmin=min(max_minX, min_minX), xmax=max(max_minX, min_minX),
 		ymin=0.065, ymax=0.12, alpha=0.15, fill="blue")
 ## sp <- sp + annotate("segment", x=val_loss_minX - 9.9, xend=val_loss_minX - 0.5,
@@ -61,7 +62,7 @@ sp <- sp + annotate("rect", xmin=min(max_minX, min_minX), xmax=max(max_minX, min
 sp <- sp + coord_fixed(ratio=1200/1) + scale_y_continuous(limits=c(0.065, 0.12), breaks=c(0.065, val_loss_minBreak, 0.075, 0.085, 0.095, 0.105, 0.115)) + 
 		scale_x_continuous(limits=c(0, 80), breaks=seq(0, 80, by=20))
 sp <- sp + xlab("epochs") + theme(axis.title.x=element_text(size=20), axis.text.x=element_text(size=15)) +
-		ylab("validation loss") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
+		ylab("validation losses") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
 ## sp <- sp + theme(axis.line = element_line(colour="black")) ## + theme(panel.grid =element_blank())
 sp
 

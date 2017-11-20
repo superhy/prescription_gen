@@ -112,7 +112,7 @@ def prod_line_csv():
                                   'max_his': max_val_loss_his,
                                   'min_his': min_val_loss_his})
         dataframe.to_csv(plot_hiscsv_folder + his_csvs[i], index=True)
- 
+
         # print
         print("{0}:".format(i))
         print("avg_his: {0}".format(average_val_loss_his))
@@ -137,4 +137,70 @@ def prod_line_csv():
         print("min_withlda_his: {0}".format(min_valwithlda_loss_his))
 
 
-prod_line_csv()
+# prod_line_csv()
+
+prescription_folder = '/home/superhy/prescription-gen-file/res/plot/p/'
+prescriptions_tuples = [('1c-0.p', '1c-1.p', '1c-2.p', '1c-3.p', '1c-4.p'),
+                        ('1c_aug-0.p', '1c_aug-1.p', '1c_aug-2.p',
+                         '1c_aug-3.p', '1c_aug-4.p'),
+                        ('2c-0.p', '2c-1.p', '2c-2.p', '2c-3.p', '2c-4.p'),
+                        ('2c_aug-0.p', '2c_aug-1.p', '2c_aug-2.p',
+                         '2c_aug-3.p', '2c_aug-4.p'),
+                        ('2c_lda-0.p', '2c_lda-1.p', '2c_lda-2.p',
+                         '2c_lda-3.p', '2c_lda-4.p'),
+                        ('2c_lda_aug-0.p', '2c_lda_aug-1.p', '2c_lda_aug-2.p', '2c_lda_aug-3.p', '2c_lda_aug-4.p')]
+model_names = ['1c', '1c_aug', '2c', '2c_aug', '2c_lda', '2c_lda_aug']
+
+
+def get_prescription_res_info():
+
+    total_nb_real_p = 0
+
+    for i in range(len(prescriptions_tuples[0])):
+        p_file = open(prescription_folder + prescriptions_tuples[0][i], 'r')
+        p_lines = p_file.readlines()
+        p_file.close()
+        for l in range(len(p_lines)):
+            if p_lines[l].startswith('label'):
+                label_p_str = p_lines[l + 1]
+#                 print(label_p_str[: len(label_p_str) - 1])
+                label_p = label_p_str[: len(label_p_str) - 1].split(' ')
+                total_nb_real_p += len(label_p)
+    total_nb_real_p = total_nb_real_p * 1.0 / 2500
+    print("average number of herbs in real prescription: {0}".format(
+        total_nb_real_p))
+
+    for m in range(len(prescriptions_tuples)):
+        total_nb_p = 0
+        total_nb_c = 0
+        total_nb_e = 0
+        for i in range(len(prescriptions_tuples[m])):
+            p_file = open(prescription_folder +
+                          prescriptions_tuples[m][i], 'r')
+            p_lines = p_file.readlines()
+            p_file.close()
+            for l in range(len(p_lines)):
+                if p_lines[l].startswith('label'):
+                    label_p_str = p_lines[l + 1]
+                    prediction_p_str = p_lines[l + 4]
+                    label_p = label_p_str[: len(label_p_str) - 1].split(' ')
+#                     print(prediction_p_str)
+                    prediction_p = prediction_p_str[: len(
+                        prediction_p_str) - 1].split(' ')
+                    total_nb_p += len(prediction_p)
+
+                    prediction_c = set(label_p) & set(prediction_p)
+                    total_nb_c += len(prediction_c)
+
+                    total_nb_e += (len(prediction_p) - len(prediction_c))
+        total_nb_p = total_nb_p * 1.0 / 2500
+        total_nb_c = total_nb_c * 1.0 / 2500
+        total_nb_e = total_nb_e * 1.0 / 2500
+        print('average number of herbs in predicted prescription of ' +
+              model_names[m] + ' model: {0}'.format(total_nb_p))
+        print('average number of herbs in correct predicted prescription of ' +
+              model_names[m] + ' model: {0}'.format(total_nb_c))
+        print('average number of herbs in error predicted prescription of ' +
+              model_names[m] + ' model: {0}'.format(total_nb_e))
+
+get_prescription_res_info()
