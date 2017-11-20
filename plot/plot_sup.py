@@ -167,7 +167,7 @@ def get_prescription_res_info():
                 label_p = label_p_str[: len(label_p_str) - 1].split(' ')
                 total_nb_real_p += len(label_p)
     total_nb_real_p = total_nb_real_p * 1.0 / 2500
-    print("average number of herbs in real prescription: {0}".format(
+    print("average number of herbs in real prescription: {0}\n".format(
         total_nb_real_p))
 
     for m in range(len(prescriptions_tuples)):
@@ -201,6 +201,23 @@ def get_prescription_res_info():
         print('average number of herbs in correct predicted prescription of ' +
               model_names[m] + ' model: {0}'.format(total_nb_c))
         print('average number of herbs in error predicted prescription of ' +
-              model_names[m] + ' model: {0}'.format(total_nb_e))
+              model_names[m] + ' model: {0}\n'.format(total_nb_e))
+
 
 get_prescription_res_info()
+
+
+def load_yaopin_id_dict(yaopin_path):
+    '''
+    load yaopin 2 id dictionary
+    @param yaopin_path: yaopin vocabulary path 
+    '''
+    # load yaopin vocab
+    yaopin_vocab_file = open(yaopin_path, 'r')
+    yaopin_vocab_lines = yaopin_vocab_file.readlines()
+    yaopin_vocab_file.close()
+
+    yaopin_id_dict = dict((line[:line.find('\r')].split(' ')[1], int(
+        line.split(' ')[0]) - 1) for line in yaopin_vocab_lines)
+
+    return yaopin_id_dict
