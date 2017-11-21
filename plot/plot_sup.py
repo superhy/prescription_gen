@@ -6,9 +6,14 @@
 '''
 
 import csv
+from sklearn.decomposition import pca
+from sklearn.decomposition.pca import PCA
+import time
 
+from layer.norm import lda
 import numpy as np
 import pandas as pd
+from sklearn import preprocessing
 
 
 plot_his_folder = '/home/superhy/prescription-gen-file/res/plot/his/'
@@ -203,8 +208,14 @@ def get_prescription_res_info():
         print('average number of herbs in error predicted prescription of ' +
               model_names[m] + ' model: {0}\n'.format(total_nb_e))
 
+# get_prescription_res_info()
 
-get_prescription_res_info()
+
+#=========================================================================
+# lda plot sup
+#=========================================================================
+yaopin_vocab_path = '/home/superhy/prescription-gen-file/original/yaopin.vocab'
+lda_model_path = '/home/superhy/prescription-gen-file/cache/nlp/tongue_9585_gensim_lda.topic'
 
 
 def load_yaopin_id_dict(yaopin_path):
@@ -221,3 +232,136 @@ def load_yaopin_id_dict(yaopin_path):
         line.split(' ')[0]) - 1) for line in yaopin_vocab_lines)
 
     return yaopin_id_dict
+
+
+prescription_pca_folder = '/home/superhy/prescription-gen-file/res/plot/topic/'
+prescriptions_pca_tuples = [('1c-0.pca', '1c-1.pca', '1c-2.pca', '1c-3.pca', '1c-4.pca'),
+                            ('1c_aug-0.pca', '1c_aug-1.pca', '1c_aug-2.pca',
+                             '1c_aug-3.pca', '1c_aug-4.pca'),
+                            ('2c-0.pca', '2c-1.pca', '2c-2.pca',
+                             '2c-3.pca', '2c-4.pca'),
+                            ('2c_aug-0.pca', '2c_aug-1.pca', '2c_aug-2.pca',
+                             '2c_aug-3.pca', '2c_aug-4.pca'),
+                            ('2c_lda-0.pca', '2c_lda-1.pca', '2c_lda-2.pca',
+                             '2c_lda-3.pca', '2c_lda-4.pca'),
+                            ('2c_lda_aug-0.pca', '2c_lda_aug-1.pca', '2c_lda_aug-2.pca', '2c_lda_aug-3.pca', '2c_lda_aug-4.pca')]
+
+
+def get_prescription_lda_pca():
+
+    yaopin_id_dict = load_yaopin_id_dict(yaopin_vocab_path)
+
+    lda_model, dictionary = lda.loadModelfromFile(
+        lda_model_path, readOnly=True)
+
+    print('load ids -> load lda -> get pca -> write pca into file')
+    start_pca = time.clock()
+    for m in range(len(prescriptions_tuples)):
+        for i in range(len(prescriptions_tuples[m])):
+            p_file = open(prescription_folder +
+                          prescriptions_tuples[m][i], 'r')
+            p_lines = p_file.readlines()
+            p_file.close()
+            # load prescription ids
+            label_p_ids = []
+            predicted_p_ids = []
+            for l in range(len(p_lines)):
+                if p_lines[l].startswith('label'):
+                    label_p_str = p_lines[l + 1]
+                    prediction_p_str = p_lines[l + 4]
+                    label_p = label_p_str[: len(label_p_str) - 1].split(' ')
+                    label_p_id = list(yaopin_id_dict[p_name]
+                                      for p_name in label_p)
+                    predicted_p = prediction_p_str[: len(
+                        prediction_p_str) - 1].split(' ')
+                    predicted_p_id = list(
+                        yaopin_id_dict[p_name] for p_name in predicted_p)
+                    label_p_ids.append(label_p_id)
+                    predicted_p_ids.append(predicted_p_id)
+
+            # load prescription lda distributions
+            label_p_ids_str = lda.list_int2str(label_p_ids)
+            predicted_p_ids_str = lda.list_int2str(predicted_p_ids)
+            del(label_p_ids)
+            del(predicted_p_ids)
+            label_p_lda_list = []
+            predicted_p_lda_list = []
+            for p in range(len(label_p_ids_str)):
+                label_p_lda = lda.get_topics_np4doc(
+                    label_p_ids_str[p], lda_model, dictionary)
+                predicted_p_lda = lda.get_topics_np4doc(
+                    predicted_p_ids_str[p], lda_model, dictionary)
+                label_p_lda_list.append(label_p_lda)
+                predicted_p_lda_list.append(predicted_p_lda)
+            del(label_p_ids_str)
+            del(predicted_p_ids_str)
+
+            # get lda pca distributions and write into file
+            total_p_lda_list = label_p_lda_list + predicted_p_lda_list
+            pca = PCA(n_components=3, svd_solver='auto')
+            pca.fit(total_p_lda_list)
+            label_p_ldapca = pca.transform(label_p_lda_list)
+            predicted_p_ldapca = pca.transform(predicted_p_lda_list)
+#             scaler = preprocessing.MinMaxScaler(feature_range=(-0.1, 0.1))
+#             scaler.fit(list(label_p_ldapca) + list(predicted_p_ldapca))
+#             label_p_ldapca = scaler.transform(label_p_ldapca)
+#             predicted_p_ldapca = scaler.transform(predicted_p_ldapca)
+            pca_tuples = []
+            for t in range(len(label_p_ldapca)):
+                label_predicted_pca = str(label_p_ldapca[t][0]) + ',' + str(label_p_ldapca[t][1]) + ',' + str(label_p_ldapca[t][2]) + ':' + str(
+                    predicted_p_ldapca[t][0]) + ',' + str(predicted_p_ldapca[t][1]) + ',' + str(predicted_p_ldapca[t][2])
+                pca_tuples.append(label_predicted_pca)
+            pca_file_str = '\n'.join(pca_tuples)
+            pca_file = open(prescription_pca_folder +
+                            prescriptions_pca_tuples[m][i], 'w')
+            pca_file.write(pca_file_str)
+            pca_file.close()
+            print('.'),
+    end_pca = time.clock()
+    print('time used: {0}s'.format(end_pca - start_pca))
+
+
+# get pca csv step 1.
+get_prescription_lda_pca()
+
+prescription_pcacsv_folder = '/home/superhy/prescription-gen-file/res/plot/topic_csv/'
+prescriptions_pca_csvs = [('1c-0.csv', '1c-1.csv', '1c-2.csv', '1c-3.csv', '1c-4.csv'),
+                          ('1c_aug-0.csv', '1c_aug-1.csv', '1c_aug-2.csv',
+                           '1c_aug-3.csv', '1c_aug-4.csv'),
+                          ('2c-0.csv', '2c-1.csv', '2c-2.csv',
+                           '2c-3.csv', '2c-4.csv'),
+                          ('2c_aug-0.csv', '2c_aug-1.csv', '2c_aug-2.csv',
+                           '2c_aug-3.csv', '2c_aug-4.csv'),
+                          ('2c_lda-0.csv', '2c_lda-1.csv', '2c_lda-2.csv',
+                           '2c_lda-3.csv', '2c_lda-4.csv'),
+                          ('2c_lda_aug-0.csv', '2c_lda_aug-1.csv', '2c_lda_aug-2.csv', '2c_lda_aug-3.csv', '2c_lda_aug-4.csv')]
+
+
+def prod_topic_point_csv():
+    for m in range(len(prescriptions_pca_csvs)):
+        for i in range(len(prescriptions_pca_csvs[m])):
+            pca_file = open(prescription_pca_folder +
+                            prescriptions_pca_tuples[m][i], 'r')
+            pca_lines = pca_file.readlines()
+            pca_file.close()
+            types = []
+            pca_x = []
+            pca_y = []
+            pca_z = []
+            for line in pca_lines:
+                pca_xy_strs = line[: line.find('\n')].split(':')
+                types.append("real")
+                pca_x.append(float(pca_xy_strs[0].split(',')[0]))
+                pca_y.append(float(pca_xy_strs[0].split(',')[1]))
+                pca_z.append(float(pca_xy_strs[0].split(',')[2]))
+                types.append("predicted")
+                pca_x.append(float(pca_xy_strs[1].split(',')[0]))
+                pca_y.append(float(pca_xy_strs[1].split(',')[1]))
+                pca_z.append(float(pca_xy_strs[1].split(',')[2]))
+            dataframe = pd.DataFrame(
+                {'type': types, 'pca_x': pca_x, 'pca_y': pca_y, 'pca_z': pca_z})
+            dataframe.to_csv(prescription_pcacsv_folder +
+                             prescriptions_pca_csvs[m][i], index=True)
+
+
+prod_topic_point_csv()
