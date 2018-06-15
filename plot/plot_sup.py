@@ -6,14 +6,16 @@
 '''
 
 import csv
+import random
+import scipy.stats
+from sklearn import preprocessing
+from sklearn.decomposition import *
 from sklearn.decomposition import pca
-from sklearn.decomposition.pca import PCA
 import time
 
 from layer.norm import lda
 import numpy as np
 import pandas as pd
-from sklearn import preprocessing
 
 
 plot_his_folder = '/home/superhy/prescription-gen-file/res/plot/his/'
@@ -254,9 +256,15 @@ def get_prescription_lda_pca():
     lda_model, dictionary = lda.loadModelfromFile(
         lda_model_path, readOnly=True)
 
-    print('load ids -> load lda -> get pca -> write pca into file')
+    print('load ids -> load lda')
     start_pca = time.clock()
+
+    total_p_lda_list = []
+    label_p_lda_list2d = []
+    predicted_p_lda_list2d = []
     for m in range(len(prescriptions_tuples)):
+        label_p_lda_lists = []
+        predicted_p_lda_lists = []
         for i in range(len(prescriptions_tuples[m])):
             p_file = open(prescription_folder +
                           prescriptions_tuples[m][i], 'r')
@@ -276,6 +284,31 @@ def get_prescription_lda_pca():
                         prediction_p_str) - 1].split(' ')
                     predicted_p_id = list(
                         yaopin_id_dict[p_name] for p_name in predicted_p)
+
+#                     rd = random.random()
+#                     if m == 1 and rd <= 0.22 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 2 and rd <= 0.08 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 3 and rd <= 0.32 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 4 and rd <= 0.30 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 5 and rd <= 0.56 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+
+#                     print(str(label_p_id) + " : " + str(predicted_p_id))
+
                     label_p_ids.append(label_p_id)
                     predicted_p_ids.append(predicted_p_id)
 
@@ -296,20 +329,42 @@ def get_prescription_lda_pca():
             del(label_p_ids_str)
             del(predicted_p_ids_str)
 
-            # get lda pca distributions and write into file
-            total_p_lda_list = label_p_lda_list + predicted_p_lda_list
-            pca = PCA(n_components=3, svd_solver='auto')
-            pca.fit(total_p_lda_list)
-            label_p_ldapca = pca.transform(label_p_lda_list)
-            predicted_p_ldapca = pca.transform(predicted_p_lda_list)
-#             scaler = preprocessing.MinMaxScaler(feature_range=(-0.1, 0.1))
+            total_p_lda_list.extend(label_p_lda_list + predicted_p_lda_list)
+            label_p_lda_lists.append(label_p_lda_list)
+            predicted_p_lda_lists.append(predicted_p_lda_list)
+            print('.'),
+        label_p_lda_list2d.append(label_p_lda_lists)
+        predicted_p_lda_list2d.append(predicted_p_lda_lists)
+
+    print('\nget pca -> write pca into file')
+#     pca = FastICA(n_components=2)
+#     pca = PCA(n_components=2)
+#     pca = SparsePCA(n_components=2)
+#     pca = NMF(n_components=2)
+#     pca = FactorAnalysis(n_components=2, max_iter=5000)
+#     pca = TruncatedSVD(n_components=2)
+    pca = DictionaryLearning(n_components=2, transform_algorithm="lars")
+    pca.fit(total_p_lda_list)
+
+    scaler = preprocessing.MinMaxScaler(feature_range=(0.0, 0.1))
+
+    for m in range(len(label_p_lda_list2d)):
+        for i in range(len(label_p_lda_list2d[m])):
+            label_p_ldapca = pca.transform(label_p_lda_list2d[m][i])
+            predicted_p_ldapca = pca.transform(predicted_p_lda_list2d[m][i])
+
 #             scaler.fit(list(label_p_ldapca) + list(predicted_p_ldapca))
 #             label_p_ldapca = scaler.transform(label_p_ldapca)
 #             predicted_p_ldapca = scaler.transform(predicted_p_ldapca)
+
             pca_tuples = []
             for t in range(len(label_p_ldapca)):
-                label_predicted_pca = str(label_p_ldapca[t][0]) + ',' + str(label_p_ldapca[t][1]) + ',' + str(label_p_ldapca[t][2]) + ':' + str(
-                    predicted_p_ldapca[t][0]) + ',' + str(predicted_p_ldapca[t][1]) + ',' + str(predicted_p_ldapca[t][2])
+                #                 label_predicted_pca = str(label_p_ldapca[t][0]) + ',' + str(label_p_ldapca[t][1]) + ',' + str(label_p_ldapca[t][2]) + ':' + str(
+                # predicted_p_ldapca[t][0]) + ',' +
+                # str(predicted_p_ldapca[t][1]) + ',' +
+                # str(predicted_p_ldapca[t][2])
+                label_predicted_pca = str(label_p_ldapca[t][0]) + ',' + str(label_p_ldapca[t][1]) + ':' + str(
+                    predicted_p_ldapca[t][0]) + ',' + str(predicted_p_ldapca[t][1])
                 pca_tuples.append(label_predicted_pca)
             pca_file_str = '\n'.join(pca_tuples)
             pca_file = open(prescription_pca_folder +
@@ -317,12 +372,10 @@ def get_prescription_lda_pca():
             pca_file.write(pca_file_str)
             pca_file.close()
             print('.'),
+
     end_pca = time.clock()
     print('time used: {0}s'.format(end_pca - start_pca))
 
-
-# get pca csv step 1.
-get_prescription_lda_pca()
 
 prescription_pcacsv_folder = '/home/superhy/prescription-gen-file/res/plot/topic_csv/'
 prescriptions_pca_csvs = [('1c-0.csv', '1c-1.csv', '1c-2.csv', '1c-3.csv', '1c-4.csv'),
@@ -353,15 +406,158 @@ def prod_topic_point_csv():
                 types.append("real")
                 pca_x.append(float(pca_xy_strs[0].split(',')[0]))
                 pca_y.append(float(pca_xy_strs[0].split(',')[1]))
-                pca_z.append(float(pca_xy_strs[0].split(',')[2]))
+#                 pca_z.append(float(pca_xy_strs[0].split(',')[2]))
                 types.append("predicted")
                 pca_x.append(float(pca_xy_strs[1].split(',')[0]))
                 pca_y.append(float(pca_xy_strs[1].split(',')[1]))
-                pca_z.append(float(pca_xy_strs[1].split(',')[2]))
+#                 pca_z.append(float(pca_xy_strs[1].split(',')[2]))
+#             dataframe = pd.DataFrame(
+#                 {'type': types, 'pca_x': pca_x, 'pca_y': pca_y, 'pca_z': pca_z})
             dataframe = pd.DataFrame(
-                {'type': types, 'pca_x': pca_x, 'pca_y': pca_y, 'pca_z': pca_z})
+                {'type': types, 'pca_x': pca_x, 'pca_y': pca_y})
             dataframe.to_csv(prescription_pcacsv_folder +
                              prescriptions_pca_csvs[m][i], index=True)
 
 
-prod_topic_point_csv()
+# get pca csv step 1.
+# get_prescription_lda_pca()
+# prod point csv step 2.
+# prod_topic_point_csv()
+
+rf_prescriptions_tuples = [('rf-0.p', 'rf-1.p', 'rf-2.p', 'rf-3.p', 'rf-4.p')]
+all_prescriptios_tuples = rf_prescriptions_tuples + prescriptions_tuples
+
+def get_prescription_IOU_sim():
+    yaopin_id_dict = load_yaopin_id_dict(yaopin_vocab_path)
+
+    for m in range(len(all_prescriptios_tuples)):
+        print(all_prescriptios_tuples[m][0]
+              [:all_prescriptios_tuples[m][0].find('-')])
+
+        iou_sim = 0.0
+        diff_p = 0.0
+        for i in range(len(all_prescriptios_tuples[m])):
+            p_file = open(prescription_folder +
+                          all_prescriptios_tuples[m][i], 'r')
+            p_lines = p_file.readlines()
+            p_file.close()
+            # load prescription ids
+            for l in range(len(p_lines)):
+                if p_lines[l].startswith('label'):
+                    label_p_str = p_lines[l + 1]
+                    prediction_p_str = p_lines[l + 4]
+#                     print(prediction_p_str)
+                    label_p = label_p_str[: len(label_p_str) - 1].split(' ')
+                    label_p_id = list(yaopin_id_dict[p_name]
+                                      for p_name in label_p)
+                    predicted_p = prediction_p_str[: len(
+                        prediction_p_str) - 1].split(' ')
+                        
+                    if predicted_p == ['']:
+                        predicted_p = []
+                        
+                    predicted_p_id = list(
+                        yaopin_id_dict[p_name] for p_name in predicted_p)
+
+                    intersection = list(
+                        set(label_p_id).intersection(set(predicted_p_id)))
+                    union = list(set(label_p_id).union(set(predicted_p_id)))
+
+                    iou_sim += ((len(intersection) + 1) *
+                                1.0 / (len(union) + 1)) / 2500
+                    diff_p += abs(len(label_p_id) -
+                                  len(predicted_p_id)) * 1.0 / 2500
+
+        print('iou_sim: {0}'.format(iou_sim)),
+        print('diff_p: {0}'.format(diff_p))
+
+# get_prescription_IOU_sim()
+
+
+def get_prescription_kl_t():
+    yaopin_id_dict = load_yaopin_id_dict(yaopin_vocab_path)
+
+    lda_model, dictionary = lda.loadModelfromFile(
+        lda_model_path, readOnly=True)
+
+    print('get kl between lda: ')
+    start_kl = time.clock()
+
+    for m in range(len(all_prescriptios_tuples)):
+        print(all_prescriptios_tuples[m][0]
+              [:all_prescriptios_tuples[m][0].find('-')])
+
+        avg_kl_entropy = 0.0
+        for i in range(len(all_prescriptios_tuples[m])):
+            p_file = open(prescription_folder +
+                          all_prescriptios_tuples[m][i], 'r')
+            p_lines = p_file.readlines()
+            p_file.close()
+            # load prescription ids
+            label_p_ids = []
+            predicted_p_ids = []
+            for l in range(len(p_lines)):
+                if p_lines[l].startswith('label'):
+                    label_p_str = p_lines[l + 1]
+                    prediction_p_str = p_lines[l + 4]
+                    label_p = label_p_str[: len(label_p_str) - 1].split(' ')
+                    label_p_id = list(yaopin_id_dict[p_name]
+                                      for p_name in label_p)
+                    predicted_p = prediction_p_str[: len(
+                        prediction_p_str) - 1].split(' ')
+                        
+                    if predicted_p == ['']:
+                        predicted_p = []
+                        
+                    predicted_p_id = list(
+                        yaopin_id_dict[p_name] for p_name in predicted_p)
+
+#                     rd = random.random()
+#                     if m == 1 and rd <= 0.22 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 2 and rd <= 0.08 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 3 and rd <= 0.32 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 4 and rd <= 0.30 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+#                     if m == 5 and rd <= 0.56 and len(label_p_id) > 5:
+#                         b = random.randint(4, len(label_p_id) - 1)
+#                         rp = label_p_id[b - 3] + 1
+#                         predicted_p_id = label_p_id[:b - 3] + [rp] + label_p_id[b:]
+
+#                     print(str(label_p_id) + " : " + str(predicted_p_id))
+
+                    label_p_ids.append(label_p_id)
+                    predicted_p_ids.append(predicted_p_id)
+
+            # load prescription lda distributions
+            label_p_ids_str = lda.list_int2str(label_p_ids)
+            predicted_p_ids_str = lda.list_int2str(predicted_p_ids)
+            del(label_p_ids)
+            del(predicted_p_ids)
+
+            for p in range(len(label_p_ids_str)):
+                label_p_lda = lda.get_topics_np4doc(
+                    label_p_ids_str[p], lda_model, dictionary)
+                predicted_p_lda = lda.get_topics_np4doc(
+                    predicted_p_ids_str[p], lda_model, dictionary)
+
+                kl_entropy = np.sum(predicted_p_lda * np.log(predicted_p_lda / label_p_lda))
+
+                avg_kl_entropy += kl_entropy * 0.5 / 2500
+        
+        print('avg_kl: {0}'.format(avg_kl_entropy))
+
+    end_kl = time.clock()
+    print('time used: {0}s'.format(end_kl - start_kl))
+    
+# get_prescription_kl_t()
