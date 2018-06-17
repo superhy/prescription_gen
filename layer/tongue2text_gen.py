@@ -376,7 +376,120 @@ def k_cnns2channels_mlp(yao_indices_dim, tongue_image_shape,
     else:
         # ready to joint in some other frameworks like Tensorflow
         return cnn2channels_mlp_model
+    
 
+def k_cnns_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
+                       with_compile=True, scaling_activation='binary'):
+    '''
+    2output but only 1 channel 2018.6.18 fix1 test
+    
+    'k_' prefix means keras_layers
+    '2output' means this layer model has double output(LDA)
+    @param scaling_activation: is for main output use tfidf(relu) output or not
+    '''
+
+    # cnn layer parameters
+    # use both on channel_1 step_1 cnn layers
+    _nb_filters_1_1 = 80
+    _kernel_size_1_1 = (3, 3)
+#     _padding_1_1 = 'same'
+    # use both on channel_1 step_2 cnn layers
+    _nb_filters_1_2 = 80
+    _kernel_size_1_2 = (3, 3)
+    _nb_filters_1_3 = 80
+    _kernel_size_1_3 = (3, 3)
+    _cnn_activation_1 = 'relu'
+    # use both on channel_1 pooling layers
+    _pool_size_1 = (2, 2)
+    _cnn_dropout_1 = 0.0
+
+    # mlp layer parameters
+    _mlp_units_1 = 160
+    _mlp_activation_1 = 'relu'
+    _mlp_dropout_1 = 0.5
+    _mlp_units_2 = 256
+    _mlp_activation_2 = 'relu'
+    if scaling_activation == 'tfidf':
+        _mlp_dropout_2 = 0.8
+    else:
+        _mlp_dropout_2 = 0.6
+
+    # output_aux layer parameters
+    _output_units = yao_indices_dim
+#     add some regularizers to overcome the overfit
+#     _output_kernel_regularizer = regularizers.l1_l2(l1=0.01, l2=0.01)
+    _output_kernel_regularizer = None
+    if scaling_activation == 'tfidf':
+        _output_activation = 'relu'  # just for tfidf tensor
+    else:
+        _output_activation = 'sigmoid'
+    _aux_output_units = topics_dim
+    _aux_output_activation = 'softmax'
+#     _aux_output_activation = 'sigmoid'
+
+    print('Build 3 * CNN with 2 channel + (merge) + MLP model and AUX_MLP...')
+
+    image_input = Input(shape=tongue_image_shape)
+
+    cnn3_mlp_1 = Sequential()
+    cnn3_mlp_1.add(Conv2D(filters=_nb_filters_1_1, kernel_size=_kernel_size_1_1,
+                          input_shape=tongue_image_shape))
+    cnn3_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn3_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn3_mlp_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn3_mlp_1.add(BatchNormalization())
+
+    cnn3_mlp_1.add(Conv2D(filters=_nb_filters_1_2, kernel_size=_kernel_size_1_2,
+                          input_shape=tongue_image_shape))
+    cnn3_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn3_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn3_mlp_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn3_mlp_1.add(BatchNormalization())
+
+    cnn3_mlp_1.add(Conv2D(filters=_nb_filters_1_3,
+                          kernel_size=_kernel_size_1_3))
+    cnn3_mlp_1.add(Activation(activation=_cnn_activation_1))
+    cnn3_mlp_1.add(MaxPool2D(pool_size=_pool_size_1))
+    cnn3_mlp_1.add(Dropout(rate=_cnn_dropout_1))
+    cnn3_mlp_1.add(BatchNormalization())
+    cnn3_mlp_1.add(Flatten())
+    cnn3_mlp_1.add(Dense(units=_mlp_units_1, activation=_mlp_activation_1))
+    cnn3_mlp_1.add(Dropout(rate=_mlp_dropout_1))
+#     cnn3_mlp_1.add(BatchNormalization())
+    cnn3_mlp_channel_1 = cnn3_mlp_1(image_input)
+
+    # print left channel framework
+    cnn3_mlp_1.summary()
+
+    cnn_mlp_1channels_mlp = Dense(units=_mlp_units_2, activation=_mlp_activation_2,
+                                  name='intermediate_dense')(cnn3_mlp_channel_1)
+    cnn_mlp_1channels_mlp = Dropout(rate=_mlp_dropout_2)(cnn_mlp_1channels_mlp)
+#     cnn_mlp_1channels_mlp = BatchNormalization()(cnn_mlp_1channels_mlp)
+
+    '''
+    The first output is the main output for prescription generation
+    The second output is the aux output for prescription topic recognition
+    '''
+    # main gen_output get features from both cnn2_mlp channel_1 and
+    # channel_2(merge)
+    gen_output = Dense(units=_output_units, kernel_regularizer=_output_kernel_regularizer,
+                       activation=_output_activation, name='gen_output')(cnn_mlp_1channels_mlp)
+    # aux_output only get features from only cnn2_mlp channel_2
+    aux_output = Dense(units=_aux_output_units,
+                       activation=_aux_output_activation, name='aux_output')(cnn_mlp_1channels_mlp)
+
+    cnn2_mlp_2output_model = Model(inputs=image_input, outputs=[
+                                   gen_output, aux_output])
+
+    # print layers framework
+    cnn2_mlp_2output_model.summary()
+
+    if with_compile == True:
+        return double_output_compiler(cnn2_mlp_2output_model, scaling_activation)
+    else:
+        # ready to joint in some other frameworks like Tensorflow
+        return cnn2_mlp_2output_model
+    
 
 def k_cnns2channels_mlp_2output(yao_indices_dim, tongue_image_shape, topics_dim,
                                 with_compile=True, scaling_activation='binary'):
