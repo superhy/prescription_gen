@@ -149,8 +149,8 @@ def train_predict_tongue2text_gen(train_new=True):
 #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
     
-#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
-    _use_data_augment = False
+    _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+#     _use_data_augment = False
 
     '''
     The part of train a new gen_model and storage it on disk,
