@@ -14,7 +14,7 @@ import numpy as np
 
 config = get_config('interface.ini')
 
-def train_predict_tongue2text_basic_gen(train_new=True):
+def train_predict_tongue2text_cnn1_withlda_gen(train_new=True):
     '''
     @param train_new: flag of train a new model model and replace the model on disk 
     '''
@@ -26,9 +26,6 @@ def train_predict_tongue2text_basic_gen(train_new=True):
     yaopin_path = config['root_path'] + \
         config['original_path'] + 'yaopin.vocab'
 
-    # tongue_ids: [01012045534615_1_4_7, ...]
-    # tongue_image_array: [np.array(pixels matrix of image), np.array(pixels matrix of image2), ...]
-    # tongue_yaofangs: [ [0,1,2,3], [4,5,6,7], ... ]
     tongue_ids, tongue_image_arrays, tongue_yaofangs, tongue_image_shape = patient_tongue_generator.loadDatafromFile(
         patient_tongue_dir, tongue_zhiliao_path, image_normal_size=(224, 224))
 
@@ -36,24 +33,37 @@ def train_predict_tongue2text_basic_gen(train_new=True):
     with open(yaopin_path, 'r') as yaopin_file:
         nb_yao = max(int(line.split(' ')[0])
                      for line in yaopin_file.readlines())
-    
+
+#     _use_tfidf_tensor = True  # set for use tfidf_tensor
+    _use_tfidf_tensor = False
+
 #     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
     _use_data_augment = False
 
     '''
-    The part of train a new gen_model and storage it on disk,
+    TODO: storage model and load it from disk
+    
+    The part of train a new gen_model with lda and storage it on disk,
     the new one will cover the old one
     '''
-    # store keras layers_framework(optional, gen_frame_path==None or not)
-    frame_name = 'tongue2text_cnnmlp_9585_act(bi)_t3_100it.json'
+    lda_model_name = 'tongue_9585_gensim_lda.topic'
+    lda_model_path = config['root_path'] + \
+        config['cache_path'] + 'nlp/' + lda_model_name
+#     _lda_replace = True  # first time is True, other is False if not needed
+    _lda_replace = False
+    
+    if _use_tfidf_tensor == True:
+        frame_name = 'tongue2text_cnn1passmlp_lda_9585_act(tfidf)_t3_80it_fix1.json'
+    else:
+        frame_name = 'tongue2text_cnn1passmlp_lda_9585_act(bi)_t3_80it_fix1.json'
     gen_frame_path = config['root_path'] + \
-        config['cache_path'] + 'keras/' + frame_name
-
-    train_on_batch = False  # switch train_on_batch or not
+        config['cache_path'] + 'keras_fix1/' + frame_name
+    
     if train_new == True:
-        _ = patient_tongue_generator.tongue_basic_gen_trainer(
+        _ = patient_tongue_generator.tongue_gen_cnn1_withlda_trainer(
             tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-            gen_model_path=gen_frame_path, train_on_batch=train_on_batch,
+            lda_model_path, gen_model_path=gen_frame_path, lda_replace=_lda_replace,
+            use_tfidf_tensor=_use_tfidf_tensor,
             use_data_augment=_use_data_augment)
 
     '''
@@ -64,14 +74,18 @@ def train_predict_tongue2text_basic_gen(train_new=True):
     trained_gen_model = tongue2text_gen.loadStoredModel(
         gen_frame_path, gen_frame_path.replace('.json', '.h5'),
         compile_info={'recompile': True,
-                      'aux_output': False,
-                      'use_tfidf_tensor': False})
+                      'aux_output': True,
+                      'use_tfidf_tensor': _use_tfidf_tensor})
 
     # test
     # gen_output: [ [0.8, 0.4., ...], [...], [...], ... ]
-    gen_output = patient_tongue_generator.basic_gen_predictor_test(
+    gen_output_list = patient_tongue_generator.gen_cnn1_withlda_predictor_test(
         tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
-        trained_gen_model)
+        trained_gen_model, lda_model_path,
+        use_tfidf_tensor=_use_tfidf_tensor)
+    # just get the gen_output, dropout the aux_output
+    gen_output = gen_output_list[0]
+    del(gen_output_list)
 #     print(gen_output[0])
 
     # yaopin_dict: {0:'麻黄',1:'桂枝',...}
@@ -122,8 +136,9 @@ def train_predict_tongue2text_basic_gen(train_new=True):
 
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
-
-def train_predict_tongue2text_gen(train_new=True):
+    
+  
+def train_predict_tongue2text_biggertimes_cnns_gen(train_new=True):
     '''
     @param train_new: flag of train a new model model and replace the model on disk 
     '''
@@ -151,6 +166,9 @@ def train_predict_tongue2text_gen(train_new=True):
     
 #     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
     _use_data_augment = False
+    
+#     times of number of filters between main cnn channel and aux cnn channel
+    _channel_times = 4
 
     '''
     The part of train a new gen_model and storage it on disk,
@@ -158,16 +176,16 @@ def train_predict_tongue2text_gen(train_new=True):
     '''
     # store keras layers_framework(optional, gen_frame_path==None or not)
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2passmlp_9585_act(tfidf)_t3_100it.json'
+        frame_name = 'tongue2text_biggertimes_cnn2passmlp_9585_act(tfidf)_t3_80it_fix1.json'
     else:
-        frame_name = 'tongue2text_cnn2passmlp_9585_act(bi)_t3_100it.json'
+        frame_name = 'tongue2text_biggertimes_cnn2passmlp_9585_act(bi)_t3_80it_fix1.json'
     gen_frame_path = config['root_path'] + \
-        config['cache_path'] + 'keras/' + frame_name
+        config['cache_path'] + 'keras_fix1/' + frame_name
 
     train_on_batch = False  # switch train_on_batch or not
     if train_new == True:
-        _ = patient_tongue_generator.tongue_gen_trainer(
-            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        _ = patient_tongue_generator.tongue_gen_bigger_cnn_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, channel_times=_channel_times,
             gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor,
             use_data_augment=_use_data_augment)
 
@@ -237,9 +255,8 @@ def train_predict_tongue2text_gen(train_new=True):
 
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
-
-
-def train_predict_tongue2text_cnn2_withlda_gen(train_new=True):
+    
+def train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True):
     '''
     @param train_new: flag of train a new model model and replace the model on disk 
     '''
@@ -264,6 +281,9 @@ def train_predict_tongue2text_cnn2_withlda_gen(train_new=True):
 
 #     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
     _use_data_augment = False
+    
+#     times of number of filters between main cnn channel and aux cnn channel
+    _channel_times = 4
 
     '''
     TODO: storage model and load it from disk
@@ -278,15 +298,15 @@ def train_predict_tongue2text_cnn2_withlda_gen(train_new=True):
     _lda_replace = False
     
     if _use_tfidf_tensor == True:
-        frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(tfidf)_t3_100it.json'
+        frame_name = 'tongue2text_biggertimes_cnn2passmlp_lda_9585_act(tfidf)_t3_80it_fix1.json'
     else:
-        frame_name = 'tongue2text_cnn2passmlp_lda_9585_act(bi)_t3_100it.json'
+        frame_name = 'tongue2text_biggertimes_cnn2passmlp_lda_9585_act(bi)_t3_80it_fix1.json'
     gen_frame_path = config['root_path'] + \
-        config['cache_path'] + 'keras/' + frame_name
+        config['cache_path'] + 'keras_fix1/' + frame_name
     
     if train_new == True:
-        _ = patient_tongue_generator.tongue_gen_withlda_trainer(
-            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao,
+        _ = patient_tongue_generator.tongue_gen_biggertimes_cnn_withlda_trainer(
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, nb_yao, _channel_times,
             lda_model_path, gen_model_path=gen_frame_path, lda_replace=_lda_replace,
             use_tfidf_tensor=_use_tfidf_tensor,
             use_data_augment=_use_data_augment)
@@ -362,9 +382,12 @@ def train_predict_tongue2text_cnn2_withlda_gen(train_new=True):
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
-# train_predict_tongue2text_basic_gen(train_new=True)
-train_predict_tongue2text_gen(train_new=True)
+'''
+keras layer model with double output(lda) to help generator to specify prescription direction
+only use 1 cnn channel in fix1 2018.6.20
+'''
+# train_predict_tongue2text_cnn1_withlda_gen(train_new=True)
 
-'''keras layer model with double output(lda) to help generator to specify prescription direction'''
-# train_predict_tongue2text_cnn2_withlda_gen(train_new=True)
+train_predict_tongue2text_biggertimes_cnns_gen(train_new=True)
+# train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True)
 
