@@ -37,8 +37,8 @@ def train_predict_tongue2text_cnn1_withlda_gen(train_new=True):
 #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
 
-#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
-    _use_data_augment = False
+    _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+#     _use_data_augment = False
 
     '''
     TODO: storage model and load it from disk
@@ -138,7 +138,7 @@ def train_predict_tongue2text_cnn1_withlda_gen(train_new=True):
           (np.average(precisions), np.average(recalls), np.average(errors)))
     
   
-def train_predict_tongue2text_biggertimes_cnns_gen(train_new=True):
+def train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=4):
     '''
     @param train_new: flag of train a new model model and replace the model on disk 
     '''
@@ -168,7 +168,7 @@ def train_predict_tongue2text_biggertimes_cnns_gen(train_new=True):
     _use_data_augment = False
     
 #     times of number of filters between main cnn channel and aux cnn channel
-    _channel_times = 4
+    _channel_times = f_times
 
     '''
     The part of train a new gen_model and storage it on disk,
@@ -256,7 +256,7 @@ def train_predict_tongue2text_biggertimes_cnns_gen(train_new=True):
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
     
-def train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True):
+def train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=4):
     '''
     @param train_new: flag of train a new model model and replace the model on disk 
     '''
@@ -283,7 +283,7 @@ def train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True):
     _use_data_augment = False
     
 #     times of number of filters between main cnn channel and aux cnn channel
-    _channel_times = 4
+    _channel_times = f_times
 
     '''
     TODO: storage model and load it from disk
@@ -388,6 +388,9 @@ only use 1 cnn channel in fix1 2018.6.20
 '''
 # train_predict_tongue2text_cnn1_withlda_gen(train_new=True)
 
-train_predict_tongue2text_biggertimes_cnns_gen(train_new=True)
-# train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True)
+# train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=4)
+# train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=4)
+
+train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=3)
+# train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=3)
 
