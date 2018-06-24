@@ -391,6 +391,6 @@ only use 1 cnn channel in fix1 2018.6.20
 # train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=4)
 # train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=4)
 
-train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=3)
-# train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=3)
+# train_predict_tongue2text_biggertimes_cnns_gen(train_new=True, f_times=3)
+train_predict_tongue2text_biggertimes_cnns_withlda_gen(train_new=True, f_times=3)
 
