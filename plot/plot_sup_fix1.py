@@ -44,6 +44,20 @@ def load_yaopin_list(yaopin_path):
 
     return yaopin_list
 
+def load_yaopin_id_dict(yaopin_path):
+    '''
+    load yaopin 2 id dictionary
+    @param yaopin_path: yaopin vocabulary path 
+    '''
+    # load yaopin vocab
+    yaopin_vocab_file = open(yaopin_path, 'r')
+    yaopin_vocab_lines = yaopin_vocab_file.readlines()
+    yaopin_vocab_file.close()
+
+    yaopin_id_dict = dict((line[:line.find('\r')].split(' ')[1], int(
+        line.split(' ')[0]) - 1) for line in yaopin_vocab_lines)
+
+    return yaopin_id_dict
 
 def check_pair_in_herbsvocab():
     yaopin_list = load_yaopin_list(yaopin_path)
@@ -96,19 +110,40 @@ prescriptions_tuples = [('1c-0.p', '1c-1.p', '1c-2.p', '1c-3.p', '1c-4.p'),
 
 
 def pos_neg_herb_pair_evaluation():
+    
+    fr_filted_pos_pair = open(herb_pair_pos_filted_path, 'r')
+    filted_pos_pair_lines = fr_filted_pos_pair.readlines()
+    fr_filted_pos_pair.close()
+    
+    filted_pos_pair_tuples = []
+    for line in filted_pos_pair_lines:
+        herb1 = line[:line.find('\r')].split('-')[0]
+        herb2 = line[:line.find('\r')].split('-')[1]
+        filted_pos_pair_tuples.append((herb1, herb2))
 
-    label_pos_value = 0
-    label_neg_value = 0
-    predicted_pos_value = 0
-    predicted_neg_value = 0
+    fr_filted_neg_pair = open(herb_pair_neg_filted_path, 'r')
+    filted_neg_pair_lines = fr_filted_neg_pair.readlines()
+    fr_filted_neg_pair.close()
+    
+    filted_neg_pair_tuples = []
+    for line in filted_neg_pair_lines:
+        herb1 = line[:line.find('\r')].split('-')[0]
+        herb2 = line[:line.find('\r')].split('-')[1]
+        filted_neg_pair_tuples.append((herb1, herb2))
 
     sample_prescriptions_results = list(
         [tuple[4] for tuple in prescriptions_tuples])
+    
     for i in range(len(sample_prescriptions_results)):
         p_file = open(prescription_folder +
                       sample_prescriptions_results[i], 'r')
         p_lines = p_file.readlines()
         p_file.close()
+        
+        label_pos_values = []
+        prediction_pos_values = []
+        label_neg_values = []
+        prediction_neg_values = []
         for l in range(len(p_lines)):
             if p_lines[l].startswith('label'):
                 label_p_str = p_lines[l + 1]
@@ -116,10 +151,32 @@ def pos_neg_herb_pair_evaluation():
                 label_p = label_p_str[: len(label_p_str) - 1].split(' ')
                 prediction_p = prediction_p_str[: len(
                     prediction_p_str) - 1].split(' ')
-                    
+                      
                 # check pos herbs_pair
-                
+                label_pos = 0
+                prediction_pos = 0
+                for pos_pair_tuple in filted_pos_pair_tuples:
+                    if pos_pair_tuple[0] in label_p and pos_pair_tuple[1] in label_p:
+                        label_pos += 1
+                    if pos_pair_tuple[0] in prediction_p and pos_pair_tuple[1] in prediction_p:
+                        prediction_pos += 1
                 # check neg herbs_pair
+                label_neg = 0
+                prediction_neg = 0
+                for neg_pair_tuple in filted_neg_pair_tuples:
+                    if neg_pair_tuple[0] in label_p and neg_pair_tuple[1] in label_p:
+                        label_neg -= 1
+                    if neg_pair_tuple[0] in prediction_p and neg_pair_tuple[1] in prediction_p:
+                        prediction_neg -= 1
                 
-                
+                label_pos_values.append(label_pos)
+                prediction_pos_values.append(prediction_pos)
+                label_neg_values.append(label_neg)
+                prediction_neg_values.append(prediction_neg)
+        
+        print(sample_prescriptions_results[i] + ':')
+        print('label pos values: ' + str(label_pos_values))
+        print('prediction pos values: ' + str(prediction_pos_values))
+        print('label neg values: ' + str(label_neg_values))
+        print('prediction neg values: ' + str(prediction_neg_values))
                 
