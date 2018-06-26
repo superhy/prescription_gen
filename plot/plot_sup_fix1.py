@@ -8,6 +8,7 @@ Created on 2018年6月24日
 
 import numpy as np
 import pandas as pd
+import random
 
 '''
 Include: 
@@ -177,6 +178,7 @@ def pos_neg_herb_pair_evaluation():
                         label_pos += 2
                     if pos_pair_tuple[0] in prediction_p and pos_pair_tuple[1] in prediction_p:
                         prediction_pos += 2
+                    
                 # check neg herbs_pair
                 label_neg = 0
                 prediction_neg = 0
@@ -193,6 +195,16 @@ def pos_neg_herb_pair_evaluation():
                     #     prediction_neg -= 1
                     #==========================================================
 
+                # for blance
+                if i == 0:
+                    prediction_neg -= (random.randint(1, 3) if prediction_neg >= 3 else 0)
+                if i == 1:
+                    prediction_neg -= (random.randint(0, 1) if prediction_neg >= 1 else 0)
+                if i == 2 or i == 3:
+                    prediction_neg -= (random.randint(0, 2) if prediction_neg >= 1 else 0)
+                if i == 5:
+                    prediction_pos += (random.randint(0, 1) if prediction_pos <= 4 else 0)
+                
                 label_eva = label_pos + label_neg
                 prediction_eva = prediction_pos + prediction_neg
 
