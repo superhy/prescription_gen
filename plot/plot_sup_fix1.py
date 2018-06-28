@@ -290,10 +290,10 @@ def pos_neg_herb_pair_evaluation():
 
 def get_train_val_losshis(his_path):
 
-    train_total_loss_his_list = []
-    train_loss_his_list = []
-    val_total_his_list = []
-    val_loss_his_list = []
+    train_total_loss_his_list = [0.1]
+    train_loss_his_list = [0.1]
+    val_total_his_list = [0.1]
+    val_loss_his_list = [0.1]
 
     fr = open(his_path, 'r')
     his_lines = fr.readlines()
