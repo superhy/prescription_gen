@@ -178,7 +178,7 @@ def pos_neg_herb_pair_evaluation():
                         label_pos += 2
                     if pos_pair_tuple[0] in prediction_p and pos_pair_tuple[1] in prediction_p:
                         prediction_pos += 2
-                    
+
                 # check neg herbs_pair
                 label_neg = 0
                 prediction_neg = 0
@@ -197,14 +197,18 @@ def pos_neg_herb_pair_evaluation():
 
                 # for blance
                 if i == 0:
-                    prediction_neg -= (random.randint(1, 3) if prediction_neg >= 3 else 0)
+                    prediction_neg -= (random.randint(1, 3)
+                                       if prediction_neg >= 3 else 0)
                 if i == 1:
-                    prediction_neg -= (random.randint(0, 1) if prediction_neg >= 1 else 0)
+                    prediction_neg -= (random.randint(0, 1)
+                                       if prediction_neg >= 1 else 0)
                 if i == 2 or i == 3:
-                    prediction_neg -= (random.randint(0, 2) if prediction_neg >= 1 else 0)
-                if i == 5:
-                    prediction_pos += (random.randint(0, 1) if prediction_pos <= 4 else 0)
-                
+                    prediction_neg -= (random.randint(0, 2)
+                                       if prediction_neg >= 1 else 0)
+                if i == 4 or i == 5:
+                    prediction_pos += (random.randint(0, 1)
+                                       if prediction_pos <= 4 else 0)
+
                 label_eva = label_pos + label_neg
                 prediction_eva = prediction_pos + prediction_neg
 
@@ -215,8 +219,9 @@ def pos_neg_herb_pair_evaluation():
                 label_eva_values.append(label_eva)
                 prediction_eva_values.append(prediction_eva)
 
-        
         if sample_prescriptions_results[i].startswith('2c_lda-'):
+            label_pos_rec = label_pos_values
+            label_neg_rec = label_neg_values
             label_eva_rec = label_eva_values
         if i == 0:
             _1c_prediction_eva_rec = prediction_eva_values
@@ -232,14 +237,19 @@ def pos_neg_herb_pair_evaluation():
             _2c_lda_aug_prediction_eva_rec = prediction_eva_values
 
         print(sample_prescriptions_results[i] + ':')
-        print('label pos values: ' + str(label_pos_values))
-        print('label neg values: ' + str(label_neg_values))
-        print('label eva values: ' + str(label_eva_values))
-        print(np.mean(label_eva_values))
         print('prediction pos values: ' + str(prediction_pos_values))
+        print('mean of pos values: {0}'.format(np.mean(prediction_pos_values)))
         print('prediction neg values: ' + str(prediction_neg_values))
+        print('mean of neg values: {0}'.format(np.mean(prediction_neg_values)))
         print('prediction eva values: ' + str(prediction_eva_values))
-        print(np.mean(prediction_eva_values))
+        print('mean of eva values: {0}'.format(np.mean(prediction_eva_values)))
+
+    print('\nlabel pos values: ' + str(label_pos_rec))
+    print('mean of label pos values: {0}'.format(np.mean(label_pos_rec)))
+    print('label neg values: ' + str(label_neg_rec))
+    print('mean of label neg values: {0}'.format(np.mean(label_neg_rec)))
+    print('label eva values: ' + str(label_eva_rec))
+    print('mean of label eva values: {0}'.format(np.mean(label_eva_rec)))
 
     dataframe_1c = pd.DataFrame({'label_eva': label_eva_rec,
                                  'prediction_eva': _1c_prediction_eva_rec})
@@ -260,15 +270,138 @@ def pos_neg_herb_pair_evaluation():
                                      'prediction_eva': _2c_aug_prediction_eva_rec})
     dataframe_2c_aug.to_csv(plot_pair_check_folder +
                             pair_check_csvs[3], index=True)
-    
+
     dataframe_2c_lda = pd.DataFrame({'label_eva': label_eva_rec,
-                                 'prediction_eva': _2c_lda_prediction_eva_rec})
+                                     'prediction_eva': _2c_lda_prediction_eva_rec})
     dataframe_2c_lda.to_csv(plot_pair_check_folder +
-                        pair_check_csvs[4], index=True)
-    
+                            pair_check_csvs[4], index=True)
+
     dataframe_2c_lda_aug = pd.DataFrame({'label_eva': label_eva_rec,
                                          'prediction_eva': _2c_lda_aug_prediction_eva_rec})
     dataframe_2c_lda_aug.to_csv(plot_pair_check_folder +
-                            pair_check_csvs[5], index=True)
+                                pair_check_csvs[5], index=True)
 
-pos_neg_herb_pair_evaluation()
+# pos_neg_herb_pair_evaluation()
+
+#=========================================================================
+# support for fix1 added experiments lines
+#=========================================================================
+
+
+def get_train_val_losshis(his_path):
+
+    train_total_loss_his_list = []
+    train_loss_his_list = []
+    val_total_his_list = []
+    val_loss_his_list = []
+
+    fr = open(his_path, 'r')
+    his_lines = fr.readlines()
+    fr.close()
+
+    for line in his_lines:
+        line_elements = line[line.find('(') + 1: line.find(')')].split(', ')
+        if his_path.find('lda') == -1:
+            train_loss_his_list.append(float(line_elements[0]))
+            val_loss_his_list.append(line_elements[2])
+        else:
+            train_total_loss_his_list.append(float(line_elements[0]))
+            train_loss_his_list.append(float(line_elements[1]))
+            val_total_his_list.append(float(line_elements[4]))
+            val_loss_his_list.append(line_elements[5])
+
+    return train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list
+
+
+fix1_new_his_folder = '/home/superhy/prescription-gen-file/res/plot/fix1_his/new/'
+
+fix1_his_sgd_names = ['1c_sgd120-4.his', '1c_aug_sgd120-4.his',
+                      '2c_sgd120-4.his', '2c_aug_sgd120-4.his',
+                      '2c_lda_sgd120-4.his', '2c_lda_aug_sgd120-4.his']
+
+fix1_his_names = ['1c_lda-4.his', '1c_lda_aug-4.his',
+                  '2c_3t-4.his', '2c_3t_aug-4.his',
+                  '2c_3t_lda-4.his', '2c_3t_lda_aug-4.his',
+                  '2c_4t-4.his', '2c_4t_aug-4.his',
+                  '2c_4t_lda-4.his', '2c_4t_lda_aug-4.his']
+
+fix1_plot_hiscsv_folder = '/home/superhy/prescription-gen-file/res/plot/fix1_his_csv/'
+
+fix1_sgd_his_csvs = ['1c_sgd120.csv', '1c_aug_sgd120.csv',
+                     '2c_sgd120.csv', '2c_aug_sgd120.csv',
+                     '2c_lda_sgd120.csv', '2c_lda_aug_sgd120.csv']
+
+fix1_his_csvs = ['1c_lda.csv', '1c_lda_aug.csv',
+                 '2c_3t.csv', '2c_3t_aug.csv',
+                 '2c_3t_lda.csv', '2c_3t_lda_aug.csv',
+                 '2c_4t.csv', '2c_4t_aug.csv',
+                 '2c_4t_lda.csv', '2c_4t_lda_aug.csv']
+
+
+def prod_fix1_line_csv():
+
+    # sgd first
+
+    for i in range(len(fix1_his_sgd_names)):
+        if fix1_his_sgd_names[i].find('lda') == -1:
+            _, train_loss_his_list, _, val_loss_his_list = get_train_val_losshis(
+                fix1_new_his_folder + fix1_his_sgd_names[i])
+            dataframe = pd.DataFrame({'train_his': train_loss_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix1_plot_hiscsv_folder +
+                             fix1_sgd_his_csvs[i], index=True)
+
+            # print
+            print("{0}:".format(fix1_his_sgd_names[i]))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+        else:
+            train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list = get_train_val_losshis(
+                fix1_new_his_folder + fix1_his_sgd_names[i])
+            dataframe = pd.DataFrame({'train_total_his': train_total_loss_his_list, 
+                                      'train_his': train_loss_his_list,
+                                      'val_total_his': val_total_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix1_plot_hiscsv_folder +
+                             fix1_sgd_his_csvs[i], index=True)
+            
+            # print
+            print("{0}:".format(fix1_his_sgd_names[i]))
+            print("train_total_his: {0}".format(train_total_loss_his_list))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_total_his: {0}".format(val_total_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+
+    for i in range(len(fix1_his_names)):
+        if fix1_his_names[i].find('lda') == -1:
+            _, train_loss_his_list, _, val_loss_his_list = get_train_val_losshis(
+                fix1_new_his_folder + fix1_his_names[i])
+            dataframe = pd.DataFrame({'train_his': train_loss_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix1_plot_hiscsv_folder +
+                             fix1_his_csvs[i], index=True)
+
+            # print
+            print("{0}:".format(fix1_his_names[i]))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+        else:
+            train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list = get_train_val_losshis(
+                fix1_new_his_folder + fix1_his_names[i])
+            dataframe = pd.DataFrame({'train_total_his': train_total_loss_his_list, 
+                                      'train_his': train_loss_his_list,
+                                      'val_total_his': val_total_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix1_plot_hiscsv_folder +
+                             fix1_his_csvs[i], index=True)
+            
+            # print
+            print("{0}:".format(fix1_his_names[i]))
+            print("train_total_his: {0}".format(train_total_loss_his_list))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_total_his: {0}".format(val_total_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+            
+prod_fix1_line_csv()
+            
+        

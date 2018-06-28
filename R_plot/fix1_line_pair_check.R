@@ -31,18 +31,18 @@ df <- data.frame(samples, prediction_eva, label_eva, eva, score_type)
 
 ppi <- 200
 theme_set(theme_bw())
-png(png_path, width = 6.5*ppi, height=2.5*ppi)
+png(png_path, width = 6.5*ppi, height=2*ppi)
 
 sp <- ggplot(data=df, mapping=aes(x=samples, y=eva, colour=score_type, group=score_type)) +
 		geom_ribbon(aes(ymin=0, ymax=prediction_eva, fill=score_type), size=0.0, alpha=0.2) +
         geom_line(size=1)
-sp <- sp + theme(legend.title=element_text(size=25)) + theme(legend.text=element_text(size=25))
+sp <- sp + theme(legend.title=element_text(size=25)) + theme(legend.text=element_text(size=30))
 
 ## 
 sp <- sp + coord_fixed(ratio=3.0/0.4) + scale_y_continuous(limits=c(0.0, 21.0), breaks=seq(0, 20, by=5)) + 
 		scale_x_continuous(limits=c(0, 500), breaks=seq(0, 500, by=100))
-sp <- sp + xlab("samples") + theme(axis.title.x=element_text(size=25), axis.text.x=element_text(size=20)) +
-		ylab("herbs logic check score") + theme(axis.title.y=element_text(size=25), axis.text.y=element_text(size=20))
+sp <- sp + xlab("samples") + theme(axis.title.x=element_text(size=30), axis.text.x=element_text(size=20)) +
+		ylab("herbs logic check score") + theme(axis.title.y=element_text(size=30), axis.text.y=element_text(size=20))
 
 sp
 
