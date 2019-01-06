@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 
 def show_eva_dist(eva_label_np_array, eva_prediction_np_array):
     
-    sns.kdeplot(eva_label_np_array, shade=True)
-    sns.kdeplot(eva_prediction_np_array, shade=True)
+    sns.kdeplot(eva_label_np_array, shade=True, label='label_predictions')
+    sns.kdeplot(eva_prediction_np_array, shade=True, label='generated_predictions')
     
     plt.grid(linestyle='--')
     plt.show()
