@@ -16,10 +16,10 @@ library(grid)
 #name <- "2c_4t_lda"
 #name <- "2c_4t_lda_aug"
 
-name <- "2c_3t"
+#name <- "2c_3t"
 #name <- "2c_3t_aug"
 #name <- "2c_4t"
-#name <- "2c_4t_aug"
+name <- "2c_4t_aug"
 path <- paste("/home/superhy/prescription-gen-file/res/plot/fix1_his_csv/", name, ".csv", sep="")
 png_path <- paste("/home/superhy/prescription-gen-file/res/plot/fix1_his_csv/", name, ".png", sep="")
 
@@ -64,15 +64,15 @@ sp <- ggplot(data=df, mapping=aes(x=epochs, y=train_val_loss, color=loss_type, g
 		geom_hline(yintercept=val_loss_minrecord, colour="#339999", linetype="dashed", size=0.6)
 sp <- sp + theme(legend.title=element_text(size=15)) + theme(legend.text=element_text(size=15))
 # geom_point(x=val_loss_minX, y=val_loss_minrecord, col="red", shape=1, size=3)
-#sp <- sp + annotate("rect", xmin=min(max_minX, min_minX), xmax=max(max_minX, min_minX),
-#		ymin=0.065, ymax=0.1, alpha=0.15, fill="blue")
+## sp <- sp + annotate("rect", xmin=min(max_minX, min_minX), xmax=max(max_minX, min_minX),
+##         ymin=0.065, ymax=0.1, alpha=0.15, fill="blue")
 ## sp <- sp + annotate("segment", x=val_loss_minX - 9.9, xend=val_loss_minX - 0.5,
 ##         y=val_loss_minrecord - 0.0025, yend=val_loss_minrecord - 0.0005,
 ##         colour="black", size=0.5, arrow=arrow())
 sp <- sp + coord_fixed(ratio=1200/1) + scale_y_continuous(limits=c(0.05, 0.11), breaks=c(0.05, train_loss_minBreak, 0.06, val_loss_minBreak, 0.07, 0.08, 0.09, 0.1, 0.11)) + 
 		scale_x_continuous(limits=c(0, 80), breaks=seq(0, 80, by=20))
 sp <- sp + xlab("epochs") + theme(axis.title.x=element_text(size=20), axis.text.x=element_text(size=15)) +
-		ylab("validation loss") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
+		ylab("losses") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
 ## sp <- sp + theme(axis.line = element_line(colour="black")) ## + theme(panel.grid =element_blank())
 sp
 

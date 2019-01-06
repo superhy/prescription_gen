@@ -67,7 +67,7 @@ sp <- sp + theme(legend.title=element_text(size=15)) + theme(legend.text=element
 sp <- sp + coord_fixed(ratio=1600/1) + scale_y_continuous(limits=c(0.05, 0.11), breaks=c(0.05, train_loss_minBreak, 0.06, val_loss_minBreak, 0.075, 0.08, 0.09, 0.1, 0.11)) + 
 		scale_x_continuous(limits=c(0, 120), breaks=seq(0, 120, by=20))
 sp <- sp + xlab("epochs") + theme(axis.title.x=element_text(size=20), axis.text.x=element_text(size=15)) +
-		ylab("validation loss") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
+		ylab("losses") + theme(axis.title.y=element_text(size=20), axis.text.y=element_text(size=15))
 ## sp <- sp + theme(axis.line = element_line(colour="black")) ## + theme(panel.grid =element_blank())
 sp
 

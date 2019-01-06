@@ -44,19 +44,30 @@ def trans_string_his_list():
 
 
 def get_losshis_avgmaxmin(his_file_paths_1tuple):
+    '''
+    for fix1, add train loss
+    '''
 
+    train_loss_his_list = []
     val_loss_his_list = []
     for i in range(len(his_file_paths_1tuple)):
         his_file = open(his_file_paths_1tuple[i], 'r')
         his_lines = his_file.readlines()
         his_file.close()
 
+        train_loss_his = [0.1]
         val_loss_his = [0.1]
         for line in his_lines:
+            train_loss = float(
+                line[line.find('(') + 1: line.find(')')].split(', ')[0])
             val_loss = float(line.split(', ')[2])
+            train_loss_his.append(train_loss)
             val_loss_his.append(val_loss)
+        train_loss_his_list.append(train_loss_his)
         val_loss_his_list.append(val_loss_his)
 
+    average_train_loss_his = list(np.average(list(train_loss_his_list[i][j] for i in range(
+        len(train_loss_his_list)))) for j in range(len(train_loss_his_list[0])))
     average_val_loss_his = list(np.average(list(val_loss_his_list[i][j] for i in range(
         len(val_loss_his_list)))) for j in range(len(val_loss_his_list[0])))
     max_val_loss_his = list(np.max(list(val_loss_his_list[i][j] for i in range(
@@ -64,11 +75,16 @@ def get_losshis_avgmaxmin(his_file_paths_1tuple):
     min_val_loss_his = list(np.min(list(val_loss_his_list[i][j] for i in range(
         len(val_loss_his_list)))) for j in range(len(val_loss_his_list[0])))
 
-    return average_val_loss_his, max_val_loss_his, min_val_loss_his
+    return average_train_loss_his, average_val_loss_his, max_val_loss_his, min_val_loss_his
 
 
 def get_losshiswithlda_avgmaxmin(hiswithlda_file_paths_1tuple):
+    '''
+    for fix1, add train loss and train total loss
+    '''
 
+    trainwithlda_total_loss_his_list = []
+    trainwithlda_loss_his_list = []
     valwithlda_total_loss_his_list = []
     valwithlda_loss_his_list = []
     for i in range(len(hiswithlda_file_paths_1tuple)):
@@ -76,16 +92,29 @@ def get_losshiswithlda_avgmaxmin(hiswithlda_file_paths_1tuple):
         his_lines = his_file.readlines()
         his_file.close()
 
+        train_total_loss_his = [0.12]
+        train_loss_his = [0.1]
         val_total_loss_his = [0.12]
         val_loss_his = [0.1]
         for line in his_lines:
+            train_total_loss = float(
+                line[line.find('(') + 1: line.find(')')].split(', ')[0])
+            train_loss = float(line.split(', ')[1])
             val_total_loss = float(line.split(', ')[4])
             val_loss = float(line.split(', ')[5])
+            train_total_loss_his.append(train_total_loss)
             val_total_loss_his.append(val_total_loss)
+            train_loss_his.append(train_loss)
             val_loss_his.append(val_loss)
+        trainwithlda_total_loss_his_list.append(train_total_loss_his)
+        trainwithlda_loss_his_list.append(train_loss_his)
         valwithlda_total_loss_his_list.append(val_total_loss_his)
         valwithlda_loss_his_list.append(val_loss_his)
 
+    average_trainwithlda_total_loss_his = list(np.average(list(trainwithlda_total_loss_his_list[i][j] for i in range(
+        len(trainwithlda_total_loss_his_list)))) for j in range(len(trainwithlda_total_loss_his_list[0])))
+    average_trainwithlda_loss_his = list(np.average(list(trainwithlda_loss_his_list[i][j] for i in range(
+        len(trainwithlda_loss_his_list)))) for j in range(len(trainwithlda_loss_his_list[0])))
     average_valwithlda_total_loss_his = list(np.average(list(valwithlda_total_loss_his_list[i][j] for i in range(
         len(valwithlda_total_loss_his_list)))) for j in range(len(valwithlda_total_loss_his_list[0])))
     average_valwithlda_loss_his = list(np.average(list(valwithlda_loss_his_list[i][j] for i in range(
@@ -95,7 +124,9 @@ def get_losshiswithlda_avgmaxmin(hiswithlda_file_paths_1tuple):
     min_valwithlda_loss_his = list(np.min(list(valwithlda_loss_his_list[i][j] for i in range(
         len(valwithlda_loss_his_list)))) for j in range(len(valwithlda_loss_his_list[0])))
 
-    return average_valwithlda_total_loss_his, average_valwithlda_loss_his, max_valwithlda_loss_his, min_valwithlda_loss_his
+    return average_trainwithlda_total_loss_his, average_trainwithlda_loss_his, \
+        average_valwithlda_total_loss_his, average_valwithlda_loss_his, \
+        max_valwithlda_loss_his, min_valwithlda_loss_his
 
 
 plot_hiscsv_folder = '/home/superhy/prescription-gen-file/res/plot/his_csv/'
@@ -111,25 +142,34 @@ hiswithlda_csvs = ['2c_lda.csv', '2c_lda_aug.csv']
 
 
 def prod_line_csv():
+    '''
+    for fix1, add train loss and train total loss
+    '''
 
     for i in range(len(his_list_tuples)):
-        average_val_loss_his, max_val_loss_his, min_val_loss_his = get_losshis_avgmaxmin(
+        average_train_loss_his, average_val_loss_his, max_val_loss_his, min_val_loss_his = get_losshis_avgmaxmin(
             list(plot_his_folder + his_name for his_name in his_list_tuples[i]))
-        dataframe = pd.DataFrame({'avg_his': average_val_loss_his,
+        dataframe = pd.DataFrame({'train_avg_his': average_train_loss_his,
+                                  'avg_his': average_val_loss_his,
                                   'max_his': max_val_loss_his,
                                   'min_his': min_val_loss_his})
         dataframe.to_csv(plot_hiscsv_folder + his_csvs[i], index=True)
 
         # print
         print("{0}:".format(i))
+        print("train_avg_his: {0}".format(average_train_loss_his))
         print("avg_his: {0}".format(average_val_loss_his))
         print("max_his: {0}".format(max_val_loss_his))
         print("min_his: {0}".format(min_val_loss_his))
 
     for i in range(len(hiswithlda_list_tuples)):
-        average_valwithlda_total_loss_his, average_valwithlda_loss_his, max_valwithlda_loss_his, min_valwithlda_loss_his = get_losshiswithlda_avgmaxmin(
-            list(plot_his_folder + his_name for his_name in hiswithlda_list_tuples[i]))
-        dataframe = pd.DataFrame({'avg_total_his': average_valwithlda_total_loss_his,
+        average_trainwithlda_total_loss_his, average_trainwithlda_loss_his, \
+            average_valwithlda_total_loss_his, average_valwithlda_loss_his, \
+            max_valwithlda_loss_his, min_valwithlda_loss_his = get_losshiswithlda_avgmaxmin(
+                list(plot_his_folder + his_name for his_name in hiswithlda_list_tuples[i]))
+        dataframe = pd.DataFrame({'train_avg_total_his': average_trainwithlda_total_loss_his,
+                                  'train_avg_his': average_trainwithlda_loss_his,
+                                  'avg_total_his': average_valwithlda_total_loss_his,
                                   'avg_his': average_valwithlda_loss_his,
                                   'max_his': max_valwithlda_loss_his,
                                   'min_his': min_valwithlda_loss_his})
@@ -137,6 +177,10 @@ def prod_line_csv():
 
         # print
         print("{0}:".format(i))
+        print("train_avg_withlda_total_his: {0}".format(
+            average_trainwithlda_total_loss_his))
+        print("train_avg_withlda_his: {0}".format(
+            average_trainwithlda_loss_his))
         print("avg_withlda_total_his: {0}".format(
             average_valwithlda_total_loss_his))
         print("avg_withlda_his: {0}".format(average_valwithlda_loss_his))
@@ -144,7 +188,7 @@ def prod_line_csv():
         print("min_withlda_his: {0}".format(min_valwithlda_loss_his))
 
 
-# prod_line_csv()
+prod_line_csv()
 
 prescription_folder = '/home/superhy/prescription-gen-file/res/plot/p/'
 prescriptions_tuples = [('1c-0.p', '1c-1.p', '1c-2.p', '1c-3.p', '1c-4.p'),
@@ -427,6 +471,7 @@ def prod_topic_point_csv():
 rf_prescriptions_tuples = [('rf-0.p', 'rf-1.p', 'rf-2.p', 'rf-3.p', 'rf-4.p')]
 all_prescriptios_tuples = rf_prescriptions_tuples + prescriptions_tuples
 
+
 def get_prescription_IOU_sim():
     yaopin_id_dict = load_yaopin_id_dict(yaopin_vocab_path)
 
@@ -452,10 +497,10 @@ def get_prescription_IOU_sim():
                                       for p_name in label_p)
                     predicted_p = prediction_p_str[: len(
                         prediction_p_str) - 1].split(' ')
-                        
+
                     if predicted_p == ['']:
                         predicted_p = []
-                        
+
                     predicted_p_id = list(
                         yaopin_id_dict[p_name] for p_name in predicted_p)
 
@@ -505,10 +550,10 @@ def get_prescription_kl_t():
                                       for p_name in label_p)
                     predicted_p = prediction_p_str[: len(
                         prediction_p_str) - 1].split(' ')
-                        
+
                     if predicted_p == ['']:
                         predicted_p = []
-                        
+
                     predicted_p_id = list(
                         yaopin_id_dict[p_name] for p_name in predicted_p)
 
@@ -551,13 +596,14 @@ def get_prescription_kl_t():
                 predicted_p_lda = lda.get_topics_np4doc(
                     predicted_p_ids_str[p], lda_model, dictionary)
 
-                kl_entropy = np.sum(predicted_p_lda * np.log(predicted_p_lda / label_p_lda))
+                kl_entropy = np.sum(
+                    predicted_p_lda * np.log(predicted_p_lda / label_p_lda))
 
                 avg_kl_entropy += kl_entropy * 0.5 / 2500
-        
+
         print('avg_kl: {0}'.format(avg_kl_entropy))
 
     end_kl = time.clock()
     print('time used: {0}s'.format(end_kl - start_kl))
-    
+
 # get_prescription_kl_t()
