@@ -20,6 +20,6 @@ def show_eva_dist(eva_label_np_array, eva_prediction_np_array):
     plt.grid(linestyle='--')
     plt.show()
     
-eva_score_file = plot_pair_check_folder + pair_check_csvs[5]
+eva_score_file = plot_pair_check_folder + pair_check_csvs[0]
 eva_label_np_array, eva_prediction_np_array = get_pair_check_score_dist(eva_score_file)
 show_eva_dist(eva_label_np_array, eva_prediction_np_array)
