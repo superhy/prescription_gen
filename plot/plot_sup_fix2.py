@@ -9,7 +9,9 @@ Created on 2019年1月6日
 import pandas as pd
 import numpy as np
 
-plot_pair_check_folder = '/home/superhy/prescription-gen-file/res/plot/fix1_pair_check_csv/'
+
+# plot_pair_check_folder = '/home/superhy/prescription-gen-file/res/plot/fix1_pair_check_csv/'
+plot_pair_check_folder = 'data/pair_check_csv/'
 pair_check_csvs = ['1c.csv', '1c_aug.csv', '2c.csv',
                    '2c_aug.csv', '2c_lda.csv', '2c_lda_aug.csv']
 

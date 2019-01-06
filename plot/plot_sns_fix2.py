@@ -7,7 +7,7 @@ Created on 2019年1月6日
 '''
 
 import seaborn as sns
-from plot.plot_sup_fix1 import plot_pair_check_folder, pair_check_csvs
+from plot.plot_sup_fix2 import plot_pair_check_folder, pair_check_csvs
 from plot.plot_sup_fix2 import get_pair_check_score_dist
 
 import matplotlib.pyplot as plt
@@ -20,6 +20,6 @@ def show_eva_dist(eva_label_np_array, eva_prediction_np_array):
     plt.grid(linestyle='--')
     plt.show()
     
-eva_score_file = plot_pair_check_folder + pair_check_csvs[0]
+eva_score_file = plot_pair_check_folder + pair_check_csvs[5]
 eva_label_np_array, eva_prediction_np_array = get_pair_check_score_dist(eva_score_file)
 show_eva_dist(eva_label_np_array, eva_prediction_np_array)
