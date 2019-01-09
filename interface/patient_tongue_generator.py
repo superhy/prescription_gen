@@ -6,9 +6,8 @@ Created on 2017年8月8日
 @author: superhy, huiqiang
 '''
 
-import os
-
 from PIL import Image
+import os
 
 from layer import tongue2text_gen, tongue2text_sklearn_gen, image_augment
 from layer.norm import lda
