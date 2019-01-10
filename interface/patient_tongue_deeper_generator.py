@@ -58,7 +58,7 @@ def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
     image_input, base_model = tongue2text_deeper_gen.k_base_model(
         tongue_image_shape=tongue_image_shape, model_name=base_model_name)
     tongue_gen_model = tongue2text_deeper_gen.k_1pipeline_mlp(
-        yao_indices_dim=nb_yao, image_input, base_model, with_compile=True)
+        yao_indices_dim=nb_yao, image_input=image_input, base_model=base_model, with_compile=True)
 
     if train_on_batch == True:
         trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
@@ -124,7 +124,7 @@ def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
     image_input, base_model = tongue2text_deeper_gen.k_base_model(
         tongue_image_shape=tongue_image_shape, model_name=base_model_name)
     tongue_gen_model = tongue2text_deeper_gen.k_2pipeline_mlp(
-        yao_indices_dim=nb_yao, image_input, base_model, with_compile=True)
+        yao_indices_dim=nb_yao, image_input=image_input, base_model=base_model, with_compile=True)
 
     if train_on_batch == True:
         trained_tongue_gen_model, history = tongue2text_gen.trainer_on_batch(
@@ -175,7 +175,7 @@ def gen_deeper_pipeline_predictor_test(tongue_image_arrays, tongue_yaofangs, ton
 #=========================================================================
 
 
-def tongue_gen_deeper_2pipeline_2outputs_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao, channel_times,
+def tongue_gen_deeper_2pipeline_2outputs_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao,
                                                  lda_model_path, gen_model_path=None, lda_replace=False, use_tfidf_tensor=False,
                                                  use_data_augment=False):
     '''
