@@ -354,7 +354,7 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
-train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='vgg16')
+# train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='resnet50')
 # 
@@ -364,7 +364,7 @@ train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='
 # 
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg19')
-# train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='resnet50')
+train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='resnet50')
 
 
 

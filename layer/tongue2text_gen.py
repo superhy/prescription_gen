@@ -979,7 +979,8 @@ def k_cnns_biggertimes_channels_mlp_2output(yao_indices_dim, tongue_image_shape,
 def get_optimizer():
 
     #     _optimizer = SGD(lr=0.1, decay=.0, momentum=0.9)
-    _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
+#     _optimizer = Adadelta(lr=1.0, rho=0.95, epsilon=1e-06, decay=1e-6)
+    _optimizer = Adam()
 #     _optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
 
     return _optimizer

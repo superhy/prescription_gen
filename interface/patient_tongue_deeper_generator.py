@@ -55,6 +55,7 @@ def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 1pipeline + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
           (train_on_batch, scaling_act_type))
+    print('use base_model: ' + base_model_name)
     image_input, base_model = tongue2text_deeper_gen.k_base_model(
         tongue_image_shape=tongue_image_shape, model_name=base_model_name)
     tongue_gen_model = tongue2text_deeper_gen.k_1pipeline_mlp(
@@ -70,6 +71,7 @@ def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
             tongue_gen_model, train_x, train_y,
             batch_size=8,
+            epochs=200,
             best_record_path=record_path)
         if gen_model_path != None:
             tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
@@ -121,6 +123,7 @@ def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 1pipeline + mlp tongue2text gen model------on_batch: %d------scaling_activation: %s...' %
           (train_on_batch, scaling_act_type))
+    print('use base_model: ' + base_model_name)
     image_input, base_model = tongue2text_deeper_gen.k_base_model(
         tongue_image_shape=tongue_image_shape, model_name=base_model_name)
     tongue_gen_model = tongue2text_deeper_gen.k_2pipeline_mlp(
@@ -136,6 +139,7 @@ def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
             tongue_gen_model, train_x, train_y,
             batch_size=8,
+            epochs=200,
             best_record_path=record_path)
         if gen_model_path != None:
             tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
@@ -229,6 +233,7 @@ def tongue_gen_deeper_2pipeline_2outputs_trainer(tongue_image_arrays, tongue_yao
     scaling_act_type = 'tfidf' if use_tfidf_tensor else 'binary'
     print('training 2 * cnn + mlp with double output(lda) tongue2text gen model------scaling_activation: %s...' %
           scaling_act_type)
+    print('use base_model: ' + base_model_name)
     image_input, base_model = tongue2text_deeper_gen.k_base_model(
         tongue_image_shape, model_name=base_model_name)
     tongue_gen_model = tongue2text_deeper_gen.k_2pipeline_mlp_2outputs(yao_indices_dim=nb_yao,
@@ -245,6 +250,7 @@ def tongue_gen_deeper_2pipeline_2outputs_trainer(tongue_image_arrays, tongue_yao
     trained_tongue_gen_model, history = tongue2text_gen.trainer(
         tongue_gen_model, train_tongue_x, train_y, train_aux_y=train_aux_y,
         batch_size=8,
+        epochs=200,
         best_record_path=record_path)
     if gen_model_path != None:
         tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
