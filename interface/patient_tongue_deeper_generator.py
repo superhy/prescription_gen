@@ -18,7 +18,7 @@ from layer import tongue2text_gen, image_augment, tongue2text_deeper_gen
 from layer.norm import lda
 
 
-def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao, channel_times,
+def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao,
                                         gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False,
                                         use_data_augment=True):
     '''
@@ -84,7 +84,7 @@ def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
 #=========================================================================
 
 
-def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao, channel_times,
+def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao,
                                         gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False,
                                         use_data_augment=True):
     '''
