@@ -37,8 +37,8 @@ def train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_na
     #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
     
-#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
-    _use_data_augment = False
+    _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+#     _use_data_augment = False
     
     '''
     The part of train a new gen_model and storage it on disk,
@@ -147,8 +147,8 @@ def train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_na
     #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
     
-#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
-    _use_data_augment = False
+    _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+#     _use_data_augment = False
     
     '''
     The part of train a new gen_model and storage it on disk,
@@ -257,8 +257,8 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
     #     _use_tfidf_tensor = True  # set for use tfidf_tensor
     _use_tfidf_tensor = False
     
-#     _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
-    _use_data_augment = False
+    _use_data_augment = True # set for use image data augment, can only be use on service 225 with big memory
+#     _use_data_augment = False
     
     '''
     The part of train a new gen_model and storage it on disk,
@@ -354,17 +354,31 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
     print('------Average Score: average precision: %f, average recall: %f, error: %f' %
           (np.average(precisions), np.average(recalls), np.average(errors)))
 
+#===============================================================================
+# 1 pipeline without lda
+#===============================================================================
+
 # train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_1pipeline_gen(train_new=True, base_model_name='resnet50')
-# 
+
+
+#===============================================================================
+# 2 pipeline without lda
+#===============================================================================
+
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')
-# train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg19')
+train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='resnet50')
-# 
+
+
+#===============================================================================
+# 2 pipeline with lda
+#===============================================================================
+
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg19')
-train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='resnet50')
+# train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='resnet50')
 
 
 

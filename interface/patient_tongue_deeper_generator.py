@@ -17,6 +17,7 @@ import os
 from layer import tongue2text_gen, image_augment, tongue2text_deeper_gen
 from layer.norm import lda
 
+_new_training_epochs = 30
 
 def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao,
                                         gen_model_path=None, train_on_batch=False, use_tfidf_tensor=False,
@@ -70,8 +71,8 @@ def tongue_gen_deeper_1pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
             record_path = gen_model_path.replace('json', 'h5')
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
             tongue_gen_model, train_x, train_y,
-            batch_size=8,
-            epochs=200,
+            batch_size=16,
+            epochs=_new_training_epochs,
             best_record_path=record_path)
         if gen_model_path != None:
             tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
@@ -138,8 +139,8 @@ def tongue_gen_deeper_2pipeline_trainer(tongue_image_arrays, tongue_yaofangs, to
             record_path = gen_model_path.replace('json', 'h5')
         trained_tongue_gen_model, history = tongue2text_gen.trainer(
             tongue_gen_model, train_x, train_y,
-            batch_size=8,
-            epochs=200,
+            batch_size=16,
+            epochs=_new_training_epochs,
             best_record_path=record_path)
         if gen_model_path != None:
             tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
@@ -249,8 +250,8 @@ def tongue_gen_deeper_2pipeline_2outputs_trainer(tongue_image_arrays, tongue_yao
         record_path = gen_model_path.replace('json', 'h5')
     trained_tongue_gen_model, history = tongue2text_gen.trainer(
         tongue_gen_model, train_tongue_x, train_y, train_aux_y=train_aux_y,
-        batch_size=8,
-        epochs=200,
+        batch_size=16,
+        epochs=_new_training_epochs,
         best_record_path=record_path)
     if gen_model_path != None:
         tongue2text_gen.storageModel(model=trained_tongue_gen_model, frame_path=gen_model_path,
