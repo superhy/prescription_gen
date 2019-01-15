@@ -94,8 +94,56 @@ def get_train_val_losshis(his_path):
     return train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list
 
 
+fix2_his_folder = '/home/superhy/prescription-gen-file/res/plot/fix2_his/'
 
+fix2_his_names = ['noaug/1p_resnet50_pt30-4.his', 'noaug/1p_vgg16_pt30-4.his', 'noaug/1p_vgg19_pt30-4.his',
+                  'noaug/2p_resnet50_pt30-4.his', 'noaug/2p_vgg16_pt30-4.his', 'noaug/2p_vgg19_pt30-4.his',
+                  'noaug/2p_resnet50_lda_pt30-4.his', 'noaug/2p_vgg16_lda_pt30-4.his', 'noaug/2p_vgg19_lda_pt30-4.his',
+                  'aug/1p_resnet50_pt30-4.his', 'aug/1p_vgg16_pt30-4.his', 'aug/1p_vgg19_pt30-4.his',
+                  'aug/2p_resnet50_pt30-4.his', 'aug/2p_vgg16_pt30-4.his', 'aug/2p_vgg19_pt30-4.his',
+                  'aug/2p_resnet50_lda_pt30-4.his', 'aug/2p_vgg16_lda_pt30-4.his', 'aug/2p_vgg19_lda_pt30-4.his']
 
+fix2_hiscsv_folder = '/home/superhy/prescription-gen-file/res/plot/fix2_his_csv/'
 
+fix2_his_csvs = ['noaug/1p_resnet50_pt30-4.csv', 'noaug/1p_vgg16_pt30-4.csv', 'noaug/1p_vgg19_pt30-4.csv',
+                 'noaug/2p_resnet50_pt30-4.csv', 'noaug/2p_vgg16_pt30-4.csv', 'noaug/2p_vgg19_pt30-4.csv',
+                 'noaug/2p_resnet50_lda_pt30-4.csv', 'noaug/2p_vgg16_lda_pt30-4.csv', 'noaug/2p_vgg19_lda_pt30-4.csv',
+                 'aug/1p_resnet50_pt30-4.csv', 'aug/1p_vgg16_pt30-4.csv', 'aug/1p_vgg19_pt30-4.csv',
+                 'aug/2p_resnet50_pt30-4.csv', 'aug/2p_vgg16_pt30-4.csv', 'aug/2p_vgg19_pt30-4.csv',
+                 'aug/2p_resnet50_lda_pt30-4.csv', 'aug/2p_vgg16_lda_pt30-4.csv', 'aug/2p_vgg19_lda_pt30-4.csv']
+
+def prod_fix2_line_csv():
+    
+    for i in range(len(fix2_his_names)):
+        if fix2_his_names[i].find('lda') == -1:
+            _, train_loss_his_list, _, val_loss_his_list = get_train_val_losshis(
+                fix2_his_folder + fix2_his_names[i])
+            dataframe = pd.DataFrame({'train_his': train_loss_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix2_hiscsv_folder +
+                             fix2_his_csvs[i], index=True)
+
+            # print
+            print("{0}:".format(fix2_his_names[i]))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+        else:
+            train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list = get_train_val_losshis(
+                fix2_his_folder + fix2_his_names[i])
+            dataframe = pd.DataFrame({'train_total_his': train_total_loss_his_list, 
+                                      'train_his': train_loss_his_list,
+                                      'val_total_his': val_total_his_list,
+                                      'val_his': val_loss_his_list})
+            dataframe.to_csv(fix2_hiscsv_folder +
+                             fix2_his_csvs[i], index=True)
+            
+            # print
+            print("{0}:".format(fix2_his_names[i]))
+            print("train_total_his: {0}".format(train_total_loss_his_list))
+            print("train_his: {0}".format(train_loss_his_list))
+            print("val_total_his: {0}".format(val_total_his_list))
+            print("val_his: {0}".format(val_loss_his_list))
+
+prod_fix2_line_csv()
 
     
