@@ -67,4 +67,35 @@ def get_linerda_dist():
     print(d2_X)
     
 get_linerda_dist()
+
+
+def get_train_val_losshis(his_path):
+    
+    train_total_loss_his_list = [0.2]
+    train_loss_his_list = [0.2]
+    val_total_his_list = [0.2]
+    val_loss_his_list = [0.2]
+
+    fr = open(his_path, 'r')
+    his_lines = fr.readlines()
+    fr.close()
+
+    for line in his_lines:
+        line_elements = line[line.find('(') + 1: line.find(')')].split(', ')
+        if his_path.find('lda') == -1:
+            train_loss_his_list.append(float(line_elements[0]))
+            val_loss_his_list.append(line_elements[2])
+        else:
+            train_total_loss_his_list.append(float(line_elements[0]))
+            train_loss_his_list.append(float(line_elements[1]))
+            val_total_his_list.append(float(line_elements[4]))
+            val_loss_his_list.append(line_elements[5])
+
+    return train_total_loss_his_list, train_loss_his_list, val_total_his_list, val_loss_his_list
+
+
+
+
+
+
     

@@ -161,7 +161,7 @@ def train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_na
     train_on_batch = False  # switch train_on_batch or not
     if train_new == True:
         _ = patient_tongue_deeper_generator.tongue_gen_deeper_2pipeline_trainer(
-            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name,  nb_yao,
+            tongue_image_arrays, tongue_yaofangs, tongue_image_shape, base_model_name, nb_yao,
             gen_model_path=gen_frame_path, train_on_batch=train_on_batch, use_tfidf_tensor=_use_tfidf_tensor,
             use_data_augment=_use_data_augment)
         
@@ -381,7 +381,7 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
 #===============================================================================
 # 2 pipeline without lda
 #===============================================================================
-print ("train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')")
+
 train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='resnet50')
