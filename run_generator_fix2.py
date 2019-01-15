@@ -381,8 +381,8 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
 #===============================================================================
 # 2 pipeline without lda
 #===============================================================================
-
-# train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')
+print ("train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')")
+train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_2pipeline_gen(train_new=True, base_model_name='resnet50')
 
@@ -391,7 +391,7 @@ def train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_
 # 2 pipeline with lda
 #===============================================================================
 
-train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg16')
+# train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg16')
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='vgg19')
 # train_predict_tongue2text_deeper_2pipeline_withlda_gen(train_new=True, base_model_name='resnet50')
 
