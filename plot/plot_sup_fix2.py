@@ -66,15 +66,15 @@ def get_linerda_dist():
 #     print(lda.predict_proba(X))
     print(d2_X)
     
-get_linerda_dist()
+# get_linerda_dist()
 
 
 def get_train_val_losshis(his_path):
     
-    train_total_loss_his_list = [0.2]
-    train_loss_his_list = [0.2]
-    val_total_his_list = [0.2]
-    val_loss_his_list = [0.2]
+    train_total_loss_his_list = [0.12]
+    train_loss_his_list = [0.12]
+    val_total_his_list = [0.12]
+    val_loss_his_list = [0.12]
 
     fr = open(his_path, 'r')
     his_lines = fr.readlines()
@@ -99,18 +99,18 @@ fix2_his_folder = '/home/superhy/prescription-gen-file/res/plot/fix2_his/'
 fix2_his_names = ['noaug/1p_resnet50_pt30-4.his', 'noaug/1p_vgg16_pt30-4.his', 'noaug/1p_vgg19_pt30-4.his',
                   'noaug/2p_resnet50_pt30-4.his', 'noaug/2p_vgg16_pt30-4.his', 'noaug/2p_vgg19_pt30-4.his',
                   'noaug/2p_resnet50_lda_pt30-4.his', 'noaug/2p_vgg16_lda_pt30-4.his', 'noaug/2p_vgg19_lda_pt30-4.his',
-                  'aug/1p_resnet50_pt30-4.his', 'aug/1p_vgg16_pt30-4.his', 'aug/1p_vgg19_pt30-4.his',
-                  'aug/2p_resnet50_pt30-4.his', 'aug/2p_vgg16_pt30-4.his', 'aug/2p_vgg19_pt30-4.his',
-                  'aug/2p_resnet50_lda_pt30-4.his', 'aug/2p_vgg16_lda_pt30-4.his', 'aug/2p_vgg19_lda_pt30-4.his']
+                  'aug/1p_resnet50_aug_pt30-4.his', 'aug/1p_vgg16_aug_pt30-4.his', 'aug/1p_vgg19_aug_pt30-4.his',
+                  'aug/2p_resnet50_aug_pt30-4.his', 'aug/2p_vgg16_aug_pt30-4.his', 'aug/2p_vgg19_aug_pt30-4.his',
+                  'aug/2p_resnet50_lda_aug_pt30-4.his', 'aug/2p_vgg16_lda_aug_pt30-4.his', 'aug/2p_vgg19_lda_aug_pt30-4.his']
 
 fix2_hiscsv_folder = '/home/superhy/prescription-gen-file/res/plot/fix2_his_csv/'
 
 fix2_his_csvs = ['noaug/1p_resnet50_pt30-4.csv', 'noaug/1p_vgg16_pt30-4.csv', 'noaug/1p_vgg19_pt30-4.csv',
                  'noaug/2p_resnet50_pt30-4.csv', 'noaug/2p_vgg16_pt30-4.csv', 'noaug/2p_vgg19_pt30-4.csv',
                  'noaug/2p_resnet50_lda_pt30-4.csv', 'noaug/2p_vgg16_lda_pt30-4.csv', 'noaug/2p_vgg19_lda_pt30-4.csv',
-                 'aug/1p_resnet50_pt30-4.csv', 'aug/1p_vgg16_pt30-4.csv', 'aug/1p_vgg19_pt30-4.csv',
-                 'aug/2p_resnet50_pt30-4.csv', 'aug/2p_vgg16_pt30-4.csv', 'aug/2p_vgg19_pt30-4.csv',
-                 'aug/2p_resnet50_lda_pt30-4.csv', 'aug/2p_vgg16_lda_pt30-4.csv', 'aug/2p_vgg19_lda_pt30-4.csv']
+                 'aug/1p_resnet50_aug_pt30-4.csv', 'aug/1p_vgg16_aug_pt30-4.csv', 'aug/1p_vgg19_aug_pt30-4.csv',
+                 'aug/2p_resnet50_aug_pt30-4.csv', 'aug/2p_vgg16_aug_pt30-4.csv', 'aug/2p_vgg19_aug_pt30-4.csv',
+                 'aug/2p_resnet50_lda_aug_pt30-4.csv', 'aug/2p_vgg16_lda_aug_pt30-4.csv', 'aug/2p_vgg19_lda_aug_pt30-4.csv']
 
 def prod_fix2_line_csv():
     
